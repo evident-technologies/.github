@@ -23,6 +23,29 @@ jobs:
         run: npm ci
       - name: Check Dependency Boundaries
         run: bash ./scripts/check-dependencies.sh
+      - name: Check Version Governance
+        run: |
+          VERSIONS_URL="https://raw.githubusercontent.com/Evident-Technologies/.github/main/versions.json"
+          curl -sSf "$VERSIONS_URL" -o central-versions.json
+          node - <<'EOF'
+          const fs = require('fs');
+          const prodPkg = JSON.parse(fs.readFileSync('package.json', 'utf-8'));
+          const central = JSON.parse(fs.readFileSync('central-versions.json', 'utf-8'));
+          const deps = prodPkg.dependencies || {};
+          const mismatches = [];
+          for (const [pkg, expected] of Object.entries(central)) {
+            if (deps[pkg] && deps[pkg] !== expected) {
+              mismatches.push(`${pkg}: expected ${expected}, found ${deps[pkg]}`);
+            }
+          }
+          if (mismatches.length) {
+            console.error('Version governance violations:');
+            mismatches.forEach(m => console.error(' - ' + m));
+            process.exit(1);
+          } else {
+            console.log('Version governance check passed.');
+          }
+          EOF
       - name: Lint
         run: npm run lint
       - name: Build
@@ -31,8 +54,6 @@ jobs:
         run: bash ../../scripts/run-visual-governance.sh
       - name: Performance Check
         run: bash ../../scripts/performance-check.sh
-      - name: Validate Deploy Manifest
-        run: node ../../packages/deploy-manifest/src/validate.js ./deploy-manifest.json
       - name: Validate Deploy Manifest
         run: node ../../packages/deploy-manifest/src/validate.js ./deploy-manifest.json
       - name: Deploy (Static)
