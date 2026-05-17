@@ -1,0 +1,39 @@
+name: CI Static App
+
+on:
+  push:
+    paths:
+      - '**/package.json'
+      - '**/src/**'
+  pull_request:
+    paths:
+      - '**/package.json'
+      - '**/src/**'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install dependencies
+        run: npm ci
+      - name: Check Dependency Boundaries
+        run: bash ./scripts/check-dependencies.sh
+      - name: Lint
+        run: npm run lint
+      - name: Build
+        run: npm run build
+      - name: Run Visual Governance
+        run: bash ../../scripts/run-visual-governance.sh
+      - name: Performance Check
+        run: bash ../../scripts/performance-check.sh
+      - name: Validate Deploy Manifest
+        run: node ../../packages/deploy-manifest/src/validate.js ./deploy-manifest.json
+      - name: Validate Deploy Manifest
+        run: node ../../packages/deploy-manifest/src/validate.js ./deploy-manifest.json
+      - name: Deploy (Static)
+        run: echo "Deploy placeholder – integrate Cloudflare Pages or Vercel"
