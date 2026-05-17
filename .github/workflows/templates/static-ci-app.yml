@@ -1,14 +1,6 @@
 name: CI Static App
 
-on:
-  push:
-    paths:
-      - '**/package.json'
-      - '**/src/**'
-  pull_request:
-    paths:
-      - '**/package.json'
-      - '**/src/**'
+workflow_call:
 
 jobs:
   build:
