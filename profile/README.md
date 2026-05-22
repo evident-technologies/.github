@@ -1,114 +1,105 @@
 # Evident Technologies
 
-Procedural systems engineering for accountable records, evidence integrity, and durable operational infrastructure.
+**Court-grade evidence processing for everyone.**
 
-Evident Technologies is a legal-technology and operational-systems organization. We build governed software for evidence workflows, civic and municipal infrastructure, and accountable record systems that are designed to remain legible and defensible over time.
-
----
-
-## Ecosystem Map
-
-| Domain                                                                    | Role                                                | Audience                              |
-| ------------------------------------------------------------------------- | --------------------------------------------------- | ------------------------------------- |
-| [evidtech.com](https://evidtech.com)                                      | Umbrella organization and infrastructure ecosystem  | Partners, civic bodies, engineering   |
-| [evident-icu.com](https://evident-icu.com)                                | Flagship platform informational surface             | Prospective platform users, reviewers |
-| [evident.icu](https://evident.icu)                                        | Operational Evident ICU application                 | Authenticated platform operators      |
-| [github.com/Evident-Technologies](https://github.com/Evident-Technologies) | Public ecosystem repositories and tooling           | Engineers, contributors               |
-| [docs.evident.icu](https://docs.evident.icu)                              | Technical documentation and developer references    | Developers, integrators               |
+We build governed software for legal practitioners who cannot access Relativity-class tools — eDiscovery, chain-of-custody infrastructure, and AI-assisted litigation workflows at a price point that works for solo practices, small firms, and public defenders.
 
 ---
 
-## Evident ICU
+## Flagship: Evident ICU
 
-Evident ICU is the flagship platform for accountable evidence intake, organization, review, and export.
+Evident ICU is a court-grade eDiscovery and evidence processing platform built for New Jersey legal practitioners and beyond.
 
-The platform is designed around:
+| Surface | |
+| --- | --- |
+| [evident.icu](https://evident.icu) | Live application — intake, pipeline, export |
+| [evident-icu.com](https://evident-icu.com) | Platform overview |
+| [docs.evident.icu](https://docs.evident.icu) | Technical documentation |
 
-- immutable handling of original evidence
-- append-only audit and custody records
-- deterministic processing and reproducible outputs
-- structured provenance for derivative artifacts
-- governed automation boundaries
-- export workflows prepared for downstream review
+**What it does:**
 
-Informational surface: [evident-icu.com](https://evident-icu.com)
-Operational application: [evident.icu](https://evident.icu)
-
----
-
-## Engineering Posture
-
-| Commitment                  | Practice                                                                |
-| --------------------------- | ----------------------------------------------------------------------- |
-| Immutable originals         | Source evidence is preserved without overwrite or destructive mutation  |
-| Cryptographic verification  | SHA-256 integrity verification for evidence and derivatives             |
-| Append-only records         | Audit and custody events are durable historical records                 |
-| Deterministic processing    | Reproducible outputs across environments and runs                       |
-| Structured provenance       | Derivatives retain reference relationships to source material           |
-| Accessibility as default    | Treated as a system-level requirement, not a finishing layer            |
-| Security-conscious design   | Privacy-aware engineering and disciplined trust boundaries              |
+- Immutable evidence intake with SHA-256 integrity verification at every stage
+- 16-stage AI-assisted processing pipeline (transcription, OCR, metadata, redaction, export)
+- Append-only chain-of-custody audit log — court-defensible by design
+- Deterministic, reproducible outputs — identical input produces identical output
+- Structured provenance for every derivative artifact
+- Export packages prepared for downstream review and production
 
 ---
 
-## Repositories
+## Engineering Principles
 
-Repositories in this organization fall into four categories.
-
-| Category            | Purpose                                                | Visibility |
-| ------------------- | ------------------------------------------------------ | ---------- |
-| Ecosystem           | Utilities, references, and supporting tooling          | Public     |
-| Satellite           | Supporting modules and integrations                    | Mixed      |
-| Documentation       | Technical and operational references                   | Public     |
-| Core infrastructure | Production systems and sensitive operational workflows | Private    |
-
-Sensitive operational systems remain private to preserve security posture and client trust.
-
----
-
-## Platform Architecture
-
-| Area                   | Stack                              |
-| ---------------------- | ---------------------------------- |
-| Runtime                | Node.js                            |
-| Workspaces             | npm / pnpm workspaces              |
-| Integrity              | SHA-256 hashing                    |
-| Commit signing         | Ed25519 SSH                        |
-| Repository shape       | Modular, domain-oriented monorepos |
-| Delivery surfaces      | Web, desktop, operational tooling  |
+| Principle | Implementation |
+| --- | --- |
+| Immutable originals | Source evidence is never overwritten or mutated |
+| Cryptographic verification | SHA-256 hashing at ingest, processing, and export |
+| Append-only records | Audit and custody events are permanent historical records |
+| Deterministic processing | Reproducible outputs across all environments and runs |
+| Structured provenance | Derivatives retain full reference relationships to source material |
+| Accessibility by default | WCAG 2.1 AA — a system requirement, not a finishing layer |
+| Security-conscious design | Privacy-aware engineering, disciplined trust boundaries, least-privilege |
 
 ---
 
-## Contribution Posture
+## Stack
 
-We accept contributions that strengthen reliability, transparency, accessibility, determinism, and operational clarity.
+| Layer | Technology |
+| --- | --- |
+| Frontend | Eleventy 3.1 · Tailwind 4 · Alpine.js · React 19 + Vite |
+| API | Express 5.1 · Node.js 22 · CommonJS |
+| Database | Supabase PostgreSQL · Row-Level Security |
+| Evidence Pipeline | Python 3.11+ · Whisper · Tesseract · ExifTool · pyannote |
+| Desktop | .NET 10 · MAUI Blazor Hybrid |
+| Billing | Stripe Subscriptions |
+| Deploy | Fly.io · Cloudflare Pages · Cloudflare Workers |
+| Signing | Ed25519 SSH signed commits |
+
+---
+
+## Ecosystem
+
+| Domain | Role |
+| --- | --- |
+| [evidtech.com](https://evidtech.com) | Umbrella organization |
+| [evident.icu](https://evident.icu) | Evident ICU — live application |
+| [evident-icu.com](https://evident-icu.com) | Platform informational surface |
+| [docs.evident.icu](https://docs.evident.icu) | Developer and operator documentation |
+
+---
+
+## Contributions
+
+We accept contributions that strengthen **reliability, transparency, determinism, and operational clarity**.
 
 - Signed commits are preferred
 - Deterministic behavior is prioritized over convenience
 - Audit-sensitive code paths require disciplined review
-- Sensitive operational details should not be publicly disclosed
+- Sensitive operational details must not be disclosed in public channels
 
-Repository-specific guidance lives in each project's `CONTRIBUTING.md`.
-
----
-
-## Security Posture
-
-If you identify a potential vulnerability, please use responsible disclosure and avoid posting sensitive operational details in public channels.
-
-Systems handling evidence-oriented workflows are designed around integrity verification, append-only history, traceable events, reproducible processing, and accountable boundaries.
+Guidance lives in each repository's `CONTRIBUTING.md`.
 
 ---
 
-## Legal Boundaries
+## Security
 
-Repositories, documentation, and public materials are provided for informational and technical purposes only.
+If you identify a potential vulnerability, use responsible disclosure. Do not post sensitive operational details in public issues or discussions.
 
-Nothing published by Evident Technologies constitutes legal advice, legal representation, forensic certification, evidentiary guarantees, or regulatory compliance guarantees. Users remain responsible for evaluating legal, regulatory, and operational requirements applicable to their use cases.
+Systems handling evidence workflows are built around integrity verification, append-only history, traceable events, and reproducible processing.
+
+For responsible disclosure: [security@evidtech.com](mailto:security@evidtech.com)
+
+---
+
+## Legal
+
+Nothing published here constitutes legal advice, legal representation, forensic certification, or evidentiary guarantees. All materials are provided for informational and technical purposes only. Users are responsible for evaluating legal and regulatory requirements applicable to their use cases.
 
 ---
 
 <div align="center">
 
-Disciplined systems for accountable records and durable workflows.
+Disciplined systems for accountable records. Built for access to justice.
+
+[evidtech.com](https://evidtech.com) · [evident.icu](https://evident.icu) · [@Evident-Technologies](https://github.com/Evident-Technologies)
 
 </div>
