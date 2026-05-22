@@ -26,10 +26,11 @@ jobs:
       # Repos that ARE allowed to be public. Update by PR only.
       ALLOWED_PUBLIC: ".github evident-technologies guild-guide"
     steps:
-      - name: Verify token present
+      - name: Verify governance audit credentials
         run: |
           if [ -z "$GH_TOKEN" ]; then
-            echo "::error::ORG_AUDIT_TOKEN secret is not configured."
+            echo "::error::ORG_AUDIT_TOKEN missing."
+            echo "::error::Repository governance verification cannot execute."
             exit 1
           fi
 
