@@ -3,4 +3,4 @@ on:
   workflow_call: {}
 jobs:
   ci:
-    uses: ./templates/static-ci-app.yml
+    uses: ./.github/workflows/templates/static-ci-app.yml
