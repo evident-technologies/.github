@@ -1,0 +1,112 @@
+name: Governance Drift Detection
+
+# Wave A governance hardening — 2026-05-21
+# Detects:
+#   1. Unauthorized public repositories in the org
+#   2. Private repositories that expose a public GitHub Pages site
+#
+# Requires a PAT secret `ORG_AUDIT_TOKEN` with `read:org` + `repo` scopes.
+# Without it, the workflow will fail and the failure itself is drift signal.
+
+on:
+  schedule:
+    - cron: '0 12 * * *'   # daily 12:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  detect:
+    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ secrets.ORG_AUDIT_TOKEN }}
+      ORG: Evident-Technologies
+      # Repos that ARE allowed to be public. Update by PR only.
+      ALLOWED_PUBLIC: ".github evident-technologies guild-guide"
+    steps:
+      - name: Verify token present
+        run: |
+          if [ -z "$GH_TOKEN" ]; then
+            echo "::error::ORG_AUDIT_TOKEN secret is not configured."
+            exit 1
+          fi
+
+      - name: Detect unauthorized public repos
+        id: pub
+        run: |
+          set -euo pipefail
+          gh repo list "$ORG" --limit 300 --json name,visibility > /tmp/repos.json
+          bad=$(node -e "
+            const fs=require('fs');
+            const allowed=new Set(process.env.ALLOWED_PUBLIC.split(/\s+/).filter(Boolean));
+            const repos=JSON.parse(fs.readFileSync('/tmp/repos.json','utf8'));
+            const bad=repos.filter(r=>String(r.visibility).toLowerCase()==='public' && !allowed.has(r.name));
+            console.log(bad.map(r=>r.name).join('\n'));
+          ")
+          echo "Unauthorized public repos:"
+          echo "$bad"
+          if [ -n "$bad" ]; then
+            {
+              echo 'unauthorized_public<<EOF'
+              echo "$bad"
+              echo 'EOF'
+            } >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Detect private repos with public Pages
+        id: pages
+        run: |
+          set -euo pipefail
+          gh repo list "$ORG" --limit 300 --json name,visibility,hasPagesSite > /tmp/repos2.json
+          bad=$(node -e "
+            const fs=require('fs');
+            const repos=JSON.parse(fs.readFileSync('/tmp/repos2.json','utf8'));
+            const bad=repos.filter(r=>String(r.visibility).toLowerCase()==='private' && r.hasPagesSite===true);
+            console.log(bad.map(r=>r.name).join('\n'));
+          ")
+          echo "Private repos publishing public Pages:"
+          echo "$bad"
+          if [ -n "$bad" ]; then
+            {
+              echo 'private_with_pages<<EOF'
+              echo "$bad"
+              echo 'EOF'
+            } >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Open or update drift issue
+        if: steps.pub.outputs.unauthorized_public != '' || steps.pages.outputs.private_with_pages != ''
+        env:
+          GH_TOKEN: ${{ secrets.ORG_AUDIT_TOKEN }}
+          UNAUTHORIZED: ${{ steps.pub.outputs.unauthorized_public }}
+          WITH_PAGES: ${{ steps.pages.outputs.private_with_pages }}
+        run: |
+          set -euo pipefail
+          body=$(cat <<EOM
+          Governance drift detected at $(date -u +%FT%TZ).
+
+          ## Unauthorized public repositories
+          \`\`\`
+          ${UNAUTHORIZED:-(none)}
+          \`\`\`
+
+          ## Private repositories with public Pages
+          \`\`\`
+          ${WITH_PAGES:-(none)}
+          \`\`\`
+
+          Resolve by either:
+          - flipping the repo back to private, or
+          - adding it to the \`ALLOWED_PUBLIC\` env var in
+            \`.github/workflows/governance-drift.yml\` (requires PR).
+          EOM
+          )
+          existing=$(gh issue list --repo Evident-Technologies/.github --state open --search 'Governance drift detected in:title' --json number --jq '.[0].number // empty')
+          if [ -n "$existing" ]; then
+            gh issue comment "$existing" --repo Evident-Technologies/.github --body "$body"
+          else
+            gh issue create --repo Evident-Technologies/.github --title "Governance drift detected" --body "$body" --label governance,drift || \
+              gh issue create --repo Evident-Technologies/.github --title "Governance drift detected" --body "$body"
+          fi
