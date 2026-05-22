@@ -1,0 +1,18 @@
+# Issue routing configuration for the Evident-Technologies organization.
+# Applied as the default for any repository without its own ISSUE_TEMPLATE/.
+
+blank_issues_enabled: false
+
+contact_links:
+  - name: Operational and platform inquiries
+    url: mailto:operations@evidtech.com
+    about: Platform, integration, and operational questions. GitHub issues are not a support channel.
+  - name: Security disclosures
+    url: https://github.com/Evident-Technologies/.github/blob/main/SECURITY.md
+    about: Coordinated, private disclosure. Do not file security matters as public issues.
+  - name: Legal and compliance inquiries
+    url: mailto:legal@evidtech.com
+    about: Licensing, IP, regulatory, and compliance correspondence.
+  - name: Engagement and contracting inquiries
+    url: https://github.com/Evident-Technologies/.github/blob/main/CONTRIBUTING.md
+    about: External contributions are not accepted. Engagement requires NDA, IP Assignment, and Contractor Agreement.

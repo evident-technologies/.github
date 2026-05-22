@@ -1,7 +1,7 @@
 # Security Policy — Evident Technologies LLC
 
-**Effective Date:** 2026-05-22  
-**Governing Entity:** Evident Technologies LLC, a New Jersey Limited Liability Company  
+**Effective Date:** 2026-05-22
+**Governing Entity:** Evident Technologies LLC, a New Jersey Limited Liability Company
 **Policy Owner:** Devon Tyler Barber, Manager
 
 ---
@@ -25,7 +25,7 @@ Evident Technologies operates a **private, coordinated disclosure** program. We 
 
 Submit all security vulnerability reports to:
 
-**Email:** `security@evidtech.com`  
+**Email:** `security@evidtech.com`
 **Subject line:** `[SECURITY] <brief description>`
 
 Encrypt sensitive reports using our PGP key (available on request).
@@ -46,14 +46,14 @@ A high-quality report includes:
 
 ## Response Commitments
 
-| Milestone | Target SLA |
-|-----------|-----------|
-| Acknowledgment of receipt | 48 business hours |
-| Initial severity assessment | 5 business days |
-| Remediation timeline communicated | 10 business days |
-| Critical (CVSS ≥ 9.0) patch deployed | 7 calendar days |
-| High (CVSS 7.0–8.9) patch deployed | 30 calendar days |
-| Medium / Low | Scheduled release cycle |
+| Milestone                             | Target SLA                  |
+| ------------------------------------- | --------------------------- |
+| Acknowledgment of receipt             | 48 business hours           |
+| Initial severity assessment           | 5 business days             |
+| Remediation timeline communicated     | 10 business days            |
+| Critical (CVSS ≥ 9.0) patch deployed  | 7 calendar days             |
+| High (CVSS 7.0–8.9) patch deployed    | 30 calendar days            |
+| Medium / Low                          | Scheduled release cycle     |
 | Disclosure coordination with reporter | Before any public statement |
 
 These timelines represent good-faith targets. Complex vulnerabilities affecting evidence integrity or chain of custody may require additional time to remediate without disrupting active legal matters.
@@ -64,13 +64,13 @@ These timelines represent good-faith targets. Complex vulnerabilities affecting 
 
 Evident ICU is deployed in legal proceedings. A subset of vulnerabilities carry heightened severity beyond standard CVSS scoring:
 
-| Category | Examples | Heightened Risk |
-|----------|----------|-----------------|
-| **Chain of custody tampering** | Hash manipulation, audit log injection | May render evidence inadmissible |
-| **Evidence file mutation** | Bypass of immutability controls | Forensic defensibility compromised |
-| **Unauthorized case access** | Auth bypass, IDOR across cases | Attorney-client privilege breach |
-| **Audit log suppression** | Log deletion, log forgery | Due process violation |
-| **PII / case data exfiltration** | Client names, docket numbers, legal strategy | OPRA / attorney ethics exposure |
+| Category                         | Examples                                     | Heightened Risk                    |
+| -------------------------------- | -------------------------------------------- | ---------------------------------- |
+| **Chain of custody tampering**   | Hash manipulation, audit log injection       | May render evidence inadmissible   |
+| **Evidence file mutation**       | Bypass of immutability controls              | Forensic defensibility compromised |
+| **Unauthorized case access**     | Auth bypass, IDOR across cases               | Attorney-client privilege breach   |
+| **Audit log suppression**        | Log deletion, log forgery                    | Due process violation              |
+| **PII / case data exfiltration** | Client names, docket numbers, legal strategy | OPRA / attorney ethics exposure    |
 
 Reports in these categories will be treated as **Critical priority** regardless of CVSS score and escalated to legal counsel immediately upon verification.
 
@@ -107,13 +107,13 @@ This safe harbor does not extend to researchers who violate items 1–5 above, o
 
 ## Supported Versions
 
-| Product | Supported |
-|---------|-----------|
-| Evident ICU (current production) | ✅ |
-| Evident ICU (prior minor release) | ✅ Security fixes only |
-| Evident ICU (older releases) | ❌ Upgrade required |
-| Evident Desktop (current release) | ✅ |
-| Satellite apps (current deployment) | ✅ |
+| Product                             | Supported              |
+| ----------------------------------- | ---------------------- |
+| Evident ICU (current production)    | ✅                     |
+| Evident ICU (prior minor release)   | ✅ Security fixes only |
+| Evident ICU (older releases)        | ❌ Upgrade required    |
+| Evident Desktop (current release)   | ✅                     |
+| Satellite apps (current deployment) | ✅                     |
 
 ---
 
@@ -132,13 +132,26 @@ All security disclosures that involve client data will be handled in accordance 
 
 ## Contact
 
-**Security disclosures:** `security@evidtech.com`  
-**General inquiries:** `hello@evidtech.com`  
-**Legal matters:** `legal@evidtech.com`  
-
-Evident Technologies LLC  
-New Jersey, United States
+| Channel              | Address                                                 |
+| -------------------- | ------------------------------------------------------- |
+| Security disclosures | [`security@evidtech.com`](mailto:security@evidtech.com) |
+| General inquiries    | [`hello@evidtech.com`](mailto:hello@evidtech.com)       |
+| Legal matters        | [`legal@evidtech.com`](mailto:legal@evidtech.com)       |
 
 ---
 
-*Nothing in this policy constitutes legal advice or creates an attorney-client relationship. This policy is subject to revision without prior notice. The current version is the version published in the default branch of this repository.*
+_Nothing in this policy constitutes legal advice or creates an attorney-client relationship. This policy is subject to revision without prior notice. The current version is the version published in the default branch of this repository._
+
+---
+
+<div align="center">
+
+<img src="https://raw.githubusercontent.com/Evident-Technologies/.github/main/profile/assets/evident-mark.svg" alt="Evident Technologies" width="56" height="56" />
+
+**Evident Technologies LLC** — New Jersey, United States
+
+_Court-grade evidence processing for everyone._
+
+[evidtech.com](https://evidtech.com) · [evident.icu](https://evident.icu) · [@Evident-Technologies](https://github.com/Evident-Technologies)
+
+</div>

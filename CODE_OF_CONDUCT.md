@@ -1,6 +1,6 @@
 # Code of Conduct — Evident Technologies LLC
 
-**Effective Date:** 2026-05-22  
+**Effective Date:** 2026-05-22
 **Governing Entity:** Evident Technologies LLC, a New Jersey Limited Liability Company
 
 ---
@@ -62,7 +62,7 @@ The following are prohibited without exception:
 
 Violations of this Code of Conduct may be reported to:
 
-**Email:** `legal@evidtech.com`  
+**Email:** `legal@evidtech.com`
 **Subject:** `[CONDUCT] <brief description>`
 
 Reports are reviewed by the Manager of Evident Technologies LLC. Anonymous reports are accepted but may limit our ability to investigate or respond.
@@ -91,13 +91,26 @@ This Code of Conduct governs behavior in GitHub-hosted spaces operated by Eviden
 
 ## Contact
 
-**Conduct reports:** `legal@evidtech.com`  
-**Security disclosures:** `security@evidtech.com`  
-**General:** `hello@evidtech.com`
-
-Evident Technologies LLC  
-New Jersey, United States
+| Channel              | Address                                                 |
+| -------------------- | ------------------------------------------------------- |
+| Conduct reports      | [`legal@evidtech.com`](mailto:legal@evidtech.com)       |
+| Security disclosures | [`security@evidtech.com`](mailto:security@evidtech.com) |
+| General inquiries    | [`hello@evidtech.com`](mailto:hello@evidtech.com)       |
 
 ---
 
-*This document is subject to revision. The current version is the version published in the default branch of this repository. Nothing herein constitutes legal advice or creates an attorney-client relationship.*
+_This document is subject to revision. The current version is the version published in the default branch of this repository. Nothing herein constitutes legal advice or creates an attorney-client relationship._
+
+---
+
+<div align="center">
+
+<img src="https://raw.githubusercontent.com/Evident-Technologies/.github/main/profile/assets/evident-mark.svg" alt="Evident Technologies" width="56" height="56" />
+
+**Evident Technologies LLC** — New Jersey, United States
+
+_Court-grade evidence processing for everyone._
+
+[evidtech.com](https://evidtech.com) · [evident.icu](https://evident.icu) · [@Evident-Technologies](https://github.com/Evident-Technologies)
+
+</div>
