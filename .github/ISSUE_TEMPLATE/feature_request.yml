@@ -1,0 +1,65 @@
+name: Capability proposal
+description: Propose a capability or change for institutional consideration.
+title: "[proposal] <concise summary>"
+labels: ["proposal", "triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Capability proposals are recorded for institutional consideration. Acceptance,
+        prioritization, and implementation are at the sole discretion of Evident
+        Technologies LLC. No response, timeline, or roadmap inclusion is implied by
+        filing a proposal.
+
+        This repository operates under controlled institutional governance. External
+        contributions are not accepted.
+
+  - type: input
+    id: repository
+    attributes:
+      label: Target repository or product
+      placeholder: "Evident-Technologies/<repo>"
+    validations:
+      required: true
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem statement
+      description: The operational, technical, or institutional problem the proposal addresses. Avoid hypothetical framing.
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed capability
+      description: A concrete, bounded description of the proposed change. Avoid open-ended exploration.
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+      description: Alternatives examined and the reason each was set aside. State "none" if no alternatives were considered.
+    validations:
+      required: true
+
+  - type: textarea
+    id: scope
+    attributes:
+      label: Scope, dependencies, and blast radius
+      description: Affected surfaces, dependencies, downstream consumers, and any institutional or compliance implications.
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: governance
+    attributes:
+      label: Governance acknowledgements
+      options:
+        - label: I understand external contributions are not accepted and this proposal does not constitute work product.
+          required: true
+        - label: I understand acceptance, prioritization, and timing are at the sole discretion of Evident Technologies LLC.
+          required: true

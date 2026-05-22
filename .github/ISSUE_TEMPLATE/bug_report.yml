@@ -1,0 +1,93 @@
+name: Defect report
+description: Report a verifiable defect in published Evident-Technologies code or documentation.
+title: "[defect] <concise summary>"
+labels: ["defect", "triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        This repository operates under controlled institutional governance. External
+        contributions are not accepted. Defect reports are reviewed at the discretion
+        of Evident Technologies LLC and are not subject to response-time commitments.
+
+        Do not file security-sensitive defects here. Use the disclosure process in
+        [SECURITY.md](https://github.com/Evident-Technologies/.github/blob/main/SECURITY.md).
+
+  - type: input
+    id: repository
+    attributes:
+      label: Affected repository
+      description: Repository name and (if applicable) package or path.
+      placeholder: "Evident-Technologies/<repo> — path/to/file"
+    validations:
+      required: true
+
+  - type: input
+    id: version
+    attributes:
+      label: Version, commit, or release
+      description: The exact version, tag, or commit SHA where the defect was observed.
+      placeholder: "v0.0.0 · commit abcd123"
+    validations:
+      required: true
+
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: Operating system, runtime, browser, or relevant deployment surface.
+      placeholder: |
+        OS:
+        Runtime:
+        Browser (if applicable):
+        Deployment surface:
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Reproduction steps
+      description: Deterministic, numbered steps. A reviewer must be able to follow these without inference.
+      placeholder: |
+        1.
+        2.
+        3.
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+      description: The documented or contractually-implied behavior.
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: Observed behavior
+      description: The actual behavior, including verbatim error output where applicable.
+    validations:
+      required: true
+
+  - type: textarea
+    id: scope
+    attributes:
+      label: Scope and impact
+      description: Affected users, data, workflows, or downstream systems. State unknowns as unknown.
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: governance
+    attributes:
+      label: Governance acknowledgements
+      options:
+        - label: This report contains no proof-of-concept material for a security vulnerability.
+          required: true
+        - label: This report contains no confidential, privileged, or personally identifying material.
+          required: true
+        - label: I understand external contributions are not accepted and review is at the discretion of Evident Technologies LLC.
+          required: true

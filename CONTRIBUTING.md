@@ -1,7 +1,7 @@
 # Contributing to Evident Technologies
 
-**Effective Date:** 2026-05-22  
-**Governing Entity:** Evident Technologies LLC, a New Jersey Limited Liability Company  
+**Effective Date:** 2026-05-22
+**Governing Entity:** Evident Technologies LLC, a New Jersey Limited Liability Company
 **Policy Owner:** Devon Tyler Barber, Manager
 
 ---
@@ -42,11 +42,11 @@ All work product in this codebase must vest unambiguously in Evident Technologie
 
 Contributions are accepted exclusively from individuals who have executed **all three** of the following agreements with Evident Technologies LLC prior to any commit:
 
-| Agreement | Purpose |
-|-----------|---------|
-| **Non-Disclosure Agreement (NDA)** | Protects confidentiality of source code, client data, case strategy, and proprietary methodology |
-| **Intellectual Property Assignment Agreement** | All work product, inventions, and improvements created during the engagement vest in Evident Technologies LLC on creation, not on payment |
-| **Contractor / Employment Agreement with Indemnification** | Establishes scope, compensation, and personal liability protection under the LLC umbrella |
+| Agreement                                                  | Purpose                                                                                                                                   |
+| ---------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
+| **Non-Disclosure Agreement (NDA)**                         | Protects confidentiality of source code, client data, case strategy, and proprietary methodology                                          |
+| **Intellectual Property Assignment Agreement**             | All work product, inventions, and improvements created during the engagement vest in Evident Technologies LLC on creation, not on payment |
+| **Contractor / Employment Agreement with Indemnification** | Establishes scope, compensation, and personal liability protection under the LLC umbrella                                                 |
 
 Engagement without these agreements signed is not authorized. Code committed without these agreements signed is a violation of the contributor's obligations and does not create ownership or compensation rights.
 
@@ -54,7 +54,7 @@ Engagement without these agreements signed is not authorized. Code committed wit
 
 If you are a developer, attorney, or consultant interested in a formal engagement:
 
-**Email:** `hello@evidtech.com`  
+**Email:** `hello@evidtech.com`
 **Subject:** `Contributor Inquiry — [Your Name / Firm]`
 
 Inquiries are reviewed at the Manager's discretion. Evident Technologies LLC is under no obligation to enter into an engagement with any party.
@@ -103,13 +103,26 @@ Viewing this repository does not grant any rights. Forking this repository does 
 
 ## Contact
 
-**General:** `hello@evidtech.com`  
-**Security:** `security@evidtech.com`  
-**Legal:** `legal@evidtech.com`
-
-Evident Technologies LLC  
-New Jersey, United States
+| Channel              | Address                                                 |
+| -------------------- | ------------------------------------------------------- |
+| General inquiries    | [`hello@evidtech.com`](mailto:hello@evidtech.com)       |
+| Security disclosures | [`security@evidtech.com`](mailto:security@evidtech.com) |
+| Legal matters        | [`legal@evidtech.com`](mailto:legal@evidtech.com)       |
 
 ---
 
-*This policy is subject to revision. The current version is the version published in the default branch of this repository. Nothing herein constitutes legal advice.*
+_This policy is subject to revision. The current version is the version published in the default branch of this repository. Nothing herein constitutes legal advice._
+
+---
+
+<div align="center">
+
+<img src="https://raw.githubusercontent.com/Evident-Technologies/.github/main/profile/assets/evident-mark.svg" alt="Evident Technologies" width="56" height="56" />
+
+**Evident Technologies LLC** — New Jersey, United States
+
+_Court-grade evidence processing for everyone._
+
+[evidtech.com](https://evidtech.com) · [evident.icu](https://evident.icu) · [@Evident-Technologies](https://github.com/Evident-Technologies)
+
+</div>

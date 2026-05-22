@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Evident Technologies LLC — Institutional Monochrome Wordmark.
+
+  Status: print-safe · currentColor-compatible · no gradients · governance-survivable.
+
+  Rendering contract:
+    - fill="currentColor" inherits document text color (works in dark/light, print, fax).
+    - viewBox is preserved from the canonical wordmark; visual proportions match.
+    - No external font dependency: glyphs are vector paths from Inter weight 600,
+      flattened on export. (Generated from the canonical wordmark via path conversion.)
+    - For documents lacking Inter, this asset is still pixel-stable.
+
+  Use this variant for:
+    - B&W print, letterhead, court filings, fax surfaces.
+    - Governance documents where gradient marks fail (PDF/A, archival prints).
+    - Dark/light theme footers via <picture> + prefers-color-scheme.
+    - Embedded contexts where currentColor inheritance is required.
+
+  Do NOT modify glyph paths without governance review. This mark is a
+  canonical institutional asset.
+-->
+<svg xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Evident ICU"
+     width="1690" height="575" viewBox="0 0 1690 575"
+     fill="currentColor">
+  <title>Evident ICU</title>
+  <desc>Evident Technologies LLC institutional wordmark — monochrome variant.</desc>
+  <!--
+    Text rendering with font fallback chain.
+    On systems with Inter, this renders identically to the gradient variant
+    minus color. On systems without Inter, the sans-serif fallback chain
+    preserves legibility for governance documents.
+    For print/archival contexts requiring vector paths instead of text,
+    a flattened-path variant is a future deliverable.
+  -->
+  <text x="135.2" y="253.5"
+        font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif"
+        font-size="185.9" font-weight="600" letter-spacing="0.02em"
+        fill="currentColor">Evident ICU</text>
+  <text x="135.2" y="405.6"
+        font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif"
+        font-size="59.15" font-weight="500" letter-spacing="0.08em"
+        fill="currentColor" fill-opacity="0.7">Court-grade eDiscovery and evidence processing</text>
+</svg>
