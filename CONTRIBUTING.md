@@ -10,7 +10,7 @@
 
 Evident Technologies LLC operates a **closed, proprietary software platform** for court-grade evidence processing and legal-technology services. The repositories under this organization are the exclusive intellectual property of Evident Technologies LLC.
 
-**External contributions are not accepted.** This organization does not operate as an open-source project. Pull requests, issues, and forks from parties not under a signed agreement with Evident Technologies LLC will be closed without review.
+**External code contributions are not accepted.** This organization does not operate as an open-source project. Pull requests and forks from parties not under a signed agreement with Evident Technologies LLC will be closed without review. GitHub issues from members of the public are permitted only where expressly allowed elsewhere in this policy (for example, limited non-security defect reports) and do not authorize code contribution, repository access, or any ownership interest.
 
 This policy is not a courtesy — it is a legal and forensic integrity requirement. See the reasoning below.
 
