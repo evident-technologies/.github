@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+<defs><linearGradient id="brand-grad-evident-icu-color" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#1f3a99"/><stop offset="100%" stop-color="#d4a020"/></linearGradient></defs>
+<g>
+<g><defs><clipPath id="shield-clip-evident"><path d="M225.28,48.08 L798.72,48.08 L798.72,623.34 C798.72,783.9 556.96,938.81 512,975.92 C467.04,938.81 225.28,783.9 225.28,623.34 Z"/></clipPath></defs>
+<g clip-path="url(#shield-clip-evident)"><circle cx="512" cy="479.53" r="90.6" stroke="#1f3a99" stroke-width="2.33472" fill="none" stroke-opacity="0.65"/>
+<circle cx="512" cy="388.93" r="90.6" stroke="#1f3a99" stroke-width="2.33472" fill="none" stroke-opacity="0.65"/>
+<circle cx="590.462" cy="434.23" r="90.6" stroke="#1f3a99" stroke-width="2.33472" fill="none" stroke-opacity="0.65"/>
+<circle cx="590.462" cy="524.83" r="90.6" stroke="#1f3a99" stroke-width="2.33472" fill="none" stroke-opacity="0.65"/>
+<circle cx="512" cy="570.13" r="90.6" stroke="#1f3a99" stroke-width="2.33472" fill="none" stroke-opacity="0.65"/>
+<circle cx="433.538" cy="524.83" r="90.6" stroke="#1f3a99" stroke-width="2.33472" fill="none" stroke-opacity="0.65"/>
+<circle cx="433.538" cy="434.23" r="90.6" stroke="#1f3a99" stroke-width="2.33472" fill="none" stroke-opacity="0.65"/></g>
+<path d="M225.28,48.08 L798.72,48.08 L798.72,623.34 C798.72,783.9 556.96,938.81 512,975.92 C467.04,938.81 225.28,783.9 225.28,623.34 Z" stroke="#1f3a99" stroke-width="5.8368" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M238.9,61.7 L785.1,61.7 L785.1,617.89 C785.1,759.18 550.53,921.66 512,954.13 C473.47,921.66 238.9,759.18 238.9,617.89 Z" stroke="#1f3a99" stroke-width="1.75104" fill="none" stroke-opacity="0.48"/>
+<circle cx="512" cy="479.53" r="22.53" fill="#d4a020" stroke="none"/></g>
+</g>
+</svg>
