@@ -85,7 +85,7 @@ Authorized contributors (those with signed agreements) must additionally:
 1. **Never commit case data, PII, or privileged materials** — even as test fixtures or comments
 2. **Never disable or bypass hash verification, audit logging, or chain-of-custody controls** without the Manager's explicit written approval
 3. **Never introduce nondeterministic processing** in any pipeline stage — all analysis must produce identical output from identical input
-4. **Follow the coding standards** documented in `_ai/CONVENTIONS.md` within the relevant repository
+4. **Follow the coding standards** documented in this repository and any canonical internal standards provided during onboarding or by the Manager
 5. **Obtain approval before modifying** Lumen prompt templates, Stripe product configuration, Supabase migrations in production, or CI/CD pipeline definitions
 6. **Report security concerns** to `security@evidtech.com` — not to the general issue tracker
 
