@@ -1,122 +1,201 @@
 <div align="center">
-
-<img src="https://raw.githubusercontent.com/Evident-Technologies/.github/main/profile/assets/evident-mark.svg" alt="Evident Technologies" width="120" height="120" />
+<img
+  src="https://raw.githubusercontent.com/Evident-Technologies/.github/main/profile/assets/evident-mark.svg"
+  alt="Evident Technologies"
+  width="140"
+  height="140"
+ />
 
 # Evident Technologies
 
-**Court-grade evidence processing for everyone.**
+### Court-grade evidence infrastructure
 
-_Disciplined systems for accountable records._
-
+_Deterministic systems for accountable records_
+<br>
+  SHA-256 Verified · Append-Only Audit Trails · Accessibility-First · Deterministic Processing
 </div>
 
 ---
 
-Evident Technologies LLC builds governed software for legal practitioners who cannot access Relativity-class tools — eDiscovery, chain-of-custody infrastructure, and AI-assisted litigation workflows engineered for solo practices, small firms, and public defenders.
+Evident Technologies LLC develops governed software infrastructure for evidence processing, chronology reconstruction, auditability, and operational record integrity.
 
-A New Jersey limited liability company. Every system shipped from this organization is reviewed and accepted under the LLC's governance authority before any client-facing deployment.
+The organization focuses on institutional-grade tooling for solo practitioners, small firms, public defenders, investigators, and organizations requiring disciplined evidence workflows without enterprise-scale overhead.
 
----
-
-## Flagship — Evident ICU
-
-A court-grade eDiscovery and evidence processing platform built for New Jersey legal practitioners and beyond.
-
-| Surface                                      | Purpose                                     |
-| -------------------------------------------- | ------------------------------------------- |
-| [evident.icu](https://evident.icu)           | Live application — intake, pipeline, export |
-| [evident-icu.com](https://evident-icu.com)   | Platform overview                           |
-| [docs.evident.icu](https://docs.evident.icu) | Technical documentation                     |
-
-**Capabilities**
-
-- Immutable evidence intake with SHA-256 integrity verification at every stage
-- 16-stage AI-assisted processing pipeline — transcription, OCR, metadata, redaction, export
-- Append-only chain-of-custody audit log, court-defensible by design
-- Deterministic, reproducible outputs — identical input produces identical output
-- Structured provenance for every derivative artifact
-- Export packages prepared for downstream review and production
+All systems released under this organization operate under formal governance review prior to deployment on public or client-facing infrastructure.
 
 ---
 
-## Engineering Principles
+# Flagship Platform — Evident ICU
 
-| Principle                  | Implementation                                                     |
-| -------------------------- | ------------------------------------------------------------------ |
-| Immutable originals        | Source evidence is never overwritten or mutated                    |
-| Cryptographic verification | SHA-256 hashing at ingest, processing, and export                  |
-| Append-only records        | Audit and custody events are permanent historical records          |
-| Deterministic processing   | Reproducible outputs across all environments and runs              |
-| Structured provenance      | Derivatives retain full reference relationships to source material |
-| Accessibility by default   | WCAG 2.1 AA — a system requirement, not a finishing layer          |
-| Least-privilege design     | Disciplined trust boundaries, scoped credentials, audited access   |
+Evident ICU is a governed evidence processing and eDiscovery platform designed for accountable legal and investigative workflows.
 
----
-
-## Stack
-
-| Layer             | Technology                                               |
-| ----------------- | -------------------------------------------------------- |
-| Frontend          | Eleventy 3.1 · Tailwind 4 · Alpine.js · React 19 + Vite  |
-| API               | Express 5.1 · Node.js 22 · CommonJS                      |
-| Database          | Supabase PostgreSQL · Row-Level Security                 |
-| Evidence Pipeline | Python 3.11+ · Whisper · Tesseract · ExifTool · pyannote |
-| Desktop           | .NET 10 · MAUI Blazor Hybrid                             |
-| Billing           | Stripe Subscriptions                                     |
-| Deploy            | Fly.io · Cloudflare Pages · Cloudflare Workers           |
-| Signing           | Ed25519 SSH-signed commits                               |
+| Surface | Purpose |
+|---|---|
+| [evident.icu](https://evident.icu) | Operational application environment |
+| [evident-icu.com](https://evident-icu.com) | Public platform and institutional overview |
+| [docs.evident.icu](https://docs.evident.icu) | Technical and operational documentation |
+| [status.evident.icu](https://status.evident.icu) | Operational status and infrastructure transparency |
 
 ---
 
-## Ecosystem
+# Core Capabilities
 
-| Domain                                       | Role                                 |
-| -------------------------------------------- | ------------------------------------ |
-| [evidtech.com](https://evidtech.com)         | Umbrella organization                |
-| [evident.icu](https://evident.icu)           | Evident ICU — live application       |
-| [evident-icu.com](https://evident-icu.com)   | Platform informational surface       |
-| [docs.evident.icu](https://docs.evident.icu) | Developer and operator documentation |
-
----
-
-## Governance
-
-Evident Technologies is a **closed, proprietary platform**. The repositories under this organization are the exclusive intellectual property of Evident Technologies LLC and operate under the LLC's governance authority.
-
-| Document                                    | Purpose                                                                                |
-| ------------------------------------------- | -------------------------------------------------------------------------------------- |
-| [SECURITY.md](../SECURITY.md)               | Coordinated vulnerability disclosure — `security@evidtech.com`                         |
-| [CONTRIBUTING.md](../CONTRIBUTING.md)       | Contribution policy — engagement requires NDA, IP Assignment, and Contractor Agreement |
-| [CODE_OF_CONDUCT.md](../CODE_OF_CONDUCT.md) | Professional conduct standard for all interactions                                     |
-
-External contributions are not accepted. Engagement inquiries: [`hello@evidtech.com`](mailto:hello@evidtech.com).
+- Immutable evidence intake and preservation
+- SHA-256 integrity verification throughout processing and export
+- Structured chronology and append-only custody records
+- Deterministic evidence processing pipelines
+- OCR, transcription, metadata extraction, redaction, and export workflows
+- Reproducible derivative generation with traceable provenance
+- Structured export packages prepared for downstream review and production
+- Accessibility-first operational workflows designed for extended review sessions
 
 ---
 
-## Security
+# Operational Doctrine
 
-Security disclosures are handled under coordinated, private disclosure. Do not post operational details, reproductions, or proof-of-concept material in public issues, pull requests, or discussions.
-
-**Report:** [`security@evidtech.com`](mailto:security@evidtech.com) — see [SECURITY.md](../SECURITY.md) for SLAs, scope, and safe-harbor terms.
+| Principle | Implementation |
+|---|---|
+| Immutable originals | Source evidence is never overwritten or modified |
+| Append-only chronology | Historical records remain permanent and traceable |
+| Deterministic processing | Identical input produces reproducible output |
+| Structured provenance | Derivatives maintain lineage to originating evidence |
+| Explicit operational state | Workflow status remains visible and explainable |
+| Recoverable workflows | Interruptions are handled transparently and safely |
+| Accessibility-first systems | WCAG 2.1 AA treated as infrastructure requirements |
+| Least-privilege boundaries | Scoped credentials and audited operational access |
 
 ---
 
-## Legal
+# Current Engineering Focus
 
-Nothing published in this organization constitutes legal advice, legal representation, forensic certification, or an evidentiary guarantee. All materials are provided for informational and technical purposes only. No license is granted by the presence of code in a public repository.
+- Append-only chronology infrastructure
+- Deterministic export and replay systems
+- Evidence lifecycle governance
+- Accessibility hardening across operational workflows
+- Operational survivability under degraded network conditions
+- Structured auditability and reproducible evidence handling
 
-© Evident Technologies LLC — a New Jersey Limited Liability Company. All rights reserved.
+---
+
+# Platform Stack
+
+| Layer | Technology |
+|---|---|
+| Frontend | Eleventy · Tailwind · Alpine.js · React + Vite |
+| API | Express · Node.js |
+| Database | PostgreSQL · Supabase · Row-Level Security |
+| Evidence Pipeline | Python · Whisper · Tesseract · ExifTool · pyannote |
+| Desktop | .NET · MAUI Blazor Hybrid |
+| Infrastructure | Cloudflare Pages · Workers · Fly.io |
+| Billing | Stripe Subscriptions |
+| Verification | Ed25519 SSH-signed commits |
+
+---
+
+# Ecosystem Structure
+
+| Domain | Role |
+|---|---|
+| [evidtech.com](https://evidtech.com) | Institutional umbrella organization |
+| [evident.icu](https://evident.icu) | Operational application environment |
+| [evident-icu.com](https://evident-icu.com) | Public platform overview |
+| [docs.evident.icu](https://docs.evident.icu) | Technical and operator documentation |
+| [status.evident.icu](https://status.evident.icu) | Operational transparency |
+
+---
+
+# Repository Classification
+
+| Category | Purpose |
+|---|---|
+| Core Infrastructure | Custody, chronology, export, verification systems |
+| Platform Surfaces | Operational applications and review environments |
+| Governance | Security policy, operational standards, review doctrine |
+| Tooling | Internal verification and developer infrastructure |
+
+---
+
+# Governance
+
+Evident Technologies operates as a governed proprietary software organization.
+
+Repositories under this organization constitute the intellectual property of Evident Technologies LLC and operate under organizational governance authority, operational review requirements, and deployment controls.
+
+| Document | Purpose |
+|---|---|
+| [SECURITY.md](../SECURITY.md) | Coordinated vulnerability disclosure procedures |
+| [CONTRIBUTING.md](../CONTRIBUTING.md) | Engagement and contribution requirements |
+| [CODE_OF_CONDUCT.md](../CODE_OF_CONDUCT.md) | Professional interaction standards |
+
+External public code contributions are not currently accepted.
+
+Operational or institutional inquiries:  
+operations@evidtech.com
+
+Security disclosures:  
+security@evidtech.com
+
+---
+
+# Security
+
+Security disclosures are handled through coordinated private reporting procedures.
+
+Do not publish operational vulnerabilities, exploit details, proof-of-concept material, or infrastructure-sensitive findings through public issues, pull requests, or discussions.
+
+Refer to `SECURITY.md` for:
+
+- disclosure scope
+- response expectations
+- safe-harbor guidance
+- operational reporting procedures
+
+---
+
+# Legal
+
+Nothing published within this organization constitutes legal advice, legal representation, forensic certification, evidentiary guarantees, or professional services.
+
+All materials are provided for informational and technical purposes only.
+
+No license or usage rights are granted solely by the presence of publicly accessible source code, documentation, or operational materials.
 
 ---
 
 <div align="center">
-
-<img src="https://raw.githubusercontent.com/Evident-Technologies/.github/main/profile/assets/evident-mark.svg" alt="" width="48" height="48" />
-
-**Court-grade evidence processing for everyone.**
-
-[evidtech.com](https://evidtech.com) · [evident.icu](https://evident.icu) · [@Evident-Technologies](https://github.com/Evident-Technologies)
-
-_Truth before persuasion. Structure before style. Integrity before convenience._
-
+<p align="center">
+  <img
+    src="https://raw.githubusercontent.com/Evident-Technologies/.github/main/profile/assets/evident-mark.svg"
+    alt="Evident Technologies"
+    width="140"
+    height="140"
+    style="
+      display: block;
+      margin: auto;
+      opacity: 0.98;
+      filter:
+        drop-shadow(0 1px 1px rgba(255,255,255,0.10))
+        drop-shadow(0 12px 28px rgba(0,0,0,0.24));
+    "
+  />
+</p>
+  <p>
+  <sub>
+    Evident Technologies LLC · Governed Evidence Infrastructure · New Jersey, USA
+  </sub>
+</p>
+<p>
+  <sub>
+    Truth before persuasion. Structure before style. Integrity before convenience.
+</sub> </p> <br>
+<p align="center">
+  <a href="https://evidtech.com">Organization</a>
+  ·
+  <a href="https://evident.icu">Platform</a>
+  ·
+  <a href="https://docs.evident.icu">Documentation</a>
+  ·
+  <a href="https://status.evident.icu">Status</a>
+</p>
+  
 </div>
