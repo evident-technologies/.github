@@ -1,0 +1,72 @@
+# Copyright © 2024–2026 Evident Technologies LLC. All rights reserved.
+# PROPRIETARY — See LICENSE.
+#
+# Reusable: verify-governance
+# Validates governance layer presence and integrity.
+# SHA-pinned actions per action-pins.json.
+
+name: Verify Governance
+
+on:
+  workflow_call:
+    inputs:
+      node-version:
+        description: "Node.js version"
+        required: false
+        default: "24"
+        type: string
+      governance-path:
+        description: "Path to governance directory"
+        required: false
+        default: "_governance"
+        type: string
+      custom-validate-command:
+        description: "Custom governance validation command (optional)"
+        required: false
+        default: ""
+        type: string
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    name: Governance Validation
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+      - name: Check governance layer presence
+        run: |
+          set -euo pipefail
+          GOV_PATH="${{ inputs.governance-path }}"
+
+          # Check for governance directory
+          if [ ! -d "$GOV_PATH" ]; then
+            echo "::warning::Governance directory '$GOV_PATH' not found. Skipping governance validation."
+            exit 0
+          fi
+
+          # Check for required governance files
+          MISSING=0
+          for FILE in GOVERNANCE.md IP_POLICY.md LICENSE; do
+            if [ ! -f "$GOV_PATH/$FILE" ] && [ ! -f "$FILE" ]; then
+              echo "::warning::Required governance file '$FILE' not found."
+              MISSING=$((MISSING + 1))
+            else
+              echo "✅ Found: $FILE"
+            fi
+          done
+
+          if [ "$MISSING" -gt 0 ]; then
+            echo "::warning::$MISSING governance file(s) missing. See governance doctrine for requirements."
+          fi
+
+          echo "Governance layer validation complete."
+
+      - name: Run custom governance validation
+        if: inputs.custom-validate-command != ''
+        run: ${{ inputs.custom-validate-command }}

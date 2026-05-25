@@ -1,0 +1,107 @@
+# Copyright © 2024–2026 Evident Technologies LLC. All rights reserved.
+# PROPRIETARY — See LICENSE.
+#
+# Reusable: verify-all
+# Composite verification pipeline calling all 5 canonical checks.
+# SHA-pinned actions per action-pins.json.
+
+name: Verify All
+
+on:
+  workflow_call:
+    inputs:
+      node-version:
+        description: "Node.js version"
+        required: false
+        default: "24"
+        type: string
+      working-directory:
+        description: "Working directory for commands"
+        required: false
+        default: "."
+        type: string
+      lint-command:
+        description: "Custom lint command"
+        required: false
+        default: "npm run lint"
+        type: string
+      typecheck-command:
+        description: "Custom typecheck command"
+        required: false
+        default: "npm run typecheck"
+        type: string
+      test-command:
+        description: "Custom test command"
+        required: false
+        default: "npm test"
+        type: string
+      skip-lint:
+        description: "Skip lint check"
+        required: false
+        default: false
+        type: boolean
+      skip-types:
+        description: "Skip type check"
+        required: false
+        default: false
+        type: boolean
+      skip-tests:
+        description: "Skip test check"
+        required: false
+        default: false
+        type: boolean
+      skip-governance:
+        description: "Skip governance check"
+        required: false
+        default: false
+        type: boolean
+      skip-secret-scan:
+        description: "Skip secret scan"
+        required: false
+        default: false
+        type: boolean
+
+permissions:
+  contents: read
+
+jobs:
+  lint:
+    name: Lint
+    if: inputs.skip-lint == false
+    uses: ./.github/workflows/templates/verify-lint.yml
+    with:
+      node-version: ${{ inputs.node-version }}
+      working-directory: ${{ inputs.working-directory }}
+      lint-command: ${{ inputs.lint-command }}
+
+  typecheck:
+    name: Type Check
+    if: inputs.skip-types == false
+    uses: ./.github/workflows/templates/verify-types.yml
+    with:
+      node-version: ${{ inputs.node-version }}
+      working-directory: ${{ inputs.working-directory }}
+      typecheck-command: ${{ inputs.typecheck-command }}
+
+  test:
+    name: Test
+    if: inputs.skip-tests == false
+    uses: ./.github/workflows/templates/verify-tests.yml
+    with:
+      node-version: ${{ inputs.node-version }}
+      working-directory: ${{ inputs.working-directory }}
+      test-command: ${{ inputs.test-command }}
+
+  governance:
+    name: Governance
+    if: inputs.skip-governance == false
+    uses: ./.github/workflows/templates/verify-governance.yml
+    with:
+      node-version: ${{ inputs.node-version }}
+
+  secret-scan:
+    name: Secret Scan
+    if: inputs.skip-secret-scan == false
+    uses: ./.github/workflows/templates/security-secret-scan.yml
+    with:
+      node-version: ${{ inputs.node-version }}

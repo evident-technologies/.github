@@ -1,0 +1,54 @@
+# Copyright © 2024–2026 Evident Technologies LLC. All rights reserved.
+# PROPRIETARY — See LICENSE.
+#
+# Reusable: verify-types
+# Runs TypeScript type checking for Node.js repositories.
+# SHA-pinned actions per action-pins.json.
+
+name: Verify Types
+
+on:
+  workflow_call:
+    inputs:
+      node-version:
+        description: "Node.js version"
+        required: false
+        default: "24"
+        type: string
+      working-directory:
+        description: "Working directory for typecheck command"
+        required: false
+        default: "."
+        type: string
+      typecheck-command:
+        description: "Custom typecheck command (default: npm run typecheck)"
+        required: false
+        default: "npm run typecheck"
+        type: string
+
+permissions:
+  contents: read
+
+jobs:
+  typecheck:
+    name: Type Check
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6.4.0
+        with:
+          node-version: ${{ inputs.node-version }}
+          cache: npm
+
+      - name: Install dependencies
+        working-directory: ${{ inputs.working-directory }}
+        run: npm ci
+
+      - name: Run typecheck
+        working-directory: ${{ inputs.working-directory }}
+        run: ${{ inputs.typecheck-command }}
