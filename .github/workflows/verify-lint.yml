@@ -1,0 +1,59 @@
+# Copyright © 2024–2026 Evident Technologies LLC. All rights reserved.
+# PROPRIETARY — See LICENSE.
+#
+# Reusable: verify-lint
+# Runs lint checks for Node.js repositories.
+# SHA-pinned actions per action-pins.json.
+#
+# MUST be at the top level of .github/workflows/ — GitHub rejects reusable
+# workflow references to subdirectory paths with HTTP 422.
+
+name: Verify Lint
+
+on:
+  workflow_call:
+    inputs:
+      node-version:
+        description: "Node.js version"
+        required: false
+        default: "24"
+        type: string
+      working-directory:
+        description: "Working directory for lint command"
+        required: false
+        default: "."
+        type: string
+      lint-command:
+        description: "Custom lint command (default: npm run lint)"
+        required: false
+        default: "npm run lint"
+        type: string
+
+permissions:
+  contents: read
+
+jobs:
+  lint:
+    name: Lint
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+      - name: Setup Node.js
+        if: inputs.lint-command == 'npm run lint'
+        uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5
+        with:
+          node-version: ${{ inputs.node-version }}
+          cache: npm
+
+      - name: Install dependencies
+        if: inputs.lint-command == 'npm run lint'
+        working-directory: ${{ inputs.working-directory }}
+        run: npm ci
+
+      - name: Run lint
+        working-directory: ${{ inputs.working-directory }}
+        run: ${{ inputs.lint-command }}
