@@ -14,8 +14,25 @@ echo "gh version: $(gh --version | head -n 1 | cut -d' ' -f3)"
 
 # Validate workflow templates exist
 if [ -d ".github/workflows/templates" ]; then
-  TEMPLATE_COUNT=$(ls .github/workflows/templates/*.yml 2>/dev/null | wc -l)
-  echo "Reusable workflow templates: $TEMPLATE_COUNT"
+  nullglob_was_set=0
+  if shopt -q nullglob; then
+    nullglob_was_set=1
+  else
+    shopt -s nullglob
+  fi
+
+  template_files=(.github/workflows/templates/*.yml)
+  TEMPLATE_COUNT=${#template_files[@]}
+
+  if [ "$nullglob_was_set" -eq 0 ]; then
+    shopt -u nullglob
+  fi
+
+  if [ "$TEMPLATE_COUNT" -gt 0 ]; then
+    echo "Reusable workflow templates: $TEMPLATE_COUNT"
+  else
+    echo "WARNING: No reusable workflow templates found"
+  fi
 else
   echo "WARNING: No reusable workflow templates found"
 fi
