@@ -24,7 +24,7 @@ else
 fi
 
 if [ -d ".github/workflows/templates" ]; then
-  TEMPLATE_COUNT=$(ls .github/workflows/templates/*.yml 2>/dev/null | wc -l)
+  TEMPLATE_COUNT=$(find .github/workflows/templates -maxdepth 1 -type f -name '*.yml' | wc -l)
   echo "workflow_templates=$TEMPLATE_COUNT"
 else
   echo "workflow_templates=0"
