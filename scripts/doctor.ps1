@@ -12,19 +12,27 @@ Write-Host "gh=$ghVersion"
 Write-Host "node=$nodeVersion"
 
 # Git status
-$gitStatus = git status --porcelain 2>$null
-if ([string]::IsNullOrEmpty($gitStatus)) {
-    Write-Host "git_status=clean"
+if ($gitVersion -eq "missing") {
+    $gitStatusValue = "unavailable"
 } else {
-    Write-Host "git_status=dirty"
+    $gitStatus = git status --porcelain 2>$null
+    if ($LASTEXITCODE -ne 0) {
+        $gitStatusValue = "unavailable"
+    } elseif ([string]::IsNullOrEmpty($gitStatus)) {
+        $gitStatusValue = "clean"
+    } else {
+        $gitStatusValue = "dirty"
+    }
 }
+Write-Host "git_status=$gitStatusValue"
 
 # Org meta-repo specific checks
 if (Test-Path "versions.json") {
-    Write-Host "versions_json=present"
+    $versionsJson = "present"
 } else {
-    Write-Host "versions_json=missing"
+    $versionsJson = "missing"
 }
+Write-Host "versions_json=$versionsJson"
 
 if (Test-Path ".github/workflows/templates") {
     $templateCount = (Get-ChildItem ".github/workflows/templates/*.yml" -ErrorAction SilentlyContinue).Count
@@ -34,16 +42,22 @@ if (Test-Path ".github/workflows/templates") {
 }
 
 if (Test-Path ".github/workflows/governance-drift.yml") {
-    Write-Host "drift_detection=active"
+    $driftDetection = "active"
 } else {
-    Write-Host "drift_detection=missing"
+    $driftDetection = "missing"
 }
+Write-Host "drift_detection=$driftDetection"
 
 # This is a meta-repo — no workspace_status or build gate
 Write-Host "repo_posture=org-governance"
 
 # Exit code
-if ($gitVersion -ne "missing") {
+if ($gitVersion -ne "missing" -and
+    $ghVersion -ne "missing" -and
+    $nodeVersion -ne "missing" -and
+    $gitStatusValue -eq "clean" -and
+    $versionsJson -eq "present" -and
+    $driftDetection -eq "active") {
     exit 0
 } else {
     exit 1

@@ -4,24 +4,35 @@ set -euo pipefail
 echo "doctor_version=1"
 
 # Tool versions
-echo "git=$(git --version 2>/dev/null | cut -d' ' -f3 || echo missing)"
-echo "gh=$(gh --version 2>/dev/null | head -n 1 | cut -d' ' -f3 || echo missing)"
-echo "node=$(node -v 2>/dev/null || echo missing)"
+git_version=$(git --version 2>/dev/null | cut -d' ' -f3 || echo missing)
+gh_version=$(gh --version 2>/dev/null | head -n 1 | cut -d' ' -f3 || echo missing)
+node_version=$(node -v 2>/dev/null || echo missing)
+
+echo "git=$git_version"
+echo "gh=$gh_version"
+echo "node=$node_version"
 
 # Git status
-GIT_STATUS=$(git status --porcelain 2>/dev/null || echo "not-a-repo")
-if [ -z "$GIT_STATUS" ]; then
-  echo "git_status=clean"
+if [ "$git_version" = "missing" ]; then
+  git_status=unavailable
+elif GIT_STATUS=$(git status --porcelain 2>/dev/null); then
+  if [ -z "$GIT_STATUS" ]; then
+    git_status=clean
+  else
+    git_status=dirty
+  fi
 else
-  echo "git_status=dirty"
+  git_status=unavailable
 fi
+echo "git_status=$git_status"
 
 # Org meta-repo specific checks
 if [ -f "versions.json" ]; then
-  echo "versions_json=present"
+  versions_json=present
 else
-  echo "versions_json=missing"
+  versions_json=missing
 fi
+echo "versions_json=$versions_json"
 
 if [ -d ".github/workflows/templates" ]; then
   TEMPLATE_COUNT=$(find .github/workflows/templates -maxdepth 1 -type f -name '*.yml' | wc -l)
@@ -31,16 +42,22 @@ else
 fi
 
 if [ -f ".github/workflows/governance-drift.yml" ]; then
-  echo "drift_detection=active"
+  drift_detection=active
 else
-  echo "drift_detection=missing"
+  drift_detection=missing
 fi
+echo "drift_detection=$drift_detection"
 
 # This is a meta-repo — no workspace_status or build gate
 echo "repo_posture=org-governance"
 
 # Exit code
-if command -v git >/dev/null 2>&1; then
+if [ "$git_version" != "missing" ] &&
+  [ "$gh_version" != "missing" ] &&
+  [ "$node_version" != "missing" ] &&
+  [ "$git_status" = "clean" ] &&
+  [ "$versions_json" = "present" ] &&
+  [ "$drift_detection" = "active" ]; then
   exit 0
 else
   exit 1
