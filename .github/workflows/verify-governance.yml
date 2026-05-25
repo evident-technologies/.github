@@ -70,7 +70,7 @@ jobs:
 
       - name: Setup Node.js
         if: inputs.custom-validate-command != ''
-        uses: actions/setup-node@49933b541b1a3c2d9b9e1c7493179b4e7e4f4a7e # v4.4.0
+        uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5
         with:
           node-version: ${{ inputs.node-version }}
 
