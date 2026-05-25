@@ -1,0 +1,11 @@
+name: Verify Governance (Template Compatibility)
+
+on:
+  workflow_call: {}
+
+permissions:
+  contents: read
+
+jobs:
+  governance:
+    uses: Evident-Technologies/.github/.github/workflows/verify-governance.yml@main
