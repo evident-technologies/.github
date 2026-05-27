@@ -1,11 +1,3 @@
-<div align="center">
-<img
-  src="https://raw.githubusercontent.com/Evident-Technologies/.github/main/profile/assets/evident-mark.svg"
-  alt="Evident Technologies"
-  width="140"
-  height="140"
- />
-
 # Evident Technologies
 
 ### Court-grade evidence infrastructure
@@ -163,22 +155,6 @@ No license or usage rights are granted solely by the presence of publicly access
 ---
 
 <div align="center">
-<p align="center">
-  <img
-    src="https://raw.githubusercontent.com/Evident-Technologies/.github/main/profile/assets/evident-mark.svg"
-    alt="Evident Technologies"
-    width="140"
-    height="140"
-    style="
-      display: block;
-      margin: auto;
-      opacity: 0.98;
-      filter:
-        drop-shadow(0 1px 1px rgba(255,255,255,0.10))
-        drop-shadow(0 12px 28px rgba(0,0,0,0.24));
-    "
-  />
-</p>
   <p>
   <sub>
     Evident Technologies LLC · Governed Evidence Infrastructure · New Jersey, USA
@@ -192,8 +168,6 @@ No license or usage rights are granted solely by the presence of publicly access
   <a href="https://evidtech.com">Organization</a>
   ·
   <a href="https://evident.icu">Platform</a>
-  ·
-  <a href="https://docs.evident.icu">Documentation</a>
   ·
   <a href="https://status.evident.icu">Status</a>
 </p>
