@@ -1,0 +1,29 @@
+name: Validate Governance
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+permissions:
+  contents: read
+jobs:
+  validate:
+    name: validate
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          persist-credentials: false
+      - name: Verify governance artifacts
+        run: |
+          missing=()
+          for f in SECURITY.md WORKSPACE.md VERIFY.md CODE_OF_CONDUCT.md CONTRIBUTING.md; do
+            [ -f "$f" ] || missing+=("$f")
+          done
+          if [ ${#missing[@]} -gt 0 ]; then
+            printf "Missing governance artifact: %s\n" "${missing[@]}"
+            exit 1
+          fi
+          echo "All governance artifacts present"
+
