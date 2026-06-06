@@ -1,31 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-  EVIDENT TECHNOLOGIES LLC — Monochrome Horizontal Lockup.
-  Single-ink (currentColor) variant for legal documents, invoices, forms, and print.
-  Works in pure black on white and reversed white on black (set CSS `color`).
+  EVIDENT TECHNOLOGIES LLC — Monochrome Horizontal Lockup · v2.
+  Single-ink (currentColor) for legal documents, invoices, forms, and print.
 -->
 <svg xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Evident Technologies"
-     width="760" height="180" viewBox="0 0 760 180" fill="currentColor">
+     width="780" height="180" viewBox="0 0 780 180" fill="currentColor">
   <title>Evident Technologies</title>
-  <desc>Monochrome horizontal logo: shield, divider, and EVIDENT TECHNOLOGIES wordmark.</desc>
+  <desc>Monochrome horizontal logo: E-monogram shield, divider, and wordmark.</desc>
 
-  <!-- Shield mark (line art) -->
   <g transform="translate(28,36) scale(1.125)" fill="none" stroke="currentColor">
-    <path d="M28,16 L68,16 Q74,16 74,22 L74,50 C74,67 62,76 48,82 C34,76 22,67 22,50 L22,22 Q22,16 28,16 Z"
-          stroke-width="3" stroke-linejoin="round"/>
-    <line x1="34" y1="35" x2="62" y2="35" stroke-width="3" stroke-linecap="round"/>
-    <line x1="38" y1="42" x2="58" y2="42" stroke-width="3" stroke-linecap="round" stroke-opacity="0.55"/>
-    <path d="M38,54 L46,62 L60,46" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M28,16 L68,16 Q74,16 74,22 L74,50 C74,67 62,76 48,82 C34,76 22,67 22,50 L22,22 Q22,16 28,16 Z" stroke-width="3" stroke-linejoin="round"/>
+    <g stroke-width="4.6" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M37,30.5 L37,49"/><path d="M37,30.5 L60,30.5"/><path d="M37,41.5 L53.5,41.5"/>
+      <path d="M37,49 L47.5,62.5 L62.5,43.5" stroke-width="5"/>
+    </g>
+    <circle cx="58" cy="41.5" r="2.8" fill="currentColor" stroke="none"/>
   </g>
 
-  <!-- Divider -->
-  <line x1="172" y1="50" x2="172" y2="130" stroke="currentColor" stroke-width="1.5" stroke-opacity="0.35"/>
+  <line x1="172" y1="48" x2="172" y2="132" stroke="currentColor" stroke-width="1.5" stroke-opacity="0.35"/>
 
-  <!-- Wordmark -->
-  <text x="200" y="88"
+  <text x="200" y="84"
         font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif"
-        font-size="60" font-weight="700" letter-spacing="6" fill="currentColor">EVIDENT</text>
-  <text x="202" y="128"
+        font-size="60" font-weight="700" letter-spacing="5" fill="currentColor">EVIDENT</text>
+  <text x="202" y="120"
         font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif"
-        font-size="29" font-weight="500" letter-spacing="9.5" fill="currentColor" fill-opacity="0.72">TECHNOLOGIES</text>
+        font-size="25" font-weight="500" letter-spacing="11.5" fill="currentColor" fill-opacity="0.72">TECHNOLOGIES</text>
 </svg>

@@ -1,23 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-  EVIDENT TECHNOLOGIES LLC — Institutional Shield Mark (monochrome).
-  Single-ink line variant for court filings, invoices, forms, fax, and print.
-  fill/stroke = currentColor: inherits document text color (light, dark, B&W, PDF/A).
-  Renders correctly in pure black on white and reversed white on black.
+  EVIDENT TECHNOLOGIES LLC — Shield Mark (monochrome) · v2 "E-monogram".
+  Single-ink (currentColor) line build for court filings, invoices, fax, print, PDF/A.
+  Reads in pure black on white and reversed white on black.
 -->
 <svg xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Evident Technologies"
      width="512" height="512" viewBox="0 0 96 96" fill="none" stroke="currentColor">
   <title>Evident Technologies</title>
-  <desc>Monochrome institutional shield mark — ledger record lines and a verification check.</desc>
+  <desc>Monochrome shield enclosing an E monogram with a provenance node and verification chevron.</desc>
 
-  <!-- Shield field (outline) -->
   <path d="M28,16 L68,16 Q74,16 74,22 L74,50 C74,67 62,76 48,82 C34,76 22,67 22,50 L22,22 Q22,16 28,16 Z"
         stroke-width="3" stroke-linejoin="round"/>
 
-  <!-- Record / ledger lines -->
-  <line x1="34" y1="35" x2="62" y2="35" stroke-width="3" stroke-linecap="round"/>
-  <line x1="38" y1="42" x2="58" y2="42" stroke-width="3" stroke-linecap="round" stroke-opacity="0.55"/>
-
-  <!-- Verification check -->
-  <path d="M38,54 L46,62 L60,46" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  <g stroke-width="4.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M37,30.5 L37,49"/>
+    <path d="M37,30.5 L60,30.5"/>
+    <path d="M37,41.5 L53.5,41.5"/>
+  </g>
+  <circle cx="58" cy="41.5" r="2.8" fill="currentColor" stroke="none"/>
+  <path d="M37,49 L47.5,62.5 L62.5,43.5" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>

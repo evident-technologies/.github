@@ -14,17 +14,22 @@ carries its own product mark under `../profile/assets/`.
 
 ## The mark
 
-A modern institutional shield carrying three integrated signals:
+A modern institutional shield enclosing a single **E-monogram** that reads four
+ways at once — a deliberate, original glyph rather than a generic icon:
 
-| Element | Meaning |
+| Element | Reads as |
 |---|---|
 | Shield field | Protection, durability, custody |
+| Spine + two bars | The letter **E** (Evident) and stacked ledger / record lines |
+| Mid-bar terminal dot | A **provenance node** — a record in a chain |
+| Lower chevron (gold) | A **verification** check, doubling as the base of the E |
 | Inner hairline frame | Procedural structure |
-| Ledger / record lines | The record, document geometry, provenance |
-| Verification check (gold) | Integrity, verification, attestation |
 
-The geometry is intentionally simple so it survives reduction to a 16 px favicon
-and a single-ink compliance seal.
+The mark is built on a deterministic geometry: a **√φ** shield, the middle record
+bar set on the **golden (φ) section** of the shield height, and shoulders/point
+struck from a shared circle grid and vesica. See
+`evident-technologies-construction.svg`. The geometry is intentionally restrained
+so it survives reduction to a 16 px favicon and a single-ink compliance seal.
 
 ---
 
@@ -33,11 +38,15 @@ and a single-ink compliance seal.
 | File | Use |
 |---|---|
 | `evident-technologies-brandboard.svg` / `.png` | Full brand board (overview / reference) |
+| `evident-technologies-construction.svg` | Geometry / construction sheet (φ + vesica) |
 | `evident-technologies-logo-primary.svg` | Primary horizontal lockup — light/ivory surfaces |
 | `evident-technologies-logo-reversed.svg` | Reversed lockup — navy / dark surfaces |
+| `evident-technologies-logo-stacked.svg` | Stacked lockup — covers, title pages, social cards |
 | `evident-technologies-logo-mono.svg` | Monochrome lockup — documents, invoices, print |
+| `evident-technologies-wordmark.svg` | Wordmark only (no mark) |
 | `evident-technologies-icon.svg` | Color shield mark (transparent) |
 | `evident-technologies-icon-mono.svg` | Monochrome shield mark (`currentColor`) |
+| `evident-technologies-usage-icons.svg` | Usage-context line icons (documents, compliance, evidence, provenance, protection) |
 | `evident-technologies-icon-512.png` | Raster avatar / app icon (512 px) |
 | `evident-technologies-favicon-32.png` | Raster favicon (32 px) |
 
@@ -69,9 +78,10 @@ rules; never set large areas in gold.
 
 ## Typography
 
-- **Typeface:** Inter, with a `system-ui` fallback chain.
+- **Primary:** Inter (system / UI / headings), with a `system-ui` fallback chain.
+- **Secondary:** Source Sans 3 (body / long-form), `system-ui` fallback.
 - **Wordmark:** uppercase, weight 700 for `EVIDENT`, weight 500 for
-  `TECHNOLOGIES`, letter-spacing roughly **+6 to +10**.
+  `TECHNOLOGIES`, letter-spacing roughly **+5 to +13** depending on lockup.
 - **Headings:** 600 / 700 · **Body & UI:** 400 / 500.
 
 ---
