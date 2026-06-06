@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  EVIDENT TECHNOLOGIES LLC — Reversed Horizontal Lockup (for dark / navy surfaces).
+  Ivory wordmark, gold verification, ivory record lines on a deep field.
+  Use on Black-Blue or Deep Navy backgrounds (footers, dark UI, letterhead bands).
+  Includes its own field panel so it can be dropped onto any dark surface.
+-->
+<svg xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Evident Technologies"
+     width="760" height="180" viewBox="0 0 760 180">
+  <title>Evident Technologies</title>
+  <desc>Reversed horizontal logo for dark backgrounds.</desc>
+
+  <rect x="0" y="0" width="760" height="180" fill="#0A1525"/>
+
+  <!-- Shield mark -->
+  <g transform="translate(28,36) scale(1.125)">
+    <path d="M28,16 L68,16 Q74,16 74,22 L74,50 C74,67 62,76 48,82 C34,76 22,67 22,50 L22,22 Q22,16 28,16 Z"
+          fill="#15294C"/>
+    <path d="M31,20 L65,20 Q70.5,20 70.5,25.5 L70.5,49.5 C70.5,64.5 60,72.5 48,77.8 C36,72.5 25.5,64.5 25.5,49.5 L25.5,25.5 Q25.5,20 31,20 Z"
+          fill="none" stroke="#BF9F4E" stroke-width="1" stroke-opacity="0.55"/>
+    <line x1="34" y1="35" x2="62" y2="35" stroke="#F4EFE3" stroke-width="3.1" stroke-linecap="round" stroke-opacity="0.95"/>
+    <line x1="38" y1="42" x2="58" y2="42" stroke="#F4EFE3" stroke-width="3.1" stroke-linecap="round" stroke-opacity="0.6"/>
+    <path d="M38,54 L46,62 L60,46" fill="none" stroke="#BF9F4E" stroke-width="5"
+          stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <line x1="172" y1="50" x2="172" y2="130" stroke="#F4EFE3" stroke-width="1.5" stroke-opacity="0.22"/>
+
+  <text x="200" y="88"
+        font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif"
+        font-size="60" font-weight="700" letter-spacing="6" fill="#F4EFE3">EVIDENT</text>
+  <text x="202" y="128"
+        font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif"
+        font-size="29" font-weight="500" letter-spacing="9.5" fill="#BF9F4E" fill-opacity="0.92">TECHNOLOGIES</text>
+</svg>

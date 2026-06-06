@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  EVIDENT TECHNOLOGIES LLC — Institutional Brand Board (parent company).
+  Primary lockup · reversed lockup · shield mark system · monochrome · palette · typography.
+  Generated as scalable vector. Canonical asset — changes require governance review.
+-->
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="1790" viewBox="0 0 1280 1790"
+     font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif">
+  <title>Evident Technologies — Institutional Brand Board</title>
+
+  <defs>
+    <!-- Color shield mark, authored in a 96x96 space -->
+    <g id="mark-color">
+      <path d="M28,16 L68,16 Q74,16 74,22 L74,50 C74,67 62,76 48,82 C34,76 22,67 22,50 L22,22 Q22,16 28,16 Z" fill="#15294C"/>
+      <path d="M31,20 L65,20 Q70.5,20 70.5,25.5 L70.5,49.5 C70.5,64.5 60,72.5 48,77.8 C36,72.5 25.5,64.5 25.5,49.5 L25.5,25.5 Q25.5,20 31,20 Z" fill="none" stroke="#BF9F4E" stroke-width="1" stroke-opacity="0.45"/>
+      <line x1="34" y1="35" x2="62" y2="35" stroke="#F4EFE3" stroke-width="3.1" stroke-linecap="round" stroke-opacity="0.92"/>
+      <line x1="38" y1="42" x2="58" y2="42" stroke="#F4EFE3" stroke-width="3.1" stroke-linecap="round" stroke-opacity="0.55"/>
+      <path d="M38,54 L46,62 L60,46" fill="none" stroke="#BF9F4E" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+    <!-- Monochrome / line shield mark (uses currentColor) -->
+    <g id="mark-mono" fill="none" stroke="currentColor">
+      <path d="M28,16 L68,16 Q74,16 74,22 L74,50 C74,67 62,76 48,82 C34,76 22,67 22,50 L22,22 Q22,16 28,16 Z" stroke-width="3" stroke-linejoin="round"/>
+      <line x1="34" y1="35" x2="62" y2="35" stroke-width="3" stroke-linecap="round"/>
+      <line x1="38" y1="42" x2="58" y2="42" stroke-width="3" stroke-linecap="round" stroke-opacity="0.55"/>
+      <path d="M38,54 L46,62 L60,46" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+  </defs>
+
+  <!-- Canvas -->
+  <rect width="1280" height="1790" fill="#F4EFE3"/>
+  <rect width="1280" height="8" fill="#15294C"/>
+  <rect width="1280" height="3" y="8" fill="#BF9F4E"/>
+
+  <!-- ============ HEADER ============ -->
+  <g transform="translate(80,70)">
+    <use href="#mark-color" transform="scale(0.62)"/>
+    <text x="78" y="26" font-size="30" font-weight="700" letter-spacing="3.5" fill="#15294C">EVIDENT TECHNOLOGIES LLC</text>
+    <text x="80" y="52" font-size="15" font-weight="500" letter-spacing="3" fill="#5B6573">INSTITUTIONAL BRAND SYSTEM · PARENT COMPANY</text>
+  </g>
+  <text x="1200" y="92" text-anchor="end" font-size="13" font-weight="500" letter-spacing="2.5" fill="#5B6573">GOVERNED EVIDENCE INFRASTRUCTURE</text>
+  <line x1="80" y1="150" x2="1200" y2="150" stroke="#15294C" stroke-width="1" stroke-opacity="0.18"/>
+
+  <!-- ============ SECTION 1 · PRIMARY LOGO ============ -->
+  <g transform="translate(80,188)">
+    <rect x="0" y="0" width="6" height="16" fill="#BF9F4E"/>
+    <text x="18" y="14" font-size="14" font-weight="600" letter-spacing="3" fill="#15294C">01 · PRIMARY LOGO LOCKUP</text>
+  </g>
+  <g transform="translate(80,224)">
+    <rect x="0" y="0" width="1120" height="248" rx="10" fill="#FBF9F2" stroke="#15294C" stroke-opacity="0.12"/>
+    <!-- lockup centered -->
+    <g transform="translate(225,46)">
+      <g transform="scale(1.55)">
+        <use href="#mark-color"/>
+      </g>
+      <line x1="178" y1="22" x2="178" y2="128" stroke="#15294C" stroke-width="1.5" stroke-opacity="0.28"/>
+      <text x="208" y="78" font-size="62" font-weight="700" letter-spacing="6" fill="#15294C">EVIDENT</text>
+      <text x="210" y="120" font-size="30" font-weight="500" letter-spacing="9.5" fill="#5B6573">TECHNOLOGIES</text>
+    </g>
+  </g>
+
+  <!-- ============ SECTION 2 · REVERSED LOCKUP ============ -->
+  <g transform="translate(80,512)">
+    <rect x="0" y="0" width="6" height="16" fill="#BF9F4E"/>
+    <text x="18" y="14" font-size="14" font-weight="600" letter-spacing="3" fill="#15294C">02 · REVERSED LOCKUP · DARK SURFACES</text>
+  </g>
+  <g transform="translate(80,548)">
+    <rect x="0" y="0" width="1120" height="200" rx="10" fill="#0A1525"/>
+    <g transform="translate(225,28)">
+      <g transform="scale(1.55)">
+        <path d="M28,16 L68,16 Q74,16 74,22 L74,50 C74,67 62,76 48,82 C34,76 22,67 22,50 L22,22 Q22,16 28,16 Z" fill="#15294C"/>
+        <path d="M31,20 L65,20 Q70.5,20 70.5,25.5 L70.5,49.5 C70.5,64.5 60,72.5 48,77.8 C36,72.5 25.5,64.5 25.5,49.5 L25.5,25.5 Q25.5,20 31,20 Z" fill="none" stroke="#BF9F4E" stroke-width="1" stroke-opacity="0.55"/>
+        <line x1="34" y1="35" x2="62" y2="35" stroke="#F4EFE3" stroke-width="3.1" stroke-linecap="round" stroke-opacity="0.95"/>
+        <line x1="38" y1="42" x2="58" y2="42" stroke="#F4EFE3" stroke-width="3.1" stroke-linecap="round" stroke-opacity="0.6"/>
+        <path d="M38,54 L46,62 L60,46" fill="none" stroke="#BF9F4E" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+      </g>
+      <line x1="178" y1="22" x2="178" y2="128" stroke="#F4EFE3" stroke-width="1.5" stroke-opacity="0.22"/>
+      <text x="208" y="78" font-size="62" font-weight="700" letter-spacing="6" fill="#F4EFE3">EVIDENT</text>
+      <text x="210" y="120" font-size="30" font-weight="500" letter-spacing="9.5" fill="#BF9F4E" fill-opacity="0.92">TECHNOLOGIES</text>
+    </g>
+  </g>
+
+  <!-- ============ SECTION 3 · SHIELD MARK ============ -->
+  <g transform="translate(80,788)">
+    <rect x="0" y="0" width="6" height="16" fill="#BF9F4E"/>
+    <text x="18" y="14" font-size="14" font-weight="600" letter-spacing="3" fill="#15294C">03 · SHIELD MARK · AVATAR · FAVICON · SEAL</text>
+  </g>
+  <g transform="translate(80,824)">
+    <rect x="0" y="0" width="1120" height="248" rx="10" fill="#FBF9F2" stroke="#15294C" stroke-opacity="0.12"/>
+
+    <!-- Hero mark -->
+    <g transform="translate(70,40)">
+      <g transform="scale(1.75)"><use href="#mark-color"/></g>
+    </g>
+
+    <!-- Light avatar tile -->
+    <g transform="translate(330,52)">
+      <rect width="144" height="144" rx="28" fill="#F4EFE3" stroke="#15294C" stroke-opacity="0.14"/>
+      <g transform="translate(24,18) scale(1.0)"><use href="#mark-color"/></g>
+      <text x="72" y="172" text-anchor="middle" font-size="12" letter-spacing="1.5" fill="#5B6573">AVATAR · LIGHT</text>
+    </g>
+
+    <!-- Dark avatar tile -->
+    <g transform="translate(500,52)">
+      <rect width="144" height="144" rx="28" fill="#0A1525"/>
+      <g transform="translate(24,18)" color="#F4EFE3"><use href="#mark-mono"/></g>
+      <text x="72" y="172" text-anchor="middle" font-size="12" letter-spacing="1.5" fill="#5B6573">AVATAR · DARK</text>
+    </g>
+
+    <!-- Favicon scale steps -->
+    <g transform="translate(700,52)">
+      <rect width="80" height="80" rx="10" fill="#F4EFE3" stroke="#15294C" stroke-opacity="0.14"/>
+      <g transform="translate(13,9) scale(0.56)"><use href="#mark-color"/></g>
+      <text x="40" y="100" text-anchor="middle" font-size="12" fill="#5B6573">64 px</text>
+    </g>
+    <g transform="translate(800,52)">
+      <rect width="48" height="48" rx="7" fill="#F4EFE3" stroke="#15294C" stroke-opacity="0.14"/>
+      <g transform="translate(8,5) scale(0.335)"><use href="#mark-color"/></g>
+      <text x="24" y="100" text-anchor="middle" font-size="12" fill="#5B6573">32 px</text>
+    </g>
+    <g transform="translate(872,52)">
+      <rect width="32" height="32" rx="5" fill="#F4EFE3" stroke="#15294C" stroke-opacity="0.14"/>
+      <g transform="translate(5,3) scale(0.225)"><use href="#mark-color"/></g>
+      <text x="16" y="100" text-anchor="middle" font-size="12" fill="#5B6573">16 px</text>
+    </g>
+
+    <!-- Mark rationale -->
+    <text x="990" y="70" text-anchor="middle" font-size="13" font-weight="600" letter-spacing="2" fill="#15294C">SYMBOLISM</text>
+    <text x="990" y="98" text-anchor="middle" font-size="12.5" fill="#5B6573">Shield — protection</text>
+    <text x="990" y="120" text-anchor="middle" font-size="12.5" fill="#5B6573">Ledger lines — record</text>
+    <text x="990" y="142" text-anchor="middle" font-size="12.5" fill="#5B6573">Check — verification</text>
+    <text x="990" y="164" text-anchor="middle" font-size="12.5" fill="#5B6573">Frame — procedure</text>
+  </g>
+
+  <!-- ============ SECTION 4 · MONOCHROME ============ -->
+  <g transform="translate(80,1112)">
+    <rect x="0" y="0" width="6" height="16" fill="#BF9F4E"/>
+    <text x="18" y="14" font-size="14" font-weight="600" letter-spacing="3" fill="#15294C">04 · MONOCHROME · DOCUMENTS · INVOICES · PRINT</text>
+  </g>
+  <g transform="translate(80,1148)">
+    <!-- Black on white -->
+    <rect x="0" y="0" width="545" height="190" rx="10" fill="#FFFFFF" stroke="#15294C" stroke-opacity="0.12"/>
+    <g transform="translate(48,40)" color="#0A1525">
+      <g transform="scale(1.25)"><use href="#mark-mono"/></g>
+      <text x="148" y="68" font-size="50" font-weight="700" letter-spacing="5" fill="#0A1525">EVIDENT</text>
+      <text x="150" y="104" font-size="24" font-weight="500" letter-spacing="7.5" fill="#0A1525" fill-opacity="0.72">TECHNOLOGIES</text>
+    </g>
+    <!-- White on black -->
+    <rect x="575" y="0" width="545" height="190" rx="10" fill="#0A1525"/>
+    <g transform="translate(623,40)" color="#F4EFE3">
+      <g transform="scale(1.25)"><use href="#mark-mono"/></g>
+      <text x="148" y="68" font-size="50" font-weight="700" letter-spacing="5" fill="#F4EFE3">EVIDENT</text>
+      <text x="150" y="104" font-size="24" font-weight="500" letter-spacing="7.5" fill="#F4EFE3" fill-opacity="0.78">TECHNOLOGIES</text>
+    </g>
+  </g>
+
+  <!-- ============ SECTION 5 · PALETTE ============ -->
+  <g transform="translate(80,1392)">
+    <rect x="0" y="0" width="6" height="16" fill="#BF9F4E"/>
+    <text x="18" y="14" font-size="14" font-weight="600" letter-spacing="3" fill="#15294C">05 · COLOR PALETTE</text>
+  </g>
+  <g transform="translate(80,1428)" font-size="14">
+    <!-- swatch template: 200 wide, 30 gap -->
+    <g transform="translate(0,0)">
+      <rect width="200" height="120" rx="8" fill="#15294C"/>
+      <text x="0" y="146" font-weight="700" fill="#15294C">Deep Navy</text>
+      <text x="0" y="168" fill="#5B6573">#15294C</text>
+      <text x="0" y="188" font-size="12" fill="#5B6573">Primary · authority</text>
+    </g>
+    <g transform="translate(230,0)">
+      <rect width="200" height="120" rx="8" fill="#0A1525"/>
+      <text x="0" y="146" font-weight="700" fill="#15294C">Black-Blue</text>
+      <text x="0" y="168" fill="#5B6573">#0A1525</text>
+      <text x="0" y="188" font-size="12" fill="#5B6573">Depth · dark surfaces</text>
+    </g>
+    <g transform="translate(460,0)">
+      <rect width="200" height="120" rx="8" fill="#5B6573"/>
+      <text x="0" y="146" font-weight="700" fill="#15294C">Slate Gray</text>
+      <text x="0" y="168" fill="#5B6573">#5B6573</text>
+      <text x="0" y="188" font-size="12" fill="#5B6573">Secondary text · rules</text>
+    </g>
+    <g transform="translate(690,0)">
+      <rect width="200" height="120" rx="8" fill="#F4EFE3" stroke="#15294C" stroke-opacity="0.18"/>
+      <text x="0" y="146" font-weight="700" fill="#15294C">Constitutional Ivory</text>
+      <text x="0" y="168" fill="#5B6573">#F4EFE3</text>
+      <text x="0" y="188" font-size="12" fill="#5B6573">Ground · paper</text>
+    </g>
+    <g transform="translate(920,0)">
+      <rect width="200" height="120" rx="8" fill="#BF9F4E"/>
+      <text x="0" y="146" font-weight="700" fill="#15294C">Muted Gold</text>
+      <text x="0" y="168" fill="#5B6573">#BF9F4E</text>
+      <text x="0" y="188" font-size="12" fill="#5B6573">Accent · verification</text>
+    </g>
+  </g>
+
+  <!-- ============ SECTION 6 · TYPOGRAPHY ============ -->
+  <g transform="translate(80,1662)">
+    <rect x="0" y="0" width="6" height="16" fill="#BF9F4E"/>
+    <text x="18" y="14" font-size="14" font-weight="600" letter-spacing="3" fill="#15294C">06 · TYPOGRAPHY</text>
+  </g>
+  <g transform="translate(80,1726)">
+    <text x="0" y="0" font-size="22" font-weight="600" fill="#15294C">Inter / system-ui</text>
+    <text x="0" y="26" font-size="13" fill="#5B6573">Wordmark — uppercase, tracked +6 to +10 · Headings 600/700 · Body 400/500</text>
+    <text x="720" y="6" font-size="30" font-weight="700" letter-spacing="2" fill="#15294C">Aa Bb Cc</text>
+    <text x="940" y="6" font-size="30" font-weight="400" letter-spacing="2" fill="#5B6573">0123456789</text>
+  </g>
+</svg>
