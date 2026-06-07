@@ -1,22 +1,130 @@
 /*
-  Evident Technologies — institutional CSS custom properties.
+  Evident Technologies — Institutional Brand Tokens
   Canonical source: evident-technologies/.github/brand/brand.css
-  Consume via CDN, e.g.:
+
+  Purpose:
+  Parent-company theme foundation for Evident Technologies LLC and related public surfaces.
+
+  Brand posture:
+  - Institutional, court-conscious, builder-founded.
+  - Evidence-first, audit-ready, restrained.
+  - No decorative gold. Gold is reserved for verification, seals, provenance, and confirmed status.
+  - Product-specific themes may extend these tokens, but should not redefine the parent palette without approval.
+
+  Suggested CDN usage:
     <link rel="stylesheet"
       href="https://cdn.jsdelivr.net/gh/evident-technologies/.github@main/brand/brand.css">
 */
-:root {
-  /* Color */
-  --et-navy:        #15294C; /* primary, authority, wordmark */
-  --et-black-blue:  #0A1525; /* depth, dark surfaces, body text */
-  --et-slate:       #5B6573; /* secondary text, rules, dividers */
-  --et-ivory:       #F4EFE3; /* ground, paper */
-  --et-gold:        #BF9F4E; /* restrained accent, verification only */
 
-  /* Type */
-  --et-font-primary:   Inter, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+:root {
+  /* ------------------------------------------------------------------
+     Core Palette
+     ------------------------------------------------------------------ */
+
+  /* Primary institutional authority: wordmark, headers, official surfaces */
+  --et-navy: #15294C;
+
+  /* Deep evidence-grade surface: dark UI, body text, command surfaces */
+  --et-black-blue: #0A1525;
+
+  /* Secondary text, rules, metadata, quiet labels */
+  --et-slate: #5B6573;
+
+  /* Paper, records, forms, readable institutional backgrounds */
+  --et-ivory: #F4EFE3;
+
+  /* Verification accent only: seals, hashes, confirmed provenance */
+  --et-gold: #BF9F4E;
+
+  /* ------------------------------------------------------------------
+     Semantic Color Tokens
+     Use these in product/UI code instead of raw palette tokens.
+     ------------------------------------------------------------------ */
+
+  --et-color-brand: var(--et-navy);
+  --et-color-brand-strong: var(--et-black-blue);
+  --et-color-text: var(--et-black-blue);
+  --et-color-text-muted: var(--et-slate);
+  --et-color-surface: #FFFFFF;
+  --et-color-surface-warm: var(--et-ivory);
+  --et-color-border: rgba(21, 41, 76, 0.18);
+
+  --et-color-link: var(--et-navy);
+  --et-color-link-hover: #0F1F3A;
+
+  --et-color-verified: var(--et-gold);
+  --et-color-verified-bg: rgba(191, 159, 78, 0.12);
+  --et-color-verified-border: rgba(191, 159, 78, 0.42);
+
+  /* Status tokens: restrained, not candy-colored nonsense */
+  --et-color-success: #256A4F;
+  --et-color-warning: #9A6A16;
+  --et-color-danger: #8A2E2E;
+  --et-color-info: #2F5F8F;
+
+  /* Evidence/custody semantics */
+  --et-color-original: var(--et-black-blue);
+  --et-color-derivative: var(--et-navy);
+  --et-color-manifest: var(--et-gold);
+  --et-color-audit: var(--et-slate);
+
+  /* ------------------------------------------------------------------
+     Typography
+     ------------------------------------------------------------------ */
+
+  --et-font-primary: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   --et-font-secondary: "Source Sans 3", "Source Sans Pro", system-ui, sans-serif;
+  --et-font-mono: "IBM Plex Mono", "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+
   --et-weight-wordmark: 700;
-  --et-weight-heading:  600;
-  --et-weight-body:     400;
+  --et-weight-heading: 600;
+  --et-weight-body: 400;
+  --et-weight-label: 600;
+
+  --et-line-height-tight: 1.15;
+  --et-line-height-heading: 1.25;
+  --et-line-height-body: 1.55;
+
+  /* ------------------------------------------------------------------
+     Shape, Spacing, and Institutional UI Feel
+     ------------------------------------------------------------------ */
+
+  --et-radius-sm: 0.375rem;
+  --et-radius-md: 0.625rem;
+  --et-radius-lg: 0.875rem;
+  --et-radius-xl: 1.25rem;
+
+  --et-space-1: 0.25rem;
+  --et-space-2: 0.5rem;
+  --et-space-3: 0.75rem;
+  --et-space-4: 1rem;
+  --et-space-6: 1.5rem;
+  --et-space-8: 2rem;
+  --et-space-12: 3rem;
+  --et-space-16: 4rem;
+
+  --et-shadow-card: 0 12px 32px rgba(10, 21, 37, 0.10);
+  --et-shadow-panel: 0 18px 48px rgba(10, 21, 37, 0.16);
+
+  /* ------------------------------------------------------------------
+     Accessibility / Interaction
+     ------------------------------------------------------------------ */
+
+  --et-focus-ring: 0 0 0 3px rgba(191, 159, 78, 0.38);
+  --et-focus-outline: 2px solid var(--et-gold);
+
+  --et-transition-fast: 120ms ease;
+  --et-transition-base: 180ms ease;
+
+  /* ------------------------------------------------------------------
+     Dark Institutional Surface
+     ------------------------------------------------------------------ */
+
+  --et-dark-bg: var(--et-black-blue);
+  --et-dark-surface: #101F36;
+  --et-dark-surface-raised: #172A46;
+  --et-dark-text: #F7F3EA;
+  --et-dark-text-muted: #B9C0CA;
+  --et-dark-border: rgba(244, 239, 227, 0.16);
 }
+
