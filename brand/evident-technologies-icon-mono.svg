@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  EVIDENT TECHNOLOGIES LLC — Shield Mark (monochrome) · v2 "E-monogram".
+  Single-ink (currentColor) line build for court filings, invoices, fax, print, PDF/A.
+  Reads in pure black on white and reversed white on black.
+-->
+<svg xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Evident Technologies"
+     width="512" height="512" viewBox="0 0 96 96" fill="none" stroke="currentColor">
+  <title>Evident Technologies</title>
+  <desc>Monochrome shield enclosing an E monogram with a provenance node and verification chevron.</desc>
+
+  <path d="M28,16 L68,16 Q74,16 74,22 L74,50 C74,67 62,76 48,82 C34,76 22,67 22,50 L22,22 Q22,16 28,16 Z"
+        stroke-width="3" stroke-linejoin="round"/>
+
+  <g stroke-width="4.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M37,30.5 L37,49"/>
+    <path d="M37,30.5 L60,30.5"/>
+    <path d="M37,41.5 L53.5,41.5"/>
+  </g>
+  <circle cx="58" cy="41.5" r="2.8" fill="currentColor" stroke="none"/>
+  <path d="M37,49 L47.5,62.5 L62.5,43.5" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
