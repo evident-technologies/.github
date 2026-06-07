@@ -1,0 +1,31 @@
+{
+  "name": "@evident-technologies/brand",
+  "version": "1.0.0",
+  "description": "Evident Technologies institutional brand assets — logos, shield mark, design tokens, and CSS variables.",
+  "license": "UNLICENSED",
+  "private": false,
+  "homepage": "https://github.com/evident-technologies/.github/tree/main/brand",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/evident-technologies/.github.git",
+    "directory": "brand"
+  },
+  "files": [
+    "*.svg",
+    "*.png",
+    "tokens.json",
+    "manifest.json",
+    "brand.css",
+    "README.md"
+  ],
+  "exports": {
+    "./tokens": "./tokens.json",
+    "./manifest": "./manifest.json",
+    "./css": "./brand.css",
+    "./*": "./*"
+  },
+  "publishConfig": {
+    "access": "restricted"
+  },
+  "keywords": ["evident-technologies", "brand", "logo", "design-tokens"]
+}

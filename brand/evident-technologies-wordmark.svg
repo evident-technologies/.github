@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  EVIDENT TECHNOLOGIES LLC — Wordmark only (no mark) · v2.
+  For tight footers, legal lines, and contexts where the shield is shown separately.
+-->
+<svg xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Evident Technologies"
+     width="620" height="150" viewBox="0 0 620 150"
+     font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif">
+  <title>Evident Technologies</title>
+  <text x="20" y="74" font-size="66" font-weight="700" letter-spacing="5" fill="#15294C">EVIDENT</text>
+  <text x="23" y="116" font-size="29" font-weight="500" letter-spacing="15.5" fill="#BF9F4E">TECHNOLOGIES</text>
+</svg>

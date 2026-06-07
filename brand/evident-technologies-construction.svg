@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  EVIDENT TECHNOLOGIES LLC — Mark Construction Sheet.
+  The shield is a sqrt(phi) proportion; the middle record bar and provenance node
+  sit on the golden section (phi) of the shield height; shoulders and point are set
+  by a shared circle grid / vesica. Guides are reference only — never reproduced.
+-->
+<svg xmlns="http://www.w3.org/2000/svg" width="540" height="620" viewBox="0 0 108 124"
+     font-family="Inter, system-ui, sans-serif">
+  <title>Evident Technologies — construction</title>
+  <rect width="108" height="124" fill="#F4EFE3"/>
+
+  <g transform="translate(6,4)">
+    <!-- ===== GEOMETRIC GUIDES ===== -->
+    <g fill="none" stroke="#BF9F4E">
+      <!-- governing circle (width + shoulders) -->
+      <circle cx="48" cy="40" r="26" stroke-width="0.5" stroke-opacity="0.55"/>
+      <circle cx="48" cy="40" r="16" stroke-width="0.4" stroke-opacity="0.35"/>
+      <!-- vesica circles for the lower point -->
+      <circle cx="34" cy="44" r="16" stroke-width="0.4" stroke-opacity="0.3"/>
+      <circle cx="62" cy="44" r="16" stroke-width="0.4" stroke-opacity="0.3"/>
+      <!-- golden section of shield height (16..82) -> y = 82 - 66/phi = 41.2 -->
+      <line x1="14" y1="41.2" x2="82" y2="41.2" stroke-width="0.7" stroke-opacity="0.8"/>
+    </g>
+    <g fill="none" stroke="#5B6573" stroke-opacity="0.45" stroke-width="0.5" stroke-dasharray="2 2">
+      <rect x="22" y="16" width="52" height="66"/>
+      <line x1="48" y1="8" x2="48" y2="90"/>
+      <line x1="14" y1="30.5" x2="82" y2="30.5"/>
+      <line x1="14" y1="16" x2="82" y2="16"/>
+      <line x1="14" y1="82" x2="82" y2="82"/>
+    </g>
+    <!-- phi label -->
+    <text x="84" y="43" font-size="5" fill="#BF9F4E" font-style="italic">&#966;</text>
+    <text x="84" y="18" font-size="3.6" fill="#5B6573">1</text>
+    <text x="84" y="84" font-size="3.6" fill="#5B6573">0</text>
+
+    <!-- ===== THE MARK (outline) ===== -->
+    <path d="M28,16 L68,16 Q74,16 74,22 L74,50 C74,67 62,76 48,82 C34,76 22,67 22,50 L22,22 Q22,16 28,16 Z"
+          fill="none" stroke="#15294C" stroke-width="1.4" stroke-linejoin="round"/>
+    <g fill="none" stroke="#15294C" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M37,30.5 L37,49"/>
+      <path d="M37,30.5 L60,30.5"/>
+      <path d="M37,41.5 L53.5,41.5"/>
+      <path d="M37,49 L47.5,62.5 L62.5,43.5"/>
+    </g>
+    <circle cx="58" cy="41.5" r="2.8" fill="none" stroke="#15294C" stroke-width="1.4"/>
+  </g>
+
+  <line x1="12" y1="108" x2="96" y2="108" stroke="#15294C" stroke-opacity="0.15" stroke-width="0.5"/>
+  <text x="54" y="115" text-anchor="middle" font-size="3.5" letter-spacing="0.35" fill="#5B6573">SHIELD √&#966; · MID-BAR ON THE &#966; SECTION · VESICA POINT</text>
+</svg>

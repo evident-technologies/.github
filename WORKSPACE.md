@@ -17,6 +17,13 @@ Organization-level governance artifacts for Evident Technologies:
 
 # Validate org-level artifacts
 ./scripts/bootstrap.sh
+
+# Mirror and clone every org repo locally (run once per machine)
+./scripts/ws-sync.sh
+
+# Add workspace shortcuts to your shell (run once per machine)
+echo 'source ~/workspace/bin/ws-shortcuts.sh' >> ~/.bashrc
+source ~/workspace/bin/ws-shortcuts.sh
 ```
 
 ## Architecture
@@ -24,7 +31,11 @@ Organization-level governance artifacts for Evident Technologies:
 - `.github/workflows/templates/` — reusable workflow templates consumed by other repos
 - `.github/workflows/governance-drift.yml` — daily scheduled org governance audit
 - `versions.json` — central version governance manifest
-- `scripts/` — operational verbs (bootstrap, doctor)
+- `scripts/` — operational verbs (bootstrap, doctor, workspace sync)
+- `scripts/ws-sync.sh` — mirror-first repo sync; bare mirrors at `~/.mirrors/`, working clones at `~/workspace/`
+- `scripts/ws-shortcuts.sh` — shell aliases: `ws <repo>`, `repos`, `gpush` (mirror → origin)
+- `scripts/pre-push` — safety hook installed by ws-sync; blocks >50 MB blobs and secret-like paths
+- `brand/` — institutional brand assets (logos, tokens, CSS, npm package)
 
 ## Boundaries
 
