@@ -1,0 +1,42 @@
+#!/usr/bin/env bash
+# pre-push — block large files and secret-like paths from leaving the machine.
+# This would have stopped the 1.28GB platform push into .github.
+# Bypass once (not recommended):  git push --no-verify
+set -uo pipefail
+
+LIMIT=$((50 * 1024 * 1024))   # 50 MB
+SECRET_RE='(^|/)(\.env(\..+)?|\.dev\.vars|id_rsa|.*\.pem|.*\.p12)$|/\.wrangler/'
+fail=0
+zero=0000000000000000000000000000000000000000
+
+while read -r _ local_sha _ remote_sha; do
+  [ "$local_sha" = "$zero" ] && continue
+  if [ "$remote_sha" = "$zero" ]; then range="$local_sha --not --remotes"; else range="$remote_sha..$local_sha"; fi
+
+  # objects new to this push
+  objs=$(git rev-list --objects $range 2>/dev/null) || continue
+
+  # large blobs
+  while read -r size path; do
+    [ -z "${size:-}" ] && continue
+    if [ "$size" -gt "$LIMIT" ]; then
+      printf '  BLOCK  %s  (%d MB > 50 MB) — use Git LFS or remove\n' "$path" "$((size/1024/1024))"
+      fail=1
+    fi
+  done < <(printf '%s\n' "$objs" | git cat-file --batch-check='%(objecttype) %(objectsize) %(rest)' \
+             | awk '$1=="blob" && $3!="" {print $2, $3}')
+
+  # secret-like paths
+  while read -r _ path; do
+    if printf '%s' "$path" | grep -Eq "$SECRET_RE"; then
+      printf '  BLOCK  %s  — secret-like path; remove before pushing\n' "$path"
+      fail=1
+    fi
+  done < <(printf '%s\n' "$objs" | awk 'NF>1')
+done
+
+if [ "$fail" -ne 0 ]; then
+  echo "pre-push: refusing to push. Override with --no-verify only if you are certain." >&2
+  exit 1
+fi
+exit 0
