@@ -97,5 +97,59 @@ rules; never set large areas in gold.
 
 ---
 
+## Sharing across the ecosystem
+
+**This `.github` repo is the single source of truth.** Other repositories,
+sites, and services should *reference* these assets — never copy them in. That
+keeps one canonical mark and lets a single update propagate everywhere.
+
+Consumers pick the method that fits their surface:
+
+### 1. CDN (web, `<img>`, email, dashboards)
+jsDelivr mirrors this repo with correct content-types, CORS, and caching. Pin to
+a tag for stability, or track `@main` for latest:
+
+```html
+<!-- latest -->
+<img alt="Evident Technologies"
+     src="https://cdn.jsdelivr.net/gh/evident-technologies/.github@main/brand/evident-technologies-logo-primary.svg">
+<!-- version-pinned (recommended for production) -->
+<img src="https://cdn.jsdelivr.net/gh/evident-technologies/.github@v1.0.0/brand/evident-technologies-icon.svg">
+```
+
+### 2. Markdown / READMEs (other repos)
+```markdown
+![Evident Technologies](https://raw.githubusercontent.com/evident-technologies/.github/main/brand/evident-technologies-logo-primary.svg)
+```
+
+### 3. Design tokens & CSS variables (design systems)
+```css
+@import url("https://cdn.jsdelivr.net/gh/evident-technologies/.github@main/brand/brand.css");
+.btn { background: var(--et-navy); color: var(--et-ivory); }
+```
+`tokens.json` is W3C-format design tokens for Style Dictionary / Tailwind / Figma sync.
+
+### 4. npm (code projects)
+```bash
+npm install @evident-technologies/brand
+```
+```js
+import tokens from "@evident-technologies/brand/tokens";
+// asset paths resolvable via @evident-technologies/brand/<file>.svg
+```
+
+### 5. GitHub org defaults
+Because this is the org `.github` repo, `brand/evident-technologies-icon-512.png`
+is the natural source for the **organization avatar**, and the wordmark/lockups
+feed the org **profile README**.
+
+`manifest.json` lists every asset with its canonical, raw, and CDN URLs for
+programmatic consumers.
+
+> Versioning: tag releases (`v1.0.0`, …) so downstreams can pin. Bump on any
+> visual change to the mark or palette.
+
+---
+
 These are canonical institutional assets. Changes should go through governance
 review before deployment on public or client-facing surfaces.

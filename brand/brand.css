@@ -1,0 +1,22 @@
+/*
+  Evident Technologies — institutional CSS custom properties.
+  Canonical source: evident-technologies/.github/brand/brand.css
+  Consume via CDN, e.g.:
+    <link rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/evident-technologies/.github@main/brand/brand.css">
+*/
+:root {
+  /* Color */
+  --et-navy:        #15294C; /* primary, authority, wordmark */
+  --et-black-blue:  #0A1525; /* depth, dark surfaces, body text */
+  --et-slate:       #5B6573; /* secondary text, rules, dividers */
+  --et-ivory:       #F4EFE3; /* ground, paper */
+  --et-gold:        #BF9F4E; /* restrained accent, verification only */
+
+  /* Type */
+  --et-font-primary:   Inter, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --et-font-secondary: "Source Sans 3", "Source Sans Pro", system-ui, sans-serif;
+  --et-weight-wordmark: 700;
+  --et-weight-heading:  600;
+  --et-weight-body:     400;
+}
