@@ -103,20 +103,35 @@ head "4/4  Verification"
 
 info "Testing SSH to GitHub..."
 SSH_OUT=$(ssh -o StrictHostKeyChecking=accept-new -T git@github.com 2>&1 || true)
+SSH_USER=$(echo "$SSH_OUT" | grep -oP 'Hi \K[^!]+' || echo "")
 if echo "$SSH_OUT" | grep -q "successfully authenticated"; then
-  ok "SSH: $SSH_OUT"
+  ok "SSH key authenticates as: @${SSH_USER}"
 else
   warn "SSH test returned: $SSH_OUT"
-  warn "If it says 'successfully authenticated' it's fine despite the exit code"
 fi
 
 info "Testing gh API..."
-GH_USER=$(gh api user --jq '.login' 2>/dev/null) && ok "gh API: logged in as @${GH_USER}" \
+GH_USER=$(gh api user --jq '.login' 2>/dev/null || echo "")
+[ -n "$GH_USER" ] && ok "gh token authenticates as: @${GH_USER}" \
   || warn "gh API test failed — check: gh auth status"
 
-info "Configuring git to use SSH for GitHub..."
-git config --global url."git@github.com:".insteadOf "https://github.com/"
-ok "git: SSH override set"
+# ── Account-consistency check ──────────────────────────────────────────────────
+# If the SSH key and the gh token belong to DIFFERENT GitHub accounts, cloning
+# over SSH (as the key's account) can fail with "Repository not found" for repos
+# only the token's account can see. Use whichever account can actually list the
+# org's repos. The gh token is the source of truth, so route git through gh's
+# HTTPS credential helper to keep listing and cloning on the SAME account.
+if [ -n "$SSH_USER" ] && [ -n "$GH_USER" ] && [ "$SSH_USER" != "$GH_USER" ]; then
+  warn "Account mismatch: SSH key=@${SSH_USER}, gh token=@${GH_USER}"
+  warn "Routing git through gh (HTTPS) so clones use @${GH_USER} consistently."
+  git config --global --unset-all url."git@github.com:".insteadOf 2>/dev/null || true
+  gh auth setup-git
+  ok "git: using gh credential helper (HTTPS as @${GH_USER})"
+else
+  info "Configuring git to use SSH for GitHub..."
+  git config --global url."git@github.com:".insteadOf "https://github.com/"
+  ok "git: SSH override set (single account @${GH_USER:-$SSH_USER})"
+fi
 
 info "Setting git identity (if not already set)..."
 git config --global user.name  2>/dev/null | grep -q . \

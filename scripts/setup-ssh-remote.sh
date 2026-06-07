@@ -108,10 +108,24 @@ ClientAliveInterval 120
 ClientAliveCountMax 3
 EOF
 
+# Ensure host keys exist (fresh/minimal installs may have none -> "no hostkeys available")
+if ! ls /etc/ssh/ssh_host_*_key &>/dev/null; then
+  info "No SSH host keys found — generating them..."
+  sudo ssh-keygen -A
+  ok "Host keys generated"
+fi
+
 info "Validating sshd config..."
 sudo sshd -t && ok "sshd config valid" || die "sshd config has errors — check ${SSHD_CONF}"
 
-sudo systemctl reload sshd && ok "sshd reloaded"
+# Reload if active, otherwise enable+start (service name is sshd on Fedora, ssh on Debian/Ubuntu)
+SSHD_UNIT=$(systemctl list-unit-files 2>/dev/null | grep -oE '^(sshd|ssh)\.service' | head -1)
+SSHD_UNIT="${SSHD_UNIT:-sshd.service}"
+if systemctl is-active --quiet "$SSHD_UNIT"; then
+  sudo systemctl reload "$SSHD_UNIT" && ok "$SSHD_UNIT reloaded"
+else
+  sudo systemctl enable --now "$SSHD_UNIT" && ok "$SSHD_UNIT enabled and started"
+fi
 
 # ── 3. Authorized keys ────────────────────────────────────────────────────────
 head "3/5  Authorized keys"
