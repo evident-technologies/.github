@@ -67,7 +67,7 @@ Security issues should be reported privately and responsibly.
 
 Please do not publish infrastructure-sensitive findings, exploit details, proof-of-concept material, or security reports through public issues, discussions, or pull requests.
 
-Refer to `SECURITY.md` for disclosure procedures.
+Refer to [SECURITY.md](SECURITY.md) for disclosure procedures.
 
 ---
 
