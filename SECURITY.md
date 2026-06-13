@@ -1,157 +1,185 @@
 # Security Policy — Evident Technologies LLC
 
-**Effective Date:** 2026-05-22
+**Effective Date:** 2026-06-12
 **Governing Entity:** Evident Technologies LLC, a New Jersey Limited Liability Company
-**Policy Owner:** Devon Tyler Barber, Manager
+
+---
+
+## Purpose
+
+Evident Technologies LLC builds software for accountable records, evidence organization, chronology review, provenance tracking, and operational integrity.
+
+Security reports are handled through private, coordinated disclosure.
+
+This policy exists to provide a clear reporting path without exposing internal architecture, deployment details, provider choices, client data, operational workflows, or security controls.
 
 ---
 
 ## Scope
 
-This policy applies to all software, infrastructure, APIs, and services operated by Evident Technologies LLC, including but not limited to:
+This policy applies to public repositories and software surfaces maintained by Evident Technologies LLC.
 
-- **Evident ICU** — court-grade eDiscovery and evidence processing platform (`evident.icu`, `evident-icu.com`)
-- **Evident Desktop** — .NET MAUI desktop client
-- **Satellite applications** — civic and legal-tech tools hosted under the Evident Technologies umbrella
-- All supporting infrastructure: authentication, billing, storage, CI/CD pipelines, and third-party integrations
+Public materials may reference Evident Technologies products, documentation, demonstrations, and related software surfaces. Specific implementation details, service wiring, deployment topology, provider configuration, private workflows, security controls, and operational runbooks are intentionally not disclosed in this policy.
+
+When in doubt, report privately first.
 
 ---
 
 ## Reporting a Vulnerability
 
-Evident Technologies operates a **private, coordinated disclosure** program. We do not operate a public bug bounty.
+Evident Technologies LLC does not operate a public bug bounty program.
 
-### How to Report
-
-Submit all security vulnerability reports to:
+Security vulnerabilities should be reported privately.
 
 **Email:** `security@evidtech.com`
-**Subject line:** `[SECURITY] <brief description>`
+**Subject:** `[SECURITY] <brief description>`
 
-Encrypt sensitive reports using our PGP key (available on request).
+If GitHub private vulnerability reporting is enabled for a repository, it may also be used. Otherwise, use the email above.
 
-**Do not** open a public GitHub issue, pull request, or discussion thread for any security finding. Public disclosure before remediation may compromise active legal proceedings, evidence integrity, or client data.
-
-### What to Include
-
-A high-quality report includes:
-
-- Description of the vulnerability and affected component
-- Steps to reproduce (proof of concept if applicable)
-- Potential impact assessment
-- Your name and contact information (optional but appreciated)
-- Whether you are a security researcher, client, or other party
+Do **not** report security vulnerabilities through public GitHub issues, pull requests, discussions, social media posts, public comments, or public proof-of-concept releases.
 
 ---
 
-## Response Commitments
+## What to Include
 
-| Milestone                             | Target SLA                  |
-| ------------------------------------- | --------------------------- |
-| Acknowledgment of receipt             | 48 business hours           |
-| Initial severity assessment           | 5 business days             |
-| Remediation timeline communicated     | 10 business days            |
-| Critical (CVSS ≥ 9.0) patch deployed  | 7 calendar days             |
-| High (CVSS 7.0–8.9) patch deployed    | 30 calendar days            |
-| Medium / Low                          | Scheduled release cycle     |
-| Disclosure coordination with reporter | Before any public statement |
+A useful report should include:
 
-These timelines represent good-faith targets. Complex vulnerabilities affecting evidence integrity or chain of custody may require additional time to remediate without disrupting active legal matters.
+* A brief description of the issue
+* The affected repository, URL, package, or product surface
+* Steps to reproduce, if safe to provide
+* Potential impact
+* Screenshots, logs, or proof-of-concept details where appropriate
+* Your contact information if you want follow-up or credit
 
----
+Do not include secrets, private keys, tokens, client records, personal data, privileged material, or third-party data in the report unless absolutely necessary to explain the issue.
 
-## Evidence Integrity — Heightened Sensitivity
-
-Evident ICU is deployed in legal proceedings. A subset of vulnerabilities carry heightened severity beyond standard CVSS scoring:
-
-| Category                         | Examples                                     | Heightened Risk                    |
-| -------------------------------- | -------------------------------------------- | ---------------------------------- |
-| **Chain of custody tampering**   | Hash manipulation, audit log injection       | May render evidence inadmissible   |
-| **Evidence file mutation**       | Bypass of immutability controls              | Forensic defensibility compromised |
-| **Unauthorized case access**     | Auth bypass, IDOR across cases               | Attorney-client privilege breach   |
-| **Audit log suppression**        | Log deletion, log forgery                    | Due process violation              |
-| **PII / case data exfiltration** | Client names, docket numbers, legal strategy | OPRA / attorney ethics exposure    |
-
-Reports in these categories will be treated as **Critical priority** regardless of CVSS score and escalated to legal counsel immediately upon verification.
+If sensitive material is involved, describe the situation at a high level first and wait for instructions.
 
 ---
 
-## Out of Scope
+## Research Boundaries
 
-The following are explicitly out of scope for this security program:
+Do not:
 
-- Denial-of-service attacks against production systems
-- Social engineering of Evident Technologies staff or contractors
-- Physical security testing
-- Automated scanning without prior written authorization
-- Testing against systems you do not own or have explicit written permission to test
-- Accessing, modifying, or retaining any client case data encountered during research
+* Access, copy, retain, modify, delete, or disclose data that is not yours
+* Attempt to bypass authorization beyond minimal proof-of-concept verification
+* Perform denial-of-service testing
+* Perform social engineering
+* Perform physical security testing
+* Exfiltrate secrets, tokens, credentials, records, or files
+* Test third-party systems without written authorization
+* Publish exploit details before coordinated remediation
+* Interfere with production systems, active users, investigations, legal matters, or records under review
 
-Researchers who access client case data during testing must immediately cease testing, not retain any data, and report the access to `security@evidtech.com` as part of their disclosure.
-
----
-
-## Legal Safe Harbor
-
-Evident Technologies LLC will not pursue legal action against security researchers who:
-
-1. Discover and report vulnerabilities in good faith under this policy
-2. Do not access, retain, or disclose client case data, PII, or privileged legal materials
-3. Do not disrupt production services or ongoing legal proceedings
-4. Do not exploit vulnerabilities beyond proof-of-concept verification
-5. Provide Evident Technologies a reasonable opportunity to remediate before any public disclosure
-
-This safe harbor does not extend to researchers who violate items 1–5 above, or to malicious actors, competitors, or parties engaged in active litigation with Evident Technologies LLC or its clients.
+If you accidentally access sensitive data, stop immediately, do not retain or share it, and report what happened to `security@evidtech.com`.
 
 ---
 
-## Supported Versions
+## Coordinated Disclosure
 
-| Product                             | Supported              |
-| ----------------------------------- | ---------------------- |
-| Evident ICU (current production)    | ✅                     |
-| Evident ICU (prior minor release)   | ✅ Security fixes only |
-| Evident ICU (older releases)        | ❌ Upgrade required    |
-| Evident Desktop (current release)   | ✅                     |
-| Satellite apps (current deployment) | ✅                     |
+Evident Technologies LLC follows a private, coordinated disclosure process.
+
+Good-faith reports will be reviewed and triaged based on severity, exploitability, affected surface, exposure, and potential impact to record integrity, confidentiality, availability, or user trust.
+
+Expected process:
+
+| Step                              | Target                                    |
+| --------------------------------- | ----------------------------------------- |
+| Acknowledge receipt               | Within 3 business days                    |
+| Initial triage                    | Within 10 business days                   |
+| Remediation plan or status update | As appropriate to severity and complexity |
+| Coordinated public disclosure     | Only after remediation or agreed timing   |
+
+These are good-faith targets, not guaranteed deadlines.
+
+Some issues may require additional time to remediate safely, especially where changes could affect records, audit history, identity, access control, or operational integrity.
 
 ---
 
-## Data Handling
+## Sensitive Issue Categories
 
-Evident Technologies processes data that may include:
+Some reports may require heightened handling even if they do not fit neatly into a standard severity score.
 
-- Legal case documents and evidentiary materials
-- Body-worn camera footage and metadata
-- Attorney work product and privileged communications (via client uploads)
-- Personally identifiable information of parties to litigation
+Examples include:
 
-All security disclosures that involve client data will be handled in accordance with applicable New Jersey and federal law, including notification obligations where required.
+* Unauthorized access to private records or restricted workspaces
+* Weaknesses affecting authentication, authorization, or session handling
+* Exposure of secrets, tokens, credentials, or private configuration
+* Integrity issues affecting source records, derived records, logs, exports, or review history
+* Cross-tenant or cross-workspace data exposure
+* Unsafe handling of personally identifiable information
+* Public disclosure of private operational details
+
+Reports in these categories should be submitted privately and handled with extra care.
+
+---
+
+## Safe Harbor
+
+Evident Technologies LLC does not intend to pursue legal action against researchers who act in good faith and comply with this policy.
+
+Good-faith research means:
+
+1. You report the issue privately and promptly
+2. You avoid accessing or retaining data that is not yours
+3. You do not disrupt systems or users
+4. You do not exploit the issue beyond what is necessary to verify it
+5. You give Evident Technologies LLC a reasonable opportunity to investigate and remediate before public disclosure
+
+This safe harbor does not apply to malicious activity, extortion, unauthorized data access, data retention, public disclosure before coordination, disruption of services, social engineering, or activity outside the boundaries of this policy.
+
+---
+
+## Supported Surfaces
+
+The current public and production-facing software surfaces maintained by Evident Technologies LLC are eligible for security reporting.
+
+Older prototypes, archived materials, dormant experiments, generated artifacts, and historical references may not receive active remediation unless they affect a current public or production-facing surface.
+
+If you are unsure whether something is supported, report it privately.
+
+---
+
+## Public Disclosure
+
+Do not publicly disclose a vulnerability until Evident Technologies LLC has confirmed remediation or agreed to a disclosure timeline.
+
+Public disclosure may be delayed where immediate publication could expose users, records, infrastructure, or ongoing remediation efforts to unnecessary risk.
 
 ---
 
 ## Contact
 
-| Channel              | Address                                                 |
-| -------------------- | ------------------------------------------------------- |
-| Security disclosures | [`security@evidtech.com`](mailto:security@evidtech.com) |
-| General inquiries    | [`hello@evidtech.com`](mailto:hello@evidtech.com)       |
-| Legal matters        | [`legal@evidtech.com`](mailto:legal@evidtech.com)       |
+| Channel              | Address                                                     |
+| -------------------- | ----------------------------------------------------------- |
+| Security disclosures | [`security@evidtech.com`](mailto:security@evidtech.com)     |
+| Legal notices        | [`legal@evidtech.com`](mailto:legal@evidtech.com)           |
+| General inquiries    | [`operations@evidtech.com`](mailto:operations@evidtech.com) |
 
 ---
 
-_Nothing in this policy constitutes legal advice or creates an attorney-client relationship. This policy is subject to revision without prior notice. The current version is the version published in the default branch of this repository._
+## Legal Notice
+
+Evident Technologies LLC is a software company.
+
+Nothing in this policy constitutes legal advice, legal representation, forensic certification, evidentiary guarantees, court acceptance guarantees, or professional services.
+
+This policy does not create an attorney-client relationship, professional-services relationship, fiduciary relationship, employment relationship, contractor relationship, or entitlement to compensation.
+
+Evident Technologies LLC may revise this policy at any time.
+
+The current version is the version published in the default branch of the relevant repository.
 
 ---
 
-<div align="center">
+<p align="center">
+  <sub>
+    Evident Technologies LLC · New Jersey, United States
+  </sub>
+</p>
 
-<img src="https://raw.githubusercontent.com/Evident-Technologies/.github/main/profile/assets/evident-mark.svg" alt="Evident Technologies" width="56" height="56" />
-
-**Evident Technologies LLC** — New Jersey, United States
-
-_Court-grade evidence processing for everyone._
-
-[evidtech.com](https://evidtech.com) · [evident.icu](https://evident.icu) · [@Evident-Technologies](https://github.com/Evident-Technologies)
-
-</div>
+<p align="center">
+  <sub>
+    Private reports. Coordinated fixes. No public exploit theater.
+  </sub>
+</p>
