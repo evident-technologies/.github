@@ -60,13 +60,8 @@ jobs:
         id: pages
         run: |
           set -euo pipefail
-          gh repo list "$ORG" --limit 300 --json name,visibility,hasPagesSite > /tmp/repos2.json
-          bad=$(node -e "
-            const fs=require('fs');
-            const repos=JSON.parse(fs.readFileSync('/tmp/repos2.json','utf8'));
-            const bad=repos.filter(r=>String(r.visibility).toLowerCase()==='private' && r.hasPagesSite===true);
-            console.log(bad.map(r=>r.name).join('\n'));
-          ")
+          bad="$(gh api --paginate "orgs/$ORG/repos?per_page=100&type=all" \
+            --jq '.[] | select(.private == true and .has_pages == true) | .name')"
           echo "Private repos publishing public Pages:"
           echo "$bad"
           if [ -n "$bad" ]; then
