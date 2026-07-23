@@ -1,0 +1,132 @@
+name: Reusable — Static Site CI
+
+on:
+  workflow_call:
+    inputs:
+      node-version:
+        description: Node.js version used by the product repository.
+        required: false
+        default: "24"
+        type: string
+      package-manager:
+        description: npm or pnpm.
+        required: false
+        default: "pnpm"
+        type: string
+      install-command:
+        description: Deterministic dependency installation command.
+        required: true
+        type: string
+      lint-command:
+        description: Optional lint command.
+        required: false
+        default: ""
+        type: string
+      typecheck-command:
+        description: Optional typecheck command.
+        required: false
+        default: ""
+        type: string
+      test-command:
+        description: Optional test command.
+        required: false
+        default: ""
+        type: string
+      build-command:
+        description: Product-owned build command.
+        required: true
+        type: string
+      output-path:
+        description: Built output directory relative to repository root.
+        required: true
+        type: string
+      verification-file:
+        description: Required file inside the built output.
+        required: false
+        default: "index.html"
+        type: string
+      runs-on:
+        description: JSON runner label array.
+        required: false
+        default: '["ubuntu-latest"]'
+        type: string
+      working-directory:
+        description: Product working directory.
+        required: false
+        default: "."
+        type: string
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    name: Verify product
+    runs-on: ${{ fromJSON(inputs.runs-on) }}
+    timeout-minutes: 35
+    steps:
+      - name: Checkout product commit
+        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+        with:
+          fetch-depth: 0
+          clean: true
+
+      - name: Assert repository-owned build boundary
+        run: |
+          set -euo pipefail
+          test -f package.json
+          test ! -d ../platform/products
+          git diff --check
+
+      - name: Setup pnpm
+        if: inputs.package-manager == 'pnpm'
+        uses: pnpm/action-setup@0e279bb959325dab635dd2c09392533439d90093 # v6
+        with:
+          version: "11"
+
+      - name: Setup Node.js
+        uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6.4.0
+        with:
+          node-version: ${{ inputs.node-version }}
+          cache: ${{ inputs.package-manager }}
+
+      - name: Install dependencies
+        working-directory: ${{ inputs.working-directory }}
+        run: ${{ inputs.install-command }}
+
+      - name: Lint
+        if: inputs.lint-command != ''
+        working-directory: ${{ inputs.working-directory }}
+        run: ${{ inputs.lint-command }}
+
+      - name: Typecheck
+        if: inputs.typecheck-command != ''
+        working-directory: ${{ inputs.working-directory }}
+        run: ${{ inputs.typecheck-command }}
+
+      - name: Test
+        if: inputs.test-command != ''
+        working-directory: ${{ inputs.working-directory }}
+        run: ${{ inputs.test-command }}
+
+      - name: Build
+        working-directory: ${{ inputs.working-directory }}
+        env:
+          NODE_ENV: production
+        run: ${{ inputs.build-command }}
+
+      - name: Verify product-owned output
+        run: |
+          set -euo pipefail
+          test -d "${{ inputs.output-path }}"
+          test -f "${{ inputs.output-path }}/${{ inputs.verification-file }}"
+
+      - name: Summary
+        run: |
+          {
+            echo "### Product CI complete"
+            echo ""
+            echo "- Repository: \`$GITHUB_REPOSITORY\`"
+            echo "- Commit: \`$GITHUB_SHA\`"
+            echo "- Output: \`${{ inputs.output-path }}\`"
+          } >> "$GITHUB_STEP_SUMMARY"

@@ -1,0 +1,246 @@
+name: Reusable — Cloudflare Pages Release
+
+on:
+  workflow_call:
+    inputs:
+      target-id:
+        required: true
+        type: string
+      cloudflare-project:
+        required: true
+        type: string
+      production-url:
+        required: true
+        type: string
+      verification-path:
+        required: false
+        default: "/"
+        type: string
+      verification-marker:
+        required: true
+        type: string
+      output-path:
+        required: true
+        type: string
+      build-command:
+        required: true
+        type: string
+      install-command:
+        required: true
+        type: string
+      package-manager:
+        required: false
+        default: "pnpm"
+        type: string
+      node-version:
+        required: false
+        default: "24"
+        type: string
+      working-directory:
+        required: false
+        default: "."
+        type: string
+      build-runs-on:
+        required: false
+        default: '["ubuntu-latest"]'
+        type: string
+      deploy-runs-on:
+        required: false
+        default: '["self-hosted","aspire","aspire-physical"]'
+        type: string
+      environment:
+        required: false
+        default: "production"
+        type: string
+    secrets:
+      CLOUDFLARE_API_TOKEN:
+        required: true
+      CLOUDFLARE_ACCOUNT_ID:
+        required: true
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    name: Build immutable ${{ inputs.target-id }} artifact
+    runs-on: ${{ fromJSON(inputs.build-runs-on) }}
+    timeout-minutes: 35
+    permissions:
+      contents: read
+      id-token: write
+      attestations: write
+    steps:
+      - name: Checkout product commit
+        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+        with:
+          fetch-depth: 0
+          clean: true
+
+      - name: Setup pnpm
+        if: inputs.package-manager == 'pnpm'
+        uses: pnpm/action-setup@0e279bb959325dab635dd2c09392533439d90093 # v6
+        with:
+          version: "11"
+
+      - name: Setup Node.js
+        uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6.4.0
+        with:
+          node-version: ${{ inputs.node-version }}
+          cache: ${{ inputs.package-manager }}
+
+      - name: Install dependencies
+        working-directory: ${{ inputs.working-directory }}
+        run: ${{ inputs.install-command }}
+
+      - name: Build product
+        working-directory: ${{ inputs.working-directory }}
+        env:
+          NODE_ENV: production
+        run: ${{ inputs.build-command }}
+
+      - name: Verify output and write provenance
+        run: |
+          set -euo pipefail
+          DIST="${{ inputs.output-path }}"
+          test -d "$DIST"
+          test -f "$DIST/index.html"
+
+          DIGEST="$(
+            find "$DIST" -type f ! -path '*/.well-known/*' -print0 \
+              | sort -z \
+              | xargs -0 sha256sum \
+              | sha256sum \
+              | awk '{print $1}'
+          )"
+
+          mkdir -p "$DIST/.well-known"
+          jq -n \
+            --arg target "${{ inputs.target-id }}" \
+            --arg repository "$GITHUB_REPOSITORY" \
+            --arg commit "$GITHUB_SHA" \
+            --arg ref "$GITHUB_REF" \
+            --arg run "$GITHUB_RUN_ID" \
+            --arg digest "sha256:$DIGEST" \
+            --arg timestamp "$(date -u +%Y-%m-%dT%H:%M:%SZ)" \
+            '{
+              target: $target,
+              repository: $repository,
+              commit: $commit,
+              ref: $ref,
+              workflow_run: $run,
+              dist_digest: $digest,
+              timestamp: $timestamp
+            }' > "$DIST/.well-known/provenance.json"
+
+      - name: Package immutable artifact
+        run: |
+          set -euo pipefail
+          mkdir -p .release
+          tar -C "${{ inputs.output-path }}" -czf ".release/${{ inputs.target-id }}.tar.gz" .
+          sha256sum ".release/${{ inputs.target-id }}.tar.gz" \
+            > ".release/${{ inputs.target-id }}.tar.gz.sha256"
+
+      - name: Attest artifact when supported
+        continue-on-error: true
+        uses: actions/attest-build-provenance@0f67c3f4856b2e3261c31976d6725780e5e4c373 # v4
+        with:
+          subject-path: ".release/${{ inputs.target-id }}.tar.gz"
+
+      - name: Upload immutable artifact
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7
+        with:
+          name: release-${{ inputs.target-id }}-${{ github.sha }}
+          path: |
+            .release/${{ inputs.target-id }}.tar.gz
+            .release/${{ inputs.target-id }}.tar.gz.sha256
+          if-no-files-found: error
+          retention-days: 14
+
+  deploy:
+    name: Publish ${{ inputs.target-id }}
+    needs: build
+    runs-on: ${{ fromJSON(inputs.deploy-runs-on) }}
+    timeout-minutes: 25
+    environment: ${{ inputs.environment }}
+    concurrency:
+      group: production-${{ github.repository }}-${{ inputs.target-id }}
+      cancel-in-progress: false
+    permissions:
+      contents: read
+    steps:
+      - name: Download immutable artifact
+        uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8
+        with:
+          name: release-${{ inputs.target-id }}-${{ github.sha }}
+          path: .release
+
+      - name: Verify and extract artifact
+        run: |
+          set -euo pipefail
+          cd .release
+          sha256sum -c "${{ inputs.target-id }}.tar.gz.sha256"
+          mkdir -p site
+          tar -xzf "${{ inputs.target-id }}.tar.gz" -C site
+          test -f site/index.html
+          test -f site/.well-known/provenance.json
+          test "$(jq -r '.repository' site/.well-known/provenance.json)" = "$GITHUB_REPOSITORY"
+          test "$(jq -r '.commit' site/.well-known/provenance.json)" = "$GITHUB_SHA"
+
+      - name: Deploy to Cloudflare Pages
+        uses: cloudflare/wrangler-action@ebbaa1584979971c8614a24965b4405ff95890e0 # pinned SHA
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: pages deploy .release/site --project-name ${{ inputs.cloudflare-project }} --branch main
+
+      - name: Verify served repository, commit, and content
+        env:
+          ORIGIN: ${{ inputs.production-url }}
+          VERIFY_PATH: ${{ inputs.verification-path }}
+          VERIFY_MARKER: ${{ inputs.verification-marker }}
+        run: |
+          set -euo pipefail
+
+          for attempt in $(seq 1 12); do
+            PROVENANCE="$(
+              curl -fsSL \
+                -H 'Cache-Control: no-cache' \
+                "${ORIGIN}/.well-known/provenance.json?run=${GITHUB_RUN_ID}-${attempt}" \
+                2>/dev/null \
+                || printf '{}'
+            )"
+            LIVE_REPOSITORY="$(jq -r '.repository // empty' <<<"$PROVENANCE")"
+            LIVE_COMMIT="$(jq -r '.commit // empty' <<<"$PROVENANCE")"
+            BODY="$(
+              curl -fsSL \
+                -H 'Cache-Control: no-cache' \
+                "${ORIGIN}${VERIFY_PATH}?run=${GITHUB_RUN_ID}-${attempt}" \
+                2>/dev/null \
+                || true
+            )"
+
+            if [[ "$LIVE_REPOSITORY" == "$GITHUB_REPOSITORY" ]] \
+              && [[ "$LIVE_COMMIT" == "$GITHUB_SHA" ]] \
+              && grep -Fq "$VERIFY_MARKER" <<<"$BODY"; then
+              echo "::notice::Verified $GITHUB_REPOSITORY@$GITHUB_SHA at $ORIGIN"
+              exit 0
+            fi
+
+            echo "Attempt $attempt: repository=${LIVE_REPOSITORY:-missing} commit=${LIVE_COMMIT:-missing}"
+            sleep 10
+          done
+
+          echo "::error::Production verification failed for $ORIGIN"
+          exit 1
+
+      - name: Summary
+        run: |
+          {
+            echo "### Published ${{ inputs.target-id }}"
+            echo ""
+            echo "- Repository: \`$GITHUB_REPOSITORY\`"
+            echo "- Commit: \`$GITHUB_SHA\`"
+            echo "- Cloudflare project: \`${{ inputs.cloudflare-project }}\`"
+            echo "- Production URL: ${{ inputs.production-url }}"
+          } >> "$GITHUB_STEP_SUMMARY"
