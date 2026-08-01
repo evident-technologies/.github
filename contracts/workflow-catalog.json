@@ -1,0 +1,22 @@
+{
+  "cross_org_policy": {
+    "evident-signal": "implement-compatible-local-caller-or-workflow",
+    "private_cross_org_reuse": "not-authorized-until-access-model-is-verified",
+    "tillerstead": "implement-compatible-local-caller-or-workflow"
+  },
+  "organization": "evident-technologies",
+  "schema_version": "1.0.0",
+  "workflows": [
+    {
+      "deploys": false,
+      "id": "ecosystem-contract-check",
+      "path": ".github/workflows/reusable-ecosystem-contract-check.yml",
+      "permissions": {
+        "contents": "read"
+      },
+      "reads_secrets": false,
+      "status": "bootstrap",
+      "trigger": "workflow_call"
+    }
+  ]
+}
