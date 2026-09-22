@@ -1,97 +1,63 @@
-# Evident Organization Runner Fabric
+# Evident Organization Runner Fabric — Workflow Implementation
 
-This repository is the organization-level source of truth for **runner classes
-and repository admission**. Runtime records desired placement and observed
-fleet state; individual repositories define their jobs; this policy defines
-which compute classes those jobs may request.
+The canonical **desired-state authority** for runner pools and repository
+admission is `evident-technologies/evident-runtime`.
 
-## Core rule
+This `.github` repository implements reusable workflow mechanics and safe
+organization scheduling defaults. It must not create a second runner-policy
+authority.
 
-Ordinary CI targets capabilities, not machines:
+Pinned Runtime authority for this implementation:
+
+- commit: `65cc779fb9cc5a3035105184272ca358362e6395`
+- pools: `inventory/runner-pools.json`
+- admission: `inventory/repository-runner-admission.json`
+
+## Scheduling model
+
+Ordinary self-hosted CI is capability-based:
 
 ```yaml
 runs-on: [self-hosted, Linux, X64, evident-ci, ci, no-private-evidence]
 ```
 
-Both `aspire-physical-ci` and `et-ws-02-fabric` belong to that shared pool.
-GitHub may schedule an admitted workload on either runner.
+Any runner that Runtime admits to the `org-ci` pool may satisfy that job.
+Physical host names therefore disappear from ordinary CI workflows.
 
-The `ci-primary` and `ci-secondary` labels are reserved for qualification,
-capacity tests and failover proof. Application workflows should not pin to them.
+`ci-primary` and `ci-secondary` are qualification-only labels.
 
-## Why this is better
+## Defaults
 
-- adding/replacing a CI machine does not require rewriting every repository;
-- ordinary jobs automatically gain two-node capacity and failover;
-- a failed/offline machine reduces capacity instead of changing workflow
-  semantics;
-- new repositories cannot execute on founder-owned hardware until explicitly
-  admitted;
-- production authority remains outside the shared CI pool.
+Active repositories default to portable GitHub-hosted CI. Self-hosted access is
+allowed only when both conditions are true:
 
-## Repository tiers
+1. Runtime admits the repository to the requested pool.
+2. GitHub runner-group access is configured to match that Runtime record.
 
-**Portable/default.** Every repository may use GitHub-hosted runners for safe,
-lightweight checks. New repositories start here.
+Neither condition alone is sufficient.
 
-**Self-hosted CI admitted.** Only repositories listed in
-`governance/runner-fabric.json` and in the corresponding GitHub runner group
-may use the `evident-ci` pool.
+## Production boundary
 
-**Production deployment.** Production is not a higher CI tier. It is a
-different security principal. The current Platform promotion identity is
-`et-ws-02-deploy`, exact-name guarded and environment-scoped.
+Production deployment is deliberately **not** exposed as a generic organization
+reusable workflow. Platform production remains exact-identity guarded by the
+Platform repository and its environment-scoped credentials.
 
-## Runtime relationship
+That prevents an otherwise-safe reusable workflow from accidentally turning
+repository membership into production authority.
 
-`evident-runtime` owns desired fleet placement, service/provider topology,
-costs and recovery. It should import or reference this organization runner
-contract rather than invent runner labels independently.
+## Capacity behavior
 
-Runtime may say **where** a class is expected to run. It does not grant a
-repository permission to schedule on that class.
+The shared `org-ci` selector lets GitHub load-balance ordinary CI across
+`aspire-physical-ci` and `et-ws-02-fabric`.
 
-## Platform relationship
-
-Platform owns build/test/deploy workflows. Credential-free jobs should migrate
-toward the shared selector. Runner-specific labels belong only in runner
-qualification workflows.
-
-Production workflows must continue to verify exact raw runner identity before
-credentials or mutating commands are available.
-
-## Ops relationship
-
-`evident-ops` may observe runner health, reconcile desired/actual admission
-and prepare execution receipts. Merely being the operator repository does not
-grant it Platform production credentials.
-
-## Fairness and capacity
-
-With two shared CI runners, repositories should use workflow-level concurrency
-to collapse superseded work. Long-running/nightly tasks should use explicit
-timeouts and should not occupy both qualification lanes by default.
-
-Duplicate execution across primary and secondary is used for qualification, not
-for every ordinary CI job. Ordinary CI load-balances across the shared pool.
+Dual execution on both machines is reserved for qualification/failover proof;
+it is not the default for every test. This preserves capacity and avoids paying
+the compute cost of duplicate work without security benefit.
 
 ## Failure behavior
 
-If both self-hosted CI runners are unavailable, jobs requiring the shared pool
-remain queued. They do not silently fall back to hosted compute if doing so
-would change trust, network, filesystem or cost assumptions.
+Portable policy/metadata checks should remain available even if the private
+fleet is offline. Jobs whose trust/tooling/cost assumptions require `org-ci`
+queue rather than silently changing execution class.
 
-Portable policy/metadata checks should normally have a GitHub-hosted path so
-pull requests can still report meaningful failures while the private fleet is
-unavailable.
-
-## Security invariants
-
-- no private evidence on any GitHub Actions runner;
-- no production credentials on CI;
-- no wildcard or prefix-based deploy authorization;
-- no repository gets self-hosted access merely because it exists in the org;
-- runner group membership is reconciled against
-  `governance/runner-admission.json`;
-- secrets remain environment/repository scoped and are never represented by
-  value in Git.
+No GitHub Actions runner may process private evidence.

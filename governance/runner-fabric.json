@@ -1,199 +1,49 @@
 {
   "schema_version": 1,
-  "authority": "evident-technologies/.github",
-  "principle": "Repository membership does not grant access to self-hosted compute or production credentials.",
-  "workload_classes": {
-    "portable": {
-      "selector": [
-        "ubuntu-latest"
-      ],
-      "purpose": [
-        "metadata-validation",
-        "lightweight-lint",
-        "policy-checks",
-        "bootstrap-ci"
-      ],
-      "credentials": "none-beyond-minimal-GITHUB_TOKEN",
-      "private_evidence": false,
-      "production_authority": false
-    },
-    "shared_ci": {
-      "selector": [
-        "self-hosted",
-        "Linux",
-        "X64",
-        "evident-ci",
-        "ci",
-        "no-private-evidence"
-      ],
-      "purpose": [
-        "build",
-        "test",
-        "static-analysis",
-        "artifact-create"
-      ],
-      "credentials": "no-production-credentials",
-      "private_evidence": false,
-      "production_authority": false,
-      "scheduling": "any-admitted-runner-may-execute"
-    },
-    "ci_primary_qualification": {
-      "selector": [
-        "self-hosted",
-        "Linux",
-        "X64",
-        "evident-ci",
-        "ci",
-        "no-private-evidence",
-        "ci-primary"
-      ],
-      "purpose": [
-        "qualification",
-        "capacity-check",
-        "failover-proof"
-      ],
-      "credentials": "no-production-credentials",
-      "private_evidence": false,
-      "production_authority": false
-    },
-    "ci_secondary_qualification": {
-      "selector": [
-        "self-hosted",
-        "Linux",
-        "X64",
-        "evident-ci",
-        "ci",
-        "no-private-evidence",
-        "ci-secondary"
-      ],
-      "purpose": [
-        "qualification",
-        "capacity-check",
-        "failover-proof"
-      ],
-      "credentials": "no-production-credentials",
-      "private_evidence": false,
-      "production_authority": false
-    },
-    "platform_deploy": {
-      "selector": [
-        "self-hosted",
-        "Linux",
-        "X64",
-        "et-ws-02",
-        "physical",
-        "deploy",
-        "deploy-primary",
-        "isolated-deploy"
-      ],
-      "exact_runner_identity": "et-ws-02-deploy",
-      "purpose": [
-        "reviewed-production-promotion"
-      ],
-      "credentials": "environment-scoped-platform-production-only",
-      "private_evidence": false,
-      "production_authority": true,
-      "repository_allowlist": [
-        "evident-technologies/platform"
-      ]
-    }
+  "authority": {
+    "repository": "evident-technologies/evident-runtime",
+    "commit": "65cc779fb9cc5a3035105184272ca358362e6395",
+    "pools_path": "inventory/runner-pools.json",
+    "admission_path": "inventory/repository-runner-admission.json"
   },
-  "runners": [
-    {
-      "id": "aspire-physical-ci",
-      "class": "ci-primary",
-      "shared_pool": true,
-      "required_labels": [
-        "aspire",
-        "evident-ci",
-        "ci",
-        "build",
-        "test",
-        "no-private-evidence",
-        "ci-primary"
-      ],
-      "production_authority": false
-    },
-    {
-      "id": "et-ws-02-fabric",
-      "class": "ci-secondary",
-      "shared_pool": true,
-      "required_labels": [
-        "et-ws-02-fabric",
-        "evident-fabric",
-        "evident-ci",
-        "ci",
-        "build",
-        "test",
-        "no-private-evidence",
-        "ci-secondary"
-      ],
-      "production_authority": false
-    },
-    {
-      "id": "et-ws-02-deploy",
-      "class": "deploy-primary",
-      "shared_pool": false,
-      "required_labels": [
-        "et-ws-02",
-        "physical",
-        "deploy",
-        "deploy-primary",
-        "isolated-deploy"
-      ],
-      "production_authority": true,
-      "repository_allowlist": [
-        "evident-technologies/platform"
-      ]
-    }
-  ],
-  "self_hosted_repository_admission": [
-    {
-      "repository": "evident-technologies/platform",
-      "classes": [
-        "shared_ci",
-        "ci_primary_qualification",
-        "ci_secondary_qualification",
-        "platform_deploy"
-      ],
-      "state": "approved"
-    },
-    {
-      "repository": "evident-technologies/evident-runtime",
-      "classes": [
-        "shared_ci",
-        "ci_primary_qualification",
-        "ci_secondary_qualification"
-      ],
-      "state": "approved-after-runner-group-admission"
-    },
-    {
-      "repository": "evident-technologies/evident-ops",
-      "classes": [
-        "shared_ci"
-      ],
-      "state": "approved-after-runner-group-admission"
-    },
-    {
-      "repository": "evident-technologies/.github",
-      "classes": [
-        "shared_ci"
-      ],
-      "state": "approved-after-runner-group-admission"
-    }
-  ],
-  "default_for_other_repositories": {
-    "class": "portable",
-    "self_hosted_access": false,
-    "elevation_process": "add repository to this manifest and runner-group allowlist in a reviewed change"
+  "role": "organization-workflow-implementation",
+  "no_local_policy_authority": true,
+  "workload_selectors": {
+    "portable": "ubuntu-24.04",
+    "org_ci": [
+      "self-hosted",
+      "Linux",
+      "X64",
+      "evident-ci",
+      "ci",
+      "no-private-evidence"
+    ],
+    "ci_primary_qualification": [
+      "self-hosted",
+      "Linux",
+      "X64",
+      "evident-ci",
+      "ci",
+      "no-private-evidence",
+      "ci-primary"
+    ],
+    "ci_secondary_qualification": [
+      "self-hosted",
+      "Linux",
+      "X64",
+      "evident-ci",
+      "ci",
+      "no-private-evidence",
+      "ci-secondary"
+    ]
   },
+  "production_rule": "No organization-generic reusable workflow may expose platform-deploy to arbitrary callers.",
   "invariants": [
-    "ordinary CI selects the shared pool, not a physical host",
-    "primary and secondary labels are qualification-only",
-    "CI runners never receive production credentials",
-    "deploy authority requires exact raw runner identity and repository/environment scope",
-    "private evidence is prohibited from all GitHub Actions runners",
-    "new repositories default to portable GitHub-hosted CI until explicitly admitted",
-    "runner group access must match this manifest; manifest alone does not grant GitHub runner access"
+    "Runtime is the desired-state authority for pools and repository admission",
+    ".github implements reusable workflows and scheduling defaults only",
+    "portable is the default for active repositories",
+    "self-hosted repository access must match Runtime admission and GitHub runner-group access",
+    "qualification selectors are not ordinary workload selectors",
+    "production deployment remains repository-specific and exact-identity guarded"
   ]
 }

@@ -1,23 +1,8 @@
 {
   "schema_version": 1,
-  "runner_group_desired_state": {
-    "name": "evident-ci",
-    "visibility": "selected-repositories",
-    "repositories": [
-      "evident-technologies/.github",
-      "evident-technologies/platform",
-      "evident-technologies/evident-runtime",
-      "evident-technologies/evident-ops"
-    ],
-    "production_credentials": false,
-    "private_evidence": false
-  },
-  "deployment_rule": {
-    "runner": "et-ws-02-deploy",
-    "repository": "evident-technologies/platform",
-    "environment": "production",
-    "access": "separate-from-evident-ci-group",
-    "exact_identity_required": true
-  },
-  "note": "This file is desired state only. GitHub organization runner-group membership must be reconciled through an authorized administrative path."
+  "authority_repository": "evident-technologies/evident-runtime",
+  "authority_commit": "65cc779fb9cc5a3035105184272ca358362e6395",
+  "authority_path": "inventory/repository-runner-admission.json",
+  "local_admission_authority": false,
+  "note": "This repository implements scheduling mechanics. It does not duplicate or widen Runtime repository admission."
 }

@@ -3,46 +3,34 @@ import json
 from pathlib import Path
 
 ROOT=Path(__file__).resolve().parents[1]
-fabric=json.loads((ROOT/"governance/runner-fabric.json").read_text())
-admission=json.loads((ROOT/"governance/runner-admission.json").read_text())
+impl=json.loads((ROOT/"governance/runner-fabric.json").read_text())
+pointer=json.loads((ROOT/"governance/runner-admission.json").read_text())
 
-if fabric.get("schema_version") != 1 or admission.get("schema_version") != 1:
-    raise SystemExit("runner policy schema_version must be 1")
+if impl.get("schema_version") != 1 or pointer.get("schema_version") != 1:
+    raise SystemExit("runner implementation schema_version must be 1")
 
-classes=fabric["workload_classes"]
-required={"portable","shared_ci","ci_primary_qualification","ci_secondary_qualification","platform_deploy"}
-if set(classes) != required:
-    raise SystemExit(f"unexpected workload classes: {sorted(set(classes)^required)}")
+authority=impl.get("authority",{})
+if authority.get("repository") != "evident-technologies/evident-runtime":
+    raise SystemExit("Runtime must remain runner desired-state authority")
+if authority.get("commit") != "65cc779fb9cc5a3035105184272ca358362e6395":
+    raise SystemExit("Runtime runner authority pin drift")
+if impl.get("no_local_policy_authority") is not True:
+    raise SystemExit(".github must not claim runner desired-state authority")
+if pointer.get("local_admission_authority") is not False:
+    raise SystemExit(".github admission pointer must be non-authoritative")
 
-shared=classes["shared_ci"]["selector"]
-for label in ("self-hosted","Linux","X64","evident-ci","ci","no-private-evidence"):
-    if label not in shared:
-        raise SystemExit(f"shared_ci missing {label}")
+shared=impl["workload_selectors"]["org_ci"]
+expected=["self-hosted","Linux","X64","evident-ci","ci","no-private-evidence"]
+if shared != expected:
+    raise SystemExit("org-ci selector drift")
 
 for q in ("ci_primary_qualification","ci_secondary_qualification"):
-    if classes[q].get("production_authority"):
-        raise SystemExit(f"{q} cannot have production authority")
+    selector=impl["workload_selectors"][q]
+    if "ci-primary" not in selector and "ci-secondary" not in selector:
+        raise SystemExit(f"{q}: qualification label missing")
 
-deploy=classes["platform_deploy"]
-if deploy.get("exact_runner_identity") != "et-ws-02-deploy":
-    raise SystemExit("deploy identity drift")
-if deploy.get("repository_allowlist") != ["evident-technologies/platform"]:
-    raise SystemExit("deploy repository scope drift")
+if "platform-deploy" not in impl.get("production_rule",""):
+    raise SystemExit("production reusable-workflow prohibition missing")
 
-runner_ids=[r["id"] for r in fabric["runners"]]
-if len(runner_ids) != len(set(runner_ids)):
-    raise SystemExit("duplicate runner id")
-for r in fabric["runners"]:
-    if r["id"] != "et-ws-02-deploy" and r.get("production_authority"):
-        raise SystemExit(f"CI runner {r['id']} has production authority")
-
-admitted={x["repository"] for x in fabric["self_hosted_repository_admission"]}
-desired=set(admission["runner_group_desired_state"]["repositories"])
-if admitted != desired:
-    raise SystemExit("runner group desired-state repositories differ from fabric admission")
-
-if fabric["default_for_other_repositories"].get("self_hosted_access") is not False:
-    raise SystemExit("default repository admission must deny self-hosted")
-
-print("org-runner-fabric-validation: PASS")
-print(f"admitted_repositories={len(admitted)} runners={len(runner_ids)} classes={len(classes)}")
+print("org-runner-implementation-validation: PASS")
+print("authority=evident-technologies/evident-runtime")
