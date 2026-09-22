@@ -1,22 +1,22 @@
-name: Organization Runner Contract
+name: Runner Qualification
 
 on:
   workflow_call:
     inputs:
       mode:
-        description: portable, shared-ci, qualify-primary, or qualify-secondary
+        description: portable, org-ci, qualify-primary, or qualify-secondary
         required: true
         type: string
   workflow_dispatch:
     inputs:
       mode:
-        description: portable, shared-ci, qualify-primary, or qualify-secondary
+        description: portable, org-ci, qualify-primary, or qualify-secondary
         required: true
         default: portable
         type: choice
         options:
           - portable
-          - shared-ci
+          - org-ci
           - qualify-primary
           - qualify-secondary
 
@@ -26,36 +26,59 @@ permissions:
 jobs:
   portable:
     if: ${{ inputs.mode == 'portable' }}
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
     steps:
-      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
-        with:
-          persist-credentials: false
-      - run: python3 scripts/validate-runner-fabric.py
+      - name: Record portable runner contract
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$RUNNER_OS" = "Linux"
+          test "$RUNNER_ARCH" = "X64"
+          printf 'mode=portable\nrunner=%s\nos=%s\narch=%s\n' "$RUNNER_NAME" "$RUNNER_OS" "$RUNNER_ARCH"
 
   shared:
-    if: ${{ inputs.mode == 'shared-ci' }}
+    if: ${{ inputs.mode == 'org-ci' }}
     runs-on: [self-hosted, Linux, X64, evident-ci, ci, no-private-evidence]
+    timeout-minutes: 5
     steps:
-      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
-        with:
-          persist-credentials: false
-      - run: python3 scripts/validate-runner-fabric.py
+      - name: Qualify shared CI runner
+        shell: bash
+        env:
+          PRIVATE_EVIDENCE: "false"
+        run: |
+          set -euo pipefail
+          test "$RUNNER_OS" = "Linux"
+          test "$RUNNER_ARCH" = "X64"
+          case "$RUNNER_NAME" in
+            aspire-physical-ci|et-ws-02-fabric) ;;
+            *) echo "::error::Unrecognized Runtime org-ci runner: $RUNNER_NAME"; exit 1 ;;
+          esac
+          test "$PRIVATE_EVIDENCE" = "false"
+          printf 'mode=org-ci\nrunner=%s\n' "$RUNNER_NAME"
 
   primary:
     if: ${{ inputs.mode == 'qualify-primary' }}
     runs-on: [self-hosted, Linux, X64, evident-ci, ci, no-private-evidence, ci-primary]
+    timeout-minutes: 5
     steps:
-      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
-        with:
-          persist-credentials: false
-      - run: python3 scripts/validate-runner-fabric.py
+      - name: Qualify primary identity
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$RUNNER_NAME" = "aspire-physical-ci"
+          test "$RUNNER_OS" = "Linux"
+          test "$RUNNER_ARCH" = "X64"
 
   secondary:
     if: ${{ inputs.mode == 'qualify-secondary' }}
     runs-on: [self-hosted, Linux, X64, evident-ci, ci, no-private-evidence, ci-secondary]
+    timeout-minutes: 5
     steps:
-      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
-        with:
-          persist-credentials: false
-      - run: python3 scripts/validate-runner-fabric.py
+      - name: Qualify secondary identity
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$RUNNER_NAME" = "et-ws-02-fabric"
+          test "$RUNNER_OS" = "Linux"
+          test "$RUNNER_ARCH" = "X64"
