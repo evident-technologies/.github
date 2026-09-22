@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "authority": {
+    "repository": "evident-technologies/evident-runtime",
+    "commit": "65cc779fb9cc5a3035105184272ca358362e6395",
+    "pools_path": "inventory/runner-pools.json",
+    "admission_path": "inventory/repository-runner-admission.json"
+  },
+  "role": "organization-workflow-implementation",
+  "no_local_policy_authority": true,
+  "workload_selectors": {
+    "portable": "ubuntu-24.04",
+    "org_ci": [
+      "self-hosted",
+      "Linux",
+      "X64",
+      "evident-ci",
+      "ci",
+      "no-private-evidence"
+    ],
+    "ci_primary_qualification": [
+      "self-hosted",
+      "Linux",
+      "X64",
+      "evident-ci",
+      "ci",
+      "no-private-evidence",
+      "ci-primary"
+    ],
+    "ci_secondary_qualification": [
+      "self-hosted",
+      "Linux",
+      "X64",
+      "evident-ci",
+      "ci",
+      "no-private-evidence",
+      "ci-secondary"
+    ]
+  },
+  "production_rule": "No organization-generic reusable workflow may expose platform-deploy to arbitrary callers.",
+  "invariants": [
+    "Runtime is the desired-state authority for pools and repository admission",
+    ".github implements reusable workflows and scheduling defaults only",
+    "portable is the default for active repositories",
+    "self-hosted repository access must match Runtime admission and GitHub runner-group access",
+    "qualification selectors are not ordinary workload selectors",
+    "production deployment remains repository-specific and exact-identity guarded"
+  ]
+}

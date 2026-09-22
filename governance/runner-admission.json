@@ -1,0 +1,8 @@
+{
+  "schema_version": 1,
+  "authority_repository": "evident-technologies/evident-runtime",
+  "authority_commit": "65cc779fb9cc5a3035105184272ca358362e6395",
+  "authority_path": "inventory/repository-runner-admission.json",
+  "local_admission_authority": false,
+  "note": "This repository implements scheduling mechanics. It does not duplicate or widen Runtime repository admission."
+}
