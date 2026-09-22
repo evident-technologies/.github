@@ -1,0 +1,61 @@
+name: Organization Runner Contract
+
+on:
+  workflow_call:
+    inputs:
+      mode:
+        description: portable, shared-ci, qualify-primary, or qualify-secondary
+        required: true
+        type: string
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: portable, shared-ci, qualify-primary, or qualify-secondary
+        required: true
+        default: portable
+        type: choice
+        options:
+          - portable
+          - shared-ci
+          - qualify-primary
+          - qualify-secondary
+
+permissions:
+  contents: read
+
+jobs:
+  portable:
+    if: ${{ inputs.mode == 'portable' }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          persist-credentials: false
+      - run: python3 scripts/validate-runner-fabric.py
+
+  shared:
+    if: ${{ inputs.mode == 'shared-ci' }}
+    runs-on: [self-hosted, Linux, X64, evident-ci, ci, no-private-evidence]
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          persist-credentials: false
+      - run: python3 scripts/validate-runner-fabric.py
+
+  primary:
+    if: ${{ inputs.mode == 'qualify-primary' }}
+    runs-on: [self-hosted, Linux, X64, evident-ci, ci, no-private-evidence, ci-primary]
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          persist-credentials: false
+      - run: python3 scripts/validate-runner-fabric.py
+
+  secondary:
+    if: ${{ inputs.mode == 'qualify-secondary' }}
+    runs-on: [self-hosted, Linux, X64, evident-ci, ci, no-private-evidence, ci-secondary]
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          persist-credentials: false
+      - run: python3 scripts/validate-runner-fabric.py
