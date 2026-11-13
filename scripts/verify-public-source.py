@@ -26,7 +26,14 @@ REVIEWED_ISSUE_FORMS = frozenset({
     ".github/ISSUE_TEMPLATE/config.yml",
 })
 REVIEWED_WORKFLOWS = frozenset({".github/workflows/static-shell.yml"})
+APPROVED_CODEOWNERS_SHA256 = '80f5d8a3fd949eee761d542aa895611830c5124dc7a3c9583a4a384f168ee179'
 SVG_NS = "{http://www.w3.org/2000/svg}"
+
+
+def codeowners_errors(text: str) -> list[str]:
+    rules = [line.strip() for line in text.splitlines()
+             if line.strip() and not line.lstrip().startswith("#")]
+    return [] if rules == ["* @devontyler"] else ["approved CODEOWNER routing changed"]
 
 
 def source_paths(root: Path) -> list[Path]:
@@ -320,8 +327,14 @@ def verify(root: Path) -> tuple[list[str], list[str], dict[str, int]]:
         if protected:
             path = root / name
             actual = hashlib.sha256(path.read_bytes()).hexdigest() if path.is_file() else None
-            if actual != original_hash:
+            expected_hash = APPROVED_CODEOWNERS_SHA256 if name == ".github/CODEOWNERS" else original_hash
+            if actual != expected_hash:
                 fail(path, "protected baseline source changed")
+            if name == ".github/CODEOWNERS":
+                if item.get("approved_revision_sha256") != APPROVED_CODEOWNERS_SHA256:
+                    fail(path, "approved CODEOWNERS revision record changed")
+                for message in codeowners_errors(path.read_text()):
+                    fail(path, message)
     # CSS compatibility is a separate contract from repaired syntax/comments.
     css_path = root / "brand/brand.css"
     css = css_path.read_text()

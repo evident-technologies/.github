@@ -6,7 +6,9 @@
       "path": ".github/CODEOWNERS",
       "classification": "KEEP",
       "sha256": "c9b23738834e07d9e540ded57a9de25042ae6968b3d633ffcbc0160504abc3ff",
-      "preserve_bytes": true
+      "preserve_bytes": true,
+      "approved_revision_sha256": "80f5d8a3fd949eee761d542aa895611830c5124dc7a3c9583a4a384f168ee179",
+      "revision_reason": "Founder authorized CODEOWNER correction on November 13, 2026; devontyler verified as repository administrator. Original baseline fingerprint and protected classification retained; exact approved replacement and routing checked."
     },
     {
       "path": ".github/ISSUE_TEMPLATE/bug_report.yml",

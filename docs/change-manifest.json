@@ -3,6 +3,11 @@
   "retired_assets": [],
   "files": [
     {
+      "path": ".github/CODEOWNERS",
+      "change": "modified",
+      "sha256": "80f5d8a3fd949eee761d542aa895611830c5124dc7a3c9583a4a384f168ee179"
+    },
+    {
       "path": ".github/ISSUE_TEMPLATE/bug_report.yml",
       "change": "modified",
       "sha256": "ee25c22046cb0cb14711ae619c4a5f80fccd67ee28858c49d3dd2b890f61269d"
@@ -246,7 +251,7 @@
     {
       "path": "docs/source-inventory.json",
       "change": "added",
-      "sha256": "4824c64e3e8b767a974afe6e504fa596ad727f78ae2f56aa7d5f852df8ad1720"
+      "sha256": "8a5a2ebf01f1bf165653a07baa8d394c4050247a1602c57f0dfb84f36bfe36d3"
     },
     {
       "path": "profile/README.md",
@@ -257,6 +262,11 @@
       "path": "scripts/README.md",
       "change": "modified",
       "sha256": "c51ffeb8e809c605f2d793b45558fbedc63a3f139b742721a6ef66ca70fcf291"
+    },
+    {
+      "path": "scripts/test-codeowners.py",
+      "change": "added",
+      "sha256": "43dd25e70db361106387577eeadbea213bdcf7f6b0054c4fa5f4311992b46864"
     },
     {
       "path": "scripts/test-issue-forms.py",
@@ -271,7 +281,7 @@
     {
       "path": "scripts/verify-public-source.py",
       "change": "added",
-      "sha256": "0accf5fc6ac4417845c6dc7754b2247c793c52bd473b0c83641e3422a6a4151f"
+      "sha256": "29b974edbaf9adac953f402aa5b0c3854579c1fe7721c9b26c4246eee540cef8"
     }
   ],
   "reconciliation_main": "0884d789f801c79fba9ad1374a3ed6cc7ac4511e",
