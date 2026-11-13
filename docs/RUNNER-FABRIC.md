@@ -1,63 +1,25 @@
-# Evident Organization Runner Fabric — Workflow Implementation
+# Runner governance boundary
 
-The canonical **desired-state authority** for runner pools and repository
-admission is `evident-technologies/evident-runtime`.
+This repository implements organization workflow mechanisms. The existing Runtime owner remains the desired-state authority for runner pools and repository admission. The local [implementation contract](../governance/runner-fabric.json) and [authority pointer](../governance/runner-admission.json) record the pinned source; they do not grant access.
 
-This `.github` repository implements reusable workflow mechanics and safe
-organization scheduling defaults. It must not create a second runner-policy
-authority.
+## Scheduling and admission
 
-Pinned Runtime authority for this implementation:
+Portable GitHub-hosted CI is the default for active repositories. Self-hosted execution requires both current Runtime admission for the requested pool and matching GitHub runner-group access. Neither a label, organization membership, a copied template, nor this document grants admission.
 
-- commit: `65cc779fb9cc5a3035105184272ca358362e6395`
-- pools: `inventory/runner-pools.json`
-- admission: `inventory/repository-runner-admission.json`
+Ordinary admitted CI uses the shared capability selector. Qualification selectors are reserved for qualification and failover checks. Physical machine identity is not a public workflow example or an authorization mechanism.
 
-## Scheduling model
+## Production separation
 
-Ordinary self-hosted CI is capability-based:
+CI identity and deployment identity remain separate. Generic organization workflows must not expose production execution to arbitrary callers. Product owners retain responsibility for exact repository identity, protected environments, product-scoped credentials, approvals, immutable artifacts, and rollback.
 
-```yaml
-runs-on: [self-hosted, Linux, X64, evident-ci, ci, no-private-evidence]
-```
+Source files alone cannot prove current GitHub group access or environment protections. Verify those controls through their existing owners before execution. Private evidence is never an Actions workload.
 
-Any runner that Runtime admits to the `org-ci` pool may satisfy that job.
-Physical host names therefore disappear from ordinary CI workflows.
+## Observations and failure behavior
 
-`ci-primary` and `ci-secondary` are qualification-only labels.
+Runner observations are sampled. Idle means available capacity; stale or missing observations mean unknown. Do not infer complete fleet utilization or queue coverage. Record repository, immutable revision, workflow/run URL, job ID, assigned runner, result, and blockers for actual CI work.
 
-## Defaults
+Portable metadata checks may run without private fleet access. Workloads requiring an admitted execution class must queue or hold rather than silently change class. This public repository creates no automatic dispatch loop, enrollment authority, or duplicate runner controller.
 
-Active repositories default to portable GitHub-hosted CI. Self-hosted access is
-allowed only when both conditions are true:
+Run the [source validator](../scripts/validate-runner-fabric.py) to check the pinned implementation contract. A pass proves those local invariants only, not live policy enforcement.
 
-1. Runtime admits the repository to the requested pool.
-2. GitHub runner-group access is configured to match that Runtime record.
-
-Neither condition alone is sufficient.
-
-## Production boundary
-
-Production deployment is deliberately **not** exposed as a generic organization
-reusable workflow. Platform production remains exact-identity guarded by the
-Platform repository and its environment-scoped credentials.
-
-That prevents an otherwise-safe reusable workflow from accidentally turning
-repository membership into production authority.
-
-## Capacity behavior
-
-The shared `org-ci` selector lets GitHub load-balance ordinary CI across
-`aspire-physical-ci` and `et-ws-02-fabric`.
-
-Dual execution on both machines is reserved for qualification/failover proof;
-it is not the default for every test. This preserves capacity and avoids paying
-the compute cost of duplicate work without security benefit.
-
-## Failure behavior
-
-Portable policy/metadata checks should remain available even if the private
-fleet is offline. Jobs whose trust/tooling/cost assumptions require `org-ci`
-queue rather than silently changing execution class.
-
-No GitHub Actions runner may process private evidence.
+[GitHub runner-group policies](https://docs.github.com/en/actions/how-tos/manage-runners/self-hosted-runners/manage-access) are separate from community defaults. Verify their current configuration rather than inferring access from repository documentation.

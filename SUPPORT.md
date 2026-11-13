@@ -1,63 +1,20 @@
-# Support
+# Contact and support
 
-Evident Technologies LLC maintains closed, proprietary software and related public information surfaces.
+Evident Technologies LLC handles project, product, and operational inquiries through private correspondence. A repository or demonstration does not create a support agreement, access entitlement, or response guarantee.
 
-This document exists only to route inquiries. It does not create a service agreement, support contract, response guarantee, attorney-client relationship, professional-services relationship, or entitlement to access.
+| Purpose | Channel |
+| --- | --- |
+| Websites, design, business software, partnerships | [Project inquiry](https://evidtech.com/contact/) |
+| Existing engagements, access, administration, support | [operations@evidtech.com](mailto:operations@evidtech.com) |
+| Security disclosure | [security@evidtech.com](mailto:security@evidtech.com), following [SECURITY.md](SECURITY.md) |
+| Legal correspondence and licensing | [legal@evidtech.com](mailto:legal@evidtech.com) |
 
----
+For a project inquiry, describe the audience, current website or process, desired result, timing, and accessibility needs. Existing clients should identify their project through their established private channel.
 
-## Contact
+Do not attach credentials, personal records, client files, privileged material, or evidence. Describe sensitive circumstances at a high level first and wait for an approved transfer method.
 
-For general operational, platform, access, business, legal, or administrative inquiries:
+## GitHub reports
 
-[operations@evidtech.com](mailto:operations@evidtech.com)
+Public issues are limited to permitted non-sensitive defect reports and capability proposals. They are not channels for support, billing, access, legal matters, private records, or security disclosure. Reports may be redirected or closed. See [CONTRIBUTING.md](CONTRIBUTING.md).
 
-For security disclosures only:
-
-[security@evidtech.com](mailto:security@evidtech.com)
-
-Security matters must follow the process in [SECURITY.md](SECURITY.md).
-
----
-
-## GitHub Issues Are Not Support
-
-GitHub issues, pull requests, and discussions are not support channels.
-
-Do not use public GitHub features to request platform access, report private matters, submit legal correspondence, disclose vulnerabilities, share sensitive records, or request product support.
-
-Public issues opened for support, access, billing, legal, or security matters may be closed without response.
-
----
-
-## Sensitive Information
-
-Do not send sensitive records, credentials, private keys, tokens, legal materials, personal data, client data, or evidence files unless specifically requested through an approved private channel.
-
-Security-sensitive matters must be reported privately to:
-
-[security@evidtech.com](mailto:security@evidtech.com)
-
----
-
-## Response Timing
-
-Correspondence is reviewed under Evident Technologies LLC governance.
-
-Response timing is not guaranteed.
-
-Evident Technologies LLC may decline, defer, or redirect inquiries at its discretion.
-
----
-
-<p align="center">
-  <sub>
-    Evident Technologies LLC · New Jersey, United States
-  </sub>
-</p>
-
-<p align="center">
-  <sub>
-    Private channels for private matters.
-  </sub>
-</p>
+Response timing and maintenance, revisions, hosting, or support obligations depend on the individual agreement. Correspondence alone creates no service, employment, contractor, fiduciary, or attorney-client relationship.

@@ -1,59 +1,36 @@
-![Evident Technologies LLC](https://raw.githubusercontent.com/evident-technologies/.github/main/brand/evident-technologies-logo-primary.svg)
-
 # Evident Technologies LLC
 
-**Websites with presence. Workflows with purpose. Records with provenance.**
+**Engineering. Design. Software. Accountable work.**
 
-We are an independent New Jersey design and engineering company. We help business owners create distinctive websites, improve the way customers reach them, and build practical digital systems they can understand, maintain, and control.
+We are an independent American company founded in New Jersey. We build websites, original design, business software, and digital workflows around a clear purpose and a result people can review.
 
-**Good work begins with a clear purpose—and ends with a result you can verify.**
-
-[**Explore our services**](https://evidtech.com/forge/) · [**Request a project proposal**](https://evidtech.com/contact/?intent=website) · [**Try a working example**](https://evidtech.com/forge/client-previews/workbench/)
+[Explore Evident](https://evidtech.com/) · [Discuss a project](https://evidtech.com/contact/) · [Explore FORGE](https://evidtech.com/forge/)
 
 ## What we build
 
-| Area | Our focus |
-| --- | --- |
-| **Websites & modernization** | Original, responsive business websites; clearer navigation, accessibility, and customer contact. |
-| **Business workflows** | Scoped customer intake, follow-up, estimating concepts, and operational handoffs designed around the people doing the work. |
-| **Identity & design assets** | Original digital marks, logo refinement, and corporate seal artwork with documented rights and deliverables. |
-| **Accountable software research** | Source-linked records, provenance, review history, and human-directed tools developed through the Evident Platform. |
+- **Professional websites:** new business sites and modernization, with clear content, responsive layouts, and useful customer contact.
+- **Original design and development:** identity artwork, interfaces, and tailored software through Evident FORGE.
+- **Business and contracting workflows:** scoped tools for intake, estimating, project information, and handoffs, subject to assessment and an agreed brief.
+- **Digital infrastructure:** systems designed around source ownership, maintainability, access boundaries, and practical operating guidance.
 
-Projects begin with a conversation. Scope, price, ownership, dependencies, review milestones, and launch responsibilities are agreed **before work begins**.
+Projects begin with scope, dependencies, price, review milestones, ownership, and delivery responsibilities agreed in writing. Accessibility and handoff requirements belong in that conversation from the start.
 
-## Products & research
+## One company, a connected platform
 
-- **Evident FORGE** — our website design and demonstration workbench. Public examples are starting points for discussion, not completed client deployments.
-- **Evident Platform / Evident ICU** — research and development toward clearer source review, evidence organization, chronology, and record provenance. These capabilities are **in development**, not advertised as certified forensic or legal services.
+**Evident FORGE** brings design studies and software demonstrations into the project conversation. An example illustrates an approach; it is not a customer deployment or a promise of an available service.
 
-We separate demonstrated functionality from planned features, source material from interpretation, and previews from approved releases.
+**Evident Platform** is the company's developing software foundation for source-linked information, review, and accountable workflows. Supporting tools are identified by their individual status rather than presented as a finished suite.
 
-[Explore the company and development work](https://evidtech.com/platform/) · [Partnership inquiries](https://evidtech.com/partnerships/)
+**Evident ICU** is evidence-oriented development focused on source records, organization, chronology, provenance, and review history. Availability and suitability require explicit confirmation. Software output does not establish legal conclusions, forensic certification, or court acceptance.
 
-## How we work
+## Work with us
 
-1. **Define the job.** Understand the need, constraints, deliverables, and acceptance criteria.
-2. **Respect ownership.** Identify source rights, account control, hosting dependencies, and handoff terms.
-3. **Build and review.** Keep changes traceable, test agreed behavior, and make uncertainties visible.
-4. **Release deliberately.** Deployment, publication, and ongoing services require their own approval.
+Bring your audience, current process, and desired outcome to a [project inquiry](https://evidtech.com/contact/). We welcome discussions with businesses, contractors, collaborators, and institutional partners. Existing engagements use their agreed private support channels.
 
-**Truth before persuasion. Structure before style. Integrity before convenience.**
+[Support and contact](https://github.com/evident-technologies/.github/blob/main/SUPPORT.md) · [Contribution and licensing policy](https://github.com/evident-technologies/.github/blob/main/CONTRIBUTING.md) · [Code of conduct](https://github.com/evident-technologies/.github/blob/main/CODE_OF_CONDUCT.md)
 
-## Repositories, security & contact
+External public code contributions are not accepted. Company-authored material requires an express reuse license; third-party components retain their own terms.
 
-This organization contains company-owned engineering work, documentation, and governance materials. **A repository being public does not automatically make its contents open source**; consult the license and contribution policy of each repository. Unsolicited external code contributions are not currently accepted.
+Report vulnerabilities privately to [security@evidtech.com](mailto:security@evidtech.com), following our [security policy](https://github.com/evident-technologies/.github/blob/main/SECURITY.md). Keep client records, credentials, privileged information, and private infrastructure out of public issues.
 
-Please report vulnerabilities **privately**, not through public issues or pull requests. See our [security disclosure policy](https://github.com/evident-technologies/.github/blob/main/SECURITY.md).
-
-- **Start a project:** [evidtech.com/contact](https://evidtech.com/contact/?intent=website)
-- **General inquiries:** [contact@evidtech.com](mailto:contact@evidtech.com)
-- **Security reports:** [security@evidtech.com](mailto:security@evidtech.com)
-- **Company:** [evidtech.com](https://evidtech.com)
-
-Evident Technologies LLC is an independent software and design company, not a law firm. Nothing here constitutes legal advice, forensic certification, or a guarantee of evidentiary or court acceptance.
-
----
-
-**Evident Technologies LLC · New Jersey, United States**
-
-*Build something worth standing behind.*
+Evident Technologies LLC · New Jersey, United States

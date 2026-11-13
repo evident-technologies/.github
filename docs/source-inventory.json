@@ -1,0 +1,372 @@
+{
+  "baseline": "743fc9ca2136ed0187f2730d5a736ba7fd88bae9",
+  "classification_note": "REPLACE is a future review disposition, not deletion authority. RETIRE now: none. PRIVATE-REVIEW preserves bytes and keeps findings outside Git.",
+  "files": [
+    {
+      "path": ".github/CODEOWNERS",
+      "classification": "KEEP",
+      "sha256": "c9b23738834e07d9e540ded57a9de25042ae6968b3d633ffcbc0160504abc3ff",
+      "preserve_bytes": true
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/bug_report.yml",
+      "classification": "KEEP",
+      "sha256": "cc33c4f82323b1492fb1697e9b75d64f6a2ede5052153dc394d825458c033376",
+      "preserve_bytes": true
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/config.yml",
+      "classification": "KEEP",
+      "sha256": "31abd16da75933c5568dd0cb537625389ff2adf491badb9e8cc65966e97b98c9",
+      "preserve_bytes": true
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/feature_request.yml",
+      "classification": "KEEP",
+      "sha256": "141465610efeee577dc42d47c6a4196e34b8d0d02b8a18230163129102ccbb5c",
+      "preserve_bytes": true
+    },
+    {
+      "path": ".github/PULL_REQUEST_TEMPLATE.md",
+      "classification": "REWRITE",
+      "sha256": "399ca54b93e2f5c567bf3cf608369a9b5ad13f937202362a5c33b8d62f3489f9",
+      "preserve_bytes": false
+    },
+    {
+      "path": ".github/copilot-instructions.md",
+      "classification": "REWRITE",
+      "sha256": "befb06c40840b652757f49ad28a7fbfb0b2b7cfc410565add024ab548a73538c",
+      "preserve_bytes": false
+    },
+    {
+      "path": ".github/dependabot.yml",
+      "classification": "KEEP",
+      "sha256": "7799d9876cf0cffdfaf9b30eb22e78215d169162f2383c443d96adcda992a869",
+      "preserve_bytes": true
+    },
+    {
+      "path": ".github/workflows/_archive/publish-packages.yml",
+      "classification": "PRIVATE-REVIEW",
+      "sha256": "25b4ba0b479a52fed46fa39f1d04beee7a742199d5774c67101972e1d430046f",
+      "preserve_bytes": true
+    },
+    {
+      "path": ".github/workflows/cloudflare-pages-release.yml",
+      "classification": "PRIVATE-REVIEW",
+      "sha256": "01cd2fb0d225afc83def302356ce326ef805accbad966ca0de51ce02171344b0",
+      "preserve_bytes": true
+    },
+    {
+      "path": ".github/workflows/governance-drift.yml",
+      "classification": "PRIVATE-REVIEW",
+      "sha256": "c733b43f66c6bfbe2867d9b61390ba2cc8ef87ad1648d74a411f9725e3b5d88b",
+      "preserve_bytes": true
+    },
+    {
+      "path": ".github/workflows/runner-contract.yml",
+      "classification": "PRIVATE-REVIEW",
+      "sha256": "737e89f1c8ad43c9bd18019ade2d16642a62fb60469f09053ca39bfd617cd2a7",
+      "preserve_bytes": true
+    },
+    {
+      "path": ".github/workflows/runner-implementation-validate.yml",
+      "classification": "PRIVATE-REVIEW",
+      "sha256": "4cb9a52d0dc9f82cf7d1878fa3805c5d603401127b534706d6e9bde208a36f07",
+      "preserve_bytes": true
+    },
+    {
+      "path": ".github/workflows/security-secret-scan.yml",
+      "classification": "PRIVATE-REVIEW",
+      "sha256": "0405a1c0611cc357f4811fd467036d0cbbee9748b8995b0f6ebbe2285395040b",
+      "preserve_bytes": true
+    },
+    {
+      "path": ".github/workflows/static-shell.yml",
+      "classification": "PRIVATE-REVIEW",
+      "sha256": "840a1a17becd382b16fb888c8a2a9291b878f1e51ce3ad527f97507980c4699e",
+      "preserve_bytes": true
+    },
+    {
+      "path": ".github/workflows/static-site-ci.yml",
+      "classification": "PRIVATE-REVIEW",
+      "sha256": "cd0e750615aac0413204e41bfeb421aba165e29f90a5253d11d9fc499c149080",
+      "preserve_bytes": true
+    },
+    {
+      "path": ".github/workflows/templates/security-secret-scan.yml",
+      "classification": "PRIVATE-REVIEW",
+      "sha256": "286889b7fbca07399923eb242a89e6ffa80c468b57a8b1cd8e441e0c499aaf8d",
+      "preserve_bytes": true
+    },
+    {
+      "path": ".github/workflows/templates/static-ci-app.yml",
+      "classification": "PRIVATE-REVIEW",
+      "sha256": "72551d490ec729868f6fd522db537eca80795ef2a4e53b1893f50c6a67b7aeb9",
+      "preserve_bytes": true
+    },
+    {
+      "path": ".github/workflows/templates/verify-all.yml",
+      "classification": "PRIVATE-REVIEW",
+      "sha256": "ddf43faf6ecd17d5612b709cabfb1aa27d5a4317aacff7c3b2f50546004198d5",
+      "preserve_bytes": true
+    },
+    {
+      "path": ".github/workflows/templates/verify-governance.yml",
+      "classification": "PRIVATE-REVIEW",
+      "sha256": "c299d0f7cb3f1967e5705dcc8976eb316efc5f1405d2b31c32a504f00c8b093e",
+      "preserve_bytes": true
+    },
+    {
+      "path": ".github/workflows/templates/verify-lint.yml",
+      "classification": "PRIVATE-REVIEW",
+      "sha256": "0927ec0d79d274211fb3e22466c53cf25d02f8685b2153a1f69b985d021d32ae",
+      "preserve_bytes": true
+    },
+    {
+      "path": ".github/workflows/templates/verify-tests.yml",
+      "classification": "PRIVATE-REVIEW",
+      "sha256": "1dfdcef4a009d7f9a882737feedc65151abc89e1bcebedc7335983c7a1cdcb4f",
+      "preserve_bytes": true
+    },
+    {
+      "path": ".github/workflows/templates/verify-types.yml",
+      "classification": "PRIVATE-REVIEW",
+      "sha256": "b050afdc57a1f09737999b6d87bd374666e6a0e38e1bf1ea5ae5f73c75c982b4",
+      "preserve_bytes": true
+    },
+    {
+      "path": ".github/workflows/validate.yml",
+      "classification": "PRIVATE-REVIEW",
+      "sha256": "4485e6cbdb142db4c1343a64044169709342a665ed5a595ca6f19dbc0d1ff9ff",
+      "preserve_bytes": true
+    },
+    {
+      "path": ".github/workflows/verify-governance.yml",
+      "classification": "PRIVATE-REVIEW",
+      "sha256": "d1fd12859a9ef5b7e1064685bf9a8db0a7c654a7d68f849e78544588420a2bf0",
+      "preserve_bytes": true
+    },
+    {
+      "path": ".github/workflows/verify-lint.yml",
+      "classification": "PRIVATE-REVIEW",
+      "sha256": "14d718f6ba8f1f4696892d6002ddc7e28161e224eb3d3e2bb46f68225eb10b84",
+      "preserve_bytes": true
+    },
+    {
+      "path": "CODE_OF_CONDUCT.md",
+      "classification": "REWRITE",
+      "sha256": "dd31c7d483e88d9d0ca149c2674aaa6a57b0b058b4a039922de2479eea02d2dc",
+      "preserve_bytes": false
+    },
+    {
+      "path": "CONTRIBUTING.md",
+      "classification": "REWRITE",
+      "sha256": "ac7b576974b814721ff5de498ee89a35b1a50e021c117602303131187aacb602",
+      "preserve_bytes": false
+    },
+    {
+      "path": "SECURITY.md",
+      "classification": "REWRITE",
+      "sha256": "556ddbfec0b5db8c970304ffb23e36684f39cfca89591736f9f6ae27d0b2e8de",
+      "preserve_bytes": false
+    },
+    {
+      "path": "SUPPORT.md",
+      "classification": "REWRITE",
+      "sha256": "d51847d6bd7e020dbc4e81b81dc5147170b90014be1d2b983418b6121db90859",
+      "preserve_bytes": false
+    },
+    {
+      "path": "VERIFY.md",
+      "classification": "REWRITE",
+      "sha256": "3db23c906c52f05a530f4f8b0472e472cc5e9b224bb99f62ce3957d464cb977d",
+      "preserve_bytes": false
+    },
+    {
+      "path": "WORKSPACE.md",
+      "classification": "REWRITE",
+      "sha256": "8d03294db6b39a5df6fe4b3e2fe880625e0e39136e23b065df26cf4dde6d2760",
+      "preserve_bytes": false
+    },
+    {
+      "path": "action-pins.json",
+      "classification": "KEEP",
+      "sha256": "f70350d246bf0a10f37f64afb4c2ac3195cca329c2cd007c7b9f37a1009c36e2",
+      "preserve_bytes": true
+    },
+    {
+      "path": "brand/README.md",
+      "classification": "REWRITE",
+      "sha256": "9aa73a136e6fa534060d7740d536bd11a5fbb460f93a40fb2445e313ddc80036",
+      "preserve_bytes": false
+    },
+    {
+      "path": "brand/brand.css",
+      "classification": "REWRITE",
+      "sha256": "dc0ea71da4517db7da343d0d89be4d7bdbb7b76cdba91de9ac290ba422254e5a",
+      "preserve_bytes": false
+    },
+    {
+      "path": "brand/evident-technologies-brandboard.png",
+      "classification": "REPLACE",
+      "sha256": "358a904c02d59679b3d1c2060ce12ee3fbc103bff42c684b4398d9649531cb35",
+      "preserve_bytes": true
+    },
+    {
+      "path": "brand/evident-technologies-brandboard.svg",
+      "classification": "REPLACE",
+      "sha256": "60f0c825670d58b5c70ec47604916f1a1aeb937ac062ff2308469e0193c0a0da",
+      "preserve_bytes": true
+    },
+    {
+      "path": "brand/evident-technologies-construction.svg",
+      "classification": "REPLACE",
+      "sha256": "6e0de98119250ac21eeba8540bfbbee344bab78b1b67933364b47ad1f14325ca",
+      "preserve_bytes": true
+    },
+    {
+      "path": "brand/evident-technologies-favicon-32.png",
+      "classification": "REPLACE",
+      "sha256": "dbc496696ab2842098fcacd8e5d70c097bb69b411f1ad0da4d56d497207c1fe8",
+      "preserve_bytes": true
+    },
+    {
+      "path": "brand/evident-technologies-icon-512.png",
+      "classification": "REPLACE",
+      "sha256": "f6c4a4db5497f1fa84258161c44a851239d123717b5bedd7455008245efd728b",
+      "preserve_bytes": true
+    },
+    {
+      "path": "brand/evident-technologies-icon-mono.svg",
+      "classification": "REPLACE",
+      "sha256": "08757c475a534989f5abfee3455ab7976150090c287091366e64bec8974a6bfb",
+      "preserve_bytes": true
+    },
+    {
+      "path": "brand/evident-technologies-icon.svg",
+      "classification": "REPLACE",
+      "sha256": "8f82334c64ea7050d39d13b82f78abb4335c8a111accb98749e7d69924214ba0",
+      "preserve_bytes": true
+    },
+    {
+      "path": "brand/evident-technologies-logo-mono.svg",
+      "classification": "REPLACE",
+      "sha256": "9b16a0f46946dc3bab3baba24a8fd2b7da31e0ecd0f19b104b1c89a20d4eaf2a",
+      "preserve_bytes": true
+    },
+    {
+      "path": "brand/evident-technologies-logo-primary.svg",
+      "classification": "REPLACE",
+      "sha256": "1467e6df3d3f25c5b5131f831b67247a41d6a5fd142661f834d132cbe0fff633",
+      "preserve_bytes": true
+    },
+    {
+      "path": "brand/evident-technologies-logo-reversed.svg",
+      "classification": "REPLACE",
+      "sha256": "1063e2fb0af6f223daec47ba7553c71ec69a640c03e29f630aea79bf1fcad9f0",
+      "preserve_bytes": true
+    },
+    {
+      "path": "brand/evident-technologies-logo-stacked.svg",
+      "classification": "REPLACE",
+      "sha256": "501ed772aa48723ef638ac0a3ae01579557b30e77754bfe4b3c11029d1921eb3",
+      "preserve_bytes": true
+    },
+    {
+      "path": "brand/evident-technologies-usage-icons.svg",
+      "classification": "KEEP",
+      "sha256": "a52ee463cab55d002b2f8fb1e8cb3aa7efce9813dc0921a944da8f0ddada108d",
+      "preserve_bytes": true
+    },
+    {
+      "path": "brand/evident-technologies-wordmark.svg",
+      "classification": "REPLACE",
+      "sha256": "e7c0ecb7d31d8d7743c1f569e5a471bbe500d132889d90332e2b2d222434c2bf",
+      "preserve_bytes": true
+    },
+    {
+      "path": "brand/manifest.json",
+      "classification": "REWRITE",
+      "sha256": "2a080b8cb1f42ef49d864319117ad442b533c168484f54cc8323403cd9b0473f",
+      "preserve_bytes": false
+    },
+    {
+      "path": "brand/package.json",
+      "classification": "KEEP",
+      "sha256": "87c739ee029801cc0c0b9f6cdf4b302e50012ebf7f95f0e75388c9cef62469ff",
+      "preserve_bytes": true
+    },
+    {
+      "path": "brand/tokens.json",
+      "classification": "REWRITE",
+      "sha256": "f00c136aa8138a0f9120eee44d5c9c389e96093e01bb04cbf25df502732d5c1c",
+      "preserve_bytes": false
+    },
+    {
+      "path": "docs/PRODUCT-WORKFLOW-ARCHITECTURE.md",
+      "classification": "REWRITE",
+      "sha256": "8f800ea37f6602306d9f26017c23b2b88f41c77180147904e910af3c8cfd6e58",
+      "preserve_bytes": false
+    },
+    {
+      "path": "docs/RUNNER-FABRIC.md",
+      "classification": "REWRITE",
+      "sha256": "0afa0f32ff529df23106c9cd5bb85336759062bc8f2a5b1afe05deeccc11a8a0",
+      "preserve_bytes": false
+    },
+    {
+      "path": "governance/runner-admission.json",
+      "classification": "PRIVATE-REVIEW",
+      "sha256": "d029c489d89f50c8cf94b36390e0c3f115ca18e84af3073df5ef4816c8760ba0",
+      "preserve_bytes": true
+    },
+    {
+      "path": "governance/runner-fabric.json",
+      "classification": "PRIVATE-REVIEW",
+      "sha256": "85fc4e26602075004ce5e57928b9ea659d6d468fbc679d791a32c3b851810a32",
+      "preserve_bytes": true
+    },
+    {
+      "path": "profile/README.md",
+      "classification": "REWRITE",
+      "sha256": "6188eea1bf29b886f3e0c438cd4978f65dd77f22e726be73f8969f939204ff89",
+      "preserve_bytes": false
+    },
+    {
+      "path": "profile/assets/evident-mark.svg",
+      "classification": "REPLACE",
+      "sha256": "5d52347baef128bb0e9ca2c6c4fbd382ceb1d795d3d6b8b94b165d63256ddd63",
+      "preserve_bytes": true
+    },
+    {
+      "path": "profile/assets/evident-wordmark-mono.svg",
+      "classification": "REPLACE",
+      "sha256": "60f0b2d6d336a3bc1b66fa7b629e4a389ec0ae0097eba46aa423f615504d50e3",
+      "preserve_bytes": true
+    },
+    {
+      "path": "profile/assets/evident-wordmark.svg",
+      "classification": "REPLACE",
+      "sha256": "a0cc3a0623ea612ae0839c89a644b09e634f66be015c8f64a3f599935c1ea514",
+      "preserve_bytes": true
+    },
+    {
+      "path": "scripts/README.md",
+      "classification": "REWRITE",
+      "sha256": "571a77e2dd0f63614f7842bb174ed487e9540c6b0a7caae17628bb2f9aefb988",
+      "preserve_bytes": false
+    },
+    {
+      "path": "scripts/ship.sh",
+      "classification": "KEEP",
+      "sha256": "48503fd8a35bbb3c1c7c0118d0ddcd523a679abedd32307dace3e76164a62717",
+      "preserve_bytes": true
+    },
+    {
+      "path": "scripts/validate-runner-fabric.py",
+      "classification": "KEEP",
+      "sha256": "7e7384ec914a15ca5c20c113ccac7d9e48627ba6ae5b04c94a771d43beb3f83a",
+      "preserve_bytes": true
+    }
+  ]
+}

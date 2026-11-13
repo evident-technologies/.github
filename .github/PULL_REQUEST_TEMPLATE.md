@@ -1,53 +1,36 @@
-<!--
-  Evident Technologies LLC — institutional pull request template.
+# Change review
 
-  This repository operates under controlled institutional governance. Pull
-  requests are reviewed by the LLC's authorized reviewers under CODEOWNERS.
-  External pull requests are not accepted; see CONTRIBUTING.md.
--->
+## Outcome and rationale
 
-## Summary
+<!-- State the concrete problem, resulting behavior, and why the change is needed. -->
 
-<!-- One paragraph. State the change, not the motivation. Reserve motivation for "Rationale". -->
+## Scope and dependencies
 
-## Rationale
-
-<!-- The operational, technical, or governance reason this change exists. -->
-
-## Scope and blast radius
-
-- **Repositories or packages affected:**
-- **Downstream consumers:**
-- **Reversibility:** <!-- additive / reversible / destructive — state explicitly -->
+- Exact paths and repositories affected:
+- Downstream consumers and immutable source revisions:
+- Reversibility and retained source:
+- Related PRs or decisions:
 
 ## Verification
 
-<!-- Deterministic verification performed before requesting review. -->
+<!-- List actual commands and results, including failures, skips, and manual limits. Do not mark checks that did not run. Application build/type checks may be N/A for documentation. -->
 
-- [ ] Local build passes
-- [ ] Lint passes with zero warnings
-- [ ] Type-check passes with zero errors
-- [ ] Tests pass (existing and new)
-- [ ] Manual verification performed where automation is insufficient
+- [ ] Applicable repository checks completed
+- [ ] Links, assets, and rendered content inspected where affected
+- [ ] Source, rights, and dependency records checked
+- [ ] Sensitive information excluded from the public diff and description
+- [ ] Remaining approvals and verification limits stated
 
-**Verification commands run:**
+## Governance
 
-```
-<!-- exact commands -->
-```
+- [ ] Manager review identified for policy, legal, security, or governance revisions
+- [ ] Evidence-integrity or custody changes have explicit authorization
+- [ ] No unapproved runner, credential, environment, or production changes
+- [ ] CODEOWNERS, branch protection, and required checks remain effective
+- [ ] External dependencies and their licenses disclosed
 
-## Rollback plan
+## Rollback and approval
 
-<!-- Concrete rollback steps. If rollback is non-trivial, state why and how the change is gated. -->
+<!-- Identify the prior revision, exact restoration scope, and any downstream pin changes. Keep private findings outside this PR. -->
 
-## Governance checklist
-
-- [ ] Change does not modify governance, security, or legal documents without Manager review
-- [ ] Change does not alter audit, custody, or evidence-integrity surfaces without explicit approval
-- [ ] Change does not introduce new external dependencies without disclosure
-- [ ] Change does not weaken branch protection, CODEOWNERS, or required CI status
-- [ ] Secrets, credentials, and personally identifying information are absent from the diff
-
-## Related
-
-<!-- Linked issues, prior PRs, or governance records. Use plain references; do not auto-close issues unless intentional. -->
+Founder or authorized reviewer approval is required before acceptance. Merge and release are separate decisions. External code contributions remain subject to [CONTRIBUTING.md](../CONTRIBUTING.md).

@@ -1,0 +1,207 @@
+{
+  "baseline": "743fc9ca2136ed0187f2730d5a736ba7fd88bae9",
+  "retired_assets": [],
+  "files": [
+    {
+      "path": ".github/PULL_REQUEST_TEMPLATE.md",
+      "change": "modified",
+      "sha256": "8273fc0680d8b12618c770f965effe0e9a3f08c4589556b9f2ed622978e12b93"
+    },
+    {
+      "path": ".github/copilot-instructions.md",
+      "change": "modified",
+      "sha256": "915807e88a7098288a5d62c88ebe60398c9722cc49bbd3cdedac782a0fd80a2e"
+    },
+    {
+      "path": "CODE_OF_CONDUCT.md",
+      "change": "modified",
+      "sha256": "646966151e916d38e433caa64d7d2b4d59bc5bdec202d5ba857c8b7e3e6cfbae"
+    },
+    {
+      "path": "CONTRIBUTING.md",
+      "change": "modified",
+      "sha256": "1bfe1de421f705f8aeff228d7afc7e91d95b114f31cade4b9b9350b0ead8b25c"
+    },
+    {
+      "path": "README.md",
+      "change": "added",
+      "sha256": "2d636a7b413baccd06fd0a74aff882c4feaa3d6d3e22dc3a85f3ad961a525438"
+    },
+    {
+      "path": "SECURITY.md",
+      "change": "modified",
+      "sha256": "cadafda45a7e9845afe41cf057b67f6b68c910fb05df33a459bdec5242c61c2d"
+    },
+    {
+      "path": "SUPPORT.md",
+      "change": "modified",
+      "sha256": "e70316e8c4f43c6c39a9f4f598feab7adcbc8263ba6eb378e01b09fa860b4f94"
+    },
+    {
+      "path": "VERIFY.md",
+      "change": "modified",
+      "sha256": "149ef96fbac84749633cc7c2704f1b9d0352be48762b7172b22bb5fcb25a251e"
+    },
+    {
+      "path": "WORKSPACE.md",
+      "change": "modified",
+      "sha256": "d121a51df4ad7b9b940962cdd86839dc5191da3f918a6d266e747c593fe87374"
+    },
+    {
+      "path": "brand/README.md",
+      "change": "modified",
+      "sha256": "351e57f40bc71917ed683874e6ca6e5f4648e136b81dd26f5fdf9621ef0e284a"
+    },
+    {
+      "path": "brand/brand.css",
+      "change": "modified",
+      "sha256": "7bebc050b168f602f78c4bef95c0a8e83036e5127065145f0d32268d36709c9b"
+    },
+    {
+      "path": "brand/candidates/README.md",
+      "change": "added",
+      "sha256": "4e3e654f9e63cd084cedd419af17baca2331065bac32f7aa3791cf887ded7988"
+    },
+    {
+      "path": "brand/candidates/candidate-a-lockup-dark.svg",
+      "change": "added",
+      "sha256": "24684cb9514d27f794e1a6ef20a9f1d89361bafb51ff6e9852d25e095787af12"
+    },
+    {
+      "path": "brand/candidates/candidate-a-lockup-light.svg",
+      "change": "added",
+      "sha256": "539c1fece9e1b4fc88e033c082b7d348a572a1d68b13726814265fb464d3b8f7"
+    },
+    {
+      "path": "brand/candidates/candidate-a-mark.svg",
+      "change": "added",
+      "sha256": "42d1c85dd14fb89537355fdef405beb6e5efef9c262d8a02a39a41f6bdc30b26"
+    },
+    {
+      "path": "brand/candidates/candidate-a-mono.svg",
+      "change": "added",
+      "sha256": "5f4acabf1613f6f1b6b8111966804eb5722e961da11eb05eb77c10cff958bc5d"
+    },
+    {
+      "path": "brand/candidates/candidate-a-reversed.svg",
+      "change": "added",
+      "sha256": "70425a5c3db4b8671ef774b01c776ac321f48d61c9a7922a049a1e14e1c32669"
+    },
+    {
+      "path": "brand/candidates/candidate-b-lockup-dark.svg",
+      "change": "added",
+      "sha256": "92a0164b19a680d36c89dd48308ddea0a93c244ad1b9c885229e6ee9df1d16a9"
+    },
+    {
+      "path": "brand/candidates/candidate-b-lockup-light.svg",
+      "change": "added",
+      "sha256": "1c49704a202581b72f751375570a69bd582dacf16fb068adf094fc681bfda323"
+    },
+    {
+      "path": "brand/candidates/candidate-b-mark.svg",
+      "change": "added",
+      "sha256": "f2aacdbd2e367aa1d5f29abe4a8e5bd7632e7c95c93bb4656e1b87cf9688b5fc"
+    },
+    {
+      "path": "brand/candidates/candidate-b-mono.svg",
+      "change": "added",
+      "sha256": "4cf60053f6bb5218d60829f25d9c0fa8ede09cbbdd73159e579f6f0d45c7a6a1"
+    },
+    {
+      "path": "brand/candidates/candidate-b-reversed.svg",
+      "change": "added",
+      "sha256": "6414b23f33c46c8df919d836037773e848b169fe2d085b7c7a291cdf2c7699bd"
+    },
+    {
+      "path": "brand/candidates/identity-review.svg",
+      "change": "added",
+      "sha256": "ee3adb10a19be4c61dd8f33211d2ea7b52c5f0dd2081141cb0ca6c709c0894a9"
+    },
+    {
+      "path": "brand/candidates/manifest.json",
+      "change": "added",
+      "sha256": "04138a169b8e0aa48f5f057e24b6936a22d510951fd3d4a6677f6dd981585f26"
+    },
+    {
+      "path": "brand/candidates/tokens.json",
+      "change": "added",
+      "sha256": "52a8f1266cdb0b8ac7080876744da52003f887f686bf80c87b0181adf9f333c8"
+    },
+    {
+      "path": "brand/manifest.json",
+      "change": "modified",
+      "sha256": "a090130cc6df74354e194698a616cbd9d06f3700009c807f53e0bb8a459bd7c6"
+    },
+    {
+      "path": "brand/source-inventory.json",
+      "change": "added",
+      "sha256": "39b5cb5b23f6a93405eaedb3c2ce45808464a98b256c37e01f3115aa15cda7d7"
+    },
+    {
+      "path": "brand/tokens.json",
+      "change": "modified",
+      "sha256": "b9dad417a09d845c18a072ea9aba89ff79c3595f545aeb70520c5a9f4d2ad536"
+    },
+    {
+      "path": "docs/COMPANY.md",
+      "change": "added",
+      "sha256": "a33d531ed412dfa5e2c635dcbd3aa633f3c18fe4205764fbd087c394e7fec44c"
+    },
+    {
+      "path": "docs/POLICY-REVIEW.md",
+      "change": "added",
+      "sha256": "03901dca56df52cd2b415bcb1b4445b9de13b01f4b101199d87688095158874a"
+    },
+    {
+      "path": "docs/PRODUCT-WORKFLOW-ARCHITECTURE.md",
+      "change": "modified",
+      "sha256": "fd212648d32c8d25bfdbe6b6fef58f9aab581d24eb8b4acbd097eb66fabb50f6"
+    },
+    {
+      "path": "docs/RECONSTRUCTION-REVIEW.md",
+      "change": "added",
+      "sha256": "d7ce71a74dd3cbeadcdd6f139507d95307f3eb5deecc3e15626fcfcca600ebf8"
+    },
+    {
+      "path": "docs/RUNNER-FABRIC.md",
+      "change": "modified",
+      "sha256": "f484d0c423f0f53e2ccc4f0600880d73cd3edbd88afcc77fb933b58d2904ad5f"
+    },
+    {
+      "path": "docs/SERVICES.md",
+      "change": "added",
+      "sha256": "0e18bf8f987352840df93c8ee86ddfae0c82ee792a0bd71ebea89ef7654395ee"
+    },
+    {
+      "path": "docs/VISUAL-REVIEW.md",
+      "change": "added",
+      "sha256": "a428cda07b00743af680563690fdf96203d315ac7053ab7532e6874c7c7dd492"
+    },
+    {
+      "path": "docs/change-manifest.json",
+      "change": "added",
+      "sha256": null,
+      "note": "Self digest omitted; Git commit binds this manifest."
+    },
+    {
+      "path": "docs/source-inventory.json",
+      "change": "added",
+      "sha256": "afe8412ca728c61ce2d3a22090fc1463cba522c5bded34825e8efa02d4d8a443"
+    },
+    {
+      "path": "profile/README.md",
+      "change": "modified",
+      "sha256": "2619e58ababe0c81a2a623c5708ac3d00cd807cb95d6daeb2af034da89e965e4"
+    },
+    {
+      "path": "scripts/README.md",
+      "change": "modified",
+      "sha256": "4b704afa91e1918ecec5015519c225bb86974f50b5eb12a4ab9cbebab5d418cc"
+    },
+    {
+      "path": "scripts/verify-public-source.py",
+      "change": "added",
+      "sha256": "d082605b31f2b82f070948e123264d179705e7070616a79d30f035ddde3debcf"
+    }
+  ]
+}

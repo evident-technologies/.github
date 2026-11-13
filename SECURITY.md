@@ -1,185 +1,60 @@
-# Security Policy — Evident Technologies LLC
+# Security policy
 
-**Effective Date:** 2026-06-12
-**Governing Entity:** Evident Technologies LLC, a New Jersey Limited Liability Company
+**Owner:** Evident Technologies LLC, New Jersey, United States.
 
----
-
-## Purpose
-
-Evident Technologies LLC builds software for accountable records, evidence organization, chronology review, provenance tracking, and operational integrity.
-
-Security reports are handled through private, coordinated disclosure.
-
-This policy exists to provide a clear reporting path without exposing internal architecture, deployment details, provider choices, client data, operational workflows, or security controls.
-
----
+**Revision status:** Editorial modernization proposed for Manager review. Reporting boundaries and disclosure targets are retained from the policy effective June 12, 2026.
 
 ## Scope
 
-This policy applies to public repositories and software surfaces maintained by Evident Technologies LLC.
+This policy applies to public repositories and software surfaces maintained by Evident Technologies LLC. Current public and production-facing surfaces are eligible for reporting. Older prototypes, archives, experiments, and generated artifacts may not receive active remediation unless they affect a current surface. If uncertain, report privately.
 
-Public materials may reference Evident Technologies products, documentation, demonstrations, and related software surfaces. Specific implementation details, service wiring, deployment topology, provider configuration, private workflows, security controls, and operational runbooks are intentionally not disclosed in this policy.
+Public documentation does not disclose private architecture, provider configuration, deployment topology, credentials, client information, or operational runbooks. Repository visibility is not authorization to test private systems.
 
-When in doubt, report privately first.
+## Report privately
 
----
+Send reports to [security@evidtech.com](mailto:security@evidtech.com) with the subject `[SECURITY]` and a brief description. GitHub private vulnerability reporting may also be used where enabled. The company does not operate a public bug bounty.
 
-## Reporting a Vulnerability
+Do not report vulnerabilities through public issues, PRs, discussions, social media, public comments, or public proof-of-concept releases.
 
-Evident Technologies LLC does not operate a public bug bounty program.
+Include the affected surface and revision, safe reproduction steps, potential impact, and contact details if follow-up or credit is desired. Screenshots, logs, and proofs of concept can help, but do not send credentials, private keys, client records, personal information, privileged material, or third-party data. Describe sensitive circumstances at a high level first and wait for transfer instructions.
 
-Security vulnerabilities should be reported privately.
+## Research boundaries
 
-**Email:** `security@evidtech.com`
-**Subject:** `[SECURITY] <brief description>`
+- Do not access, copy, retain, modify, delete, or disclose another party's data.
+- Do not bypass authorization beyond minimal proof-of-concept verification.
+- Do not perform denial-of-service, social engineering, or physical testing.
+- Do not exfiltrate credentials, secrets, records, or files.
+- Do not test third-party systems without written authorization.
+- Do not interfere with production, users, investigations, legal matters, or records under review.
+- Do not publish exploit details before coordinated remediation.
 
-If GitHub private vulnerability reporting is enabled for a repository, it may also be used. Otherwise, use the email above.
+If sensitive data is encountered accidentally, stop, do not retain or share it, and report what happened through the private security address.
 
-Do **not** report security vulnerabilities through public GitHub issues, pull requests, discussions, social media posts, public comments, or public proof-of-concept releases.
+## Coordinated disclosure
 
----
+Reports are triaged according to severity, exploitability, affected surface, exposure, and impact on integrity, confidentiality, availability, or trust.
 
-## What to Include
+| Step | Good-faith target |
+| --- | --- |
+| Acknowledge receipt | Within 3 business days |
+| Initial triage | Within 10 business days |
+| Remediation plan or status | As appropriate to severity and complexity |
+| Public disclosure | After remediation or an agreed timeline |
 
-A useful report should include:
+These targets are not guaranteed deadlines. Changes affecting records, identity, access controls, or audit history may require additional time. Private workspaces, authentication, authorization, sessions, credentials, cross-tenant or cross-workspace exposure, record integrity, exports, review history, personal information, and public disclosure of private operational details may require heightened handling.
 
-* A brief description of the issue
-* The affected repository, URL, package, or product surface
-* Steps to reproduce, if safe to provide
-* Potential impact
-* Screenshots, logs, or proof-of-concept details where appropriate
-* Your contact information if you want follow-up or credit
+Do not disclose a vulnerability publicly until the company confirms remediation or agrees to a timeline. Disclosure may be delayed to protect users, records, infrastructure, and remediation work.
 
-Do not include secrets, private keys, tokens, client records, personal data, privileged material, or third-party data in the report unless absolutely necessary to explain the issue.
+## Safe harbor
 
-If sensitive material is involved, describe the situation at a high level first and wait for instructions.
+Evident Technologies LLC does not intend to pursue legal action against researchers who act in good faith and comply with this policy. Good-faith research means reporting privately and promptly, avoiding access to or retention of another party's data, avoiding disruption, limiting exploitation to necessary verification, and allowing a reasonable opportunity to investigate and remediate before public disclosure.
 
----
+Safe harbor does not apply to malicious activity, extortion, unauthorized data access or retention, disclosure before coordination, service disruption, social engineering, or activity outside this policy's boundaries.
 
-## Research Boundaries
+## Contact and terms
 
-Do not:
+Security: [security@evidtech.com](mailto:security@evidtech.com). Legal notices: [legal@evidtech.com](mailto:legal@evidtech.com). Other inquiries: [operations@evidtech.com](mailto:operations@evidtech.com).
 
-* Access, copy, retain, modify, delete, or disclose data that is not yours
-* Attempt to bypass authorization beyond minimal proof-of-concept verification
-* Perform denial-of-service testing
-* Perform social engineering
-* Perform physical security testing
-* Exfiltrate secrets, tokens, credentials, records, or files
-* Test third-party systems without written authorization
-* Publish exploit details before coordinated remediation
-* Interfere with production systems, active users, investigations, legal matters, or records under review
+This policy provides no legal advice, representation, forensic certification, evidentiary guarantee, court-acceptance guarantee, or professional-service commitment. It creates no attorney-client, professional-services, fiduciary, employment, or contractor relationship and no entitlement to compensation.
 
-If you accidentally access sensitive data, stop immediately, do not retain or share it, and report what happened to `security@evidtech.com`.
-
----
-
-## Coordinated Disclosure
-
-Evident Technologies LLC follows a private, coordinated disclosure process.
-
-Good-faith reports will be reviewed and triaged based on severity, exploitability, affected surface, exposure, and potential impact to record integrity, confidentiality, availability, or user trust.
-
-Expected process:
-
-| Step                              | Target                                    |
-| --------------------------------- | ----------------------------------------- |
-| Acknowledge receipt               | Within 3 business days                    |
-| Initial triage                    | Within 10 business days                   |
-| Remediation plan or status update | As appropriate to severity and complexity |
-| Coordinated public disclosure     | Only after remediation or agreed timing   |
-
-These are good-faith targets, not guaranteed deadlines.
-
-Some issues may require additional time to remediate safely, especially where changes could affect records, audit history, identity, access control, or operational integrity.
-
----
-
-## Sensitive Issue Categories
-
-Some reports may require heightened handling even if they do not fit neatly into a standard severity score.
-
-Examples include:
-
-* Unauthorized access to private records or restricted workspaces
-* Weaknesses affecting authentication, authorization, or session handling
-* Exposure of secrets, tokens, credentials, or private configuration
-* Integrity issues affecting source records, derived records, logs, exports, or review history
-* Cross-tenant or cross-workspace data exposure
-* Unsafe handling of personally identifiable information
-* Public disclosure of private operational details
-
-Reports in these categories should be submitted privately and handled with extra care.
-
----
-
-## Safe Harbor
-
-Evident Technologies LLC does not intend to pursue legal action against researchers who act in good faith and comply with this policy.
-
-Good-faith research means:
-
-1. You report the issue privately and promptly
-2. You avoid accessing or retaining data that is not yours
-3. You do not disrupt systems or users
-4. You do not exploit the issue beyond what is necessary to verify it
-5. You give Evident Technologies LLC a reasonable opportunity to investigate and remediate before public disclosure
-
-This safe harbor does not apply to malicious activity, extortion, unauthorized data access, data retention, public disclosure before coordination, disruption of services, social engineering, or activity outside the boundaries of this policy.
-
----
-
-## Supported Surfaces
-
-The current public and production-facing software surfaces maintained by Evident Technologies LLC are eligible for security reporting.
-
-Older prototypes, archived materials, dormant experiments, generated artifacts, and historical references may not receive active remediation unless they affect a current public or production-facing surface.
-
-If you are unsure whether something is supported, report it privately.
-
----
-
-## Public Disclosure
-
-Do not publicly disclose a vulnerability until Evident Technologies LLC has confirmed remediation or agreed to a disclosure timeline.
-
-Public disclosure may be delayed where immediate publication could expose users, records, infrastructure, or ongoing remediation efforts to unnecessary risk.
-
----
-
-## Contact
-
-| Channel              | Address                                                     |
-| -------------------- | ----------------------------------------------------------- |
-| Security disclosures | [`security@evidtech.com`](mailto:security@evidtech.com)     |
-| Legal notices        | [`legal@evidtech.com`](mailto:legal@evidtech.com)           |
-| General inquiries    | [`operations@evidtech.com`](mailto:operations@evidtech.com) |
-
----
-
-## Legal Notice
-
-Evident Technologies LLC is a software company.
-
-Nothing in this policy constitutes legal advice, legal representation, forensic certification, evidentiary guarantees, court acceptance guarantees, or professional services.
-
-This policy does not create an attorney-client relationship, professional-services relationship, fiduciary relationship, employment relationship, contractor relationship, or entitlement to compensation.
-
-Evident Technologies LLC may revise this policy at any time.
-
-The current version is the version published in the default branch of the relevant repository.
-
----
-
-<p align="center">
-  <sub>
-    Evident Technologies LLC · New Jersey, United States
-  </sub>
-</p>
-
-<p align="center">
-  <sub>
-    Private reports. Coordinated fixes. No public exploit theater.
-  </sub>
-</p>
+The company may revise this policy. The version in the relevant repository's default branch is the published version. Proposed editorial changes and policy questions appear in the [policy review](docs/POLICY-REVIEW.md).

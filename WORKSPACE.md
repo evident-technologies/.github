@@ -1,45 +1,31 @@
-# .github Org Meta-Repo
+# Repository workspace
 
-## What this repository contains
+This public repository belongs to Evident Technologies LLC. It contains the organization profile, community policies, brand source, workflow mechanisms, and runner-governance pointers. Start with the [repository guide](README.md).
 
-Organization-level governance artifacts for Evident Technologies:
+## Source ownership
 
-- Reusable CI workflow templates (`.github/workflows/templates/`)
-- Governance drift detection (`.github/workflows/governance-drift.yml`)
-- Central version manifest (`versions.json`)
-- Org profile and community health files
+| Path | Responsibility |
+| --- | --- |
+| `profile/` | GitHub organization introduction |
+| `brand/` | Existing identity assets and unapproved candidates |
+| Root policies | Contributions, conduct, disclosure, and inquiry routing |
+| `.github/` | Issue forms, CODEOWNERS, review guidance, and Actions source |
+| `governance/` | Workflow implementation contracts and authority pointers |
+| `docs/` | Company scope and repository responsibilities |
+| `scripts/` | Local checking helper and source validators |
 
-## How to operate this system
+Product repositories own their source, dependencies, releases, and rollback. This repository does not host private client records or product deployments.
 
-```bash
-# Check environment health
-./scripts/doctor.sh
+## Working safely
 
-# Validate org-level artifacts
-./scripts/bootstrap.sh
+Inspect branch, HEAD, worktrees, and dirty paths before editing. Preserve existing work and use the established Evident lane and checkpoint controls. Keep one worktree, branch, and reviewable PR for the agreed objective. Review exact paths before staging.
 
-# Mirror and clone every org repo locally (run once per machine)
-./scripts/ws-sync.sh
+Founder clones normally live under `~/workspace/evident-technologies`. Existing operator commands include `repos`, `repo`, `et work`, `et shell`, and `et runners`. Do not automatically pull or replace a checkout. Preserve recovery worktrees.
 
-# Add workspace shortcuts to your shell (run once per machine)
-echo 'source ~/workspace/bin/ws-shortcuts.sh' >> ~/.bashrc
-source ~/workspace/bin/ws-shortcuts.sh
-```
+Run [VERIFY.md](VERIFY.md) from the repository root. There is no root application package or application build. Brand package metadata does not establish package publication.
 
-## Architecture
+## Authority boundaries
 
-- `.github/workflows/templates/` — reusable workflow templates consumed by other repos
-- `.github/workflows/governance-drift.yml` — daily scheduled org governance audit
-- `versions.json` — central version governance manifest
-- `scripts/` — operational verbs (bootstrap, doctor, workspace sync)
-- `scripts/ws-sync.sh` — mirror-first repo sync; bare mirrors at `~/.mirrors/`, working clones at `~/workspace/`
-- `scripts/ws-shortcuts.sh` — shell aliases: `ws <repo>`, `repos`, `gpush` (mirror → origin)
-- `scripts/pre-push` — safety hook installed by ws-sync; blocks >50 MB blobs and secret-like paths
-- `brand/` — institutional brand assets (logos, tokens, CSS, npm package)
+CODEOWNERS and protected review govern acceptance in this repository. Supported community health files can supply defaults to repositories without their own file of that type. They do not supply an inherited license or CODEOWNERS rule. See [GitHub’s default-file behavior](https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/creating-a-default-community-health-file). Documentation grants no runner access, credentials, environment approval, or deployment permission. See the [runner boundary](docs/RUNNER-FABRIC.md).
 
-## Boundaries
-
-- This repo does NOT contain product code
-- This repo does NOT have a package.json or build step
-- Workflow templates are consumed via `uses:` in downstream repos
-- Changes to templates have cross-repo blast radius — PR review required
+Commit, push, workflow dispatch, merge, and deployment are separate actions. Use only those authorized for the current task. Keep restricted findings and private operational records outside Git and public Actions output.

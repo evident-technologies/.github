@@ -1,36 +1,29 @@
-# Verify
+# Verification
 
-How to confirm this repository is in a healthy operational state.
-
-## Quick verification
+Run these checks from the repository root. They inspect source without installing hooks, dispatching workflows, publishing packages, or deploying products.
 
 ```bash
-./scripts/doctor.sh
+python3 scripts/validate-runner-fabric.py
+python3 scripts/verify-public-source.py
+bash -n scripts/ship.sh
+git diff --check
 ```
 
-## Full verification
+The public-source verifier checks Markdown destinations, JSON, SVG structure and resource restrictions, image dimensions, brand manifests and fingerprints, candidate contrast, and preservation of automation against the recorded reconstruction baseline. Python 3 is required. YAML checks additionally need PyYAML; unavailable tooling is reported explicitly.
 
 ```bash
-./scripts/bootstrap.sh
+bash scripts/ship.sh check
+shellcheck -S warning scripts/ship.sh
 ```
 
-## Doctor output contract
+The legacy `ship` helper checks changed files. Its regex scanner is incomplete and may print matching content; run it after a private exposure review. Its `check` subcommand does not commit or push. See [script behavior](scripts/README.md).
 
-```
-doctor_version=1
-git=X.X.X
-gh=X.X.X
-node=vXX.X.X
-git_status=clean|dirty|unavailable
-versions_json=present|missing
-workflow_templates=N
-drift_detection=active|missing
-repo_posture=org-governance
-```
+## Manual and provider verification
 
-Exit 0 = healthy: `git`, `gh`, and `node` are present, `git_status=clean`, `versions_json=present`, and `drift_detection=active`. Exit 1 = remediation required.
+Inspect rendered Markdown, mobile and desktop wrapping, alternative text, and light/dark assets. Inspect candidate marks at 16, 24, 48, and 128 pixels. An XML parse does not establish visual quality, trademark clearance, accessibility conformance, or founder approval.
 
-## Cross-repo impact
+Check public destinations with bounded requests. Record redirects, forbidden responses, and inaccessible pages individually. HTTP success proves reachability at that time, not a working form or product entitlement.
 
-Changes to workflow templates or versions.json affect all downstream consumers.
-Always check blast radius before merging.
+Use `actionlint` where available. Nested workflow templates and archived examples are source material, not callable top-level entry points. Live runner groups, reusable-workflow access, environments, and credentials require verification through their authorized owners before operational enforcement can be claimed.
+
+Record exact commands, revision, failures, skips, and manual limits in the [reconstruction review](docs/RECONSTRUCTION-REVIEW.md). Missing historical bootstrap, doctor, and version-manifest files are not prerequisites for the commands above.
