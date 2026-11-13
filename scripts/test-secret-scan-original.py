@@ -1,12 +1,13 @@
 # Recovered original 38-case behavior matrix, SHA-256 dd57745bcf3fa516a0b052793b6ba6a8f3aca8be31fc9ba72756a16cca055c4a.
 # Portability: paths from source/env; synthetic key strings constructed; per-file fault
-# injector covers committed-blob reads. All 38 case names/expectations preserved.
+# injector covers committed-blob reads; stdlib extracts the exact run block.
+# All 38 case names/expectations preserved; no third-party Python dependency.
 from pathlib import Path
-import subprocess,os,json,yaml,tempfile,shutil,csv
+import subprocess,os,json,tempfile,shutil,csv,textwrap
 receipt=Path(os.environ['SECRET_SCAN_RECEIPT']);receipt.mkdir(parents=True,exist_ok=True)
 workflow=Path(__file__).resolve().parents[1]/'.github/workflows/security-secret-scan.yml'
 def run_matrix(label):
- d=yaml.safe_load(workflow.read_text());step=next(s for s in d['jobs']['secret-scan']['steps'] if s.get('name')=='Run secret scan');body=step['run']
+ body=textwrap.dedent(workflow.read_text().split('      - name: Run secret scan\n',1)[1].split('        run: |\n',1)[1])
  envbase=dict(os.environ);envbase.update(GIT_CONFIG_GLOBAL='/dev/null',GIT_CONFIG_SYSTEM='/dev/null',GIT_CONFIG_NOSYSTEM='1')
  fixtures=receipt/('fixtures-'+label);fixtures.mkdir(mode=0o700,exist_ok=True)
  repo=fixtures/'git';repo.mkdir(exist_ok=True)
@@ -16,7 +17,7 @@ def run_matrix(label):
   return r.stdout.strip()
  git('init','--template=','-b','fixture')
  (repo/'source.txt').write_text('ordinary original source\n');git('add','--','source.txt');git('-c','user.name=Synthetic Fixture','-c','user.email=fixture@example.invalid','-c','commit.gpgsign=false','commit','-m','synthetic baseline');base=git('rev-parse','HEAD')
- aws='AKIA'+'A'*16;gh='ghp_'+'A'*36;jwt='eyJSyntheticHeader.eyJSyntheticPayload.SyntheticSignature';pk='-----BEGIN '+'PRIVATE KEY-----'
+ aws='AKIA'+'A'*16;gh='ghp_'+'A'*36;jwt='eyJ'+'SyntheticHeader.'+'eyJ'+'SyntheticPayload.SyntheticSignature';pk='-----BEGIN '+'PRIVATE KEY-----'
  # All values are synthetic; none are used for authentication or transmitted.
  filenames=['ordinary.txt','space name.txt','line\nbreak.txt','quote\"name.txt','literal[glob]*.txt','--option.txt','unicode-é.txt']
  for n in filenames:(repo/n).write_text('ordinary changed content\n')
