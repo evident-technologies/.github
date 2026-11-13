@@ -13,7 +13,8 @@
 
 ## Verification
 
-<!-- List actual commands and results, including failures, skips, and manual limits. Do not mark checks that did not run. Application build/type checks may be N/A for documentation. -->
+<!-- List actual commands and results, including failures, skips, and manual limits.
+Do not mark checks that did not run. Application build/type checks may be N/A for documentation. -->
 
 - [ ] Applicable repository checks completed
 - [ ] Links, assets, and rendered content inspected where affected
@@ -31,6 +32,9 @@
 
 ## Rollback and approval
 
-<!-- Identify the prior revision, exact restoration scope, and any downstream pin changes. Keep private findings outside this PR. -->
+<!-- Identify the prior revision, restoration scope, and downstream pin changes.
+Keep private findings outside this PR. -->
 
-Founder or authorized reviewer approval is required before acceptance. Merge and release are separate decisions. External code contributions remain subject to [CONTRIBUTING.md](../CONTRIBUTING.md).
+Founder or authorized reviewer approval is required before acceptance. Merge and release are
+separate decisions. External code contributions remain subject to
+[CONTRIBUTING.md](../CONTRIBUTING.md).

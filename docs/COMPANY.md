@@ -1,29 +1,55 @@
-# Company, products, and status
+# Company, capabilities, and status
 
-Evident Technologies LLC is an independent American engineering, contracting, software, design, and digital infrastructure company founded in New Jersey. This describes the company's direction and scope, not a claim of professional licensure or universal product availability.
+Evident Technologies LLC — Clear systems. Accountable technology.
 
-## Current project work
+Evident is an independent, founder-led American technology company founded in New Jersey. Its work
+spans digital engineering, computational infrastructure, professional software, original design,
+evidence-conscious systems, and reusable business workflows.
 
-The public company site offers project discussions for websites, modernization, original identity artwork, and business workflows. A project is available only after scope, delivery capacity, terms, and required access have been agreed. Connected systems and contracting-related software require assessment.
+## Services and development
 
-## Product relationships
+Website, design, and workflow projects require an agreed scope, available delivery capacity,
+appropriate access, and written terms. Contracting-related tools can address intake, estimating,
+project information, and handoffs after assessment. A demonstration is not a finished customer
+deployment or a public self-service product.
 
-| Name | Role | Public status |
+## One company and one Platform
+
+The institutional direction is **ONE COMPANY · ONE PLATFORM · ONE TRUST SPINE · MANY PRODUCTS**.
+This means shared accountability and authorization, not one process, repository, or uniform release
+status.
+
+| Name | Responsibility | Maturity statement |
 | --- | --- | --- |
-| Evident Technologies LLC | Company and contracting party | Project inquiries through the corporate site |
-| Evident FORGE | Original design/development practice and demonstrations | Public examples; engagements scoped individually |
-| Evident Platform | Shared direction for connected software and accountable work | In development; no blanket self-service availability claim |
-| Evident ICU | Evidence-oriented organization and review software | In development; access and capability require confirmation |
-| Supporting tools | Focused components and experiments under the Platform | Status established per tool and revision |
+| Evident Technologies LLC | Institution and accountable contracting party | Independent company; project terms are agreed individually |
+| Evident Platform | Shared application capabilities and resource authorization | Development; public self-service availability is not established here |
+| Evident Forge | Governed production and composition for project delivery | Scoped website work and demonstrations; no public self-service engine claim |
+| Evident OS | Fedora-derived operating-system and native-computing development direction | Development direction; no released distribution asserted |
+| Evident Runtime | Infrastructure and workload configuration | Desired state is separate from observed service state and execution permission |
+| Evident Operations | Controlled execution, validation, releases, and recovery | Execution requires the applicable approved procedure and target authorization |
+| EDL | Definitions, source lineage, language contracts, and reviewable reasoning | Development scope; no general reasoning guarantee asserted |
+| Evident ICU / CivicOS | Evidence and civic capabilities within the unified Platform | Capability families and development work; no separate authority stack |
 
-A preview is not a production deployment, a paid entitlement, or an accepted client deliverable. A source repository or passing test does not establish a hosted product. There is one company identity; product names describe functions rather than separate institutional authority.
+The Trust Spine keeps identity, resource authorization, source material, review, human decision,
+authorized action, and verification connected. Authentication alone does not authorize a resource.
+Supporting systems and product labels do not create additional companies or independent governing
+authorities.
 
-## Evidence-oriented work
+## Evidence-conscious work
 
-ICU development concerns source preservation, separation of originals and derivatives, chronology, provenance, and human review history. Each capability needs a documented implementation and verification before a claim of availability. No claim of forensic certification, legal representation, evidentiary admissibility, or guaranteed court acceptance is made here.
+ICU work concerns source preservation, separation of originals and derivatives, chronology,
+provenance, and human review history. Each capability needs implementation and verification before
+an availability claim. No forensic certification, legal representation, investigative authority,
+government affiliation, professional licensure, or guaranteed court acceptance is claimed.
 
-## Source basis
+## Source basis and limits
 
-This reconstruction follows the owner's authorized company scope, reconciles [draft PR #28](https://github.com/evident-technologies/.github/pull/28), and checks the [corporate site](https://evidtech.com/) and [Platform overview](https://evidtech.com/platform/) as observed November 13, 2026. The site distinguishes scoped manual work from developing civic, evidence, and self-service products. These observations do not prove live product access.
+The owner supplied the company positioning and development taxonomy for this review. Current
+canonical architecture, engineering governance, and scoped system descriptions were compared on
+November 13, 2026; private source identities and unresolved adoption questions remain in the private
+authority catalog. The public company and [Platform overview](https://evidtech.com/platform/)
+distinguish scoped services from developing products. This repository does not independently prove
+deployment, licensing, certification, or release readiness.
 
-See [services and delivery](SERVICES.md), [contribution and reuse](../CONTRIBUTING.md), and [security disclosure](../SECURITY.md).
+See [services and delivery](SERVICES.md), [contribution and reuse](../CONTRIBUTING.md), and
+[security disclosure](../SECURITY.md).

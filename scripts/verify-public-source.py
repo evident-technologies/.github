@@ -146,6 +146,24 @@ def verify(root: Path) -> tuple[list[str], list[str], dict[str, int]]:
         except (ValueError, ET.ParseError, UnicodeError) as exc:
             fail(path, f"parse error ({type(exc).__name__})")
 
+    audit_path = root / "docs/documentation-audit.json"
+    audit = json.loads(audit_path.read_text())
+    documents = audit["documents"]
+    if {item["path"] for item in documents} != {
+        str(path.relative_to(root)) for path in paths if path.suffix == ".md"
+    }:
+        fail(audit_path, "Markdown audit does not cover every public document")
+    required = {"purpose", "intake_classification", "identified_issue", "proposed_treatment",
+                "source_authority", "acceptance_criteria", "final_disposition"}
+    for item in documents:
+        if not all(item.get(key) for key in required):
+            fail(audit_path, "incomplete purpose, authority, treatment, or acceptance record")
+        if any(source not in audit["sources"] for source in item.get("source_authority", [])):
+            fail(audit_path, "unknown source authority identifier")
+    for name in ("README.md", "profile/README.md"):
+        if "Clear systems. Accountable technology." not in (root / name).read_text():
+            fail(root / name, "owner-selected public positioning missing")
+
     candidates = root / "brand/candidates"
     manifest = json.loads((candidates / "manifest.json").read_text())
     if manifest.get("status") != "PROPOSED_UNAPPROVED" or manifest.get("approval") is not None:

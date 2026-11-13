@@ -5,52 +5,57 @@
     {
       "path": ".github/PULL_REQUEST_TEMPLATE.md",
       "change": "modified",
-      "sha256": "8273fc0680d8b12618c770f965effe0e9a3f08c4589556b9f2ed622978e12b93"
+      "sha256": "ca2e5f3acf277ebb6e0d74fef8303db1acdaab7ac2173e797cc387990e4e8f79"
     },
     {
       "path": ".github/copilot-instructions.md",
       "change": "modified",
-      "sha256": "915807e88a7098288a5d62c88ebe60398c9722cc49bbd3cdedac782a0fd80a2e"
+      "sha256": "b50b4d3cd5aa51182e846de4bd5c4714cfe0928c49240cd4740e7be1490645dc"
+    },
+    {
+      "path": ".markdownlint.json",
+      "change": "added",
+      "sha256": "88eb5910eb2192aab988b5fd9662f23b08d06e4655a09c2b3f82632cc70b0813"
     },
     {
       "path": "CODE_OF_CONDUCT.md",
       "change": "modified",
-      "sha256": "646966151e916d38e433caa64d7d2b4d59bc5bdec202d5ba857c8b7e3e6cfbae"
+      "sha256": "cf4aac2fecb761ec821b6d024eabc5893f16bfacc8c1465fd717e7801798817d"
     },
     {
       "path": "CONTRIBUTING.md",
       "change": "modified",
-      "sha256": "1bfe1de421f705f8aeff228d7afc7e91d95b114f31cade4b9b9350b0ead8b25c"
+      "sha256": "bb705061a2acec4751de93634f519698297bb164a02cf183b5ec627e72f56788"
     },
     {
       "path": "README.md",
       "change": "added",
-      "sha256": "2d636a7b413baccd06fd0a74aff882c4feaa3d6d3e22dc3a85f3ad961a525438"
+      "sha256": "fb03833734c150599a3f90cc632442f9ee2e14b31e08fd04ed17e746b3121077"
     },
     {
       "path": "SECURITY.md",
       "change": "modified",
-      "sha256": "cadafda45a7e9845afe41cf057b67f6b68c910fb05df33a459bdec5242c61c2d"
+      "sha256": "893167638446ba1131a09e1398c059e91c569716bb74b8c419594bc2c8fe7bbc"
     },
     {
       "path": "SUPPORT.md",
       "change": "modified",
-      "sha256": "e70316e8c4f43c6c39a9f4f598feab7adcbc8263ba6eb378e01b09fa860b4f94"
+      "sha256": "305e384746957850b8259724e4a7a18e8138bdedb50df6334cca4534e88f7372"
     },
     {
       "path": "VERIFY.md",
       "change": "modified",
-      "sha256": "149ef96fbac84749633cc7c2704f1b9d0352be48762b7172b22bb5fcb25a251e"
+      "sha256": "24e8c14f8a02e90b7390ec867fe3ab9480679d23eebf36b71f19c6a776a83b06"
     },
     {
       "path": "WORKSPACE.md",
       "change": "modified",
-      "sha256": "d121a51df4ad7b9b940962cdd86839dc5191da3f918a6d266e747c593fe87374"
+      "sha256": "5b73848a92d82f6709a2be5877ae5dff87cae6cdfdef9cd7279c9223adbe40e4"
     },
     {
       "path": "brand/README.md",
       "change": "modified",
-      "sha256": "351e57f40bc71917ed683874e6ca6e5f4648e136b81dd26f5fdf9621ef0e284a"
+      "sha256": "665f986035a74c61a112395b3c2cfca3f31bb55b8f7af5489552d51c61117507"
     },
     {
       "path": "brand/brand.css",
@@ -60,7 +65,7 @@
     {
       "path": "brand/candidates/README.md",
       "change": "added",
-      "sha256": "4e3e654f9e63cd084cedd419af17baca2331065bac32f7aa3791cf887ded7988"
+      "sha256": "6e635595edc680d999424ff7fb866fee1739e039c2922337de5bdc18879d42d8"
     },
     {
       "path": "brand/candidates/candidate-a-lockup-dark.svg",
@@ -145,43 +150,53 @@
     {
       "path": "docs/COMPANY.md",
       "change": "added",
-      "sha256": "a33d531ed412dfa5e2c635dcbd3aa633f3c18fe4205764fbd087c394e7fec44c"
+      "sha256": "8c47ef6e4f36895dfbcc23ea9dcbaee0f0ca878047fbe4fed4e120b2a98b46b9"
+    },
+    {
+      "path": "docs/DOCUMENTATION-AUDIT.md",
+      "change": "added",
+      "sha256": "24a1a60ac9978d6e34754b4ae5c655f403afcfa1ffe7b081711131ff86bba4a2"
     },
     {
       "path": "docs/POLICY-REVIEW.md",
       "change": "added",
-      "sha256": "03901dca56df52cd2b415bcb1b4445b9de13b01f4b101199d87688095158874a"
+      "sha256": "af6ccd804efda2e33aa511b9583a52414f374ca0ddc977d18f18bb93bf03dd91"
     },
     {
       "path": "docs/PRODUCT-WORKFLOW-ARCHITECTURE.md",
       "change": "modified",
-      "sha256": "fd212648d32c8d25bfdbe6b6fef58f9aab581d24eb8b4acbd097eb66fabb50f6"
+      "sha256": "9f93ba9b0c65f7f59e68a688847312787ea326848f4c1e320be0c0549e9eacac"
     },
     {
       "path": "docs/RECONSTRUCTION-REVIEW.md",
       "change": "added",
-      "sha256": "d7ce71a74dd3cbeadcdd6f139507d95307f3eb5deecc3e15626fcfcca600ebf8"
+      "sha256": "40ccb23756deaf75527065d81750e2c0d7c68c4657b7f257705ec144a2e6db0b"
     },
     {
       "path": "docs/RUNNER-FABRIC.md",
       "change": "modified",
-      "sha256": "f484d0c423f0f53e2ccc4f0600880d73cd3edbd88afcc77fb933b58d2904ad5f"
+      "sha256": "501d724a2429c5406485cfbd1c9e7bd76f11d0557fada95e565e070c7128f599"
     },
     {
       "path": "docs/SERVICES.md",
       "change": "added",
-      "sha256": "0e18bf8f987352840df93c8ee86ddfae0c82ee792a0bd71ebea89ef7654395ee"
+      "sha256": "4cac88a3e53995e97aa250ad7c219bdb9e99ebfcb6aba64d040ffbca39ec72ef"
     },
     {
       "path": "docs/VISUAL-REVIEW.md",
       "change": "added",
-      "sha256": "a428cda07b00743af680563690fdf96203d315ac7053ab7532e6874c7c7dd492"
+      "sha256": "1efa69ddc1b15c318e1eb32612e1ca3ae164384af2e884e7f93bcab549d10d94"
     },
     {
       "path": "docs/change-manifest.json",
       "change": "added",
       "sha256": null,
       "note": "Self digest omitted; Git commit binds this manifest."
+    },
+    {
+      "path": "docs/documentation-audit.json",
+      "change": "added",
+      "sha256": "e4920a178759e7024aef52e23624f76e88de5e634da33b1a65e06422aa967081"
     },
     {
       "path": "docs/source-inventory.json",
@@ -191,17 +206,17 @@
     {
       "path": "profile/README.md",
       "change": "modified",
-      "sha256": "2619e58ababe0c81a2a623c5708ac3d00cd807cb95d6daeb2af034da89e965e4"
+      "sha256": "ddf34dc4039ae8fcae0da65d775ea67cd29d1c33f1a2515b4263416d4939ba1f"
     },
     {
       "path": "scripts/README.md",
       "change": "modified",
-      "sha256": "4b704afa91e1918ecec5015519c225bb86974f50b5eb12a4ab9cbebab5d418cc"
+      "sha256": "c51ffeb8e809c605f2d793b45558fbedc63a3f139b742721a6ef66ca70fcf291"
     },
     {
       "path": "scripts/verify-public-source.py",
       "change": "added",
-      "sha256": "d082605b31f2b82f070948e123264d179705e7070616a79d30f035ddde3debcf"
+      "sha256": "ed2f3e996f8b7ec47d29e805a8b277a1f8a2bfc6a5310cba4b6eb96495ba4b36"
     }
   ]
 }
