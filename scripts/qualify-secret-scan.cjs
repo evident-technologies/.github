@@ -75,6 +75,15 @@ try {
     check('custom success redaction',run(repo,base,head,{SCAN_SCRIPT:custom}),false,marker);
     check('root clean',run(repo,'ROOT',head),false);
   }
+  const receipt=path.join(root,'recovered-original');
+  const recovered=spawnSync('python3',[path.join(__dirname,'test-secret-scan-original.py'),'current'],{
+    env:{...env,SECRET_SCAN_RECEIPT:receipt},encoding:'utf8',timeout:30000,maxBuffer:1024*1024});
+  assert.equal(recovered.status,0,'recovered suite execution failed');
+  const originalCases=JSON.parse(fs.readFileSync(path.join(receipt,'BEHAVIOR-current.json'),'utf8'));
+  assert.equal(originalCases.length,38);assert.ok(originalCases.every(r=>r.RESULT==='PASS'));
+  if(process.env.GITHUB_STEP_SUMMARY)fs.appendFileSync(process.env.GITHUB_STEP_SUMMARY,
+    'Recovered 38-case matrix (portable paths and current blob-read fault injection): 38/38 PASS.\n'+
+    'Additional synthetic scanner cases: '+results.length+'/'+results.length+' PASS.\n');
   console.log(JSON.stringify({qualification:'exact inline scanner synthetic fixtures',cases:results.length,results}));
 } catch {
   console.error('Synthetic scanner qualification failed; fixture values withheld.');
