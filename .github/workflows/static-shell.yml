@@ -1,6 +1,19 @@
 name: CI Shell
+
 on:
   workflow_call: {}
+
+permissions:
+  contents: read
+
 jobs:
   ci:
-    uses: ./.github/workflows/templates/static-ci-app.yml
+    uses: ./.github/workflows/static-site-ci.yml
+    with:
+      node-version: "22"
+      package-manager: npm
+      install-command: npm ci
+      lint-command: npm run lint
+      build-command: npm run build
+      output-path: dist
+      runs-on: '["ubuntu-24.04"]'
