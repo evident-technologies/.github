@@ -1,96 +1,59 @@
-# Evident Technologies
+![Evident Technologies LLC](https://raw.githubusercontent.com/evident-technologies/.github/main/brand/evident-technologies-logo-primary.svg)
 
-### Verifiable Records Infrastructure
+# Evident Technologies LLC
 
-Truth before persuasion. Structure before style. Integrity before convenience.
+**Websites with presence. Workflows with purpose. Records with provenance.**
 
----
+We are an independent New Jersey design and engineering company. We help business owners create distinctive websites, improve the way customers reach them, and build practical digital systems they can understand, maintain, and control.
 
-Evident Technologies LLC builds software for accountable records, evidence organization, chronology review, and operational integrity.
+**Good work begins with a clear purpose—and ends with a result you can verify.**
 
-Our work is focused on one principle:
+[**Explore our services**](https://evidtech.com/forge/) · [**Request a project proposal**](https://evidtech.com/contact/?intent=website) · [**Try a working example**](https://evidtech.com/forge/client-previews/workbench/)
 
-**Records should remain explainable, traceable, and reviewable without turning trust into theater.**
+## What we build
 
----
+| Area | Our focus |
+| --- | --- |
+| **Websites & modernization** | Original, responsive business websites; clearer navigation, accessibility, and customer contact. |
+| **Business workflows** | Scoped customer intake, follow-up, estimating concepts, and operational handoffs designed around the people doing the work. |
+| **Identity & design assets** | Original digital marks, logo refinement, and corporate seal artwork with documented rights and deliverables. |
+| **Accountable software research** | Source-linked records, provenance, review history, and human-directed tools developed through the Evident Platform. |
 
-## Flagship Platform
+Projects begin with a conversation. Scope, price, ownership, dependencies, review milestones, and launch responsibilities are agreed **before work begins**.
 
-### Evident ICU
+## Products & research
 
-Evident ICU is the company’s flagship platform for structured evidence review, chronology organization, provenance tracking, and defensible record workflows.
+- **Evident FORGE** — our website design and demonstration workbench. Public examples are starting points for discussion, not completed client deployments.
+- **Evident Platform / Evident ICU** — research and development toward clearer source review, evidence organization, chronology, and record provenance. These capabilities are **in development**, not advertised as certified forensic or legal services.
 
-It is built for serious review environments where source material, process history, and record integrity matter.
+We separate demonstrated functionality from planned features, source material from interpretation, and previews from approved releases.
 
----
+[Explore the company and development work](https://evidtech.com/platform/) · [Partnership inquiries](https://evidtech.com/partnerships/)
 
-## What We Care About
+## How we work
 
-* Preserving source records
-* Separating originals from derivatives
-* Maintaining traceable review history
-* Supporting structured chronology work
-* Keeping system state visible and understandable
-* Designing for long review sessions and accessibility
-* Matching public claims to implemented behavior
-* Protecting sensitive operational details from unnecessary exposure
+1. **Define the job.** Understand the need, constraints, deliverables, and acceptance criteria.
+2. **Respect ownership.** Identify source rights, account control, hosting dependencies, and handoff terms.
+3. **Build and review.** Keep changes traceable, test agreed behavior, and make uncertainties visible.
+4. **Release deliberately.** Deployment, publication, and ongoing services require their own approval.
 
----
+**Truth before persuasion. Structure before style. Integrity before convenience.**
 
-## What We Do Not Publish Here
+## Repositories, security & contact
 
-This public organization profile does not disclose internal architecture, provider choices, deployment topology, security controls, private workflows, operational runbooks, roadmap details, or implementation patterns.
+This organization contains company-owned engineering work, documentation, and governance materials. **A repository being public does not automatically make its contents open source**; consult the license and contribution policy of each repository. Unsolicited external code contributions are not currently accepted.
 
-Public trust does not require handing out the wiring diagram.
+Please report vulnerabilities **privately**, not through public issues or pull requests. See our [security disclosure policy](https://github.com/evident-technologies/.github/blob/main/SECURITY.md).
 
----
+- **Start a project:** [evidtech.com/contact](https://evidtech.com/contact/?intent=website)
+- **General inquiries:** [contact@evidtech.com](mailto:contact@evidtech.com)
+- **Security reports:** [security@evidtech.com](mailto:security@evidtech.com)
+- **Company:** [evidtech.com](https://evidtech.com)
 
-## Governance
-
-Repositories within this organization are maintained under Evident Technologies LLC governance, security, and operational standards.
-
-External public code contributions are not currently accepted.
-
-Operational inquiries:
-
-[operations@evidtech.com](mailto:operations@evidtech.com)
-
-Security disclosures:
-
-[security@evidtech.com](mailto:security@evidtech.com)
+Evident Technologies LLC is an independent software and design company, not a law firm. Nothing here constitutes legal advice, forensic certification, or a guarantee of evidentiary or court acceptance.
 
 ---
 
-## Security
+**Evident Technologies LLC · New Jersey, United States**
 
-Security issues should be reported privately and responsibly.
-
-Please do not publish infrastructure-sensitive findings, exploit details, proof-of-concept material, or security reports through public issues, discussions, or pull requests.
-
-Refer to [SECURITY.md](SECURITY.md) for disclosure procedures.
-
----
-
-## Legal Notice
-
-Evident Technologies LLC is a software company.
-
-Nothing published within this organization constitutes legal advice, legal representation, forensic certification, evidentiary guarantees, court acceptance guarantees, or professional services.
-
-Software, documentation, examples, and technical materials are provided for informational and operational purposes only.
-
-Use of any software or documentation does not create an attorney-client relationship, professional-services relationship, or fiduciary relationship.
-
----
-
-<p align="center">
-  <sub>
-    Evident Technologies LLC · New Jersey, USA
-  </sub>
-</p>
-
-<p align="center">
-  <sub>
-    Build records that can answer for themselves.
-  </sub>
-</p>
+*Build something worth standing behind.*
