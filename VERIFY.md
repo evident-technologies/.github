@@ -55,10 +55,15 @@ Run from the repository root; these checks do not publish or deploy:
 python3 scripts/validate-runner-fabric.py
 python3 scripts/verify-public-source.py
 python3 scripts/test-issue-forms.py
+python3 scripts/test-static-shell.py
 bash -n scripts/ship.sh
 shellcheck -S warning scripts/ship.sh
 git diff --check
 ```
+
+The static-shell regressions validate callable routing, read-only token scope, fixed portable
+runners, absence of secret/environment forwarding, and an offline synthetic npm install/lint/build.
+They do not attest a deployed product or an unknown downstream caller.
 
 The source verifier checks the public Markdown inventory, headings, relative destinations, JSON,
 YAML, SVG restrictions, PNG headers, manifests, fingerprints, contrast, and preserved controls.

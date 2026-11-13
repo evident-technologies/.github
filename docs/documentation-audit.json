@@ -8,7 +8,8 @@
     "S4": "Exact repository source, manifests, recorded baseline, and verification results",
     "S5": "Official GitHub documentation for community defaults and runner-group boundaries",
     "S6": "Corporate public pages observed November 13, 2026; project availability remains qualified",
-    "S7": "Owner-requested reconciliation into existing draft PR 28, November 13, 2026; main 0884d789f801c79fba9ad1374a3ed6cc7ac4511e and prior PR c31684e58fd2a526a61641f3e3b127c5a0c68011; no PR merge or deploy."
+    "S7": "Owner-requested reconciliation into existing draft PR 28, November 13, 2026; main 0884d789f801c79fba9ad1374a3ed6cc7ac4511e and prior PR c31684e58fd2a526a61641f3e3b127c5a0c68011; no PR merge or deploy.",
+    "S8": "Owner-requested static-shell failure repair on existing draft PR 28, November 13, 2026; preserve runner/security boundaries; no merge or deploy."
   },
   "documents": [
     {
@@ -122,10 +123,12 @@
       "proposed_treatment": "Document existing checks, new bounded source verifier, failures, and manual limits.",
       "source_authority": [
         "S4",
-        "S7"
+        "S7",
+        "S8"
       ],
       "acceptance_criteria": "Commands exist and actual results distinguish PASS, FAIL, HOLD, NOT_RUN.",
-      "final_disposition": "REVIEW_PROPOSAL; current facts qualified; founder/Manager approval as applicable"
+      "final_disposition": "REVIEW_PROPOSAL; current facts qualified; founder/Manager approval as applicable",
+      "static_shell_repair": "Document the explicitly authorized single-wrapper repair, its npm static-build contract, preserved callee/admission/security boundaries, and synthetic verification limits."
     },
     {
       "path": "WORKSPACE.md",
@@ -254,10 +257,12 @@
         "S1",
         "S3",
         "S4",
-        "S7"
+        "S7",
+        "S8"
       ],
       "acceptance_criteria": "No documentation-level production grant; preserved workflow defects not hidden.",
-      "final_disposition": "REVIEW_PROPOSAL; current facts qualified; founder/Manager approval as applicable"
+      "final_disposition": "REVIEW_PROPOSAL; current facts qualified; founder/Manager approval as applicable",
+      "static_shell_repair": "Document the explicitly authorized single-wrapper repair, its npm static-build contract, preserved callee/admission/security boundaries, and synthetic verification limits."
     },
     {
       "path": "docs/PUBLIC-CLAIMS.md",
@@ -282,10 +287,12 @@
       "source_authority": [
         "S4",
         "S5",
-        "S7"
+        "S7",
+        "S8"
       ],
       "acceptance_criteria": "Links resolve, claims are qualified, source and original assets remain preserved.",
-      "final_disposition": "REVIEW_PROPOSAL; adoption and operational permission remain separate."
+      "final_disposition": "REVIEW_PROPOSAL; adoption and operational permission remain separate.",
+      "static_shell_repair": "Document the explicitly authorized single-wrapper repair, its npm static-build contract, preserved callee/admission/security boundaries, and synthetic verification limits."
     },
     {
       "path": "docs/RECONSTRUCTION-REVIEW.md",

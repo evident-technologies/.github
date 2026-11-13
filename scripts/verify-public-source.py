@@ -25,6 +25,7 @@ REVIEWED_ISSUE_FORMS = frozenset({
     ".github/ISSUE_TEMPLATE/feature_request.yml",
     ".github/ISSUE_TEMPLATE/config.yml",
 })
+REVIEWED_WORKFLOWS = frozenset({".github/workflows/static-shell.yml"})
 SVG_NS = "{http://www.w3.org/2000/svg}"
 
 
@@ -110,6 +111,37 @@ def issue_form_errors(name: str, data: dict) -> list[str]:
         errors.append("required public privacy consent missing")
     if not routing:
         errors.append("organization policy routing missing")
+    return errors
+
+
+def static_shell_errors(data: dict, callee: dict) -> list[str]:
+    """Constrain the compatibility wrapper to portable, read-only static builds."""
+    errors: list[str] = []
+    if set(data.get("on", {})) != {"workflow_call"}:
+        errors.append("static-shell must remain callable only")
+    if data.get("permissions") != {"contents": "read"}:
+        errors.append("static-shell token must be read-only")
+    if set(data.get("jobs", {})) != {"ci"}:
+        return errors + ["static-shell job contract changed"]
+    job = data["jobs"]["ci"]
+    if set(job) != {"uses", "with"}:
+        errors.append("static-shell must not pass secrets, environments, or extra execution")
+    if job.get("uses") != "./.github/workflows/static-site-ci.yml":
+        errors.append("static-shell must call the supported top-level CI entry point")
+    args = job.get("with", {})
+    expected = {"node-version": "22", "package-manager": "npm", "install-command": "npm ci",
+                "lint-command": "npm run lint", "build-command": "npm run build",
+                "output-path": "dist", "runs-on": '["ubuntu-24.04"]'}
+    if args != expected:
+        errors.append("static-shell portable npm build contract changed")
+    if callee.get("permissions") != {"contents": "read"}:
+        errors.append("static-shell callee token boundary changed")
+    declared = callee.get("on", {}).get("workflow_call", {}).get("inputs", {})
+    if not set(args) <= set(declared):
+        errors.append("static-shell passes unsupported callee inputs")
+    for name, definition in declared.items():
+        if str(definition.get("required")).lower() == "true" and name not in args:
+            errors.append("static-shell omits required callee input")
     return errors
 
 
@@ -204,6 +236,11 @@ def verify(root: Path) -> tuple[list[str], list[str], dict[str, int]]:
                     elif str(path.relative_to(root)) in REVIEWED_ISSUE_FORMS:
                         for message in issue_form_errors(path.name, data):
                             fail(path, message)
+                    if str(path.relative_to(root)) in REVIEWED_WORKFLOWS:
+                        callee = yaml.load((root / ".github/workflows/static-site-ci.yml").read_text(),
+                                           Loader=yaml.BaseLoader)
+                        for message in static_shell_errors(data, callee):
+                            fail(path, message)
         except (ValueError, ET.ParseError, UnicodeError) as exc:
             fail(path, f"parse error ({type(exc).__name__})")
 
@@ -273,7 +310,7 @@ def verify(root: Path) -> tuple[list[str], list[str], dict[str, int]]:
             fail(root / "docs/source-inventory.json", "baseline fingerprint does not match Git source")
         protected = (
             (name.startswith((".github/workflows/", "governance/", ".github/ISSUE_TEMPLATE/"))
-             and name not in REVIEWED_ISSUE_FORMS)
+             and name not in REVIEWED_ISSUE_FORMS and name not in REVIEWED_WORKFLOWS)
             or Path(name).suffix in {".svg", ".png"}
             or name in {".github/CODEOWNERS", ".github/dependabot.yml", "action-pins.json",
                         "scripts/ship.sh", "scripts/validate-runner-fabric.py", "brand/package.json"}

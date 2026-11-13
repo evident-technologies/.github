@@ -54,3 +54,21 @@ observations](ACTION-PINS.md). No pin or workflow is changed by this reconciliat
 
 Use a normal reviewed revert or follow-up for corrections. Preserve both histories and all assets.
 Keep PR 28 draft; passing checks do not approve merge or deployment.
+
+## Authorized static-shell repair
+
+After the documentation reconciliation at `c86a4ce644c18eb9d6cc5b62694c97331c85c242`, the owner
+explicitly authorized correcting the pre-existing static-shell failure on this same draft branch.
+The earlier workflow-preservation statement describes that prior revision; the only new workflow
+change is the static-shell wrapper. Original workflow bytes remain in history and baseline hashes.
+
+The wrapper now calls the existing top-level static-site CI with explicit npm static-build
+settings, a fixed portable runner, and read-only token scope. It forwards no secrets or deployment
+environment. The callee, runner admission, scanner, action pins, credentials, and deployment controls
+remain unchanged. New checks reject the original nested call, self-hosted routing, token escalation,
+secret/environment forwarding, and incompatible callee inputs. Synthetic valid/invalid inputs
+exercise npm install, lint, build, and failure before build without external network access.
+
+The retained nested historical template is not promoted or executed. Its separate source-lint
+issues remain historical findings. GitHub CI receipts for the repair are recorded on the draft PR;
+passing source checks do not authorize merge or deployment.

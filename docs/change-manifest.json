@@ -28,6 +28,11 @@
       "sha256": "b50b4d3cd5aa51182e846de4bd5c4714cfe0928c49240cd4740e7be1490645dc"
     },
     {
+      "path": ".github/workflows/static-shell.yml",
+      "change": "modified",
+      "sha256": "3c10403d1cce27c7ef3e642bc80e8aa2c6f2c502b7cedb75391fb64d24b6b0a3"
+    },
+    {
       "path": ".markdownlint.json",
       "change": "added",
       "sha256": "643b412a4334cf9832b5139106f12ea701470790c382c9c54cabb7b3565bacfe"
@@ -60,7 +65,7 @@
     {
       "path": "VERIFY.md",
       "change": "modified",
-      "sha256": "b829a70eff7c8e0e99788fef1727019c511c30d93a46418b1d73b6e0e176f57f"
+      "sha256": "40285dbacb5db43c835b5a07d03dff967aac6b5435f1497a5c233fa11f00e6ed"
     },
     {
       "path": "WORKSPACE.md",
@@ -190,7 +195,7 @@
     {
       "path": "docs/PRODUCT-WORKFLOW-ARCHITECTURE.md",
       "change": "modified",
-      "sha256": "9f93ba9b0c65f7f59e68a688847312787ea326848f4c1e320be0c0549e9eacac"
+      "sha256": "53feb008e1cdd1c131f629e5921c4276b3b491d003dfd181b06ead863ffefcb6"
     },
     {
       "path": "docs/PUBLIC-CLAIMS.md",
@@ -200,7 +205,7 @@
     {
       "path": "docs/RECONCILIATION-20261113.md",
       "change": "added",
-      "sha256": "264f4ffb60ee3ec093873492c014038077886bdaa107ec3f6c7065a09a6246f1"
+      "sha256": "8b766c04e4df875fe143d941810c82fe1f3be41a4d454b3c30f0b18f7ed5bb68"
     },
     {
       "path": "docs/RECONSTRUCTION-REVIEW.md",
@@ -231,12 +236,12 @@
     {
       "path": "docs/documentation-audit.json",
       "change": "added",
-      "sha256": "2b352a3da1bd991c376d10606c3fe97454f012e5ab6f03647809266754e7fce8"
+      "sha256": "01d90ef64c9943d66c7619f5264e7c487d2a15718a8d3583c19197d1813438db"
     },
     {
       "path": "docs/source-inventory.json",
       "change": "added",
-      "sha256": "c3dd2f1e9dce10c1807c52089c0f28d521a3b93b8ddd956476104fc79b9179b9"
+      "sha256": "4824c64e3e8b767a974afe6e504fa596ad727f78ae2f56aa7d5f852df8ad1720"
     },
     {
       "path": "profile/README.md",
@@ -254,9 +259,14 @@
       "sha256": "830d30146387b8c7d93bc801de2cc27853bd1b3816dcf05981f240a10fcfc203"
     },
     {
+      "path": "scripts/test-static-shell.py",
+      "change": "added",
+      "sha256": "a14ca9442983b9bfc332b2e2738d62363e320391a38ba5382da661ddce161794"
+    },
+    {
       "path": "scripts/verify-public-source.py",
       "change": "added",
-      "sha256": "2b2d2dd51968c5d1359360583f7fc1bfcd93b82c9be3ca67480171b36f97a74d"
+      "sha256": "0accf5fc6ac4417845c6dc7754b2247c793c52bd473b0c83641e3422a6a4151f"
     }
   ],
   "reconciliation_main": "0884d789f801c79fba9ad1374a3ed6cc7ac4511e",

@@ -85,9 +85,10 @@
     },
     {
       "path": ".github/workflows/static-shell.yml",
-      "classification": "PRIVATE-REVIEW",
+      "classification": "REVISE_FOR_REVIEW",
       "sha256": "840a1a17becd382b16fb888c8a2a9291b878f1e51ce3ad527f97507980c4699e",
-      "preserve_bytes": true
+      "preserve_bytes": false,
+      "revision_reason": "Owner explicitly authorized static-shell repair in draft PR 28 on November 13, 2026; replace unsupported nested call with the existing top-level portable static-site CI entry point. Baseline fingerprint retained; wrapper boundary checks added."
     },
     {
       "path": ".github/workflows/static-site-ci.yml",

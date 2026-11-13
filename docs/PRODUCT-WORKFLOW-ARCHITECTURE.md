@@ -8,6 +8,7 @@ defaults. It does not own product deployments or grant access to private infrast
 
 | Source | Intended role |
 | --- | --- |
+| `.github/workflows/static-shell.yml` | Callable npm static-build compatibility wrapper; fixed portable runner, read-only token, no secret/environment forwarding |
 | `.github/workflows/static-site-ci.yml` | Product-owned install, checks, and build; no deployment |
 | `.github/workflows/verify-lint.yml` | Reusable lint entry point |
 | `.github/workflows/verify-governance.yml` | Reusable governance source checks; warnings are not enforcement |
@@ -41,3 +42,21 @@ Before changing a consumer, identify its exact source revision and dependencies,
 fixtures, and preserve the prior pin. Product extraction or migration requires its own
 authorization, acceptance, and source-to-destination provenance. Merge approval does not authorize
 production release.
+
+## Static-shell compatibility entry point
+
+`static-shell.yml` remains a zero-input callable workflow. It now delegates to the existing
+`static-site-ci.yml` at the same source revision, using Node.js 22, npm, `npm ci`, `npm run lint`,
+`npm run build`, and output `dist/index.html`. The Node.js version and npm commands follow the old
+static-app template; the output contract is now explicit. Callers with different requirements
+should use the general static-site CI entry point and supply its documented inputs.
+
+The wrapper fixes the runner to `ubuntu-24.04` and permissions to `contents: read`; it forwards no
+secrets and selects no deployment environment. Runner admission and the static-site implementation
+remain unchanged. No deployed system or private record is needed to verify this routing.
+
+The old nested `templates/static-ci-app.yml` is retained as historical source. It is not a callable
+workflow location and its missing version-manifest, monorepo scripts, and deployment placeholder
+are not activated. Syntax lint alone did not detect the nested-call restriction; the source guard
+and regression tests explicitly reject it. See [GitHub's reusable workflow location
+requirements](https://docs.github.com/en/actions/how-tos/reuse-automations/reuse-workflows).
