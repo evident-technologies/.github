@@ -1,67 +1,91 @@
-# Verification
+# Verify source and releases
 
-Run these checks from the repository root. They inspect source without installing hooks, dispatching
-workflows, publishing packages, or deploying products.
+Verification should identify exactly what was checked and what remains unknown. A matching hash
+proves byte identity, not safety, truth, ownership, legal admissibility, or fitness for a particular
+use.
+
+## Identify source
+
+Start from the [Evident Technologies organization](https://github.com/evident-technologies) and the
+intended repository. Confirm the owner, project, default branch, status, and license. Record a full
+commit SHA rather than relying on a mutable branch or tag.
+
+For an existing local checkout, inspect without pulling or resetting:
+
+```bash
+git remote -v
+git status --short
+git rev-parse HEAD
+git worktree list
+```
+
+Compare the full SHA with the repository's commit page. A GitHub Verified badge concerns the
+signature on that commit; it does not certify the product, authorship rights, or the contents of a
+downloaded binary.
+
+## Assess a release before use
+
+1. Confirm the release belongs to the intended repository and identify its tag's resolved commit,
+   release notes, platform, maturity, supported versions, known limitations, and license.
+2. Download only the artifact named by that release. If the publisher supplies a SHA-256 checksum,
+   calculate the artifact's digest and compare the exact value and filename using the release's
+   instructions. On Fedora, `sha256sum <artifact-file>` computes a digest; `sha256sum -c
+<checksum-file>` checks a supplied manifest. Replace placeholders with reviewed filenames.
+3. A checksum distributed with the same artifact is not independent authentication. Verify
+   signatures against a trusted, independently established key where the release provides them.
+4. If the release provides GitHub artifact attestations, use its documented verification command and
+   expected repository, workflow identity, and source revision. For example, `gh attestation verify
+<artifact-file> --repo <owner/repository>` verifies against the specified repository. Inspect the
+   returned source identity and commit; do not assume attestations exist for every release. See
+   [GitHub's verification
+   instructions](https://docs.github.com/en/actions/how-tos/secure-your-work/use-artifact-attestations/use-artifact-attestations).
+5. Stop if provenance disagrees or required verification evidence is missing. Report the discrepancy
+   privately if it is security sensitive.
+
+Reproducibility is a separate claim. It requires documented inputs, dependencies, toolchain,
+environment, build steps, and comparison criteria. Do not claim a reproducible build from a checksum
+alone. Hardware and physical deliverables additionally need the applicable inspection, safety, and
+acceptance evidence.
+
+## Repository source checks
+
+Run from the repository root; these checks do not publish or deploy:
 
 ```bash
 python3 scripts/validate-runner-fabric.py
 python3 scripts/verify-public-source.py
+python3 scripts/test-issue-forms.py
 bash -n scripts/ship.sh
+shellcheck -S warning scripts/ship.sh
 git diff --check
 ```
 
-The public-source verifier checks Markdown destinations, JSON, SVG structure and resource
-restrictions, image dimensions, brand manifests and fingerprints, candidate contrast, and
-preservation of automation against the recorded reconstruction baseline. Python 3 is required. YAML
-checks additionally need PyYAML; unavailable tooling is reported explicitly.
+The source verifier checks the public Markdown inventory, headings, relative destinations, JSON,
+YAML, SVG restrictions, PNG headers, manifests, fingerprints, contrast, and preserved controls.
+The three intentionally revised issue forms have separate field, ID, required privacy-consent,
+and private-routing checks. Missing PyYAML is reported, not counted as a pass. Markdownlint 0.50.0
+uses `.markdownlint.json` and `docs/documentation-audit.json`; only `img` HTML is allowed for the
+existing sized mark. No package installation is required by the commands above.
 
-```bash
-bash scripts/ship.sh check
-shellcheck -S warning scripts/ship.sh
-```
+The existing `ship check` helper is a separate change-based check. Inspect its effects and private
+exposure before use; it does not substitute for source checks or permission to commit/push.
 
-The legacy `ship` helper checks changed files. Its regex scanner is incomplete and may print
-matching content; run it after a private exposure review. Its `check` subcommand does not commit or
-push. See [script behavior](scripts/README.md).
+## Check this repository
 
-## Markdown style
+There is no root application package or application build. The active `Validate Governance` workflow
+checks that `SECURITY.md`, `WORKSPACE.md`, `VERIFY.md`, `CODE_OF_CONDUCT.md`, and `CONTRIBUTING.md`
+exist. That check does not establish legal sufficiency, working email, safe software, or release
+approval.
 
-The repository enables the standard Markdown lint rules with a 100-character prose source limit.
-Tables, headings, and code examples are exempt from line length so exact paths and commands remain
-usable. This source formatting policy does not assert mobile or assistive-technology conformance.
+For documentation changes, check Markdown, local links and anchors, existing asset paths, public
+destinations, issue-form YAML, and JSON syntax. Compare preserved asset bytes and review the exact
+diff for private content. Changes to reusable workflows, action pins, or runner contracts require
+additional consumer and policy review.
 
-Run the pinned Markdown linter against the exact public inventory:
+The older doctor/bootstrap instructions referenced scripts and `versions.json` absent from the
+inspected source; do not treat those commands as a current health check. Do not run commit, push,
+install, sync, or deployment helpers merely to verify documentation.
 
-```bash
-python3 - <<'PYLINT'
-import json
-import subprocess
-from pathlib import Path
-
-audit = json.loads(Path("docs/documentation-audit.json").read_text())
-paths = [item["path"] for item in audit["documents"]]
-subprocess.run([
-    "npx", "--yes", "markdownlint-cli@0.50.0",
-    "--config", ".markdownlint.json", *paths,
-], check=True)
-PYLINT
-```
-
-## Manual and provider verification
-
-Inspect rendered Markdown, mobile and desktop wrapping, alternative text, and light/dark assets.
-Inspect candidate marks at 16, 24, 48, and 128 pixels. An XML parse does not establish visual
-quality, trademark clearance, accessibility conformance, or founder approval.
-
-Check public destinations with bounded requests. Record redirects, forbidden responses, and
-inaccessible pages individually. HTTP success proves reachability at that time, not a working form
-or product entitlement.
-
-Use `actionlint` where available. Nested workflow templates and archived examples are source
-material, not callable top-level entry points. Live runner groups, reusable-workflow access,
-environments, and credentials require verification through their authorized owners before
-operational enforcement can be claimed.
-
-Record exact commands, revision, failures, skips, and manual limits in the [reconstruction
-review](docs/RECONSTRUCTION-REVIEW.md). Missing historical bootstrap, doctor, and version-manifest
-files are not prerequisites for the commands above.
+Record test versions, commands, results, source SHA, observation time, skipped checks, and
+limitations. For CI, include run URL, job ID, assigned runner, conclusion, and failures. Local
+success does not replace required protected-branch checks.

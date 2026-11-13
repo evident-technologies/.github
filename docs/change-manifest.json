@@ -3,9 +3,24 @@
   "retired_assets": [],
   "files": [
     {
+      "path": ".github/ISSUE_TEMPLATE/bug_report.yml",
+      "change": "modified",
+      "sha256": "ee25c22046cb0cb14711ae619c4a5f80fccd67ee28858c49d3dd2b890f61269d"
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/config.yml",
+      "change": "modified",
+      "sha256": "a5719af802c843af2abc316aa10abe8832979d1cb56a50fee22455817d39b330"
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/feature_request.yml",
+      "change": "modified",
+      "sha256": "4da86840a128e87a78066ead09084417f9e104ec12b6adfbcbffc4aa0980e9b2"
+    },
+    {
       "path": ".github/PULL_REQUEST_TEMPLATE.md",
       "change": "modified",
-      "sha256": "ca2e5f3acf277ebb6e0d74fef8303db1acdaab7ac2173e797cc387990e4e8f79"
+      "sha256": "4af65ea7ca15fb3f5e543e72a4be42946e0b870870c8317294d6f09036449420"
     },
     {
       "path": ".github/copilot-instructions.md",
@@ -15,42 +30,42 @@
     {
       "path": ".markdownlint.json",
       "change": "added",
-      "sha256": "88eb5910eb2192aab988b5fd9662f23b08d06e4655a09c2b3f82632cc70b0813"
+      "sha256": "643b412a4334cf9832b5139106f12ea701470790c382c9c54cabb7b3565bacfe"
     },
     {
       "path": "CODE_OF_CONDUCT.md",
       "change": "modified",
-      "sha256": "cf4aac2fecb761ec821b6d024eabc5893f16bfacc8c1465fd717e7801798817d"
+      "sha256": "dd0252152e5c9f8371a2d196ae8bbc9fee6220ae61f118525d5960e42d5c1002"
     },
     {
       "path": "CONTRIBUTING.md",
       "change": "modified",
-      "sha256": "bb705061a2acec4751de93634f519698297bb164a02cf183b5ec627e72f56788"
+      "sha256": "083774d4e67b4423bc3ac06d9d63bd836d3dd14e8cf77fa64d5915dce6b5779b"
     },
     {
       "path": "README.md",
       "change": "added",
-      "sha256": "fb03833734c150599a3f90cc632442f9ee2e14b31e08fd04ed17e746b3121077"
+      "sha256": "7b7e0906d476dde98833902f2e7fb96cd92813cd2fd707cf2c396884209a969f"
     },
     {
       "path": "SECURITY.md",
       "change": "modified",
-      "sha256": "893167638446ba1131a09e1398c059e91c569716bb74b8c419594bc2c8fe7bbc"
+      "sha256": "b71aaca227da825cfd9dfc49d9545607cb56593c934b45e3b87825924c31288f"
     },
     {
       "path": "SUPPORT.md",
       "change": "modified",
-      "sha256": "305e384746957850b8259724e4a7a18e8138bdedb50df6334cca4534e88f7372"
+      "sha256": "991474a7e0cd2e3f5067ebff2691b1c30065f0b08c5d6fb8d5db6622599285d5"
     },
     {
       "path": "VERIFY.md",
       "change": "modified",
-      "sha256": "24e8c14f8a02e90b7390ec867fe3ab9480679d23eebf36b71f19c6a776a83b06"
+      "sha256": "b829a70eff7c8e0e99788fef1727019c511c30d93a46418b1d73b6e0e176f57f"
     },
     {
       "path": "WORKSPACE.md",
       "change": "modified",
-      "sha256": "5b73848a92d82f6709a2be5877ae5dff87cae6cdfdef9cd7279c9223adbe40e4"
+      "sha256": "e1cb7f80d422882194f873cf1d9387864b9f7341ca55f87155c8ce85532c6924"
     },
     {
       "path": "brand/README.md",
@@ -148,19 +163,29 @@
       "sha256": "b9dad417a09d845c18a072ea9aba89ff79c3595f545aeb70520c5a9f4d2ad536"
     },
     {
+      "path": "docs/ACTION-PINS.md",
+      "change": "added",
+      "sha256": "b4f44539964d206c093585a5670cf2b080a9b9338fe2b815a7dbef1ef06c514e"
+    },
+    {
       "path": "docs/COMPANY.md",
       "change": "added",
-      "sha256": "8c47ef6e4f36895dfbcc23ea9dcbaee0f0ca878047fbe4fed4e120b2a98b46b9"
+      "sha256": "01ce87025f2f9276513a76949dbf0d1a7aa3bad005cec72e739d3cace5330176"
     },
     {
       "path": "docs/DOCUMENTATION-AUDIT.md",
       "change": "added",
-      "sha256": "24a1a60ac9978d6e34754b4ae5c655f403afcfa1ffe7b081711131ff86bba4a2"
+      "sha256": "139d84b5e1c393abc0358d4b1621d13d54bd8e9594cb4e5a92a320417c4e7367"
+    },
+    {
+      "path": "docs/LICENSING.md",
+      "change": "added",
+      "sha256": "9d376b9d049907fbbb1a08877cab8438055236b369b0290fedc17c57b81f1a44"
     },
     {
       "path": "docs/POLICY-REVIEW.md",
       "change": "added",
-      "sha256": "af6ccd804efda2e33aa511b9583a52414f374ca0ddc977d18f18bb93bf03dd91"
+      "sha256": "050aef5124647b97c418080334ebd3c63004503141c2df5d26826c547a7c093a"
     },
     {
       "path": "docs/PRODUCT-WORKFLOW-ARCHITECTURE.md",
@@ -168,9 +193,19 @@
       "sha256": "9f93ba9b0c65f7f59e68a688847312787ea326848f4c1e320be0c0549e9eacac"
     },
     {
+      "path": "docs/PUBLIC-CLAIMS.md",
+      "change": "added",
+      "sha256": "b3f22b2b165d7ebaa982be1652ddb49fa48a1bacf8dd40b2092d358d5aea3076"
+    },
+    {
+      "path": "docs/RECONCILIATION-20261113.md",
+      "change": "added",
+      "sha256": "264f4ffb60ee3ec093873492c014038077886bdaa107ec3f6c7065a09a6246f1"
+    },
+    {
       "path": "docs/RECONSTRUCTION-REVIEW.md",
       "change": "added",
-      "sha256": "40ccb23756deaf75527065d81750e2c0d7c68c4657b7f257705ec144a2e6db0b"
+      "sha256": "bfa39b1be132bcd9023e36905e9a5f06af477ad46adc532408b7d11f8eb02103"
     },
     {
       "path": "docs/RUNNER-FABRIC.md",
@@ -180,7 +215,7 @@
     {
       "path": "docs/SERVICES.md",
       "change": "added",
-      "sha256": "4cac88a3e53995e97aa250ad7c219bdb9e99ebfcb6aba64d040ffbca39ec72ef"
+      "sha256": "27d9fe8087e3539096e111d75a36c2f342ac50f4709dca410c3a8acfc3ecdd7d"
     },
     {
       "path": "docs/VISUAL-REVIEW.md",
@@ -196,17 +231,17 @@
     {
       "path": "docs/documentation-audit.json",
       "change": "added",
-      "sha256": "e4920a178759e7024aef52e23624f76e88de5e634da33b1a65e06422aa967081"
+      "sha256": "2b352a3da1bd991c376d10606c3fe97454f012e5ab6f03647809266754e7fce8"
     },
     {
       "path": "docs/source-inventory.json",
       "change": "added",
-      "sha256": "afe8412ca728c61ce2d3a22090fc1463cba522c5bded34825e8efa02d4d8a443"
+      "sha256": "c3dd2f1e9dce10c1807c52089c0f28d521a3b93b8ddd956476104fc79b9179b9"
     },
     {
       "path": "profile/README.md",
       "change": "modified",
-      "sha256": "ddf34dc4039ae8fcae0da65d775ea67cd29d1c33f1a2515b4263416d4939ba1f"
+      "sha256": "db7d676453520b68a0cf208cf4fe8e02c4c57a20abc35e7cfa9366b6e33a0817"
     },
     {
       "path": "scripts/README.md",
@@ -214,9 +249,16 @@
       "sha256": "c51ffeb8e809c605f2d793b45558fbedc63a3f139b742721a6ef66ca70fcf291"
     },
     {
+      "path": "scripts/test-issue-forms.py",
+      "change": "added",
+      "sha256": "830d30146387b8c7d93bc801de2cc27853bd1b3816dcf05981f240a10fcfc203"
+    },
+    {
       "path": "scripts/verify-public-source.py",
       "change": "added",
-      "sha256": "ed2f3e996f8b7ec47d29e805a8b277a1f8a2bfc6a5310cba4b6eb96495ba4b36"
+      "sha256": "2b2d2dd51968c5d1359360583f7fc1bfcd93b82c9be3ca67480171b36f97a74d"
     }
-  ]
+  ],
+  "reconciliation_main": "0884d789f801c79fba9ad1374a3ed6cc7ac4511e",
+  "prior_pr_head": "c31684e58fd2a526a61641f3e3b127c5a0c68011"
 }

@@ -20,6 +20,11 @@ from urllib.parse import unquote, urlsplit
 from xml.etree import ElementTree as ET
 
 BASELINE = "743fc9ca2136ed0187f2730d5a736ba7fd88bae9"
+REVIEWED_ISSUE_FORMS = frozenset({
+    ".github/ISSUE_TEMPLATE/bug_report.yml",
+    ".github/ISSUE_TEMPLATE/feature_request.yml",
+    ".github/ISSUE_TEMPLATE/config.yml",
+})
 SVG_NS = "{http://www.w3.org/2000/svg}"
 
 
@@ -53,6 +58,59 @@ class ImageReferences(HTMLParser):
         for key in ("src", "href", "srcset"):
             if attr.get(key):
                 self.references.append(str(attr[key]))
+
+
+def issue_form_errors(name: str, data: dict) -> list[str]:
+    """Check public routing and privacy independently of file fingerprints."""
+    errors: list[str] = []
+    if name == "config.yml":
+        if str(data.get("blank_issues_enabled")).lower() != "false":
+            errors.append("blank issue bypass enabled")
+        links = data.get("contact_links", [])
+        security = "https://github.com/evident-technologies/.github/blob/main/SECURITY.md"
+        if not isinstance(links, list) or not any(
+            isinstance(row, dict) and row.get("url") == security for row in links
+        ):
+            errors.append("private security routing missing")
+        return errors
+    body = data.get("body", [])
+    if not data.get("name") or not data.get("description") or not isinstance(body, list) or not body:
+        return ["issue form identity or body missing"]
+    fields = [row for row in body if isinstance(row, dict) and row.get("type") != "markdown"]
+    ids = [row.get("id") for row in fields]
+    if not ids or any(not isinstance(value, str) or not value for value in ids):
+        errors.append("issue form IDs missing or duplicated")
+    elif len(ids) != len(set(ids)):
+        errors.append("issue form IDs missing or duplicated")
+    consent = False
+    routing = False
+    allowed = {"markdown", "input", "textarea", "dropdown", "checkboxes", "upload"}
+    for row in body:
+        if not isinstance(row, dict) or row.get("type") not in allowed:
+            errors.append("unsupported issue form element")
+            continue
+        attrs = row.get("attributes", {})
+        if not isinstance(attrs, dict):
+            errors.append("issue form attributes missing")
+            continue
+        if row["type"] != "markdown" and not attrs.get("label"):
+            errors.append("issue form field label missing")
+        if row["type"] == "checkboxes":
+            options = attrs.get("options", [])
+            if isinstance(options, list):
+                consent |= any(isinstance(option, dict) and
+                               str(option.get("required")).lower() == "true" and
+                               any(word in str(option.get("label", "")).lower()
+                                   for word in ("sensitive", "confidential"))
+                               for option in options)
+        if row["type"] == "markdown":
+            routing |= ("https://github.com/evident-technologies/.github/blob/main/"
+                        in str(attrs.get("value", "")))
+    if not consent:
+        errors.append("required public privacy consent missing")
+    if not routing:
+        errors.append("organization policy routing missing")
+    return errors
 
 
 def verify(root: Path) -> tuple[list[str], list[str], dict[str, int]]:
@@ -143,6 +201,9 @@ def verify(root: Path) -> tuple[list[str], list[str], dict[str, int]]:
                         fail(path, "YAML mapping expected")
                     elif path.parent == root / ".github/workflows" and not {"on", "jobs"} <= data.keys():
                         fail(path, "top-level workflow needs on and jobs")
+                    elif str(path.relative_to(root)) in REVIEWED_ISSUE_FORMS:
+                        for message in issue_form_errors(path.name, data):
+                            fail(path, message)
         except (ValueError, ET.ParseError, UnicodeError) as exc:
             fail(path, f"parse error ({type(exc).__name__})")
 
@@ -211,7 +272,8 @@ def verify(root: Path) -> tuple[list[str], list[str], dict[str, int]]:
         if item["sha256"] != original_hash:
             fail(root / "docs/source-inventory.json", "baseline fingerprint does not match Git source")
         protected = (
-            name.startswith((".github/workflows/", "governance/", ".github/ISSUE_TEMPLATE/"))
+            (name.startswith((".github/workflows/", "governance/", ".github/ISSUE_TEMPLATE/"))
+             and name not in REVIEWED_ISSUE_FORMS)
             or Path(name).suffix in {".svg", ".png"}
             or name in {".github/CODEOWNERS", ".github/dependabot.yml", "action-pins.json",
                         "scripts/ship.sh", "scripts/validate-runner-fabric.py", "brand/package.json"}

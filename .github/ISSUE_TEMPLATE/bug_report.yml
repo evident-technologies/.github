@@ -1,93 +1,39 @@
-name: Defect report
-description: Report a verifiable defect in published Evident-Technologies code or documentation.
-title: "[defect] <concise summary>"
-labels: ["defect", "triage"]
+name: Public defect report
+description: Report a non-sensitive defect in public source or documentation.
+title: "[defect] "
 body:
   - type: markdown
     attributes:
       value: |
-        This repository operates under controlled institutional governance. External
-        contributions are not accepted. Defect reports are reviewed at the discretion
-        of Evident Technologies LLC and are not subject to response-time commitments.
-
-        Do not file security-sensitive defects here. Use the disclosure process in
-        [SECURITY.md](https://github.com/Evident-Technologies/.github/blob/main/SECURITY.md).
-
+        This is a public form. Use synthetic examples only. Do not include credentials,
+        personal data, case records, customer files, private infrastructure, or vulnerability details.
+        Report security concerns under [SECURITY.md](https://github.com/evident-technologies/.github/blob/main/SECURITY.md).
+        Review is discretionary. A report does not authorize code contributions or system testing.
   - type: input
-    id: repository
+    id: revision
     attributes:
-      label: Affected repository
-      description: Repository name and (if applicable) package or path.
-      placeholder: "Evident-Technologies/<repo> — path/to/file"
+      label: Affected repository and revision
+      description: Public URL, full commit SHA or release, and affected file or feature.
     validations:
       required: true
-
-  - type: input
-    id: version
-    attributes:
-      label: Version, commit, or release
-      description: The exact version, tag, or commit SHA where the defect was observed.
-      placeholder: "v0.0.0 · commit abcd123"
-    validations:
-      required: true
-
   - type: textarea
-    id: environment
+    id: reproduce
     attributes:
-      label: Environment
-      description: Operating system, runtime, browser, or relevant deployment surface.
-      placeholder: |
-        OS:
-        Runtime:
-        Browser (if applicable):
-        Deployment surface:
+      label: Steps and environment
+      description: Numbered steps, relevant OS or browser versions, and synthetic inputs.
     validations:
       required: true
-
   - type: textarea
-    id: reproduction
+    id: result
     attributes:
-      label: Reproduction steps
-      description: Deterministic, numbered steps. A reviewer must be able to follow these without inference.
-      placeholder: |
-        1.
-        2.
-        3.
+      label: Expected and observed results
+      description: Separate documented expectations from observations. State uncertainties and impact.
     validations:
       required: true
-
-  - type: textarea
-    id: expected
-    attributes:
-      label: Expected behavior
-      description: The documented or contractually-implied behavior.
-    validations:
-      required: true
-
-  - type: textarea
-    id: actual
-    attributes:
-      label: Observed behavior
-      description: The actual behavior, including verbatim error output where applicable.
-    validations:
-      required: true
-
-  - type: textarea
-    id: scope
-    attributes:
-      label: Scope and impact
-      description: Affected users, data, workflows, or downstream systems. State unknowns as unknown.
-    validations:
-      required: true
-
   - type: checkboxes
-    id: governance
+    id: privacy
     attributes:
-      label: Governance acknowledgements
+      label: Public reporting boundaries
       options:
-        - label: This report contains no proof-of-concept material for a security vulnerability.
-          required: true
-        - label: This report contains no confidential, privileged, or personally identifying material.
-          required: true
-        - label: I understand external contributions are not accepted and review is at the discretion of Evident Technologies LLC.
+        - label: This report contains no sensitive information or security vulnerability details.
           required: true

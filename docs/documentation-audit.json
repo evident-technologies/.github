@@ -7,7 +7,8 @@
     "S3": "Current canonical architecture/engineering source compared through authenticated default-branch reads; private identities retained in the private authority catalog, not published here",
     "S4": "Exact repository source, manifests, recorded baseline, and verification results",
     "S5": "Official GitHub documentation for community defaults and runner-group boundaries",
-    "S6": "Corporate public pages observed November 13, 2026; project availability remains qualified"
+    "S6": "Corporate public pages observed November 13, 2026; project availability remains qualified",
+    "S7": "Owner-requested reconciliation into existing draft PR 28, November 13, 2026; main 0884d789f801c79fba9ad1374a3ed6cc7ac4511e and prior PR c31684e58fd2a526a61641f3e3b127c5a0c68011; no PR merge or deploy."
   },
   "documents": [
     {
@@ -19,7 +20,8 @@
       "source_authority": [
         "S2",
         "S4",
-        "S5"
+        "S5",
+        "S7"
       ],
       "acceptance_criteria": "Template is usable for documentation and reports actual checks.",
       "final_disposition": "REVIEW_PROPOSAL; current facts qualified; founder/Manager approval as applicable"
@@ -33,7 +35,8 @@
       "source_authority": [
         "S1",
         "S3",
-        "S4"
+        "S4",
+        "S7"
       ],
       "acceptance_criteria": "No vendor promotion or self-issued publication authority.",
       "final_disposition": "REVIEW_PROPOSAL; current facts qualified; founder/Manager approval as applicable"
@@ -46,7 +49,8 @@
       "proposed_treatment": "Preserve conduct/reporting rules; propose narrower rights language for review.",
       "source_authority": [
         "S1",
-        "S2"
+        "S2",
+        "S7"
       ],
       "acceptance_criteria": "Manager review visible; no unsupported waiver presented as settled law.",
       "final_disposition": "REVIEW_PROPOSAL; current facts qualified; founder/Manager approval as applicable"
@@ -60,7 +64,8 @@
       "source_authority": [
         "S1",
         "S2",
-        "S3"
+        "S3",
+        "S7"
       ],
       "acceptance_criteria": "Access, credit, ownership, and consequential permission remain distinct.",
       "final_disposition": "REVIEW_PROPOSAL; current facts qualified; founder/Manager approval as applicable"
@@ -74,7 +79,8 @@
       "source_authority": [
         "S1",
         "S4",
-        "S5"
+        "S5",
+        "S7"
       ],
       "acceptance_criteria": "Repository purpose, paths, status, and links verified.",
       "final_disposition": "REVIEW_PROPOSAL; current facts qualified; founder/Manager approval as applicable"
@@ -87,7 +93,8 @@
       "proposed_treatment": "Preserve scope, safe harbor, boundaries, targets, and private route; simplify editorial presentation.",
       "source_authority": [
         "S2",
-        "S4"
+        "S4",
+        "S7"
       ],
       "acceptance_criteria": "All substantive reporting protections preserved; no unverified practice claims.",
       "final_disposition": "REVIEW_PROPOSAL; current facts qualified; founder/Manager approval as applicable"
@@ -101,7 +108,8 @@
       "source_authority": [
         "S1",
         "S2",
-        "S6"
+        "S6",
+        "S7"
       ],
       "acceptance_criteria": "Security and private support do not route to public issues.",
       "final_disposition": "REVIEW_PROPOSAL; current facts qualified; founder/Manager approval as applicable"
@@ -113,7 +121,8 @@
       "identified_issue": "Commands referred to absent tooling.",
       "proposed_treatment": "Document existing checks, new bounded source verifier, failures, and manual limits.",
       "source_authority": [
-        "S4"
+        "S4",
+        "S7"
       ],
       "acceptance_criteria": "Commands exist and actual results distinguish PASS, FAIL, HOLD, NOT_RUN.",
       "final_disposition": "REVIEW_PROPOSAL; current facts qualified; founder/Manager approval as applicable"
@@ -128,7 +137,8 @@
         "S1",
         "S3",
         "S4",
-        "S5"
+        "S5",
+        "S7"
       ],
       "acceptance_criteria": "No private topology or workstation personalization; no invented authority.",
       "final_disposition": "REVIEW_PROPOSAL; current facts qualified; founder/Manager approval as applicable"
@@ -141,7 +151,8 @@
       "proposed_treatment": "Preserve originals; qualify rights and publication; document explicit candidate/retirement holds.",
       "source_authority": [
         "S1",
-        "S4"
+        "S4",
+        "S7"
       ],
       "acceptance_criteria": "No approved mark invented; original fingerprints and compatibility paths retained.",
       "final_disposition": "REVIEW_PROPOSAL; current facts qualified; founder/Manager approval as applicable"
@@ -154,10 +165,25 @@
       "proposed_treatment": "Retain editable variants and exact founder selection gate.",
       "source_authority": [
         "S1",
-        "S4"
+        "S4",
+        "S7"
       ],
       "acceptance_criteria": "No candidate replaces legacy bytes or becomes permanent by documentation.",
       "final_disposition": "REVIEW_PROPOSAL; current facts qualified; founder/Manager approval as applicable"
+    },
+    {
+      "path": "docs/ACTION-PINS.md",
+      "purpose": "Observed action manifest format and drift",
+      "intake_classification": "ADVISORY_CANDIDATE",
+      "identified_issue": "Public guidance needs an explicit source and limitation.",
+      "proposed_treatment": "Add qualified guidance without new authority, rights grants, readiness claims, or deployment.",
+      "source_authority": [
+        "S4",
+        "S5",
+        "S7"
+      ],
+      "acceptance_criteria": "Links resolve, claims are qualified, source and original assets remain preserved.",
+      "final_disposition": "REVIEW_PROPOSAL; adoption and operational permission remain separate."
     },
     {
       "path": "docs/COMPANY.md",
@@ -168,7 +194,8 @@
       "source_authority": [
         "S1",
         "S3",
-        "S6"
+        "S6",
+        "S7"
       ],
       "acceptance_criteria": "Conceptual roles do not claim released systems or independent constitutions.",
       "final_disposition": "REVIEW_PROPOSAL; current facts qualified; founder/Manager approval as applicable"
@@ -181,10 +208,25 @@
       "proposed_treatment": "Index the complete machine-readable file-by-file review.",
       "source_authority": [
         "S1",
-        "S4"
+        "S4",
+        "S7"
       ],
       "acceptance_criteria": "Inventory parity with tracked and proposed public Markdown; sources and acceptance criteria present.",
       "final_disposition": "REVIEW_PROPOSAL; current facts qualified; founder/Manager approval as applicable"
+    },
+    {
+      "path": "docs/LICENSING.md",
+      "purpose": "Component rights and distribution notices",
+      "intake_classification": "ADVISORY_CANDIDATE",
+      "identified_issue": "Public guidance needs an explicit source and limitation.",
+      "proposed_treatment": "Add qualified guidance without new authority, rights grants, readiness claims, or deployment.",
+      "source_authority": [
+        "S4",
+        "S5",
+        "S7"
+      ],
+      "acceptance_criteria": "Links resolve, claims are qualified, source and original assets remain preserved.",
+      "final_disposition": "REVIEW_PROPOSAL; adoption and operational permission remain separate."
     },
     {
       "path": "docs/POLICY-REVIEW.md",
@@ -196,7 +238,8 @@
         "S1",
         "S2",
         "S3",
-        "S4"
+        "S4",
+        "S7"
       ],
       "acceptance_criteria": "No private constitution copied or candidate allowed to adopt itself.",
       "final_disposition": "REVIEW_PROPOSAL; current facts qualified; founder/Manager approval as applicable"
@@ -210,10 +253,39 @@
       "source_authority": [
         "S1",
         "S3",
-        "S4"
+        "S4",
+        "S7"
       ],
       "acceptance_criteria": "No documentation-level production grant; preserved workflow defects not hidden.",
       "final_disposition": "REVIEW_PROPOSAL; current facts qualified; founder/Manager approval as applicable"
+    },
+    {
+      "path": "docs/PUBLIC-CLAIMS.md",
+      "purpose": "Scope, maturity, qualifications and safety",
+      "intake_classification": "ADVISORY_CANDIDATE",
+      "identified_issue": "Public guidance needs an explicit source and limitation.",
+      "proposed_treatment": "Add qualified guidance without new authority, rights grants, readiness claims, or deployment.",
+      "source_authority": [
+        "S4",
+        "S5",
+        "S7"
+      ],
+      "acceptance_criteria": "Links resolve, claims are qualified, source and original assets remain preserved.",
+      "final_disposition": "REVIEW_PROPOSAL; adoption and operational permission remain separate."
+    },
+    {
+      "path": "docs/RECONCILIATION-20261113.md",
+      "purpose": "Current source and conflict reconciliation record",
+      "intake_classification": "ADVISORY_CANDIDATE",
+      "identified_issue": "Public guidance needs an explicit source and limitation.",
+      "proposed_treatment": "Add qualified guidance without new authority, rights grants, readiness claims, or deployment.",
+      "source_authority": [
+        "S4",
+        "S5",
+        "S7"
+      ],
+      "acceptance_criteria": "Links resolve, claims are qualified, source and original assets remain preserved.",
+      "final_disposition": "REVIEW_PROPOSAL; adoption and operational permission remain separate."
     },
     {
       "path": "docs/RECONSTRUCTION-REVIEW.md",
@@ -223,7 +295,8 @@
       "proposed_treatment": "Keep finite evidence, results, dependency holds, and rollback.",
       "source_authority": [
         "S1",
-        "S4"
+        "S4",
+        "S7"
       ],
       "acceptance_criteria": "No complete/ready-for-merge claim while mandatory review or verification remains open.",
       "final_disposition": "REVIEW_PROPOSAL; current facts qualified; founder/Manager approval as applicable"
@@ -238,7 +311,8 @@
         "S1",
         "S3",
         "S4",
-        "S5"
+        "S5",
+        "S7"
       ],
       "acceptance_criteria": "Detailed findings stay private; no new access grant or topology disclosure.",
       "final_disposition": "REVIEW_PROPOSAL; current facts qualified; founder/Manager approval as applicable"
@@ -251,7 +325,8 @@
       "proposed_treatment": "Keep concise project process, rights, support, and acceptance expectations.",
       "source_authority": [
         "S1",
-        "S6"
+        "S6",
+        "S7"
       ],
       "acceptance_criteria": "No fabricated customers, contracts, revenue, partnerships, or automatic rights transfer.",
       "final_disposition": "REVIEW_PROPOSAL; current facts qualified; founder/Manager approval as applicable"
@@ -264,7 +339,8 @@
       "proposed_treatment": "Describe observed vector proofs and unavailable rendering evidence.",
       "source_authority": [
         "S1",
-        "S4"
+        "S4",
+        "S7"
       ],
       "acceptance_criteria": "No browser, screen-reader, trademark, or approval claim without evidence.",
       "final_disposition": "REVIEW_PROPOSAL; current facts qualified; founder/Manager approval as applicable"
@@ -278,7 +354,8 @@
       "source_authority": [
         "S1",
         "S3",
-        "S6"
+        "S6",
+        "S7"
       ],
       "acceptance_criteria": "Founder-led company identified; no product maturity, affiliation, or certification inflation.",
       "final_disposition": "REVIEW_PROPOSAL; current facts qualified; founder/Manager approval as applicable"
@@ -292,7 +369,8 @@
       "source_authority": [
         "S1",
         "S3",
-        "S4"
+        "S4",
+        "S7"
       ],
       "acceptance_criteria": "No automatic shipping instruction or unsupported safety guarantee.",
       "final_disposition": "REVIEW_PROPOSAL; current facts qualified; founder/Manager approval as applicable"

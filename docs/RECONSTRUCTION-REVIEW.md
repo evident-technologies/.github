@@ -1,5 +1,10 @@
 # Organization reconstruction review
 
+> [!NOTE]
+> The latest main/profile/conduct reconciliation is recorded in
+> [the November 13 supplement](RECONCILIATION-20261113.md). Earlier evidence below remains tied
+> to its original revision; it is not a test receipt for the new head.
+
 Status: review proposal, not publication approval. This change extends the service-focused direction
 in [draft PR #28](https://github.com/evident-technologies/.github/pull/28) on its existing branch.
 It does not create a competing identity PR. The baseline is

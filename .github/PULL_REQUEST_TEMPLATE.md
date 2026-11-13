@@ -1,40 +1,38 @@
-# Change review
+# Pull request
 
-## Outcome and rationale
+## Change and purpose
 
-<!-- State the concrete problem, resulting behavior, and why the change is needed. -->
+<!-- State the problem, resulting behavior, and affected paths. External code contributions are
+closed; follow the receiving repository's policy and signed agreements. -->
 
-## Scope and dependencies
+## Scope and provenance
 
-- Exact paths and repositories affected:
-- Downstream consumers and immutable source revisions:
-- Reversibility and retained source:
-- Related PRs or decisions:
+<!-- Identify base/head revisions, related work, downstream consumers, preserved originals,
+third-party sources and licenses, and material AI assistance. Do not paste private records or
+agreements. -->
 
 ## Verification
 
-<!-- List actual commands and results, including failures, skips, and manual limits.
-Do not mark checks that did not run. Application build/type checks may be N/A for documentation. -->
+<!-- List commands, tool versions, actual results, and source revision. State skipped/inapplicable
+checks and limitations. For CI include run URL, job ID, assigned runner, and conclusion. Never mark
+an unrun test as passed. -->
 
-- [ ] Applicable repository checks completed
-- [ ] Links, assets, and rendered content inspected where affected
-- [ ] Source, rights, and dependency records checked
-- [ ] Sensitive information excluded from the public diff and description
-- [ ] Remaining approvals and verification limits stated
+## Risk and recovery
 
-## Governance
+<!-- Describe privacy/security/safety implications, compatibility, recovery steps, and any separate
+operational authorization needed. Vulnerability details belong in the private disclosure process.
+-->
 
-- [ ] Manager review identified for policy, legal, security, or governance revisions
-- [ ] Evidence-integrity or custody changes have explicit authorization
-- [ ] No unapproved runner, credential, environment, or production changes
-- [ ] CODEOWNERS, branch protection, and required checks remain effective
-- [ ] External dependencies and their licenses disclosed
+## Review checklist
 
-## Rollback and approval
+- [ ] The change is within the authorized task and contribution terms; required rights and
+  attribution are documented.
+- [ ] Public content contains no private records, credentials, client information, or sensitive
+  infrastructure details.
+- [ ] Claims distinguish verified behavior, limitations, development work, and prospective services.
+- [ ] Tests and link/asset checks match the changed scope; gaps are stated.
+- [ ] Governance, security, licensing, evidence-integrity, workflow, or qualification changes are
+  identified for the applicable authorized review.
 
-<!-- Identify the prior revision, restoration scope, and downstream pin changes.
-Keep private findings outside this PR. -->
-
-Founder or authorized reviewer approval is required before acceptance. Merge and release are
-separate decisions. External code contributions remain subject to
-[CONTRIBUTING.md](../CONTRIBUTING.md).
+<!-- Passing checks do not authorize merge, release, deployment, permission changes, or broader
+testing. -->

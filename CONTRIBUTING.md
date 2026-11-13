@@ -1,69 +1,70 @@
-# Contribution and reuse policy
+# Contributing
 
-**Owner:** Evident Technologies LLC, New Jersey, United States.
+**Owner:** Evident Technologies LLC. **Status:** Proposed revision for Manager review; the published
+policy and signed agreements remain controlling until adopted.
 
-**Policy owner:** The company's Manager.
+## Participation and authorization
 
-**Revision status:** Proposed modernization for Manager review. The default-branch policy remains
-controlling until approved. See the [policy review](docs/POLICY-REVIEW.md).
+External code contributions are not accepted. Do not submit unsolicited implementations or
+confidential material. Non-sensitive defects and bounded proposals may use the receiving
+repository's issue forms. A report does not authorize implementation, promise compensation, or
+establish employment, access, or ownership.
 
-## Contributions
+Authorized contributors must have the agreements required by the published policy before committing
+work: an NDA, an intellectual property assignment agreement, and a contractor or employment
+agreement with indemnification. The actual signed agreements govern ownership, scope, compensation,
+responsibilities, and liability; this guide does not supply or amend them. Direct engagement
+inquiries to [hello@evidtech.com](mailto:hello@evidtech.com).
 
-External public code contributions are not accepted. Public visibility permits inspection of
-published material; it does not invite unsolicited development, grant platform access, or establish
-compensation or ownership rights. Authentication, repository access, and contribution credit do not
-grant organizational membership, resource authorization, or deployment authority.
+Read the receiving repository's current instructions, contribution terms, and license. A permissive
+dependency license does not open company-owned material for contributions, and this default does not
+override component rights or an expressly adopted repository-specific contribution policy.
 
-Company work includes scoped websites, software, design, and business workflows, alongside Platform
-and ICU development. Evidence-related processing requires traceable source, reproducible behavior
-within its documented contract, and clear responsibility for changes.
+## Before changing source
 
-Authorized contributors must have all three agreements in place before work:
+1. Inspect the remote, exact commit, branch, working changes, other worktrees, and existing PRs.
+   Preserve original history and other writers' work. Use the established isolated lane for the agreed
+   task.
+2. Confirm authorization and review requirements for the exact paths and actions. CODEOWNERS
+   identifies requested reviewers; technical access is not approval to merge, release, deploy, or
+   change permissions.
+3. Keep case records, personal information, credentials, privileged materials, and private
+   infrastructure outside public GitHub and Actions. Use synthetic fixtures. Do not upload customer
+   material as a reproduction.
+4. Preserve documented determinism requirements. The published policy requires identical output from
+   identical input in analysis pipelines. Do not narrow that requirement through editorial changes;
+   identify conflicts or exceptions for explicit Manager review.
+5. Obtain explicit written Manager approval before bypassing hash verification, audit logging,
+   custody controls, or evidence-integrity contracts. Obtain the required approval for Lumen prompt
+   templates, payment configuration, production database migrations, or CI/CD definitions.
+6. Describe what changed, why, downstream effects, tests actually run, limitations, and recovery
+   steps. Use [verification
+   guidance](https://github.com/evident-technologies/.github/blob/main/VERIFY.md) and the PR template.
+   Mark inapplicable checks honestly.
 
-| Agreement | Purpose |
-| --- | --- |
-| Non-disclosure agreement | Confidentiality of source, methods, and private information |
-| Intellectual property assignment | Documented ownership of agreed work product |
-| Contractor or employment agreement with indemnification | Scope, responsibilities, compensation, and engagement terms |
+## Rights, attribution, and dependencies
 
-The signed agreements govern their terms. An inquiry, issue, fork, or PR does not substitute for an
-agreement. Send engagement inquiries to [hello@evidtech.com](mailto:hello@evidtech.com) with the
-subject `Contributor Inquiry`.
+Submit only material you are authorized to contribute under the applicable signed agreements.
+Identify original authors, upstream URLs and exact revisions, licenses, required notices,
+modifications, and any restrictions. Disclose material AI assistance and verify its outputs,
+citations, dependencies, and rights before submission. AI output is not proof of authorship or
+clearance.
 
-## Authorized work
+Do not remove copyright or attribution notices or claim company ownership of third-party work. Do
+not introduce a new license, assignment, CLA, or rights waiver through a checkbox or PR description.
+Resolve incompatible or unclear terms before inclusion. See [licensing
+guidance](https://github.com/evident-technologies/.github/blob/main/docs/LICENSING.md).
 
-1. Preserve source provenance, review history, and recovery checkpoints.
-2. Keep real case data, personal information, privileged material, credentials, and private
-   infrastructure outside public repositories and Actions.
-3. Obtain the Manager's explicit written approval before bypassing hash verification, audit logging,
-   custody controls, or evidence-integrity contracts.
-4. Preserve documented deterministic-processing requirements and disclose limitations.
-5. Follow repository governance and approved internal standards. Obtain approval before changing
-   production settings, payment configuration, production database migrations, Lumen prompt
-   templates, or CI/CD definitions.
-6. Report security concerns privately through [SECURITY.md](SECURITY.md).
+## Reports and review
 
-## Reports and proposals
+Report vulnerabilities privately under
+[SECURITY.md](https://github.com/evident-technologies/.github/blob/main/SECURITY.md). For other
+private matters use
+[SUPPORT.md](https://github.com/evident-technologies/.github/blob/main/SUPPORT.md). Public issues
+may describe non-sensitive defects and proposals where permitted, using an exact revision and
+synthetic examples. Review and response timing are discretionary.
 
-Use the available issue forms for non-sensitive defects in a public surface or bounded capability
-proposals. Describe the affected revision, reproduction steps, expected behavior, and observed
-result. Include synthetic examples only.
-
-GitHub is not a support channel. Existing clients should use their account contact or
-[operations@evidtech.com](mailto:operations@evidtech.com). Security, legal, access, billing, and
-private matters follow [SUPPORT.md](SUPPORT.md). Review, prioritization, and response timing remain
-at the company's discretion.
-
-## Licensing and third-party sources
-
-Company-authored proprietary material requires an express license for reuse. This repository
-includes no repository-wide open-source license. Public visibility, an example, or package metadata
-does not establish one.
-
-Third-party components retain their own licenses, copyright notices, and attribution requirements.
-Company ownership statements do not override those rights. Inspect the license and provenance of the
-exact component and revision before reuse; ask [legal@evidtech.com](mailto:legal@evidtech.com) when
-unclear. Brand artwork has a separate [rights and approval record](brand/README.md).
-
-This policy describes repository participation. It provides no legal advice and does not replace
-signed engagement terms.
+Follow the [Code of
+Conduct](https://github.com/evident-technologies/.github/blob/main/CODE_OF_CONDUCT.md). Keep fixes
+focused and preserve provenance. Passing checks provide evidence for review; acceptance and
+consequential actions require their own authorized process.

@@ -1,29 +1,31 @@
-# Contact and support
+# Support and inquiries
 
-Evident Technologies LLC handles project, product, and operational inquiries through private
-correspondence. A repository or demonstration does not create a support agreement, access
-entitlement, or response guarantee.
+Use the receiving project's documentation and any existing agreement first. This page routes
+inquiries; it does not create a support contract, response guarantee, professional relationship, or
+entitlement to access.
 
-| Purpose | Channel |
+| Need | Route |
 | --- | --- |
-| Websites, design, business software, partnerships | [Project inquiry](https://evidtech.com/contact/) |
-| Existing engagements, access, administration, support | [operations@evidtech.com](mailto:operations@evidtech.com) |
-| Security disclosure | [security@evidtech.com](mailto:security@evidtech.com), following [SECURITY.md](SECURITY.md) |
-| Legal correspondence and licensing | [legal@evidtech.com](mailto:legal@evidtech.com) |
+| Public, non-sensitive documentation or product defect | The affected repository's enabled issue form; include the revision and synthetic reproduction |
+| Public capability proposal | The affected repository's proposal form, where available |
+| Business, contracting, trades, access, billing, or private product assistance | [operations@evidtech.com](mailto:operations@evidtech.com), or the contact in your existing agreement |
+| Contributor engagement | [hello@evidtech.com](mailto:hello@evidtech.com) and [CONTRIBUTING.md](https://github.com/evident-technologies/.github/blob/main/CONTRIBUTING.md) |
+| Security vulnerability or exposed credentials | [security@evidtech.com](mailto:security@evidtech.com) and [SECURITY.md](https://github.com/evident-technologies/.github/blob/main/SECURITY.md) |
+| Conduct, licensing, or rights concern | [legal@evidtech.com](mailto:legal@evidtech.com) and the [Code of Conduct](https://github.com/evident-technologies/.github/blob/main/CODE_OF_CONDUCT.md) |
 
-For a project inquiry, describe the audience, current website or process, desired result, timing,
-and accessibility needs. Existing clients should identify their project through their established
-private channel.
+Public GitHub issues are for permitted non-sensitive reports, not account support, legal
+correspondence, billing, vulnerability details, or private records. Do not include account
+identifiers or internal system details publicly.
 
-Do not attach credentials, personal records, client files, privileged material, or evidence.
-Describe sensitive circumstances at a high level first and wait for an approved transfer method.
+Start private inquiries with the product or project name, a brief description, and a public revision
+or URL where useful. Do not attach credentials, legal records, customer files, personal information,
+or evidence. Ordinary email is not an approved sensitive-record transfer channel; arrange an
+appropriate channel first.
 
-## GitHub reports
+If you accidentally publish sensitive information, stop sharing it and report privately. Do not
+repeat the sensitive content in a new issue. The responsible owner must assess credential rotation
+and provider remediation; editing a comment does not prove copies were removed.
 
-Public issues are limited to permitted non-sensitive defect reports and capability proposals. They
-are not channels for support, billing, access, legal matters, private records, or security
-disclosure. Reports may be redirected or closed. See [CONTRIBUTING.md](CONTRIBUTING.md).
-
-Response timing and maintenance, revisions, hosting, or support obligations depend on the individual
-agreement. Correspondence alone creates no service, employment, contractor, fiduciary, or
-attorney-client relationship.
+Messages are reviewed as capacity permits. Acknowledgment and resolution times are not guaranteed.
+GitHub and email are not emergency services. Availability, qualifications, safety responsibilities,
+deliverables, acceptance, rights, and ongoing support must be established for each engagement.

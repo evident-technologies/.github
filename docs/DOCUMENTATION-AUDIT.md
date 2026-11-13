@@ -1,5 +1,10 @@
 # Documentation audit
 
+> [!NOTE]
+> The latest main/profile/conduct reconciliation is recorded in
+> [the November 13 supplement](RECONCILIATION-20261113.md). Earlier evidence below remains tied
+> to its original revision; it is not a test receipt for the new head.
+
 All original and proposed public Markdown documents, including hidden GitHub templates, are reviewed
 in the [file-by-file inventory](documentation-audit.json). Each record identifies purpose, issue
 classification, treatment, source authority, acceptance criteria, and final disposition. No document

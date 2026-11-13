@@ -1,65 +1,38 @@
 name: Capability proposal
-description: Propose a capability or change for institutional consideration.
-title: "[proposal] <concise summary>"
-labels: ["proposal", "triage"]
+description: Describe a bounded, non-sensitive improvement for consideration.
+title: "[proposal] "
 body:
   - type: markdown
     attributes:
       value: |
-        Capability proposals are recorded for institutional consideration. Acceptance,
-        prioritization, and implementation are at the sole discretion of Evident
-        Technologies LLC. No response, timeline, or roadmap inclusion is implied by
-        filing a proposal.
-
-        This repository operates under controlled institutional governance. External
-        contributions are not accepted.
-
+        Share a public problem statement, not confidential plans or unsolicited implementation.
+        External code contributions remain closed. A proposal is not an engagement, IP assignment,
+        promise of compensation, roadmap commitment, or permission to test systems.
+        See [CONTRIBUTING.md](https://github.com/evident-technologies/.github/blob/main/CONTRIBUTING.md).
   - type: input
-    id: repository
+    id: project
     attributes:
-      label: Target repository or product
-      placeholder: "Evident-Technologies/<repo>"
+      label: Affected project or documentation
     validations:
       required: true
-
   - type: textarea
     id: problem
     attributes:
-      label: Problem statement
-      description: The operational, technical, or institutional problem the proposal addresses. Avoid hypothetical framing.
+      label: Problem and intended users
+      description: Explain the practical need without personal or customer information.
     validations:
       required: true
-
   - type: textarea
     id: proposal
     attributes:
-      label: Proposed capability
-      description: A concrete, bounded description of the proposed change. Avoid open-ended exploration.
+      label: Proposed outcome, scope, and alternatives
+      description: Include dependencies, privacy, safety, accessibility, and known limitations where relevant.
     validations:
       required: true
-
-  - type: textarea
-    id: alternatives
-    attributes:
-      label: Alternatives considered
-      description: Alternatives examined and the reason each was set aside. State "none" if no alternatives were considered.
-    validations:
-      required: true
-
-  - type: textarea
-    id: scope
-    attributes:
-      label: Scope, dependencies, and blast radius
-      description: Affected surfaces, dependencies, downstream consumers, and any institutional or compliance implications.
-    validations:
-      required: true
-
   - type: checkboxes
-    id: governance
+    id: privacy
     attributes:
-      label: Governance acknowledgements
+      label: Public reporting boundaries
       options:
-        - label: I understand external contributions are not accepted and this proposal does not constitute work product.
-          required: true
-        - label: I understand acceptance, prioritization, and timing are at the sole discretion of Evident Technologies LLC.
+        - label: This proposal contains no confidential, personal, security-sensitive, or unauthorized material.
           required: true

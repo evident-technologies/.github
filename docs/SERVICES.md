@@ -45,3 +45,12 @@ right.
 Use the [project inquiry page](https://evidtech.com/contact/). Describe the work without attaching
 private client, legal, evidence, or credential material. Partnerships and institutional projects use
 the same inquiry route. Existing clients follow [SUPPORT.md](../SUPPORT.md).
+
+## Contracting, trades, and prospective engineering
+
+Contracting and trades are available by separate scoped agreement. Confirm work, jurisdiction,
+qualifications, required licenses or permits, insurance, safety responsibilities, and capacity for
+the engagement. Native software and connected systems depend on documented project status and
+scope. Physical and hardware engineering remain prospective; no facility, operational hardware
+product, certification, or licensed professional engineering practice is asserted. See
+[public claims and safety](PUBLIC-CLAIMS.md).

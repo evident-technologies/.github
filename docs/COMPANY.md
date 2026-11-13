@@ -53,3 +53,12 @@ deployment, licensing, certification, or release readiness.
 
 See [services and delivery](SERVICES.md), [contribution and reuse](../CONTRIBUTING.md), and
 [security disclosure](../SECURITY.md).
+
+## Contracting, trades, and prospective engineering
+
+Contracting and trades are available by separate scoped agreement. Confirm work, jurisdiction,
+qualifications, required licenses or permits, insurance, safety responsibilities, and capacity for
+the engagement. Native software and connected systems depend on documented project status and
+scope. Physical and hardware engineering remain prospective; no facility, operational hardware
+product, certification, or licensed professional engineering practice is asserted. See
+[public claims and safety](PUBLIC-CLAIMS.md).

@@ -10,21 +10,24 @@
     },
     {
       "path": ".github/ISSUE_TEMPLATE/bug_report.yml",
-      "classification": "KEEP",
+      "classification": "REVISE_FOR_REVIEW",
       "sha256": "cc33c4f82323b1492fb1697e9b75d64f6a2ede5052153dc394d825458c033376",
-      "preserve_bytes": true
+      "preserve_bytes": false,
+      "revision_reason": "Owner requested the prepared issue-form refresh in existing draft PR 28 on November 13, 2026; original baseline fingerprint retained."
     },
     {
       "path": ".github/ISSUE_TEMPLATE/config.yml",
-      "classification": "KEEP",
+      "classification": "REVISE_FOR_REVIEW",
       "sha256": "31abd16da75933c5568dd0cb537625389ff2adf491badb9e8cc65966e97b98c9",
-      "preserve_bytes": true
+      "preserve_bytes": false,
+      "revision_reason": "Owner requested the prepared issue-form refresh in existing draft PR 28 on November 13, 2026; original baseline fingerprint retained."
     },
     {
       "path": ".github/ISSUE_TEMPLATE/feature_request.yml",
-      "classification": "KEEP",
+      "classification": "REVISE_FOR_REVIEW",
       "sha256": "141465610efeee577dc42d47c6a4196e34b8d0d02b8a18230163129102ccbb5c",
-      "preserve_bytes": true
+      "preserve_bytes": false,
+      "revision_reason": "Owner requested the prepared issue-form refresh in existing draft PR 28 on November 13, 2026; original baseline fingerprint retained."
     },
     {
       "path": ".github/PULL_REQUEST_TEMPLATE.md",

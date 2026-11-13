@@ -1,5 +1,10 @@
 # Policy revision proposal
 
+> [!NOTE]
+> The latest main/profile/conduct reconciliation is recorded in
+> [the November 13 supplement](RECONCILIATION-20261113.md). Earlier evidence below remains tied
+> to its original revision; it is not a test receipt for the new head.
+
 Status: proposed for Manager review in the existing identity reconstruction. The default-branch
 policy remains controlling until acceptance. This document records editorial and substantive
 differences so authority is not changed implicitly.

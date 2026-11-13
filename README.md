@@ -13,6 +13,8 @@ retain their own purpose and development status.
 [Company website](https://evidtech.com/) · [Discuss a project](https://evidtech.com/contact/) ·
 [Organization profile](profile/README.md)
 
+Human dignity. Disciplined engineering. Verifiable work.
+
 ## Work with Evident
 
 Website, design, and workflow engagements begin with an agreed scope. Contracting-related tools can
@@ -23,6 +25,12 @@ process, accessibility, rights, and handoff expectations.
 Evident Forge is the company's design and development practice and demonstration surface. Evident
 Platform and Evident ICU remain development work; public examples do not establish production
 availability, certification, or a service commitment. See [products and status](docs/COMPANY.md).
+
+Contracting and trades are available by separate scoped agreement. Confirm work, location,
+qualifications, required licenses or permits, insurance, and capacity for the engagement. Native
+software and connected systems are development and project-specific integration areas. Physical
+and hardware engineering remain prospective; no operational hardware product, facility,
+certification, or licensed engineering practice is announced.
 
 ## Navigate this repository
 
@@ -35,7 +43,12 @@ availability, certification, or a service commitment. See [products and status](
 | Responsible disclosure | [Security policy](SECURITY.md) |
 | Identity sources and approval | [Brand guide](brand/README.md) and [candidate review](brand/candidates/README.md) |
 | Technical responsibilities | [Workspace](WORKSPACE.md), [workflows](docs/PRODUCT-WORKFLOW-ARCHITECTURE.md), and [runner boundaries](docs/RUNNER-FABRIC.md) |
+| Claims, rights, and action pins | [Claims and safety](docs/PUBLIC-CLAIMS.md), [licensing](docs/LICENSING.md), and [action-pin observations](docs/ACTION-PINS.md) |
 | Checks and proposed changes | [Verification](VERIFY.md) and [reconstruction review](docs/RECONSTRUCTION-REVIEW.md) |
+
+Supported community files supply GitHub defaults only where a repository has no corresponding
+override. Licenses, CODEOWNERS, and workflows are not inherited defaults. `VERIFY.md` and
+`WORKSPACE.md` are ordinary documentation.
 
 ## Governance and rights
 
