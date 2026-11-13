@@ -1,5 +1,10 @@
 # Public claims and project boundaries
 
+Public disclosure requires an approved classification and the recipient's actual authorization.
+Unknown classification is not public by default. See the proposed
+[public-information boundaries](PUBLIC-INFORMATION.md); scanner success does not adopt that proposal
+or approve a disclosure.
+
 **Status:** Proposed public guidance, November 13, 2026. Owner confirmation supports contracting and
 trades by scoped agreement. This page does not establish qualifications or adopt a release.
 

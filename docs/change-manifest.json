@@ -55,7 +55,7 @@
     {
       "path": "SECURITY.md",
       "change": "modified",
-      "sha256": "b71aaca227da825cfd9dfc49d9545607cb56593c934b45e3b87825924c31288f"
+      "sha256": "eb3acd30ce950de8206c4e2fa7861accc16408e4d15f147392d7676da8a20c33"
     },
     {
       "path": "SUPPORT.md",
@@ -75,7 +75,7 @@
     {
       "path": "brand/README.md",
       "change": "modified",
-      "sha256": "665f986035a74c61a112395b3c2cfca3f31bb55b8f7af5489552d51c61117507"
+      "sha256": "bcb1ad25233827719f046c08056741f11968ff2bbc27c53f80c723837d8a12ef"
     },
     {
       "path": "brand/brand.css",
@@ -185,12 +185,12 @@
     {
       "path": "docs/LICENSING.md",
       "change": "added",
-      "sha256": "9d376b9d049907fbbb1a08877cab8438055236b369b0290fedc17c57b81f1a44"
+      "sha256": "519661be021b5dc2f7d142bcba342eb3b3631713e5ad9fa1a998e8074b2dcca3"
     },
     {
       "path": "docs/POLICY-REVIEW.md",
       "change": "added",
-      "sha256": "050aef5124647b97c418080334ebd3c63004503141c2df5d26826c547a7c093a"
+      "sha256": "2784e27c639a69c530ac1e74d535f843ac5e6e895501e33eb4052388090df984"
     },
     {
       "path": "docs/PRODUCT-WORKFLOW-ARCHITECTURE.md",
@@ -200,7 +200,12 @@
     {
       "path": "docs/PUBLIC-CLAIMS.md",
       "change": "added",
-      "sha256": "b3f22b2b165d7ebaa982be1652ddb49fa48a1bacf8dd40b2092d358d5aea3076"
+      "sha256": "457545f24ac36167f0a09d17b5dce3c1f4b3610b1b91c30619a312ad54015ae7"
+    },
+    {
+      "path": "docs/PUBLIC-INFORMATION.md",
+      "change": "added",
+      "sha256": "e14c83690ddcb492831c40a761aecf60958c8ec4cfcc62f7f45339753ca7ff19"
     },
     {
       "path": "docs/RECONCILIATION-20261113.md",
@@ -225,7 +230,7 @@
     {
       "path": "docs/VISUAL-REVIEW.md",
       "change": "added",
-      "sha256": "1efa69ddc1b15c318e1eb32612e1ca3ae164384af2e884e7f93bcab549d10d94"
+      "sha256": "8a89783498817b25723de88b0b42333715a684ad17243d0d193f82c1c63bc6bc"
     },
     {
       "path": "docs/change-manifest.json",
@@ -236,7 +241,7 @@
     {
       "path": "docs/documentation-audit.json",
       "change": "added",
-      "sha256": "01d90ef64c9943d66c7619f5264e7c487d2a15718a8d3583c19197d1813438db"
+      "sha256": "0d61536d72ace4442d4b4039c305960251d6361641cadc53a190f2ab40fbb245"
     },
     {
       "path": "docs/source-inventory.json",
@@ -270,5 +275,6 @@
     }
   ],
   "reconciliation_main": "0884d789f801c79fba9ad1374a3ed6cc7ac4511e",
-  "prior_pr_head": "c31684e58fd2a526a61641f3e3b127c5a0c68011"
+  "prior_pr_head": "c31684e58fd2a526a61641f3e3b127c5a0c68011",
+  "premerge_preparation_base": "e6bd1d3a50b078649337c2ef1d65816d8174f1c4"
 }

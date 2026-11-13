@@ -31,6 +31,19 @@ the absence of certification or court-acceptance guarantees remain intact.
 | Report routing | Distinguish permitted public defect/proposal forms from private support | Align existing issue forms with contribution and support guidance |
 | Security copy | Condense repetition and remove promotional closing language | Preserve reporting terms and all substantive research restrictions |
 
+## Additional pre-merge proposals
+
+The proposed public-information guidance introduces no adopted classification scheme. Its five
+labels need mapping through the existing Company/Platform owner; unknown classifications stop
+disclosure. Client status does not grant blanket technical access. The internal client-disclosure
+protocol remains outside this public repository for founder and competent legal review.
+
+Licensing guidance now states the MIT notice obligation explicitly and distinguishes Company
+background rights, third-party rights and engagement-specific deliverables. No NDA is treated as
+removing license conditions. The security description and visual-review record are reconciled with
+the actual company scope and retained legacy footer mark. Policy adoption, rights/qualification
+review, contact monitoring and permanent identity selection remain separate founder decisions.
+
 ## Acceptance
 
 Review the actual policy diffs against the prior revision, confirm contact ownership, and record

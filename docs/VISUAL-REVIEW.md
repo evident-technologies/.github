@@ -41,15 +41,22 @@ design, and workflows. The reconstruction retains that direction and adds a clea
 relationship, assessment-based contracting tools, accessibility and handoff expectations, and
 private disclosure routing.
 
-The proposed profile uses a text company heading while mark approval is pending. It has no logo
-image, badge, remote font, CDN dependency, or layout table. This avoids treating an unapproved
-candidate or historical product mark as the selected corporate identity.
+The current profile uses a text company heading and retains the existing 64-pixel legacy mark in
+its footer. That image has alternative text and references the main-branch asset. Its presence is
+not a founder decision selecting a permanent corporate identity. Neither candidate family is
+activated. Mutable asset references require separate review when an immutable artifact is needed.
 
 ## Review limits
 
 Rsvg proofs establish observed local raster output, not browser equivalence. Lockup fonts remain
-editable and may render differently elsewhere. The official external Chrome connection was
-unavailable, so GitHub-rendered desktop/mobile layout, theme switching, 200% zoom, keyboard
-behavior, and screen-reader review were not performed. No in-app browser or alternate
-browser-control route was used. Founder selection, rights review, and cross-repository migration
+editable and may render differently elsewhere. The earlier external-Chrome limitation describes that
+historical review. A later November 13
+inspection observed GitHub's rendered candidate profile at commit
+`e6bd1d3a50b078649337c2ef1d65816d8174f1c4` in external Chrome, including a 390-by-844 CSS-pixel
+mobile viewport. Desktop/mobile dark-theme screenshots and the exposed heading/link structure were
+recorded privately. This was a file-preview review, not an activated organization-profile change.
+Light-theme, 200% zoom, end-to-end keyboard, assistive-technology use and full WCAG acceptance
+remain
+unverified. No browser DevTools or in-app browser was used. Founder selection, rights review, and
+cross-repository migration
 remain open.

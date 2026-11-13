@@ -9,6 +9,16 @@ dependencies, documentation, examples, fonts, logos, and other assets may have d
 Preserve applicable licenses, copyright notices, attribution, modification notices, and distribution
 obligations. Company ownership statements do not override third-party rights.
 
+For MIT-covered software or substantial portions included in a distribution, retain the applicable
+copyright and permission notices. Keep notices with the distributed copy; a private inventory alone
+does not satisfy that condition. An NDA or Company confidentiality label does not remove rights
+granted by the applicable license or authorize omission of required notices. Review other licenses
+individually. See the [MIT license text](https://opensource.org/license/mit).
+
+Company-owned background material, third-party components and customer-specific deliverables remain
+distinct. Verify ownership and actual executed terms for source access, deliverables, redistribution,
+maintenance and newly created work. This document assigns no engagement IP to either party.
+
 Public visibility is not a blanket open-source license. GitHub's applicable terms and legal rights
 still apply, including platform rights to view and fork public repositories. See [GitHub's licensing
 guidance](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/licensing-a-repository).

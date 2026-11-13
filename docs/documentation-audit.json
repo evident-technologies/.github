@@ -9,7 +9,8 @@
     "S5": "Official GitHub documentation for community defaults and runner-group boundaries",
     "S6": "Corporate public pages observed November 13, 2026; project availability remains qualified",
     "S7": "Owner-requested reconciliation into existing draft PR 28, November 13, 2026; main 0884d789f801c79fba9ad1374a3ed6cc7ac4511e and prior PR c31684e58fd2a526a61641f3e3b127c5a0c68011; no PR merge or deploy.",
-    "S8": "Owner-requested static-shell failure repair on existing draft PR 28, November 13, 2026; preserve runner/security boundaries; no merge or deploy."
+    "S8": "Owner-requested static-shell failure repair on existing draft PR 28, November 13, 2026; preserve runner/security boundaries; no merge or deploy.",
+    "S9": "Founder pre-merge preparation handoff, November 13, 2026; exact candidate source and local external-Chrome observations; no merge, publication, policy adoption or production permission."
   },
   "documents": [
     {
@@ -91,11 +92,12 @@
       "purpose": "Private vulnerability disclosure",
       "intake_classification": "CURRENT",
       "identified_issue": "Reporting policy was useful but repetitive.",
-      "proposed_treatment": "Preserve scope, safe harbor, boundaries, targets, and private route; simplify editorial presentation.",
+      "proposed_treatment": "Preserve scope, safe harbor, boundaries, targets, and private route; simplify editorial presentation. Reconcile scoped confidentiality, rights and current rendering where applicable; preserve approval status.",
       "source_authority": [
         "S2",
         "S4",
-        "S7"
+        "S7",
+        "S9"
       ],
       "acceptance_criteria": "All substantive reporting protections preserved; no unverified practice claims.",
       "final_disposition": "REVIEW_PROPOSAL; current facts qualified; founder/Manager approval as applicable"
@@ -151,11 +153,12 @@
       "purpose": "Identity source and compatibility",
       "intake_classification": "UNVERIFIED",
       "identified_issue": "Approval, standards, font, and publication claims exceeded evidence.",
-      "proposed_treatment": "Preserve originals; qualify rights and publication; document explicit candidate/retirement holds.",
+      "proposed_treatment": "Preserve originals; qualify rights and publication; document explicit candidate/retirement holds. Reconcile scoped confidentiality, rights and current rendering where applicable; preserve approval status.",
       "source_authority": [
         "S1",
         "S4",
-        "S7"
+        "S7",
+        "S9"
       ],
       "acceptance_criteria": "No approved mark invented; original fingerprints and compatibility paths retained.",
       "final_disposition": "REVIEW_PROPOSAL; current facts qualified; founder/Manager approval as applicable"
@@ -222,11 +225,12 @@
       "purpose": "Component rights and distribution notices",
       "intake_classification": "ADVISORY_CANDIDATE",
       "identified_issue": "Public guidance needs an explicit source and limitation.",
-      "proposed_treatment": "Add qualified guidance without new authority, rights grants, readiness claims, or deployment.",
+      "proposed_treatment": "Add qualified guidance without new authority, rights grants, readiness claims, or deployment. Reconcile scoped confidentiality, rights and current rendering where applicable; preserve approval status.",
       "source_authority": [
         "S4",
         "S5",
-        "S7"
+        "S7",
+        "S9"
       ],
       "acceptance_criteria": "Links resolve, claims are qualified, source and original assets remain preserved.",
       "final_disposition": "REVIEW_PROPOSAL; adoption and operational permission remain separate."
@@ -236,13 +240,14 @@
       "purpose": "Authorization and policy reconciliation",
       "intake_classification": "CURRENT",
       "identified_issue": "Proposed changes need a visible supersession and approval record.",
-      "proposed_treatment": "List preserved rules, exact superseded implications, replacement guidance, and scope.",
+      "proposed_treatment": "List preserved rules, exact superseded implications, replacement guidance, and scope. Reconcile scoped confidentiality, rights and current rendering where applicable; preserve approval status.",
       "source_authority": [
         "S1",
         "S2",
         "S3",
         "S4",
-        "S7"
+        "S7",
+        "S9"
       ],
       "acceptance_criteria": "No private constitution copied or candidate allowed to adopt itself.",
       "final_disposition": "REVIEW_PROPOSAL; current facts qualified; founder/Manager approval as applicable"
@@ -269,14 +274,28 @@
       "purpose": "Scope, maturity, qualifications and safety",
       "intake_classification": "ADVISORY_CANDIDATE",
       "identified_issue": "Public guidance needs an explicit source and limitation.",
-      "proposed_treatment": "Add qualified guidance without new authority, rights grants, readiness claims, or deployment.",
+      "proposed_treatment": "Add qualified guidance without new authority, rights grants, readiness claims, or deployment. Reconcile scoped confidentiality, rights and current rendering where applicable; preserve approval status.",
       "source_authority": [
         "S4",
         "S5",
-        "S7"
+        "S7",
+        "S9"
       ],
       "acceptance_criteria": "Links resolve, claims are qualified, source and original assets remain preserved.",
       "final_disposition": "REVIEW_PROPOSAL; adoption and operational permission remain separate."
+    },
+    {
+      "path": "docs/PUBLIC-INFORMATION.md",
+      "purpose": "Public disclosure boundaries",
+      "intake_classification": "NEW_PROPOSAL",
+      "identified_issue": "Credential scanning does not approve classification or confidential client disclosures.",
+      "proposed_treatment": "Describe proposed labels, current-owner mapping, recipient authorization and bounded scanner limitations.",
+      "source_authority": [
+        "S9",
+        "S4"
+      ],
+      "acceptance_criteria": "No self-issued authority, unknown-to-public fallback, private dictionary or operational claim.",
+      "final_disposition": "REVIEW_PROPOSAL; mapping and adoption pending existing owner review"
     },
     {
       "path": "docs/RECONCILIATION-20261113.md",
@@ -343,11 +362,12 @@
       "purpose": "Before/after source proofs",
       "intake_classification": "CURRENT",
       "identified_issue": "Local raster output is distinct from browser acceptance.",
-      "proposed_treatment": "Describe observed vector proofs and unavailable rendering evidence.",
+      "proposed_treatment": "Describe observed vector proofs and unavailable rendering evidence. Reconcile scoped confidentiality, rights and current rendering where applicable; preserve approval status.",
       "source_authority": [
         "S1",
         "S4",
-        "S7"
+        "S7",
+        "S9"
       ],
       "acceptance_criteria": "No browser, screen-reader, trademark, or approval claim without evidence.",
       "final_disposition": "REVIEW_PROPOSAL; current facts qualified; founder/Manager approval as applicable"

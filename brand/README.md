@@ -14,7 +14,8 @@ define a second company.
 [Editable identity candidates](candidates/README.md) offer two original geometric directions, each
 with light, dark, monochrome, and lockup sources. They are **unapproved**. Neither candidate is
 activated in the organization profile, an avatar, a package release, or a client surface. The public
-profile uses a text heading while artwork approval is unresolved.
+profile uses a text heading and retains a legacy footer mark while artwork approval is unresolved.
+That retained mark does not constitute approval of either candidate or a permanent corporate identity.
 
 ## Existing asset inventory
 

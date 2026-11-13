@@ -196,7 +196,9 @@ infrastructure, or ongoing remediation efforts to unnecessary risk.
 
 ## Legal Notice
 
-Evident Technologies LLC is a software company.
+Evident Technologies LLC develops software and systems and undertakes work under scoped
+agreements. Project availability and required professional qualifications must be established for
+the actual engagement; this policy does not establish them.
 
 Nothing in this policy constitutes legal advice, legal representation, forensic certification,
 evidentiary guarantees, court acceptance guarantees, or professional services.
