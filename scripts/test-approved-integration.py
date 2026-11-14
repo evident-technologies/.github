@@ -66,7 +66,7 @@ def combined():
     common = git("rev-parse", "--path-format=absolute", "--git-common-dir").decode().strip()
     with tempfile.TemporaryDirectory(prefix="approved-combined-") as td:
         tarfile.open(fileobj=io.BytesIO(git("archive", tree))).extractall(td, filter="data")
-        for args in [["init", "-q"], ["add", "--all"], ["-c", "commit.gpgsign=false", "commit", "-qm", "Temporary integration qualification"]]:
+        for args in [["init", "-q"], ["add", "--all"], ["-c", "user.name=Synthetic qualification", "-c", "user.email=synthetic@example.invalid", "-c", "commit.gpgsign=false", "commit", "-qm", "Temporary integration qualification"]]:
             subprocess.run(["git", "-C", td, *args], check=True, capture_output=True)
         env = {**os.environ, "GIT_ALTERNATE_OBJECT_DIRECTORIES": common + "/objects"}
         for cmd in [["python3", "scripts/verify-public-source.py"], ["python3", "scripts/test-approved-integration.py"], ["python3", "scripts/test-codeowners.py"], ["python3", "scripts/test-issue-forms.py"], ["python3", "scripts/test-static-shell.py"], ["python3", "scripts/validate-runner-fabric.py"], ["node", "scripts/qualify-secret-scan.cjs"]]:
