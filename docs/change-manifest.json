@@ -270,7 +270,7 @@
     {
       "path": "scripts/test-approved-integration.py",
       "change": "added",
-      "sha256": "8db5311cd87ba73e5b91b48ee781345cdd457d399a7fc8b654bfaa268a11e322"
+      "sha256": "4653074237c1796e3803119f4853b7ffc80533419610060fd65da1e01f6f0f9e"
     },
     {
       "path": "scripts/test-codeowners.py",

@@ -11,6 +11,7 @@ import sys
 import tarfile
 import tempfile
 import unittest
+sys.dont_write_bytecode = True
 ROOT = Path(__file__).resolve().parents[1]
 spec = importlib.util.spec_from_file_location("public_source", ROOT / "scripts/verify-public-source.py")
 m = importlib.util.module_from_spec(spec)
