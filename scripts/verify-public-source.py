@@ -27,6 +27,21 @@ REVIEWED_ISSUE_FORMS = frozenset({
 })
 REVIEWED_WORKFLOWS = frozenset({".github/workflows/static-shell.yml"})
 APPROVED_CODEOWNERS_SHA256 = '80f5d8a3fd949eee761d542aa895611830c5124dc7a3c9583a4a384f168ee179'
+APPROVED_PR27_SHA = 'b88f7ef2784674405201cc253a2c1f3f5982d21c'
+APPROVED_PR27_FILES = {'.github/workflows/security-secret-scan.yml': 'a68ee02030254b3eba30742164c5179a97e7f2bf9fc46d6d543c904cd0bd3b83', '.github/workflows/security-secret-scan-qualification.yml': '6f4b5af3f6bad2b032199eb361ddb852878b5dc0fc34b6b059345d424a092bdc', 'scripts/qualify-secret-scan.cjs': '8b7f260c6d470f36e56794f03f787fbedee17728adcac9e46e2067d42c64d077', 'scripts/test-secret-scan-original.py': 'c44de1961293a6aa1da66a6ace0b52ef0cc8dc24e7efa72b344d7d93140d03e4'}
+
+BASELINE_SCANNER_SHA256 = '0405a1c0611cc357f4811fd467036d0cbbee9748b8995b0f6ebbe2285395040b'
+
+def integration_errors(actual, record):
+    """Admit only the complete exact reviewed integration, never partial drift."""
+    if record != {"head": APPROVED_PR27_SHA, "files": APPROVED_PR27_FILES}:
+        return ["approved integration record changed"]
+    additions = set(APPROVED_PR27_FILES) - {".github/workflows/security-secret-scan.yml"}
+    if not any(actual.get(p) is not None for p in additions):
+        return [] if actual.get(".github/workflows/security-secret-scan.yml") == BASELINE_SCANNER_SHA256 else ["unapproved baseline scanner"]
+    return [] if actual == APPROVED_PR27_FILES else ["incomplete or changed approved integration"]
+
+
 SVG_NS = "{http://www.w3.org/2000/svg}"
 
 
@@ -306,6 +321,13 @@ def verify(root: Path) -> tuple[list[str], list[str], dict[str, int]]:
     ).stdout.splitlines())
     if {item["path"] for item in inventory["files"]} != baseline_paths:
         fail(root / "docs/source-inventory.json", "baseline inventory is incomplete")
+    integration_record = inventory.get("approved_integration")
+    integration_actual = {name: hashlib.sha256((root / name).read_bytes()).hexdigest()
+                          if (root / name).is_file() else None for name in APPROVED_PR27_FILES}
+    integration_present = any(integration_actual[name] is not None for name in APPROVED_PR27_FILES
+                              if name != ".github/workflows/security-secret-scan.yml")
+    for message in integration_errors(integration_actual, integration_record):
+        fail(root / "docs/source-inventory.json", message)
     for item in inventory["files"]:
         name = item["path"]
         original = subprocess.run(
@@ -328,6 +350,8 @@ def verify(root: Path) -> tuple[list[str], list[str], dict[str, int]]:
             path = root / name
             actual = hashlib.sha256(path.read_bytes()).hexdigest() if path.is_file() else None
             expected_hash = APPROVED_CODEOWNERS_SHA256 if name == ".github/CODEOWNERS" else original_hash
+            if name == ".github/workflows/security-secret-scan.yml" and integration_present:
+                expected_hash = APPROVED_PR27_FILES[name]
             if actual != expected_hash:
                 fail(path, "protected baseline source changed")
             if name == ".github/CODEOWNERS":
@@ -354,7 +378,10 @@ def verify(root: Path) -> tuple[list[str], list[str], dict[str, int]]:
         ["git", "-C", str(root), "ls-files", "--others", "--exclude-standard"],
         check=True, capture_output=True, text=True,
     ).stdout.splitlines())
-    if {item["path"] for item in changes["files"]} != changed:
+    if changes.get("approved_integration") != integration_record:
+        fail(changes_path, "changed-file integration record mismatch")
+    integration_paths = set(APPROVED_PR27_FILES) if integration_present else set()
+    if {item["path"] for item in changes["files"]} | integration_paths != changed:
         fail(changes_path, "changed-file manifest does not match Git scope")
     for item in changes["files"]:
         if item["path"] == "docs/change-manifest.json":

@@ -374,5 +374,14 @@
       "sha256": "7e7384ec914a15ca5c20c113ccac7d9e48627ba6ae5b04c94a771d43beb3f83a",
       "preserve_bytes": true
     }
-  ]
+  ],
+  "approved_integration": {
+    "head": "b88f7ef2784674405201cc253a2c1f3f5982d21c",
+    "files": {
+      ".github/workflows/security-secret-scan.yml": "a68ee02030254b3eba30742164c5179a97e7f2bf9fc46d6d543c904cd0bd3b83",
+      ".github/workflows/security-secret-scan-qualification.yml": "6f4b5af3f6bad2b032199eb361ddb852878b5dc0fc34b6b059345d424a092bdc",
+      "scripts/qualify-secret-scan.cjs": "8b7f260c6d470f36e56794f03f787fbedee17728adcac9e46e2067d42c64d077",
+      "scripts/test-secret-scan-original.py": "c44de1961293a6aa1da66a6ace0b52ef0cc8dc24e7efa72b344d7d93140d03e4"
+    }
+  }
 }

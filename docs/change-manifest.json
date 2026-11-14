@@ -33,6 +33,11 @@
       "sha256": "b50b4d3cd5aa51182e846de4bd5c4714cfe0928c49240cd4740e7be1490645dc"
     },
     {
+      "path": ".github/workflows/public-source-validation.yml",
+      "change": "added",
+      "sha256": "ae40fd1a853a99456f48d6de8e752c59afd7d4b81ed08c30761a953a0f5175a4"
+    },
+    {
       "path": ".github/workflows/static-shell.yml",
       "change": "modified",
       "sha256": "3c10403d1cce27c7ef3e642bc80e8aa2c6f2c502b7cedb75391fb64d24b6b0a3"
@@ -240,8 +245,7 @@
     {
       "path": "docs/change-manifest.json",
       "change": "added",
-      "sha256": null,
-      "note": "Self digest omitted; Git commit binds this manifest."
+      "sha256": null
     },
     {
       "path": "docs/documentation-audit.json",
@@ -251,7 +255,7 @@
     {
       "path": "docs/source-inventory.json",
       "change": "added",
-      "sha256": "8a5a2ebf01f1bf165653a07baa8d394c4050247a1602c57f0dfb84f36bfe36d3"
+      "sha256": "4c4b73241213a374eebbe4659ff55ad5850eab7ea07a656063e031988b14d4cd"
     },
     {
       "path": "profile/README.md",
@@ -262,6 +266,11 @@
       "path": "scripts/README.md",
       "change": "modified",
       "sha256": "c51ffeb8e809c605f2d793b45558fbedc63a3f139b742721a6ef66ca70fcf291"
+    },
+    {
+      "path": "scripts/test-approved-integration.py",
+      "change": "added",
+      "sha256": "8db5311cd87ba73e5b91b48ee781345cdd457d399a7fc8b654bfaa268a11e322"
     },
     {
       "path": "scripts/test-codeowners.py",
@@ -281,10 +290,19 @@
     {
       "path": "scripts/verify-public-source.py",
       "change": "added",
-      "sha256": "29b974edbaf9adac953f402aa5b0c3854579c1fe7721c9b26c4246eee540cef8"
+      "sha256": "6bf65e3212834ee38e155663fcbc73613c06baf26512d3d869263a75ac81739c"
     }
   ],
   "reconciliation_main": "0884d789f801c79fba9ad1374a3ed6cc7ac4511e",
   "prior_pr_head": "c31684e58fd2a526a61641f3e3b127c5a0c68011",
-  "premerge_preparation_base": "e6bd1d3a50b078649337c2ef1d65816d8174f1c4"
+  "premerge_preparation_base": "e6bd1d3a50b078649337c2ef1d65816d8174f1c4",
+  "approved_integration": {
+    "head": "b88f7ef2784674405201cc253a2c1f3f5982d21c",
+    "files": {
+      ".github/workflows/security-secret-scan.yml": "a68ee02030254b3eba30742164c5179a97e7f2bf9fc46d6d543c904cd0bd3b83",
+      ".github/workflows/security-secret-scan-qualification.yml": "6f4b5af3f6bad2b032199eb361ddb852878b5dc0fc34b6b059345d424a092bdc",
+      "scripts/qualify-secret-scan.cjs": "8b7f260c6d470f36e56794f03f787fbedee17728adcac9e46e2067d42c64d077",
+      "scripts/test-secret-scan-original.py": "c44de1961293a6aa1da66a6ace0b52ef0cc8dc24e7efa72b344d7d93140d03e4"
+    }
+  }
 }

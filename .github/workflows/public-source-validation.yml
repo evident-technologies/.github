@@ -1,0 +1,25 @@
+name: Validate Public Source Integration
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [docs/public-org-profile-signed-20261113]
+permissions:
+  contents: read
+jobs:
+  source-integration:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Isolated source and adverse admission checks
+        run: |
+          python3 scripts/verify-public-source.py
+          python3 scripts/test-approved-integration.py
+      - name: Fetch exact reviewed scanner revision
+        run: git fetch --no-tags https://github.com/evident-technologies/.github.git b88f7ef2784674405201cc253a2c1f3f5982d21c
+      - name: Qualify exact combined tree without moving branches
+        run: python3 scripts/test-approved-integration.py --combined
