@@ -1,53 +1,38 @@
-<!--
-  Evident Technologies LLC — institutional pull request template.
+# Pull request
 
-  This repository operates under controlled institutional governance. Pull
-  requests are reviewed by the LLC's authorized reviewers under CODEOWNERS.
-  External pull requests are not accepted; see CONTRIBUTING.md.
--->
+## Change and purpose
 
-## Summary
+<!-- State the problem, resulting behavior, and affected paths. External code contributions are
+closed; follow the receiving repository's policy and signed agreements. -->
 
-<!-- One paragraph. State the change, not the motivation. Reserve motivation for "Rationale". -->
+## Scope and provenance
 
-## Rationale
-
-<!-- The operational, technical, or governance reason this change exists. -->
-
-## Scope and blast radius
-
-- **Repositories or packages affected:**
-- **Downstream consumers:**
-- **Reversibility:** <!-- additive / reversible / destructive — state explicitly -->
+<!-- Identify base/head revisions, related work, downstream consumers, preserved originals,
+third-party sources and licenses, and material AI assistance. Do not paste private records or
+agreements. -->
 
 ## Verification
 
-<!-- Deterministic verification performed before requesting review. -->
+<!-- List commands, tool versions, actual results, and source revision. State skipped/inapplicable
+checks and limitations. For CI include run URL, job ID, assigned runner, and conclusion. Never mark
+an unrun test as passed. -->
 
-- [ ] Local build passes
-- [ ] Lint passes with zero warnings
-- [ ] Type-check passes with zero errors
-- [ ] Tests pass (existing and new)
-- [ ] Manual verification performed where automation is insufficient
+## Risk and recovery
 
-**Verification commands run:**
+<!-- Describe privacy/security/safety implications, compatibility, recovery steps, and any separate
+operational authorization needed. Vulnerability details belong in the private disclosure process.
+-->
 
-```
-<!-- exact commands -->
-```
+## Review checklist
 
-## Rollback plan
+- [ ] The change is within the authorized task and contribution terms; required rights and
+  attribution are documented.
+- [ ] Public content contains no private records, credentials, client information, or sensitive
+  infrastructure details.
+- [ ] Claims distinguish verified behavior, limitations, development work, and prospective services.
+- [ ] Tests and link/asset checks match the changed scope; gaps are stated.
+- [ ] Governance, security, licensing, evidence-integrity, workflow, or qualification changes are
+  identified for the applicable authorized review.
 
-<!-- Concrete rollback steps. If rollback is non-trivial, state why and how the change is gated. -->
-
-## Governance checklist
-
-- [ ] Change does not modify governance, security, or legal documents without Manager review
-- [ ] Change does not alter audit, custody, or evidence-integrity surfaces without explicit approval
-- [ ] Change does not introduce new external dependencies without disclosure
-- [ ] Change does not weaken branch protection, CODEOWNERS, or required CI status
-- [ ] Secrets, credentials, and personally identifying information are absent from the diff
-
-## Related
-
-<!-- Linked issues, prior PRs, or governance records. Use plain references; do not auto-close issues unless intentional. -->
+<!-- Passing checks do not authorize merge, release, deployment, permission changes, or broader
+testing. -->

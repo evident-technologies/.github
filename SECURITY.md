@@ -1,25 +1,39 @@
 # Security Policy — Evident Technologies LLC
 
 **Effective Date:** 2026-06-12
+
+**Revision status:** Proposed clarification for Manager review; existing reporting terms are
+retained.
 **Governing Entity:** Evident Technologies LLC, a New Jersey Limited Liability Company
 
 ---
 
 ## Purpose
 
-Evident Technologies LLC builds software for accountable records, evidence organization, chronology review, provenance tracking, and operational integrity.
+Evident Technologies LLC builds software for accountable records, evidence organization, chronology
+review, provenance tracking, and operational integrity.
 
 Security reports are handled through private, coordinated disclosure.
 
-This policy exists to provide a clear reporting path without exposing internal architecture, deployment details, provider choices, client data, operational workflows, or security controls.
+This policy exists to provide a clear reporting path without exposing internal architecture,
+deployment details, provider choices, client data, operational workflows, or security controls.
 
 ---
 
 ## Scope
 
-This policy applies to public repositories and software surfaces maintained by Evident Technologies LLC.
+This policy applies to public repositories and software surfaces maintained by Evident Technologies
+LLC.
 
-Public materials may reference Evident Technologies products, documentation, demonstrations, and related software surfaces. Specific implementation details, service wiring, deployment topology, provider configuration, private workflows, security controls, and operational runbooks are intentionally not disclosed in this policy.
+Reports may concern software, native applications, connected systems, websites, or related
+documentation. Referencing prospective hardware does not announce a supported hardware product or
+authorize physical testing. This policy does not authorize intrusive testing of deployed systems;
+obtain explicit scope first.
+
+Public materials may reference Evident Technologies products, documentation, demonstrations, and
+related software surfaces. Specific implementation details, service wiring, deployment topology,
+provider configuration, private workflows, security controls, and operational runbooks are
+intentionally not disclosed in this policy.
 
 When in doubt, report privately first.
 
@@ -34,9 +48,13 @@ Security vulnerabilities should be reported privately.
 **Email:** `security@evidtech.com`
 **Subject:** `[SECURITY] <brief description>`
 
-If GitHub private vulnerability reporting is enabled for a repository, it may also be used. Otherwise, use the email above.
+If GitHub private vulnerability reporting is enabled for the affected repository, use its Security
+tab and “Report a vulnerability” form. A SECURITY.md file does not enable that feature. Otherwise,
+use the email above. Start with a minimal description and arrange an appropriate private channel
+before sending sensitive details.
 
-Do **not** report security vulnerabilities through public GitHub issues, pull requests, discussions, social media posts, public comments, or public proof-of-concept releases.
+Do **not** report security vulnerabilities through public GitHub issues, pull requests, discussions,
+social media posts, public comments, or public proof-of-concept releases.
 
 ---
 
@@ -51,9 +69,11 @@ A useful report should include:
 * Screenshots, logs, or proof-of-concept details where appropriate
 * Your contact information if you want follow-up or credit
 
-Do not include secrets, private keys, tokens, client records, personal data, privileged material, or third-party data in the report unless absolutely necessary to explain the issue.
+Do not include secrets, private keys, tokens, client records, personal data, privileged material, or
+third-party data in the report unless absolutely necessary to explain the issue.
 
-If sensitive material is involved, describe the situation at a high level first and wait for instructions.
+If sensitive material is involved, describe the situation at a high level first and wait for
+instructions.
 
 ---
 
@@ -69,9 +89,11 @@ Do not:
 * Exfiltrate secrets, tokens, credentials, records, or files
 * Test third-party systems without written authorization
 * Publish exploit details before coordinated remediation
-* Interfere with production systems, active users, investigations, legal matters, or records under review
+* Interfere with production systems, active users, investigations, legal matters, or records under
+  review
 
-If you accidentally access sensitive data, stop immediately, do not retain or share it, and report what happened to `security@evidtech.com`.
+If you accidentally access sensitive data, stop immediately, do not retain or share it, and report
+what happened to `security@evidtech.com`.
 
 ---
 
@@ -79,7 +101,8 @@ If you accidentally access sensitive data, stop immediately, do not retain or sh
 
 Evident Technologies LLC follows a private, coordinated disclosure process.
 
-Good-faith reports will be reviewed and triaged based on severity, exploitability, affected surface, exposure, and potential impact to record integrity, confidentiality, availability, or user trust.
+Good-faith reports will be reviewed and triaged based on severity, exploitability, affected surface,
+exposure, and potential impact to record integrity, confidentiality, availability, or user trust.
 
 Expected process:
 
@@ -92,13 +115,15 @@ Expected process:
 
 These are good-faith targets, not guaranteed deadlines.
 
-Some issues may require additional time to remediate safely, especially where changes could affect records, audit history, identity, access control, or operational integrity.
+Some issues may require additional time to remediate safely, especially where changes could affect
+records, audit history, identity, access control, or operational integrity.
 
 ---
 
 ## Sensitive Issue Categories
 
-Some reports may require heightened handling even if they do not fit neatly into a standard severity score.
+Some reports may require heightened handling even if they do not fit neatly into a standard severity
+score.
 
 Examples include:
 
@@ -116,7 +141,8 @@ Reports in these categories should be submitted privately and handled with extra
 
 ## Safe Harbor
 
-Evident Technologies LLC does not intend to pursue legal action against researchers who act in good faith and comply with this policy.
+Evident Technologies LLC does not intend to pursue legal action against researchers who act in good
+faith and comply with this policy.
 
 Good-faith research means:
 
@@ -124,17 +150,25 @@ Good-faith research means:
 2. You avoid accessing or retaining data that is not yours
 3. You do not disrupt systems or users
 4. You do not exploit the issue beyond what is necessary to verify it
-5. You give Evident Technologies LLC a reasonable opportunity to investigate and remediate before public disclosure
+5. You give Evident Technologies LLC a reasonable opportunity to investigate and remediate before
+   public disclosure
 
-This safe harbor does not apply to malicious activity, extortion, unauthorized data access, data retention, public disclosure before coordination, disruption of services, social engineering, or activity outside the boundaries of this policy.
+This safe harbor does not apply to malicious activity, extortion, unauthorized data access, data
+retention, public disclosure before coordination, disruption of services, social engineering, or
+activity outside the boundaries of this policy.
 
 ---
 
-## Supported Surfaces
+## Supported Versions and Surfaces
 
-The current public and production-facing software surfaces maintained by Evident Technologies LLC are eligible for security reporting.
+The current public and production-facing software surfaces maintained by Evident Technologies LLC
+are eligible for security reporting. No organization-wide version support matrix is asserted here.
+Consult the affected project’s release and maintenance policy; receiving a report does not promise a
+backport or support term.
 
-Older prototypes, archived materials, dormant experiments, generated artifacts, and historical references may not receive active remediation unless they affect a current public or production-facing surface.
+Older prototypes, archived materials, dormant experiments, generated artifacts, and historical
+references may not receive active remediation unless they affect a current public or
+production-facing surface.
 
 If you are unsure whether something is supported, report it privately.
 
@@ -142,9 +176,11 @@ If you are unsure whether something is supported, report it privately.
 
 ## Public Disclosure
 
-Do not publicly disclose a vulnerability until Evident Technologies LLC has confirmed remediation or agreed to a disclosure timeline.
+Do not publicly disclose a vulnerability until Evident Technologies LLC has confirmed remediation or
+agreed to a disclosure timeline.
 
-Public disclosure may be delayed where immediate publication could expose users, records, infrastructure, or ongoing remediation efforts to unnecessary risk.
+Public disclosure may be delayed where immediate publication could expose users, records,
+infrastructure, or ongoing remediation efforts to unnecessary risk.
 
 ---
 
@@ -160,11 +196,16 @@ Public disclosure may be delayed where immediate publication could expose users,
 
 ## Legal Notice
 
-Evident Technologies LLC is a software company.
+Evident Technologies LLC develops software and systems and undertakes work under scoped
+agreements. Project availability and required professional qualifications must be established for
+the actual engagement; this policy does not establish them.
 
-Nothing in this policy constitutes legal advice, legal representation, forensic certification, evidentiary guarantees, court acceptance guarantees, or professional services.
+Nothing in this policy constitutes legal advice, legal representation, forensic certification,
+evidentiary guarantees, court acceptance guarantees, or professional services.
 
-This policy does not create an attorney-client relationship, professional-services relationship, fiduciary relationship, employment relationship, contractor relationship, or entitlement to compensation.
+This policy does not create an attorney-client relationship, professional-services relationship,
+fiduciary relationship, employment relationship, contractor relationship, or entitlement to
+compensation.
 
 Evident Technologies LLC may revise this policy at any time.
 
@@ -172,14 +213,6 @@ The current version is the version published in the default branch of the releva
 
 ---
 
-<p align="center">
-  <sub>
-    Evident Technologies LLC · New Jersey, United States
-  </sub>
-</p>
+Evident Technologies LLC · New Jersey, United States
 
-<p align="center">
-  <sub>
-    Private reports. Coordinated fixes. No public exploit theater.
-  </sub>
-</p>
+Private reports. Coordinated fixes.

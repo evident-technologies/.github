@@ -1,25 +1,27 @@
 {
-  "name": "Evident Technologies — Brand Assets",
+  "name": "Evident Technologies \u2014 Brand Assets",
   "version": "1.0.0",
   "owner": "evident-technologies",
   "canonical": "https://github.com/evident-technologies/.github/tree/main/brand",
   "cdn": "https://cdn.jsdelivr.net/gh/evident-technologies/.github@main/brand/",
   "raw": "https://raw.githubusercontent.com/evident-technologies/.github/main/brand/",
-  "note": "Single source of truth. Other repos should reference these URLs (or the npm package) — do not copy files into individual repos.",
+  "note": "Compatibility inventory. Existing URL fields are historical locations, not delivery or availability guarantees. Prefer reviewed immutable source revisions; no npm or CDN publication is asserted.",
   "tokens": "tokens.json",
   "css": "brand.css",
   "assets": {
-    "brandboard":     "evident-technologies-brandboard.svg",
-    "construction":   "evident-technologies-construction.svg",
-    "logoPrimary":    "evident-technologies-logo-primary.svg",
-    "logoReversed":   "evident-technologies-logo-reversed.svg",
-    "logoStacked":    "evident-technologies-logo-stacked.svg",
-    "logoMono":       "evident-technologies-logo-mono.svg",
-    "wordmark":       "evident-technologies-wordmark.svg",
-    "iconColor":      "evident-technologies-icon.svg",
-    "iconMono":       "evident-technologies-icon-mono.svg",
-    "usageIcons":     "evident-technologies-usage-icons.svg",
-    "avatar512":      "evident-technologies-icon-512.png",
-    "favicon32":      "evident-technologies-favicon-32.png"
-  }
+    "brandboard": "evident-technologies-brandboard.svg",
+    "construction": "evident-technologies-construction.svg",
+    "logoPrimary": "evident-technologies-logo-primary.svg",
+    "logoReversed": "evident-technologies-logo-reversed.svg",
+    "logoStacked": "evident-technologies-logo-stacked.svg",
+    "logoMono": "evident-technologies-logo-mono.svg",
+    "wordmark": "evident-technologies-wordmark.svg",
+    "iconColor": "evident-technologies-icon.svg",
+    "iconMono": "evident-technologies-icon-mono.svg",
+    "usageIcons": "evident-technologies-usage-icons.svg",
+    "avatar512": "evident-technologies-icon-512.png",
+    "favicon32": "evident-technologies-favicon-32.png"
+  },
+  "status": "EXISTING_ASSETS_APPROVAL_UNVERIFIED",
+  "candidates": "candidates/manifest.json"
 }
