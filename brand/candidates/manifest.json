@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "owner": "Evident Technologies LLC",
+  "status": "PROPOSED_UNAPPROVED",
+  "prepared_utc": "2026-11-13T14:23:37.939053+00:00",
+  "source_revision": "743fc9ca2136ed0187f2730d5a736ba7fd88bae9",
+  "source_classification": "Original geometry authored during authorized reconstruction; not derived from external artwork.",
+  "rights": "Prepared for company review. No public reuse license or trademark clearance asserted.",
+  "approval": null,
+  "font_note": "Live text uses locally installed fallbacks. No font files embedded or redistributed. Shape-only marks have no font dependency.",
+  "assets": [
+    {
+      "path": "candidate-a-lockup-dark.svg",
+      "sha256": "24684cb9514d27f794e1a6ef20a9f1d89361bafb51ff6e9852d25e095787af12"
+    },
+    {
+      "path": "candidate-a-lockup-light.svg",
+      "sha256": "539c1fece9e1b4fc88e033c082b7d348a572a1d68b13726814265fb464d3b8f7"
+    },
+    {
+      "path": "candidate-a-mark.svg",
+      "sha256": "42d1c85dd14fb89537355fdef405beb6e5efef9c262d8a02a39a41f6bdc30b26"
+    },
+    {
+      "path": "candidate-a-mono.svg",
+      "sha256": "5f4acabf1613f6f1b6b8111966804eb5722e961da11eb05eb77c10cff958bc5d"
+    },
+    {
+      "path": "candidate-a-reversed.svg",
+      "sha256": "70425a5c3db4b8671ef774b01c776ac321f48d61c9a7922a049a1e14e1c32669"
+    },
+    {
+      "path": "candidate-b-lockup-dark.svg",
+      "sha256": "92a0164b19a680d36c89dd48308ddea0a93c244ad1b9c885229e6ee9df1d16a9"
+    },
+    {
+      "path": "candidate-b-lockup-light.svg",
+      "sha256": "1c49704a202581b72f751375570a69bd582dacf16fb068adf094fc681bfda323"
+    },
+    {
+      "path": "candidate-b-mark.svg",
+      "sha256": "f2aacdbd2e367aa1d5f29abe4a8e5bd7632e7c95c93bb4656e1b87cf9688b5fc"
+    },
+    {
+      "path": "candidate-b-mono.svg",
+      "sha256": "4cf60053f6bb5218d60829f25d9c0fa8ede09cbbdd73159e579f6f0d45c7a6a1"
+    },
+    {
+      "path": "candidate-b-reversed.svg",
+      "sha256": "6414b23f33c46c8df919d836037773e848b169fe2d085b7c7a291cdf2c7699bd"
+    },
+    {
+      "path": "identity-review.svg",
+      "sha256": "ee3adb10a19be4c61dd8f33211d2ea7b52c5f0dd2081141cb0ca6c709c0894a9"
+    },
+    {
+      "path": "tokens.json",
+      "sha256": "52a8f1266cdb0b8ac7080876744da52003f887f686bf80c87b0181adf9f333c8"
+    }
+  ]
+}

@@ -1,0 +1,77 @@
+{
+  "baseline": "743fc9ca2136ed0187f2730d5a736ba7fd88bae9",
+  "approval": "UNVERIFIED",
+  "rights": "Existing comments assert company ownership; no complete rights chain or replacement approval established.",
+  "source_commits": [
+    "8d25153",
+    "8e7cb40",
+    "9f0947d",
+    "3a64c0d"
+  ],
+  "assets": [
+    {
+      "path": "brand/evident-technologies-brandboard.png",
+      "sha256": "358a904c02d59679b3d1c2060ce12ee3fbc103bff42c684b4398d9649531cb35"
+    },
+    {
+      "path": "brand/evident-technologies-brandboard.svg",
+      "sha256": "60f0c825670d58b5c70ec47604916f1a1aeb937ac062ff2308469e0193c0a0da"
+    },
+    {
+      "path": "brand/evident-technologies-construction.svg",
+      "sha256": "6e0de98119250ac21eeba8540bfbbee344bab78b1b67933364b47ad1f14325ca"
+    },
+    {
+      "path": "brand/evident-technologies-favicon-32.png",
+      "sha256": "dbc496696ab2842098fcacd8e5d70c097bb69b411f1ad0da4d56d497207c1fe8"
+    },
+    {
+      "path": "brand/evident-technologies-icon-512.png",
+      "sha256": "f6c4a4db5497f1fa84258161c44a851239d123717b5bedd7455008245efd728b"
+    },
+    {
+      "path": "brand/evident-technologies-icon-mono.svg",
+      "sha256": "08757c475a534989f5abfee3455ab7976150090c287091366e64bec8974a6bfb"
+    },
+    {
+      "path": "brand/evident-technologies-icon.svg",
+      "sha256": "8f82334c64ea7050d39d13b82f78abb4335c8a111accb98749e7d69924214ba0"
+    },
+    {
+      "path": "brand/evident-technologies-logo-mono.svg",
+      "sha256": "9b16a0f46946dc3bab3baba24a8fd2b7da31e0ecd0f19b104b1c89a20d4eaf2a"
+    },
+    {
+      "path": "brand/evident-technologies-logo-primary.svg",
+      "sha256": "1467e6df3d3f25c5b5131f831b67247a41d6a5fd142661f834d132cbe0fff633"
+    },
+    {
+      "path": "brand/evident-technologies-logo-reversed.svg",
+      "sha256": "1063e2fb0af6f223daec47ba7553c71ec69a640c03e29f630aea79bf1fcad9f0"
+    },
+    {
+      "path": "brand/evident-technologies-logo-stacked.svg",
+      "sha256": "501ed772aa48723ef638ac0a3ae01579557b30e77754bfe4b3c11029d1921eb3"
+    },
+    {
+      "path": "brand/evident-technologies-usage-icons.svg",
+      "sha256": "a52ee463cab55d002b2f8fb1e8cb3aa7efce9813dc0921a944da8f0ddada108d"
+    },
+    {
+      "path": "brand/evident-technologies-wordmark.svg",
+      "sha256": "e7c0ecb7d31d8d7743c1f569e5a471bbe500d132889d90332e2b2d222434c2bf"
+    },
+    {
+      "path": "profile/assets/evident-mark.svg",
+      "sha256": "5d52347baef128bb0e9ca2c6c4fbd382ceb1d795d3d6b8b94b165d63256ddd63"
+    },
+    {
+      "path": "profile/assets/evident-wordmark-mono.svg",
+      "sha256": "60f0b2d6d336a3bc1b66fa7b629e4a389ec0ae0097eba46aa423f615504d50e3"
+    },
+    {
+      "path": "profile/assets/evident-wordmark.svg",
+      "sha256": "a0cc3a0623ea612ae0839c89a644b09e634f66be015c8f64a3f599935c1ea514"
+    }
+  ]
+}

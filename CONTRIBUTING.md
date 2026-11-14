@@ -1,128 +1,70 @@
-# Contributing to Evident Technologies
+# Contributing
 
-**Effective Date:** 2026-05-22
-**Governing Entity:** Evident Technologies LLC, a New Jersey Limited Liability Company
-**Policy Owner:** Devon Tyler Barber, Manager
+**Owner:** Evident Technologies LLC. **Status:** Proposed revision for Manager review; the published
+policy and signed agreements remain controlling until adopted.
 
----
+## Participation and authorization
 
-## This Is a Proprietary Platform
+External code contributions are not accepted. Do not submit unsolicited implementations or
+confidential material. Non-sensitive defects and bounded proposals may use the receiving
+repository's issue forms. A report does not authorize implementation, promise compensation, or
+establish employment, access, or ownership.
 
-Evident Technologies LLC operates a **closed, proprietary software platform** for court-grade evidence processing and legal-technology services. The repositories under this organization are the exclusive intellectual property of Evident Technologies LLC.
+Authorized contributors must have the agreements required by the published policy before committing
+work: an NDA, an intellectual property assignment agreement, and a contractor or employment
+agreement with indemnification. The actual signed agreements govern ownership, scope, compensation,
+responsibilities, and liability; this guide does not supply or amend them. Direct engagement
+inquiries to [hello@evidtech.com](mailto:hello@evidtech.com).
 
-**External code contributions are not accepted.** This organization does not operate as an open-source project. Pull requests and forks from parties not under a signed agreement with Evident Technologies LLC will be closed without review. GitHub issues from members of the public are permitted only where expressly allowed elsewhere in this policy (for example, limited non-security defect reports) and do not authorize code contribution, repository access, or any ownership interest.
+Read the receiving repository's current instructions, contribution terms, and license. A permissive
+dependency license does not open company-owned material for contributions, and this default does not
+override component rights or an expressly adopted repository-specific contribution policy.
 
-This policy is not a courtesy — it is a legal and forensic integrity requirement. See the reasoning below.
+## Before changing source
 
----
+1. Inspect the remote, exact commit, branch, working changes, other worktrees, and existing PRs.
+   Preserve original history and other writers' work. Use the established isolated lane for the agreed
+   task.
+2. Confirm authorization and review requirements for the exact paths and actions. CODEOWNERS
+   identifies requested reviewers; technical access is not approval to merge, release, deploy, or
+   change permissions.
+3. Keep case records, personal information, credentials, privileged materials, and private
+   infrastructure outside public GitHub and Actions. Use synthetic fixtures. Do not upload customer
+   material as a reproduction.
+4. Preserve documented determinism requirements. The published policy requires identical output from
+   identical input in analysis pipelines. Do not narrow that requirement through editorial changes;
+   identify conflicts or exceptions for explicit Manager review.
+5. Obtain explicit written Manager approval before bypassing hash verification, audit logging,
+   custody controls, or evidence-integrity contracts. Obtain the required approval for Lumen prompt
+   templates, payment configuration, production database migrations, or CI/CD definitions.
+6. Describe what changed, why, downstream effects, tests actually run, limitations, and recovery
+   steps. Use [verification
+   guidance](https://github.com/evident-technologies/.github/blob/main/VERIFY.md) and the PR template.
+   Mark inapplicable checks honestly.
 
-## Why Contributions Are Restricted
+## Rights, attribution, and dependencies
 
-### Forensic Integrity
+Submit only material you are authorized to contribute under the applicable signed agreements.
+Identify original authors, upstream URLs and exact revisions, licenses, required notices,
+modifications, and any restrictions. Disclose material AI assistance and verify its outputs,
+citations, dependencies, and rights before submission. AI output is not proof of authorship or
+clearance.
 
-Evident ICU processes evidence that may be introduced in litigation, administrative proceedings, and criminal defense. Every line of code that touches the evidence pipeline, hash verification, chain-of-custody logging, or audit trail must be traceable to an identified, vetted, and contractually bound individual.
+Do not remove copyright or attribution notices or claim company ownership of third-party work. Do
+not introduce a new license, assignment, CLA, or rights waiver through a checkbox or PR description.
+Resolve incompatible or unclear terms before inclusion. See [licensing
+guidance](https://github.com/evident-technologies/.github/blob/main/docs/LICENSING.md).
 
-Unvetted contributions create:
+## Reports and review
 
-- Unauditable code lineage — a defense attorney's first target
-- Potential nondeterminism in evidence processing — grounds for admissibility challenge
-- IP ownership ambiguity — a material defect in any insurance, financing, or acquisition transaction
+Report vulnerabilities privately under
+[SECURITY.md](https://github.com/evident-technologies/.github/blob/main/SECURITY.md). For other
+private matters use
+[SUPPORT.md](https://github.com/evident-technologies/.github/blob/main/SUPPORT.md). Public issues
+may describe non-sensitive defects and proposals where permitted, using an exact revision and
+synthetic examples. Review and response timing are discretionary.
 
-### Intellectual Property Chain of Title
-
-All work product in this codebase must vest unambiguously in Evident Technologies LLC. Contributions from parties without a signed IP assignment agreement create partial ownership claims that cloud title and impair the LLC's ability to:
-
-- Obtain professional liability (E&O) and cyber liability insurance
-- Raise debt or equity financing
-- Execute licensing or acquisition agreements
-
----
-
-## Who May Contribute
-
-Contributions are accepted exclusively from individuals who have executed **all three** of the following agreements with Evident Technologies LLC prior to any commit:
-
-| Agreement                                                  | Purpose                                                                                                                                   |
-| ---------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
-| **Non-Disclosure Agreement (NDA)**                         | Protects confidentiality of source code, client data, case strategy, and proprietary methodology                                          |
-| **Intellectual Property Assignment Agreement**             | All work product, inventions, and improvements created during the engagement vest in Evident Technologies LLC on creation, not on payment |
-| **Contractor / Employment Agreement with Indemnification** | Establishes scope, compensation, and personal liability protection under the LLC umbrella                                                 |
-
-Engagement without these agreements signed is not authorized. Code committed without these agreements signed is a violation of the contributor's obligations and does not create ownership or compensation rights.
-
-### How to Inquire
-
-If you are a developer, attorney, or consultant interested in a formal engagement:
-
-**Email:** `hello@evidtech.com`
-**Subject:** `Contributor Inquiry — [Your Name / Firm]`
-
-Inquiries are reviewed at the Manager's discretion. Evident Technologies LLC is under no obligation to enter into an engagement with any party.
-
----
-
-## Reporting Bugs and Issues
-
-### Security Vulnerabilities
-
-Do not open public issues for security findings. See [SECURITY.md](./SECURITY.md) for the coordinated disclosure process.
-
-### Non-Security Issues
-
-If you are a **licensed client** of Evident ICU and have encountered a product defect:
-
-- Contact your account representative, or
-- Email `support@evidtech.com` with reproduction steps and your account identifier
-
-If you are a member of the public and have identified a defect in a publicly accessible surface, you may open a GitHub issue with the `[bug]` label. Issues that reveal internal implementation details, case data, or proprietary logic will be immediately closed and the reporter notified.
-
----
-
-## Authorized Contributor Obligations
-
-Authorized contributors (those with signed agreements) must additionally:
-
-1. **Never commit case data, PII, or privileged materials** — even as test fixtures or comments
-2. **Never disable or bypass hash verification, audit logging, or chain-of-custody controls** without the Manager's explicit written approval
-3. **Never introduce nondeterministic processing** in any pipeline stage — all analysis must produce identical output from identical input
-4. **Follow the coding standards** documented in this repository and any canonical internal standards provided during onboarding or by the Manager
-5. **Obtain approval before modifying** Lumen prompt templates, Stripe product configuration, Supabase migrations in production, or CI/CD pipeline definitions
-6. **Report security concerns** to `security@evidtech.com` — not to the general issue tracker
-
-Violation of any of these obligations is grounds for immediate termination of the engagement and may give rise to legal liability.
-
----
-
-## No License Granted
-
-Nothing in this repository, its documentation, or any communication from Evident Technologies LLC constitutes a license to use, reproduce, modify, distribute, sublicense, or create derivative works from any code, content, or intellectual property in this organization.
-
-Viewing this repository does not grant any rights. Forking this repository does not grant any rights. The presence of code in a public repository does not constitute a dedication to the public domain.
-
----
-
-## Contact
-
-| Channel              | Address                                                 |
-| -------------------- | ------------------------------------------------------- |
-| General inquiries    | [`hello@evidtech.com`](mailto:hello@evidtech.com)       |
-| Security disclosures | [`security@evidtech.com`](mailto:security@evidtech.com) |
-| Legal matters        | [`legal@evidtech.com`](mailto:legal@evidtech.com)       |
-
----
-
-_This policy is subject to revision. The current version is the version published in the default branch of this repository. Nothing herein constitutes legal advice._
-
----
-
-<div align="center">
-
-<img src="https://raw.githubusercontent.com/Evident-Technologies/.github/main/profile/assets/evident-mark.svg" alt="Evident Technologies" width="56" height="56" />
-
-**Evident Technologies LLC** — New Jersey, United States
-
-_Court-grade evidence processing for everyone._
-
-[evidtech.com](https://evidtech.com) · [evident.icu](https://evident.icu) · [@Evident-Technologies](https://github.com/Evident-Technologies)
-
-</div>
+Follow the [Code of
+Conduct](https://github.com/evident-technologies/.github/blob/main/CODE_OF_CONDUCT.md). Keep fixes
+focused and preserve provenance. Passing checks provide evidence for review; acceptance and
+consequential actions require their own authorized process.

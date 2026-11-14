@@ -1,0 +1,406 @@
+{
+  "observed_date": "2026-11-13",
+  "baseline": "743fc9ca2136ed0187f2730d5a736ba7fd88bae9",
+  "sources": {
+    "S1": "Current owner instructions for this objective, including R1/R1.1/R1.2; no merge permission inferred",
+    "S2": "Published .github policy at original main 4ad51c023b4dd87e25d7668708268e4e7423ba7e",
+    "S3": "Current canonical architecture/engineering source compared through authenticated default-branch reads; private identities retained in the private authority catalog, not published here",
+    "S4": "Exact repository source, manifests, recorded baseline, and verification results",
+    "S5": "Official GitHub documentation for community defaults and runner-group boundaries",
+    "S6": "Corporate public pages observed November 13, 2026; project availability remains qualified",
+    "S7": "Owner-requested reconciliation into existing draft PR 28, November 13, 2026; main 0884d789f801c79fba9ad1374a3ed6cc7ac4511e and prior PR c31684e58fd2a526a61641f3e3b127c5a0c68011; no PR merge or deploy.",
+    "S8": "Owner-requested static-shell failure repair on existing draft PR 28, November 13, 2026; preserve runner/security boundaries; no merge or deploy.",
+    "S9": "Founder pre-merge preparation handoff, November 13, 2026; exact candidate source and local external-Chrome observations; no merge, publication, policy adoption or production permission."
+  },
+  "documents": [
+    {
+      "path": ".github/PULL_REQUEST_TEMPLATE.md",
+      "purpose": "PR review",
+      "intake_classification": "STALE",
+      "identified_issue": "Application-only checklist implied universal build gates.",
+      "proposed_treatment": "Use applicable checks, exact scope, privacy, and approval gates.",
+      "source_authority": [
+        "S2",
+        "S4",
+        "S5",
+        "S7"
+      ],
+      "acceptance_criteria": "Template is usable for documentation and reports actual checks.",
+      "final_disposition": "REVIEW_PROPOSAL; current facts qualified; founder/Manager approval as applicable"
+    },
+    {
+      "path": ".github/copilot-instructions.md",
+      "purpose": "Public artifact preparation",
+      "intake_classification": "STALE",
+      "identified_issue": "Gist-specific and historical agent framing needed bounded scope.",
+      "proposed_treatment": "Keep inspection, privacy, provenance, and human approval without creating agent authority.",
+      "source_authority": [
+        "S1",
+        "S3",
+        "S4",
+        "S7"
+      ],
+      "acceptance_criteria": "No vendor promotion or self-issued publication authority.",
+      "final_disposition": "REVIEW_PROPOSAL; current facts qualified; founder/Manager approval as applicable"
+    },
+    {
+      "path": "CODE_OF_CONDUCT.md",
+      "purpose": "Participation standards",
+      "intake_classification": "UNVERIFIED",
+      "identified_issue": "Categorical enforcement/legal assertions lacked supplied agreement support.",
+      "proposed_treatment": "Preserve conduct/reporting rules; propose narrower rights language for review.",
+      "source_authority": [
+        "S1",
+        "S2",
+        "S7"
+      ],
+      "acceptance_criteria": "Manager review visible; no unsupported waiver presented as settled law.",
+      "final_disposition": "REVIEW_PROPOSAL; current facts qualified; founder/Manager approval as applicable"
+    },
+    {
+      "path": "CONTRIBUTING.md",
+      "purpose": "Participation and reuse",
+      "intake_classification": "CONFLICTING",
+      "identified_issue": "Evidence-only scope and blanket ownership statements needed reconciliation.",
+      "proposed_treatment": "Retain closed contribution policy and agreement requirements; qualify third-party rights and authority.",
+      "source_authority": [
+        "S1",
+        "S2",
+        "S3",
+        "S7"
+      ],
+      "acceptance_criteria": "Access, credit, ownership, and consequential permission remain distinct.",
+      "final_disposition": "REVIEW_PROPOSAL; current facts qualified; founder/Manager approval as applicable"
+    },
+    {
+      "path": "README.md",
+      "purpose": "Repository guide",
+      "intake_classification": "UNVERIFIED",
+      "identified_issue": "Root guide was genuinely absent from original main.",
+      "proposed_treatment": "Add concise navigation distinct from the organization profile.",
+      "source_authority": [
+        "S1",
+        "S4",
+        "S5",
+        "S7"
+      ],
+      "acceptance_criteria": "Repository purpose, paths, status, and links verified.",
+      "final_disposition": "REVIEW_PROPOSAL; current facts qualified; founder/Manager approval as applicable"
+    },
+    {
+      "path": "SECURITY.md",
+      "purpose": "Private vulnerability disclosure",
+      "intake_classification": "CURRENT",
+      "identified_issue": "Reporting policy was useful but repetitive.",
+      "proposed_treatment": "Preserve scope, safe harbor, boundaries, targets, and private route; simplify editorial presentation. Reconcile scoped confidentiality, rights and current rendering where applicable; preserve approval status.",
+      "source_authority": [
+        "S2",
+        "S4",
+        "S7",
+        "S9"
+      ],
+      "acceptance_criteria": "All substantive reporting protections preserved; no unverified practice claims.",
+      "final_disposition": "REVIEW_PROPOSAL; current facts qualified; founder/Manager approval as applicable"
+    },
+    {
+      "path": "SUPPORT.md",
+      "purpose": "Inquiry routing",
+      "intake_classification": "REDUNDANT",
+      "identified_issue": "Repeated disclaimers obscured project and support routes.",
+      "proposed_treatment": "Consolidate routing and sensitive-data handling; distinguish permitted public defects.",
+      "source_authority": [
+        "S1",
+        "S2",
+        "S6",
+        "S7"
+      ],
+      "acceptance_criteria": "Security and private support do not route to public issues.",
+      "final_disposition": "REVIEW_PROPOSAL; current facts qualified; founder/Manager approval as applicable"
+    },
+    {
+      "path": "VERIFY.md",
+      "purpose": "Repository validation",
+      "intake_classification": "STALE",
+      "identified_issue": "Commands referred to absent tooling.",
+      "proposed_treatment": "Document existing checks, new bounded source verifier, failures, and manual limits.",
+      "source_authority": [
+        "S4",
+        "S7",
+        "S8"
+      ],
+      "acceptance_criteria": "Commands exist and actual results distinguish PASS, FAIL, HOLD, NOT_RUN.",
+      "final_disposition": "REVIEW_PROPOSAL; current facts qualified; founder/Manager approval as applicable",
+      "static_shell_repair": "Document the explicitly authorized single-wrapper repair, its npm static-build contract, preserved callee/admission/security boundaries, and synthetic verification limits."
+    },
+    {
+      "path": "WORKSPACE.md",
+      "purpose": "Source and authority boundaries",
+      "intake_classification": "STALE",
+      "identified_issue": "Missing-script guidance and personal operator practices were unsuitable public instructions.",
+      "proposed_treatment": "Describe actual structure, default inheritance, human authority, and scoped review.",
+      "source_authority": [
+        "S1",
+        "S3",
+        "S4",
+        "S5",
+        "S7"
+      ],
+      "acceptance_criteria": "No private topology or workstation personalization; no invented authority.",
+      "final_disposition": "REVIEW_PROPOSAL; current facts qualified; founder/Manager approval as applicable"
+    },
+    {
+      "path": "brand/README.md",
+      "purpose": "Identity source and compatibility",
+      "intake_classification": "UNVERIFIED",
+      "identified_issue": "Approval, standards, font, and publication claims exceeded evidence.",
+      "proposed_treatment": "Preserve originals; qualify rights and publication; document explicit candidate/retirement holds. Reconcile scoped confidentiality, rights and current rendering where applicable; preserve approval status.",
+      "source_authority": [
+        "S1",
+        "S4",
+        "S7",
+        "S9"
+      ],
+      "acceptance_criteria": "No approved mark invented; original fingerprints and compatibility paths retained.",
+      "final_disposition": "REVIEW_PROPOSAL; current facts qualified; founder/Manager approval as applicable"
+    },
+    {
+      "path": "brand/candidates/README.md",
+      "purpose": "Identity candidate selection",
+      "intake_classification": "CURRENT",
+      "identified_issue": "Candidate source is original but unapproved.",
+      "proposed_treatment": "Retain editable variants and exact founder selection gate.",
+      "source_authority": [
+        "S1",
+        "S4",
+        "S7"
+      ],
+      "acceptance_criteria": "No candidate replaces legacy bytes or becomes permanent by documentation.",
+      "final_disposition": "REVIEW_PROPOSAL; current facts qualified; founder/Manager approval as applicable"
+    },
+    {
+      "path": "docs/ACTION-PINS.md",
+      "purpose": "Observed action manifest format and drift",
+      "intake_classification": "ADVISORY_CANDIDATE",
+      "identified_issue": "Public guidance needs an explicit source and limitation.",
+      "proposed_treatment": "Add qualified guidance without new authority, rights grants, readiness claims, or deployment.",
+      "source_authority": [
+        "S4",
+        "S5",
+        "S7"
+      ],
+      "acceptance_criteria": "Links resolve, claims are qualified, source and original assets remain preserved.",
+      "final_disposition": "REVIEW_PROPOSAL; adoption and operational permission remain separate."
+    },
+    {
+      "path": "docs/COMPANY.md",
+      "purpose": "Company and capability map",
+      "intake_classification": "UNVERIFIED",
+      "identified_issue": "New proposal needed current architecture and qualified maturity.",
+      "proposed_treatment": "Explain company, Platform, Forge, OS, Runtime, Operations, EDL, ICU/CivicOS roles.",
+      "source_authority": [
+        "S1",
+        "S3",
+        "S6",
+        "S7"
+      ],
+      "acceptance_criteria": "Conceptual roles do not claim released systems or independent constitutions.",
+      "final_disposition": "REVIEW_PROPOSAL; current facts qualified; founder/Manager approval as applicable"
+    },
+    {
+      "path": "docs/DOCUMENTATION-AUDIT.md",
+      "purpose": "Audit navigation",
+      "intake_classification": "CURRENT",
+      "identified_issue": "New audit must cover itself and all nested Markdown.",
+      "proposed_treatment": "Index the complete machine-readable file-by-file review.",
+      "source_authority": [
+        "S1",
+        "S4",
+        "S7"
+      ],
+      "acceptance_criteria": "Inventory parity with tracked and proposed public Markdown; sources and acceptance criteria present.",
+      "final_disposition": "REVIEW_PROPOSAL; current facts qualified; founder/Manager approval as applicable"
+    },
+    {
+      "path": "docs/LICENSING.md",
+      "purpose": "Component rights and distribution notices",
+      "intake_classification": "ADVISORY_CANDIDATE",
+      "identified_issue": "Public guidance needs an explicit source and limitation.",
+      "proposed_treatment": "Add qualified guidance without new authority, rights grants, readiness claims, or deployment. Reconcile scoped confidentiality, rights and current rendering where applicable; preserve approval status.",
+      "source_authority": [
+        "S4",
+        "S5",
+        "S7",
+        "S9"
+      ],
+      "acceptance_criteria": "Links resolve, claims are qualified, source and original assets remain preserved.",
+      "final_disposition": "REVIEW_PROPOSAL; adoption and operational permission remain separate."
+    },
+    {
+      "path": "docs/POLICY-REVIEW.md",
+      "purpose": "Authorization and policy reconciliation",
+      "intake_classification": "CURRENT",
+      "identified_issue": "Proposed changes need a visible supersession and approval record.",
+      "proposed_treatment": "List preserved rules, exact superseded implications, replacement guidance, and scope. Reconcile scoped confidentiality, rights and current rendering where applicable; preserve approval status.",
+      "source_authority": [
+        "S1",
+        "S2",
+        "S3",
+        "S4",
+        "S7",
+        "S9"
+      ],
+      "acceptance_criteria": "No private constitution copied or candidate allowed to adopt itself.",
+      "final_disposition": "REVIEW_PROPOSAL; current facts qualified; founder/Manager approval as applicable"
+    },
+    {
+      "path": "docs/PRODUCT-WORKFLOW-ARCHITECTURE.md",
+      "purpose": "Workflow ownership",
+      "intake_classification": "CONFLICTING",
+      "identified_issue": "Intended safeguards and deployment examples did not establish enforced state.",
+      "proposed_treatment": "Explain responsibilities and qualification without copy-ready private execution examples.",
+      "source_authority": [
+        "S1",
+        "S3",
+        "S4",
+        "S7",
+        "S8"
+      ],
+      "acceptance_criteria": "No documentation-level production grant; preserved workflow defects not hidden.",
+      "final_disposition": "REVIEW_PROPOSAL; current facts qualified; founder/Manager approval as applicable",
+      "static_shell_repair": "Document the explicitly authorized single-wrapper repair, its npm static-build contract, preserved callee/admission/security boundaries, and synthetic verification limits."
+    },
+    {
+      "path": "docs/PUBLIC-CLAIMS.md",
+      "purpose": "Scope, maturity, qualifications and safety",
+      "intake_classification": "ADVISORY_CANDIDATE",
+      "identified_issue": "Public guidance needs an explicit source and limitation.",
+      "proposed_treatment": "Add qualified guidance without new authority, rights grants, readiness claims, or deployment. Reconcile scoped confidentiality, rights and current rendering where applicable; preserve approval status.",
+      "source_authority": [
+        "S4",
+        "S5",
+        "S7",
+        "S9"
+      ],
+      "acceptance_criteria": "Links resolve, claims are qualified, source and original assets remain preserved.",
+      "final_disposition": "REVIEW_PROPOSAL; adoption and operational permission remain separate."
+    },
+    {
+      "path": "docs/PUBLIC-INFORMATION.md",
+      "purpose": "Public disclosure boundaries",
+      "intake_classification": "NEW_PROPOSAL",
+      "identified_issue": "Credential scanning does not approve classification or confidential client disclosures.",
+      "proposed_treatment": "Describe proposed labels, current-owner mapping, recipient authorization and bounded scanner limitations.",
+      "source_authority": [
+        "S9",
+        "S4"
+      ],
+      "acceptance_criteria": "No self-issued authority, unknown-to-public fallback, private dictionary or operational claim.",
+      "final_disposition": "REVIEW_PROPOSAL; mapping and adoption pending existing owner review"
+    },
+    {
+      "path": "docs/RECONCILIATION-20261113.md",
+      "purpose": "Current source and conflict reconciliation record",
+      "intake_classification": "ADVISORY_CANDIDATE",
+      "identified_issue": "Public guidance needs an explicit source and limitation.",
+      "proposed_treatment": "Add qualified guidance without new authority, rights grants, readiness claims, or deployment.",
+      "source_authority": [
+        "S4",
+        "S5",
+        "S7",
+        "S8"
+      ],
+      "acceptance_criteria": "Links resolve, claims are qualified, source and original assets remain preserved.",
+      "final_disposition": "REVIEW_PROPOSAL; adoption and operational permission remain separate.",
+      "static_shell_repair": "Document the explicitly authorized single-wrapper repair, its npm static-build contract, preserved callee/admission/security boundaries, and synthetic verification limits."
+    },
+    {
+      "path": "docs/RECONSTRUCTION-REVIEW.md",
+      "purpose": "Review and verification record",
+      "intake_classification": "CURRENT",
+      "identified_issue": "New review record must reflect actual limits and current scope.",
+      "proposed_treatment": "Keep finite evidence, results, dependency holds, and rollback.",
+      "source_authority": [
+        "S1",
+        "S4",
+        "S7"
+      ],
+      "acceptance_criteria": "No complete/ready-for-merge claim while mandatory review or verification remains open.",
+      "final_disposition": "REVIEW_PROPOSAL; current facts qualified; founder/Manager approval as applicable"
+    },
+    {
+      "path": "docs/RUNNER-FABRIC.md",
+      "purpose": "Scheduling and admission boundary",
+      "intake_classification": "SENSITIVE",
+      "identified_issue": "Public guidance included unnecessary implementation detail.",
+      "proposed_treatment": "Retain generic admission, execution separation, and unknown-state handling.",
+      "source_authority": [
+        "S1",
+        "S3",
+        "S4",
+        "S5",
+        "S7"
+      ],
+      "acceptance_criteria": "Detailed findings stay private; no new access grant or topology disclosure.",
+      "final_disposition": "REVIEW_PROPOSAL; current facts qualified; founder/Manager approval as applicable"
+    },
+    {
+      "path": "docs/SERVICES.md",
+      "purpose": "Engagement and handoff",
+      "intake_classification": "CURRENT",
+      "identified_issue": "New source needed scoped service and accessibility language.",
+      "proposed_treatment": "Keep concise project process, rights, support, and acceptance expectations.",
+      "source_authority": [
+        "S1",
+        "S6",
+        "S7"
+      ],
+      "acceptance_criteria": "No fabricated customers, contracts, revenue, partnerships, or automatic rights transfer.",
+      "final_disposition": "REVIEW_PROPOSAL; current facts qualified; founder/Manager approval as applicable"
+    },
+    {
+      "path": "docs/VISUAL-REVIEW.md",
+      "purpose": "Before/after source proofs",
+      "intake_classification": "CURRENT",
+      "identified_issue": "Local raster output is distinct from browser acceptance.",
+      "proposed_treatment": "Describe observed vector proofs and unavailable rendering evidence. Reconcile scoped confidentiality, rights and current rendering where applicable; preserve approval status.",
+      "source_authority": [
+        "S1",
+        "S4",
+        "S7",
+        "S9"
+      ],
+      "acceptance_criteria": "No browser, screen-reader, trademark, or approval claim without evidence.",
+      "final_disposition": "REVIEW_PROPOSAL; current facts qualified; founder/Manager approval as applicable"
+    },
+    {
+      "path": "profile/README.md",
+      "purpose": "Organization introduction",
+      "intake_classification": "STALE",
+      "identified_issue": "Original main was evidence-only; PR28 broadened services.",
+      "proposed_treatment": "Retain PR28 direction, apply current positioning and unified capability status.",
+      "source_authority": [
+        "S1",
+        "S3",
+        "S6",
+        "S7"
+      ],
+      "acceptance_criteria": "Founder-led company identified; no product maturity, affiliation, or certification inflation.",
+      "final_disposition": "REVIEW_PROPOSAL; current facts qualified; founder/Manager approval as applicable"
+    },
+    {
+      "path": "scripts/README.md",
+      "purpose": "Check helper effects",
+      "intake_classification": "STALE",
+      "identified_issue": "Legacy tooling was described as a complete CI mirror and default shipping procedure.",
+      "proposed_treatment": "Document actual checks and mutation surfaces without endorsing uncontrolled execution.",
+      "source_authority": [
+        "S1",
+        "S3",
+        "S4",
+        "S7"
+      ],
+      "acceptance_criteria": "No automatic shipping instruction or unsupported safety guarantee.",
+      "final_disposition": "REVIEW_PROPOSAL; current facts qualified; founder/Manager approval as applicable"
+    }
+  ]
+}
