@@ -56,6 +56,7 @@ python3 scripts/validate-runner-fabric.py
 python3 scripts/verify-public-source.py
 python3 scripts/test-issue-forms.py
 python3 scripts/test-static-shell.py
+python3 scripts/test-polyglot-ci.py
 bash -n scripts/ship.sh
 shellcheck -S warning scripts/ship.sh
 git diff --check
@@ -64,6 +65,11 @@ git diff --check
 The static-shell regressions validate callable routing, read-only token scope, fixed portable
 runners, absence of secret/environment forwarding, and an offline synthetic npm install/lint/build.
 They do not attest a deployed product or an unknown downstream caller.
+
+The polyglot regressions execute the reusable workflow's actual input and artifact guards,
+check its pinned actions and read-only runner boundary, and assert command failure propagation.
+They do not substitute for a consuming product's hosted platform tests. See the
+[polyglot CI contract](docs/POLYGLOT-CI-R1.md) for adoption and receipt requirements.
 
 The source verifier checks the public Markdown inventory, headings, relative destinations, JSON,
 YAML, SVG restrictions, PNG headers, manifests, fingerprints, contrast, and preserved controls.

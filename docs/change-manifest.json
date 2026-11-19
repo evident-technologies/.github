@@ -33,6 +33,16 @@
       "sha256": "b50b4d3cd5aa51182e846de4bd5c4714cfe0928c49240cd4740e7be1490645dc"
     },
     {
+      "path": ".github/workflows/polyglot-ci-qualification.yml",
+      "change": "added",
+      "sha256": "b9ce10e5ec7eb87279804aea752b4c85c1cb168002a8a8dccdd9ff47b834cbeb"
+    },
+    {
+      "path": ".github/workflows/polyglot-ci.yml",
+      "change": "added",
+      "sha256": "d5ed2ecfe3c902f79454e5cfe4b2dff6f2e1db11ba066c626ad0cc6bb11ec586"
+    },
+    {
       "path": ".github/workflows/public-source-validation.yml",
       "change": "added",
       "sha256": "ae40fd1a853a99456f48d6de8e752c59afd7d4b81ed08c30761a953a0f5175a4"
@@ -75,7 +85,7 @@
     {
       "path": "VERIFY.md",
       "change": "modified",
-      "sha256": "40285dbacb5db43c835b5a07d03dff967aac6b5435f1497a5c233fa11f00e6ed"
+      "sha256": "3d96f2bb7225002988e59fc9d6f46c4d3cbe05d9f33dada55e2f927f00f14f75"
     },
     {
       "path": "WORKSPACE.md",
@@ -203,9 +213,14 @@
       "sha256": "2784e27c639a69c530ac1e74d535f843ac5e6e895501e33eb4052388090df984"
     },
     {
+      "path": "docs/POLYGLOT-CI-R1.md",
+      "change": "added",
+      "sha256": "c8b3cba6eca3c36f7c0c40bf4937655ea7842bdaf9a6202a79f86bd858142eb7"
+    },
+    {
       "path": "docs/PRODUCT-WORKFLOW-ARCHITECTURE.md",
       "change": "modified",
-      "sha256": "53feb008e1cdd1c131f629e5921c4276b3b491d003dfd181b06ead863ffefcb6"
+      "sha256": "68db7300882b12570837b7b8e9bfbe7fcdca5130a32283b33ebb6dec652c6515"
     },
     {
       "path": "docs/PUBLIC-CLAIMS.md",
@@ -250,12 +265,17 @@
     {
       "path": "docs/documentation-audit.json",
       "change": "added",
-      "sha256": "0d61536d72ace4442d4b4039c305960251d6361641cadc53a190f2ab40fbb245"
+      "sha256": "0909076dcdd74bf124c8d4f179a18a885b59a1eada0e64b8e7e069d65b2fdcae"
     },
     {
       "path": "docs/source-inventory.json",
       "change": "added",
       "sha256": "4c4b73241213a374eebbe4659ff55ad5850eab7ea07a656063e031988b14d4cd"
+    },
+    {
+      "path": "governance/engineering-profiles.json",
+      "change": "added",
+      "sha256": "f5b56bb4318ab5dd7bc74abf4b220178157a68a0b3adf3179f683eeb4685ff6b"
     },
     {
       "path": "profile/README.md",
@@ -283,6 +303,11 @@
       "sha256": "830d30146387b8c7d93bc801de2cc27853bd1b3816dcf05981f240a10fcfc203"
     },
     {
+      "path": "scripts/test-polyglot-ci.py",
+      "change": "added",
+      "sha256": "cb0af656ba5fca2405d7d1218dde78acbb039c2dd42489fc7999bd67254fe190"
+    },
+    {
       "path": "scripts/test-static-shell.py",
       "change": "added",
       "sha256": "a14ca9442983b9bfc332b2e2738d62363e320391a38ba5382da661ddce161794"
@@ -304,5 +329,6 @@
       "scripts/qualify-secret-scan.cjs": "8b7f260c6d470f36e56794f03f787fbedee17728adcac9e46e2067d42c64d077",
       "scripts/test-secret-scan-original.py": "c44de1961293a6aa1da66a6ace0b52ef0cc8dc24e7efa72b344d7d93140d03e4"
     }
-  }
+  },
+  "polyglot_ci_r1_base": "e809f5fee8355f1255e4a600e76ab7834c0648aa"
 }

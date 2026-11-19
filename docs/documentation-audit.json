@@ -10,7 +10,8 @@
     "S6": "Corporate public pages observed November 13, 2026; project availability remains qualified",
     "S7": "Owner-requested reconciliation into existing draft PR 28, November 13, 2026; main 0884d789f801c79fba9ad1374a3ed6cc7ac4511e and prior PR c31684e58fd2a526a61641f3e3b127c5a0c68011; no PR merge or deploy.",
     "S8": "Owner-requested static-shell failure repair on existing draft PR 28, November 13, 2026; preserve runner/security boundaries; no merge or deploy.",
-    "S9": "Founder pre-merge preparation handoff, November 13, 2026; exact candidate source and local external-Chrome observations; no merge, publication, policy adoption or production permission."
+    "S9": "Founder pre-merge preparation handoff, November 13, 2026; exact candidate source and local external-Chrome observations; no merge, publication, policy adoption or production permission.",
+    "S10": "Owner-authorized polyglot CI R1 implementation, November 19, 2026; public reusable verification and optional profiles; product source and releases remain with their owners."
   },
   "documents": [
     {
@@ -126,7 +127,8 @@
       "source_authority": [
         "S4",
         "S7",
-        "S8"
+        "S8",
+        "S10"
       ],
       "acceptance_criteria": "Commands exist and actual results distinguish PASS, FAIL, HOLD, NOT_RUN.",
       "final_disposition": "REVIEW_PROPOSAL; current facts qualified; founder/Manager approval as applicable",
@@ -263,7 +265,8 @@
         "S3",
         "S4",
         "S7",
-        "S8"
+        "S8",
+        "S10"
       ],
       "acceptance_criteria": "No documentation-level production grant; preserved workflow defects not hidden.",
       "final_disposition": "REVIEW_PROPOSAL; current facts qualified; founder/Manager approval as applicable",
@@ -401,6 +404,20 @@
       ],
       "acceptance_criteria": "No automatic shipping instruction or unsupported safety guarantee.",
       "final_disposition": "REVIEW_PROPOSAL; current facts qualified; founder/Manager approval as applicable"
+    },
+    {
+      "path": "docs/POLYGLOT-CI-R1.md",
+      "purpose": "Define opt-in engineering profiles and portable reusable CI contract",
+      "intake_classification": "NEW",
+      "identified_issue": "Products need shared verification without confusing languages, runtimes, dependencies and deployment authority.",
+      "proposed_treatment": "Document fixed portable runner inputs, dependency ownership, selected-profile evidence and security/contract/browser/container limits.",
+      "source_authority": [
+        "S4",
+        "S5",
+        "S10"
+      ],
+      "acceptance_criteria": "Matches callable source; no private identifiers or unexecuted coverage claims; selected gates require real evidence.",
+      "final_disposition": "SOURCE_IMPLEMENTED; consuming products require their own execution receipts; no production release."
     }
   ]
 }

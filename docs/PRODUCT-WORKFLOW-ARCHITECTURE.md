@@ -10,6 +10,7 @@ defaults. It does not own product deployments or grant access to private infrast
 | --- | --- |
 | `.github/workflows/static-shell.yml` | Callable npm static-build compatibility wrapper; fixed portable runner, read-only token, no secret/environment forwarding |
 | `.github/workflows/static-site-ci.yml` | Product-owned install, checks, and build; no deployment |
+| `.github/workflows/polyglot-ci.yml` | Opt-in pinned toolchains and product-owned verification on fixed portable runners; bounded receipts, no deployment |
 | `.github/workflows/verify-lint.yml` | Reusable lint entry point |
 | `.github/workflows/verify-governance.yml` | Reusable governance source checks; warnings are not enforcement |
 | `.github/workflows/security-secret-scan.yml` | Reusable secret-scanner source; qualification tracked separately |
@@ -20,6 +21,10 @@ defaults. It does not own product deployments or grant access to private infrast
 Callers must use a reviewed full commit SHA. A mutable branch or assumed tag is not a release pin.
 No copy-ready production caller is supplied here because its repository, environment, credentials,
 and admission must first be qualified.
+
+The [polyglot CI guide](POLYGLOT-CI-R1.md) distinguishes languages, runtimes, package managers,
+frameworks and infrastructure. Its [profile catalog](../governance/engineering-profiles.json)
+is advisory: each product selects and qualifies only the technologies it actually uses.
 
 ## Verify before adoption
 
