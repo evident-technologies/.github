@@ -1,0 +1,1015 @@
+{
+  "schema_version": 1,
+  "purpose": "Public advisory opt-in engineering profiles; product repositories own executable commands and acceptance.",
+  "authority": {
+    "repository": "evident-technologies/.github",
+    "role": "reusable-workflow-implementation",
+    "runner_admission_owner": "existing Runtime owner",
+    "product_source_and_release_owner": "each existing product repository",
+    "grants_execution": false
+  },
+  "activation": {
+    "mode": "explicit-product-opt-in",
+    "auto_discovery": false,
+    "auto_dispatch": false,
+    "schedules_enabled": [],
+    "profile_file_executed": false
+  },
+  "interpretation": {
+    "core": "Planning priority for an existing justified product need; not a mandate to add every language.",
+    "selective": "Use only for a concrete product or operational need.",
+    "conditional": "Require an established interoperability/framework need and an owned toolchain.",
+    "specialized": "Require a systems/native or measured requirement and target-specific qualification.",
+    "command_examples": "Templates with prerequisites; callers bind actual existing commands. This catalog does not claim the named example script exists in a receiving product."
+  },
+  "taxonomy": {
+    "general_purpose_languages": [
+      "TypeScript",
+      "JavaScript",
+      "Python",
+      "C#",
+      "Rust",
+      "Go",
+      "Kotlin",
+      "Java",
+      "C",
+      "C++"
+    ],
+    "query_and_automation_languages": [
+      "SQL",
+      "Bash"
+    ],
+    "web_presentation_languages": [
+      "HTML",
+      "CSS",
+      "SVG"
+    ],
+    "runtimes_and_targets": [
+      "Node.js",
+      "CPython",
+      ".NET",
+      "JVM",
+      "browser",
+      "native executable"
+    ],
+    "dependency_managers": [
+      "npm",
+      "pnpm",
+      "uv",
+      "existing pip lock workflow",
+      "NuGet",
+      "Cargo",
+      "Go modules",
+      "Gradle",
+      "Maven",
+      "existing C/C++ dependency owner"
+    ],
+    "build_and_check_tools": [
+      "TypeScript compiler",
+      "MSBuild",
+      "test runners",
+      "CMake",
+      "Ninja",
+      "linters",
+      "schema validators"
+    ],
+    "application_libraries_and_frameworks": [
+      "React (UI library)",
+      "Astro",
+      "Vue",
+      "Svelte",
+      "ASP.NET Core",
+      "FastAPI",
+      "Django"
+    ],
+    "persistence_and_infrastructure": [
+      "PostgreSQL",
+      "managed database service",
+      "containers",
+      "CI runners",
+      "hosting platforms"
+    ],
+    "contract_formats": [
+      "OpenAPI",
+      "JSON Schema",
+      "repository-owned schemas"
+    ]
+  },
+  "workflow": {
+    "path": ".github/workflows/polyglot-ci.yml",
+    "trigger": "workflow_call",
+    "platform_classes": {
+      "linux": "ubuntu-24.04",
+      "windows": "windows-2025",
+      "macos": "macos-15"
+    },
+    "optional_exact_version_inputs": [
+      "node-version",
+      "npm-version",
+      "python-version",
+      "dotnet-version",
+      "go-version",
+      "rust-toolchain"
+    ],
+    "version_pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$",
+    "npm_requires_node": true,
+    "working_directory": "existing relative directory inside caller checkout",
+    "install_command": "optional reviewed product command",
+    "verify_command": "required reviewed product command producing receipts",
+    "permissions": {
+      "contents": "read"
+    },
+    "declared_caller_secrets": false,
+    "environment_forwarding": false,
+    "deploy_or_publish_operation": false,
+    "self_hosted_selector": false,
+    "artifacts": {
+      "roots": [
+        "artifacts/",
+        "reports/"
+      ],
+      "default_path": "artifacts/ci",
+      "retention_days": 7,
+      "hidden_files": false,
+      "symlinks": false,
+      "caller_bounds_size": true
+    },
+    "tool_setup_limits": [
+      "No automatic package-manager migration.",
+      "pnpm, uv, JDK/Gradle, CMake, databases, browsers and container runtimes remain product-provisioned or verified.",
+      "Rust setup requires existing rustup and an exact stable toolchain; optional RustSec is product-owned.",
+      "Executable test commands remain executable code; read-only token scope is not a sandbox."
+    ]
+  },
+  "version_policy": {
+    "support_verification": "Verify upstream support, maintenance, advisories and end-of-support before adopting/updating a pin; record date and primary source.",
+    "pins": "Use exact stable supported versions compatible with the existing product; no silent latest/wildcard/prerelease selection.",
+    "locks": "Preserve the actual dependency owner and committed graph. Missing/inconsistent required locks fail; verification does not repair them.",
+    "source_integrity": "Compare relevant manifest/lock digests before and after verification.",
+    "no_global_manager_replacement": true,
+    "sources": [
+      "node_support",
+      "dotnet_support",
+      "postgres_support"
+    ]
+  },
+  "profiles": [
+    {
+      "id": "javascript-npm",
+      "tier": "core",
+      "languages": [
+        "JavaScript"
+      ],
+      "runtime": "Node.js",
+      "dependency_owner": "npm",
+      "setup_inputs": [
+        "node-version",
+        "npm-version"
+      ],
+      "expected_manifests": [
+        "package.json"
+      ],
+      "required_lock_alternatives": [
+        [
+          "package-lock.json"
+        ],
+        [
+          "npm-shrinkwrap.json"
+        ]
+      ],
+      "prerequisites": [
+        "Exact supported Node/npm pins match the product scope.",
+        "The selected package scripts exist and invoke locally locked tools.",
+        "Review lifecycle scripts and installation egress before opting in."
+      ],
+      "command_examples": [
+        {
+          "purpose": "locked install",
+          "command_example": "npm ci",
+          "requires": "Run in the existing npm-owned manifest/lock scope; preserve any required committed npm configuration."
+        },
+        {
+          "purpose": "behavior tests",
+          "command_example": "npm test",
+          "requires": "The product declares a test script with a known nonzero discovery expectation."
+        },
+        {
+          "purpose": "required build",
+          "command_example": "npm run build",
+          "requires": "The product declares and requires this build; otherwise record a source-based not-applicable decision."
+        }
+      ],
+      "acceptance": [
+        "Manifest/lock digests remain unchanged.",
+        "Selected tests are discovered and execute; positive and failure paths are asserted.",
+        "Required build/export artifacts are inspected; a successful install is not a test result.",
+        "An actual failure propagates to the job and receipt."
+      ],
+      "sources": [
+        "npm_ci",
+        "node_support"
+      ],
+      "default_enabled": false,
+      "execution_evidence": "NOT_RUN_BY_CATALOG"
+    },
+    {
+      "id": "javascript-pnpm",
+      "tier": "core",
+      "languages": [
+        "JavaScript",
+        "TypeScript"
+      ],
+      "runtime": "Node.js",
+      "dependency_owner": "pnpm",
+      "setup_inputs": [
+        "node-version"
+      ],
+      "expected_manifests": [
+        "package.json",
+        "pnpm-workspace.yaml when the owner uses a workspace"
+      ],
+      "required_lock_alternatives": [
+        [
+          "pnpm-lock.yaml"
+        ]
+      ],
+      "prerequisites": [
+        "Provision and verify the owner's exact pnpm pin; this workflow has no pnpm setup input.",
+        "Retain existing workspace/filter boundaries and packageManager policy.",
+        "Do not add an npm lockfile to a pnpm-owned dependency scope."
+      ],
+      "command_examples": [
+        {
+          "purpose": "locked install",
+          "command_example": "pnpm install --frozen-lockfile",
+          "requires": "Use the existing pnpm workspace and reviewed script policy."
+        },
+        {
+          "purpose": "behavior tests",
+          "command_example": "pnpm run test",
+          "requires": "The selected package declares this script; use the owner's existing filter for a workspace."
+        },
+        {
+          "purpose": "required build",
+          "command_example": "pnpm run build",
+          "requires": "The selected package declares and requires this script."
+        }
+      ],
+      "acceptance": [
+        "The committed pnpm lock and manifests do not change.",
+        "Required package and workspace tests actually execute.",
+        "Scope selection does not silently omit affected consumers."
+      ],
+      "sources": [
+        "pnpm_install",
+        "node_support"
+      ],
+      "default_enabled": false,
+      "execution_evidence": "NOT_RUN_BY_CATALOG"
+    },
+    {
+      "id": "typescript",
+      "tier": "core",
+      "languages": [
+        "TypeScript"
+      ],
+      "runtime": "Product-selected Node.js or other explicitly qualified target",
+      "dependency_owner": "Inherits the existing npm or pnpm scope",
+      "setup_inputs": [
+        "node-version"
+      ],
+      "expected_manifests": [
+        "package.json",
+        "tsconfig.json or the exact owner-selected tsconfig files"
+      ],
+      "required_lock_alternatives": [
+        [
+          "package-lock.json"
+        ],
+        [
+          "npm-shrinkwrap.json"
+        ],
+        [
+          "pnpm-lock.yaml"
+        ]
+      ],
+      "prerequisites": [
+        "The TypeScript compiler and declaration dependencies are locked locally.",
+        "Bind the exact project references, module mode and runtime target; do not apply a blanket tsconfig.",
+        "Choose the existing package-manager variant, not both."
+      ],
+      "command_examples": [
+        {
+          "purpose": "npm typecheck",
+          "command_example": "npm run typecheck",
+          "requires": "The npm-owned script uses the locked local compiler and intended tsconfig."
+        },
+        {
+          "purpose": "pnpm typecheck",
+          "command_example": "pnpm run typecheck",
+          "requires": "Alternative for a pnpm-owned script using the locked compiler."
+        }
+      ],
+      "acceptance": [
+        "The intended project/declaration boundary is checked without fetching an unpinned compiler.",
+        "Generated DTOs and wire formats retain compatibility tests.",
+        "Runtime behavior tests remain separate from typecheck/transpile success."
+      ],
+      "sources": [
+        "npm_ci",
+        "pnpm_install"
+      ],
+      "default_enabled": false,
+      "execution_evidence": "NOT_RUN_BY_CATALOG"
+    },
+    {
+      "id": "python-uv",
+      "tier": "core",
+      "languages": [
+        "Python"
+      ],
+      "runtime": "CPython",
+      "dependency_owner": "uv",
+      "setup_inputs": [
+        "python-version"
+      ],
+      "expected_manifests": [
+        "pyproject.toml",
+        "the owner's interpreter pin, such as .python-version"
+      ],
+      "required_lock_alternatives": [
+        [
+          "uv.lock"
+        ]
+      ],
+      "prerequisites": [
+        "Provision and verify the owner's exact uv version.",
+        "Declare test/lint dependency groups and install the selected groups explicitly.",
+        "Do not treat --frozen as proof that the lock matches current manifests."
+      ],
+      "command_examples": [
+        {
+          "purpose": "locked install",
+          "command_example": "uv sync --locked",
+          "requires": "The declared default dependency groups contain the selected tools; otherwise add the owner's explicit groups."
+        },
+        {
+          "purpose": "behavior tests",
+          "command_example": "uv run --locked python -m pytest",
+          "requires": "pytest and its plugins are locked in an installed group and the test inventory is declared."
+        },
+        {
+          "purpose": "static analysis",
+          "command_example": "uv run --locked ruff check .",
+          "requires": "The product has adopted and locked Ruff with its owned configuration."
+        }
+      ],
+      "acceptance": [
+        "The interpreter and uv versions are recorded.",
+        "pyproject.toml and uv.lock remain unchanged.",
+        "Tests actually execute, including failure paths and serialization/contract tests where relevant.",
+        "No unrelated environment supplies undeclared dependencies."
+      ],
+      "sources": [
+        "uv_locking"
+      ],
+      "default_enabled": false,
+      "execution_evidence": "NOT_RUN_BY_CATALOG"
+    },
+    {
+      "id": "python-existing-pip",
+      "tier": "core",
+      "languages": [
+        "Python"
+      ],
+      "runtime": "CPython",
+      "dependency_owner": "Existing pip-based product owner",
+      "setup_inputs": [
+        "python-version"
+      ],
+      "expected_manifests": [
+        "pyproject.toml or the existing product requirements manifest"
+      ],
+      "required_lock_alternatives": [
+        [
+          "fully pinned requirements lock including transitive hashes"
+        ]
+      ],
+      "prerequisites": [
+        "Preserve an existing pip workflow instead of migrating managers during CI adoption.",
+        "The example requirements.lock filename must be replaced with the actual committed owner file.",
+        "Record the pip version and provision an isolated test environment."
+      ],
+      "command_examples": [
+        {
+          "purpose": "hashed installation",
+          "command_example": "python -m pip install --require-hashes -r requirements.lock",
+          "requires": "The actual owner file pins every selected dependency and hash."
+        },
+        {
+          "purpose": "behavior tests",
+          "command_example": "python -m pytest",
+          "requires": "The project's locked test environment includes pytest; otherwise use its existing test runner."
+        }
+      ],
+      "acceptance": [
+        "The selected lock remains unchanged and hash verification is enabled.",
+        "The test environment has no undeclared package dependency.",
+        "A missing or empty selected test suite cannot pass."
+      ],
+      "sources": [
+        "pip_hashes"
+      ],
+      "default_enabled": false,
+      "execution_evidence": "NOT_RUN_BY_CATALOG"
+    },
+    {
+      "id": "dotnet-csharp",
+      "tier": "core",
+      "languages": [
+        "C#"
+      ],
+      "runtime": ".NET",
+      "dependency_owner": "NuGet/MSBuild product scope",
+      "setup_inputs": [
+        "dotnet-version"
+      ],
+      "expected_manifests": [
+        "global.json",
+        "owned .sln/.slnx or .csproj entry points"
+      ],
+      "required_lock_alternatives": [
+        [
+          "packages.lock.json for the opted-in PackageReference project scope"
+        ]
+      ],
+      "prerequisites": [
+        "The exact SDK input and global.json/roll-forward policy are compatible.",
+        "The product has deliberately enabled lock generation; CI does not create the first lock.",
+        "Commands run at the selected solution root or add the actual owned solution path."
+      ],
+      "command_examples": [
+        {
+          "purpose": "locked restore",
+          "command_example": "dotnet restore --locked-mode",
+          "requires": "All selected projects have the required committed lock policy."
+        },
+        {
+          "purpose": "build",
+          "command_example": "dotnet build --configuration Release --no-restore",
+          "requires": "Use the already-restored selected solution and its actual target frameworks."
+        },
+        {
+          "purpose": "behavior tests",
+          "command_example": "dotnet test --configuration Release --no-build --no-restore",
+          "requires": "The selected test projects were built and use the product's supported test runner."
+        }
+      ],
+      "acceptance": [
+        "Actual SDK and target frameworks are recorded.",
+        "Restore does not rewrite dependency locks.",
+        "Nonzero selected tests execute; native/client serialization and server authorization are covered when affected.",
+        "Build success alone is not a test or deployment result."
+      ],
+      "sources": [
+        "dotnet_support",
+        "dotnet_restore"
+      ],
+      "default_enabled": false,
+      "execution_evidence": "NOT_RUN_BY_CATALOG"
+    },
+    {
+      "id": "rust-cargo",
+      "tier": "core",
+      "languages": [
+        "Rust"
+      ],
+      "runtime": "Native target selected by the product",
+      "dependency_owner": "Cargo",
+      "setup_inputs": [
+        "rust-toolchain"
+      ],
+      "expected_manifests": [
+        "Cargo.toml",
+        "rust-toolchain.toml with the owner-selected exact stable toolchain"
+      ],
+      "required_lock_alternatives": [
+        [
+          "Cargo.lock"
+        ]
+      ],
+      "prerequisites": [
+        "The workflow's exact toolchain agrees with the product toolchain contract.",
+        "rustup must already exist; the generic workflow does not download an arbitrary installer.",
+        "The product declares target/features; do not enable incompatible all-features automatically."
+      ],
+      "command_examples": [
+        {
+          "purpose": "locked dependency fetch",
+          "command_example": "cargo fetch --locked",
+          "requires": "Use the selected committed Cargo.lock and approved registry/network policy."
+        },
+        {
+          "purpose": "format",
+          "command_example": "cargo fmt --all -- --check",
+          "requires": "rustfmt exists in the selected exact toolchain."
+        },
+        {
+          "purpose": "lint",
+          "command_example": "cargo clippy --workspace --all-targets --locked -- -D warnings",
+          "requires": "The product adopts this scope and warning policy; add only its reviewed feature flags."
+        },
+        {
+          "purpose": "behavior and documentation tests",
+          "command_example": "cargo test --workspace --locked",
+          "requires": "Use the product's intended feature/target selection and expected test inventory."
+        }
+      ],
+      "acceptance": [
+        "Cargo.lock and manifests remain unchanged.",
+        "Unit/integration/documentation tests actually run where applicable.",
+        "Each selected target has separate evidence; compilation is not execution.",
+        "Any optional RustSec audit uses an owner-pinned tool and dated advisory source, not an automatically installed scanner."
+      ],
+      "sources": [
+        "cargo_test"
+      ],
+      "default_enabled": false,
+      "execution_evidence": "NOT_RUN_BY_CATALOG"
+    },
+    {
+      "id": "sql-postgresql",
+      "tier": "core",
+      "languages": [
+        "SQL"
+      ],
+      "runtime": "Actual PostgreSQL version and extensions selected by the owner",
+      "dependency_owner": "Existing migration ledger and database service owner",
+      "setup_inputs": [],
+      "expected_manifests": [
+        "actual owner migration directory and migration-tool configuration",
+        "synthetic schema/role fixtures and executable SQL assertions"
+      ],
+      "required_lock_alternatives": [
+        [
+          "pinned test database image digest and migration-tool dependency lock or verified tool artifact"
+        ]
+      ],
+      "prerequisites": [
+        "The opted-in job creates a disposable isolated test database; no production URL or credentials are used.",
+        "Preflight verifies the test endpoint, instance and role before SQL execution.",
+        "The actual migration directory and historical replay portability are established before applying candidate SQL.",
+        "tests/ci.sql below is an example binding; it must be a real owner-reviewed assertion file."
+      ],
+      "command_examples": [
+        {
+          "purpose": "SQL assertions",
+          "command_example": "psql \"$CI_TEST_DATABASE_URL\" -X --set=ON_ERROR_STOP=1 --file=tests/ci.sql",
+          "requires": "CI_TEST_DATABASE_URL is generated for the verified disposable job-local test service, not passed from production secrets."
+        }
+      ],
+      "acceptance": [
+        "Record the real PostgreSQL version/extensions, migration versions and exact source.",
+        "Prove authorized save, read on a fresh independent connection, another client's read/write denial and stale-write rejection without an extra record.",
+        "Check native-session and grant revocation, least-privileged roles, rollback behavior and concurrent requests where claimed.",
+        "A shared-connection emulator is labeled separately and does not qualify PostgreSQL concurrency or network/TLS behavior.",
+        "No production ledger repair or migration is performed by this profile."
+      ],
+      "sources": [
+        "postgres_support"
+      ],
+      "default_enabled": false,
+      "execution_evidence": "NOT_RUN_BY_CATALOG"
+    },
+    {
+      "id": "bash",
+      "tier": "core",
+      "languages": [
+        "Bash"
+      ],
+      "runtime": "Bash on an explicitly selected OS",
+      "dependency_owner": "Existing shell/tool owner",
+      "setup_inputs": [],
+      "expected_manifests": [
+        "explicit inventory of owned shell files and shell lint/test configuration"
+      ],
+      "required_lock_alternatives": [
+        [
+          "pinned Bash/ShellCheck versions and verified ancillary test tools"
+        ]
+      ],
+      "prerequisites": [
+        "Provision ShellCheck through the approved owner path if not already available.",
+        "Bind example script paths to actual owned files; zero matched files is not a pass.",
+        "Behavior tests use synthetic temporary fixtures and no workstation/production maintenance actions."
+      ],
+      "command_examples": [
+        {
+          "purpose": "syntax",
+          "command_example": "bash -n scripts/ci/check.sh",
+          "requires": "scripts/ci/check.sh is the selected existing owner script."
+        },
+        {
+          "purpose": "lint",
+          "command_example": "shellcheck -S warning scripts/ci/check.sh",
+          "requires": "The exact pinned ShellCheck and adopted severity policy apply."
+        },
+        {
+          "purpose": "behavior tests",
+          "command_example": "bash scripts/test-shell.sh",
+          "requires": "The existing synthetic test harness asserts failure propagation and effects."
+        }
+      ],
+      "acceptance": [
+        "Every selected file was checked.",
+        "Quoting, input validation, failure propagation and intended filesystem effects have meaningful synthetic tests.",
+        "No lint result is represented as successful remote maintenance."
+      ],
+      "sources": [],
+      "default_enabled": false,
+      "execution_evidence": "NOT_RUN_BY_CATALOG"
+    },
+    {
+      "id": "html-css-svg",
+      "tier": "core",
+      "languages": [
+        "HTML",
+        "CSS",
+        "SVG"
+      ],
+      "runtime": "Standards-based browser when rendering is in scope",
+      "dependency_owner": "Existing frontend/build owner",
+      "setup_inputs": [
+        "node-version"
+      ],
+      "expected_manifests": [
+        "owned document/style/asset inventory",
+        "the selected build/validator configuration"
+      ],
+      "required_lock_alternatives": [
+        [
+          "existing tool dependency lock or exact dependency-free toolchain"
+        ]
+      ],
+      "prerequisites": [
+        "Bind commands to actual adopted local validators.",
+        "Choose a browser profile when rendered or interaction behavior is affected.",
+        "Review SVG scripting/external-reference policy and preserve approved asset provenance."
+      ],
+      "command_examples": [
+        {
+          "purpose": "markup validation",
+          "command_example": "npm run lint:markup",
+          "requires": "An npm-owned product declares this script and locally locked validators."
+        },
+        {
+          "purpose": "style validation",
+          "command_example": "npm run lint:styles",
+          "requires": "An npm-owned product declares this script; use its pnpm equivalent when pnpm owns the scope."
+        }
+      ],
+      "acceptance": [
+        "Semantic headings/landmarks, links, asset references and security constraints are checked.",
+        "Affected keyboard/focus/error states and rendered widths have browser evidence.",
+        "Actual zoom is checked before claiming zoom qualification.",
+        "Automated checks do not claim complete accessibility conformance."
+      ],
+      "sources": [
+        "playwright_ci"
+      ],
+      "default_enabled": false,
+      "execution_evidence": "NOT_RUN_BY_CATALOG"
+    },
+    {
+      "id": "go-modules",
+      "tier": "selective",
+      "languages": [
+        "Go"
+      ],
+      "runtime": "Native target selected by the product",
+      "dependency_owner": "Go modules",
+      "setup_inputs": [
+        "go-version"
+      ],
+      "expected_manifests": [
+        "go.mod",
+        "go.sum",
+        "vendor/modules.txt when the owner uses vendoring"
+      ],
+      "required_lock_alternatives": [
+        [
+          "go.mod",
+          "go.sum"
+        ],
+        [
+          "go.mod",
+          "go.sum",
+          "vendor/modules.txt plus the committed vendor scope"
+        ]
+      ],
+      "prerequisites": [
+        "Choose Go for an existing need; it is not mandatory for every product.",
+        "The exact setup version is compatible with go.mod and any toolchain directive.",
+        "GOTOOLCHAIN=local prevents an undeclared toolchain download.",
+        "Module-readonly and vendor commands below are alternatives; preserve the current owner mode."
+      ],
+      "command_examples": [
+        {
+          "purpose": "module cache verification",
+          "command_example": "go mod verify",
+          "requires": "Non-vendored dependencies have been fetched by the owner's reviewed installation command."
+        },
+        {
+          "purpose": "module-mode tests",
+          "command_example": "go test -mod=readonly ./...",
+          "requires": "The owner uses module mode and has an expected nonzero test inventory."
+        },
+        {
+          "purpose": "module-mode static checks",
+          "command_example": "go vet -mod=readonly ./...",
+          "requires": "The owner uses module mode and this target set."
+        },
+        {
+          "purpose": "vendor-mode tests",
+          "command_example": "go test -mod=vendor ./...",
+          "requires": "Alternative only for the existing committed and consistent vendor scope."
+        }
+      ],
+      "acceptance": [
+        "go.mod, go.sum and any vendor inventory remain unchanged.",
+        "Tests actually execute and package selection is recorded.",
+        "Race and cross-architecture checks have separately selected compatible targets; neither is implied by ordinary tests."
+      ],
+      "sources": [
+        "go_modules"
+      ],
+      "default_enabled": false,
+      "execution_evidence": "NOT_RUN_BY_CATALOG"
+    },
+    {
+      "id": "jvm-kotlin-gradle",
+      "tier": "conditional",
+      "languages": [
+        "Kotlin",
+        "Java"
+      ],
+      "runtime": "Owner-selected JDK/JVM",
+      "dependency_owner": "Existing Gradle owner; retain Maven if already owned",
+      "setup_inputs": [],
+      "expected_manifests": [
+        "owned build.gradle or build.gradle.kts and settings files",
+        "gradlew and gradlew.bat",
+        "gradle/wrapper/gradle-wrapper.properties and verified wrapper JAR"
+      ],
+      "required_lock_alternatives": [
+        [
+          "adopted Gradle dependency lockfiles",
+          "gradle/verification-metadata.xml"
+        ]
+      ],
+      "prerequisites": [
+        "A concrete existing JVM/framework/interoperability need justifies this profile.",
+        "Provision and verify the exact JDK and wrapper distribution checksum; no JDK setup input is supplied by R1.",
+        "The owner enables strict dependency locking and strict verification before CI adoption.",
+        "A Maven-owned project needs its own precise locked/verified command binding; this catalog does not migrate it."
+      ],
+      "command_examples": [
+        {
+          "purpose": "verified tests/checks",
+          "command_example": "./gradlew --no-daemon --dependency-verification strict test check",
+          "requires": "The wrapper and dependency verification/lock configuration are adopted and verified; Windows uses the owner's qualified wrapper invocation."
+        }
+      ],
+      "acceptance": [
+        "Wrapper, dependency locks and verification metadata do not change.",
+        "Selected tests actually run with the intended JDK and platform.",
+        "Missing verification or lock metadata fails rather than being regenerated."
+      ],
+      "sources": [
+        "gradle_locking",
+        "gradle_verification"
+      ],
+      "default_enabled": false,
+      "execution_evidence": "NOT_RUN_BY_CATALOG"
+    },
+    {
+      "id": "c-cpp-cmake",
+      "tier": "specialized",
+      "languages": [
+        "C",
+        "C++"
+      ],
+      "runtime": "Owner-selected native compiler/ABI",
+      "dependency_owner": "Existing C/C++ package owner with CMake/Ninja or another established build",
+      "setup_inputs": [],
+      "expected_manifests": [
+        "CMakeLists.txt",
+        "CMakePresets.json",
+        "owned toolchain and package-manager manifests"
+      ],
+      "required_lock_alternatives": [
+        [
+          "adopted dependency lock/baseline pins and verified compiler/build-tool artifacts"
+        ]
+      ],
+      "prerequisites": [
+        "A concrete systems, native interoperability or measured performance need justifies the profile.",
+        "The owner provisions exact compilers/build tools and preserves existing vcpkg/Conan/other dependency ownership.",
+        "The example ci configure/build/test presets must exist; user-local presets are not substituted."
+      ],
+      "command_examples": [
+        {
+          "purpose": "configure",
+          "command_example": "cmake --preset ci",
+          "requires": "The committed ci configure preset selects the reviewed toolchain/dependency graph."
+        },
+        {
+          "purpose": "build",
+          "command_example": "cmake --build --preset ci",
+          "requires": "The corresponding committed build preset exists."
+        },
+        {
+          "purpose": "tests",
+          "command_example": "ctest --preset ci --output-on-failure",
+          "requires": "The committed test preset discovers the required actual tests."
+        }
+      ],
+      "acceptance": [
+        "Compiler/ABI, dependency graph and preset hashes are recorded.",
+        "Required tests execute; no zero-test pass is accepted.",
+        "Applicable sanitizers and native targets are selected and qualified separately.",
+        "No unsupported hardware or runtime claim follows from cross-compilation."
+      ],
+      "sources": [
+        "cmake_presets"
+      ],
+      "default_enabled": false,
+      "execution_evidence": "NOT_RUN_BY_CATALOG"
+    }
+  ],
+  "overlays": [
+    {
+      "id": "contracts",
+      "default_enabled": false,
+      "expected_inputs": [
+        "pinned OpenAPI/JSON Schema or established owner contract",
+        "locked validator/generator",
+        "synthetic accepted and rejected payloads"
+      ],
+      "command_examples": [
+        {
+          "purpose": "contract checks",
+          "command_example": "npm run check:contracts",
+          "requires": "Example for an owner that has adopted this npm script; otherwise bind the existing language-specific command."
+        },
+        {
+          "purpose": "contract behavior",
+          "command_example": "npm run test:contracts",
+          "requires": "The declared script executes actual serialization and service-boundary assertions."
+        }
+      ],
+      "acceptance": [
+        "Validate required/unknown fields, numeric/revision limits and generated-source drift.",
+        "Exercise valid session/resource access, another client's denial, revocation and stale writes.",
+        "Schema annotations and UI roles are never accepted as authorization proof."
+      ],
+      "sources": [
+        "openapi",
+        "json_schema"
+      ]
+    },
+    {
+      "id": "browser",
+      "default_enabled": false,
+      "expected_inputs": [
+        "locked browser test tool and matching binary versions",
+        "owned browser configuration, synthetic data and bounded test-server lifecycle"
+      ],
+      "command_examples": [
+        {
+          "purpose": "browser install",
+          "command_example": "npm run browser:install",
+          "requires": "The existing owner script installs only the package-pinned selected browser binaries and reviewed OS dependencies."
+        },
+        {
+          "purpose": "browser tests",
+          "command_example": "npm run test:browser",
+          "requires": "The existing owner script invokes its locked test tool and expected browser/viewport test inventory."
+        }
+      ],
+      "acceptance": [
+        "Affected navigation, keyboard/focus recovery and loading/error states are asserted.",
+        "Real rendering and applicable zoom are tested before those claims.",
+        "Record browser/OS versions, test counts and sanitized bounded screenshots/traces.",
+        "No fallback package download or private user data is introduced."
+      ],
+      "sources": [
+        "playwright_ci"
+      ]
+    },
+    {
+      "id": "container",
+      "default_enabled": false,
+      "expected_inputs": [
+        "owned Dockerfile/build context",
+        "pinned base image digest",
+        "qualified container runtime and product smoke tests"
+      ],
+      "command_examples": [
+        {
+          "purpose": "test image build",
+          "command_example": "docker build --tag local/ci-check:review .",
+          "requires": "The selected runner has a qualified container runtime and the reviewed current directory is the build context."
+        },
+        {
+          "purpose": "isolated image smoke",
+          "command_example": "docker run --rm --network=none local/ci-check:review",
+          "requires": "The product's image entrypoint is specifically designed to execute bounded test-only assertions without external services; otherwise bind its reviewed smoke command."
+        }
+      ],
+      "acceptance": [
+        "Record image digest, base digest, runtime and build inputs.",
+        "Prove affected image-level behavior, runtime user and intended file/network boundaries.",
+        "No registry login, image push, production network or deployment occurs.",
+        "Do not claim Windows/macOS container support from a Linux run."
+      ],
+      "sources": [
+        "docker_ci"
+      ]
+    },
+    {
+      "id": "security",
+      "default_enabled": false,
+      "expected_inputs": [
+        "owner-selected pinned scanners/rules",
+        "declared dependency/advisory inputs and egress policy",
+        "existing private findings route"
+      ],
+      "command_examples": [
+        {
+          "purpose": "product security checks",
+          "command_example": "npm run check:security",
+          "requires": "Example only for an npm-owned declared script that runs the reviewed scanners; other owners retain their own exact commands."
+        }
+      ],
+      "acceptance": [
+        "Record scanner/rules/advisory versions, freshness, scope, severity policy and approved exceptions.",
+        "Secret findings and sensitive details stay out of public logs/artifacts.",
+        "Missing tools, stale required coverage and scanner errors are failures/blocks, not clean results.",
+        "Private CodeQL entitlement remains unverified; no paid feature or security-events write permission is enabled.",
+        "Optional RustSec or other scanners are explicitly installed/pinned by the product owner."
+      ],
+      "sources": [
+        "code_scanning"
+      ]
+    }
+  ],
+  "required_receipt_fields": [
+    "event/source checkout SHA",
+    "PR head/base when applicable",
+    "selected profile and platform",
+    "actual runtime and tool versions",
+    "manifest and lock digests before/after",
+    "exact commands and exit codes",
+    "test discovery/counts",
+    "skipped/blocked gates with reasons",
+    "sanitized artifact hashes"
+  ],
+  "overall_pass_rule": "Every selected required gate passes; missing tests/tools/fixtures and command failures cannot become PASS through cleanup or receipt writing.",
+  "cadence": {
+    "automatic_schedules": [],
+    "selection": "Product owner explicitly selects triggers, budget and coverage.",
+    "examples": [
+      "Relevant change: bounded static/type, unit/contract and affected build.",
+      "Explicit extended run: browser/database/container or additional OS targets.",
+      "Optional recurring review: support/advisory freshness and dependency review.",
+      "Optional periodic review: disposable restore/replay and reproducibility checks."
+    ]
+  },
+  "sources": {
+    "workflow_reuse": "https://docs.github.com/en/actions/reference/workflows-and-actions/reusing-workflow-configurations",
+    "node_support": "https://nodejs.org/en/about/previous-releases",
+    "npm_ci": "https://docs.npmjs.com/cli/v11/commands/npm-ci/",
+    "pnpm_install": "https://pnpm.io/cli/install",
+    "uv_locking": "https://docs.astral.sh/uv/concepts/projects/sync/",
+    "pip_hashes": "https://pip.pypa.io/en/stable/topics/secure-installs/",
+    "dotnet_support": "https://dotnet.microsoft.com/en-us/platform/support/policy/dotnet-core",
+    "dotnet_restore": "https://learn.microsoft.com/en-us/dotnet/core/tools/dotnet-restore",
+    "cargo_test": "https://doc.rust-lang.org/cargo/commands/cargo-test.html",
+    "go_modules": "https://go.dev/ref/mod",
+    "postgres_support": "https://www.postgresql.org/support/versioning/",
+    "gradle_locking": "https://docs.gradle.org/current/userguide/dependency_locking.html",
+    "gradle_verification": "https://docs.gradle.org/current/userguide/dependency_verification.html",
+    "cmake_presets": "https://cmake.org/cmake/help/latest/manual/cmake-presets.7.html",
+    "openapi": "https://spec.openapis.org/oas/latest.html",
+    "json_schema": "https://json-schema.org/specification",
+    "playwright_ci": "https://playwright.dev/docs/ci",
+    "docker_ci": "https://docs.docker.com/build/ci/github-actions/",
+    "code_scanning": "https://docs.github.com/en/code-security/concepts/code-scanning/code-scanning"
+  },
+  "adoption_evidence": {
+    "owner": "Each opted-in product repository",
+    "required": "Record exact source/toolchain pins, selected platforms, actual execution and limitations in the product-approved audience.",
+    "public_catalog_claim": "No executed language, platform, database, browser or container qualification is asserted by this catalog."
+  }
+}
