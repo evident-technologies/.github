@@ -48,6 +48,11 @@
       "sha256": "ae40fd1a853a99456f48d6de8e752c59afd7d4b81ed08c30761a953a0f5175a4"
     },
     {
+      "path": ".github/workflows/runner-contract.yml",
+      "change": "modified",
+      "sha256": "21c833fd4f24d50e17f634c02d1f9d752b91e986b9ae59f5903da26fdb2bf556"
+    },
+    {
       "path": ".github/workflows/static-shell.yml",
       "change": "modified",
       "sha256": "3c10403d1cce27c7ef3e642bc80e8aa2c6f2c502b7cedb75391fb64d24b6b0a3"
@@ -285,7 +290,7 @@
     {
       "path": "scripts/README.md",
       "change": "modified",
-      "sha256": "c51ffeb8e809c605f2d793b45558fbedc63a3f139b742721a6ef66ca70fcf291"
+      "sha256": "7608450c926fcbf2ec9fec7c76b684452b898ff7cb778717e86119136d788cee"
     },
     {
       "path": "scripts/test-approved-integration.py",
@@ -308,6 +313,11 @@
       "sha256": "cb0af656ba5fca2405d7d1218dde78acbb039c2dd42489fc7999bd67254fe190"
     },
     {
+      "path": "scripts/test-runner-contract.py",
+      "change": "added",
+      "sha256": "eda83c81e244850480759a2ed090e5476329996f2c43c40ac7ce42c833a5dc15"
+    },
+    {
       "path": "scripts/test-static-shell.py",
       "change": "added",
       "sha256": "a14ca9442983b9bfc332b2e2738d62363e320391a38ba5382da661ddce161794"
@@ -315,7 +325,7 @@
     {
       "path": "scripts/verify-public-source.py",
       "change": "added",
-      "sha256": "6bf65e3212834ee38e155663fcbc73613c06baf26512d3d869263a75ac81739c"
+      "sha256": "8ab0cc3ea7d0e5f6e2014a78b39bc5dfe47e1784469d7e52b26f6138c6c081ae"
     }
   ],
   "reconciliation_main": "0884d789f801c79fba9ad1374a3ed6cc7ac4511e",
