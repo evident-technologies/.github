@@ -32,6 +32,28 @@ APPROVED_PR27_FILES = {'.github/workflows/security-secret-scan.yml': 'a68ee02030
 
 BASELINE_SCANNER_SHA256 = '0405a1c0611cc357f4811fd467036d0cbbee9748b8995b0f6ebbe2285395040b'
 
+
+def current_runner_contract(original: bytes) -> bytes:
+    """Derive only the three owner-requested identity corrections from Git baseline.
+
+    The historical fingerprint and protected classification stay unchanged.
+    Neither a changed manifest nor a supplied digest can authorize other bytes.
+    """
+    substitutions = (
+        (b'            aspire-physical-ci|et-ws-02-fabric) ;;',
+         b'            aspire-et-ci|et-ws-02-et-ci) ;;'),
+        (b'          test "$RUNNER_NAME" = "aspire-physical-ci"',
+         b'          test "$RUNNER_NAME" = "aspire-et-ci"'),
+        (b'          test "$RUNNER_NAME" = "et-ws-02-fabric"',
+         b'          test "$RUNNER_NAME" = "et-ws-02-et-ci"'),
+    )
+    for before, after in substitutions:
+        if original.count(before) != 1:
+            raise ValueError("runner-contract baseline identity correction is ambiguous")
+        original = original.replace(before, after, 1)
+    return original
+
+
 def integration_errors(actual, record):
     """Admit only the complete exact reviewed integration, never partial drift."""
     if record != {"head": APPROVED_PR27_SHA, "files": APPROVED_PR27_FILES}:
@@ -350,6 +372,12 @@ def verify(root: Path) -> tuple[list[str], list[str], dict[str, int]]:
             path = root / name
             actual = hashlib.sha256(path.read_bytes()).hexdigest() if path.is_file() else None
             expected_hash = APPROVED_CODEOWNERS_SHA256 if name == ".github/CODEOWNERS" else original_hash
+            if name == ".github/workflows/runner-contract.yml":
+                try:
+                    expected_hash = hashlib.sha256(current_runner_contract(original)).hexdigest()
+                except ValueError as error:
+                    fail(path, str(error))
+                    expected_hash = None
             if name == ".github/workflows/security-secret-scan.yml" and integration_present:
                 expected_hash = APPROVED_PR27_FILES[name]
             if actual != expected_hash:

@@ -7,6 +7,7 @@ development lane.
 
 ```bash
 python3 scripts/validate-runner-fabric.py
+python3 scripts/test-runner-contract.py
 python3 scripts/verify-public-source.py
 bash -n scripts/ship.sh
 ```
@@ -14,6 +15,11 @@ bash -n scripts/ship.sh
 The runner validator checks the pinned local implementation contract. It does not read live
 admission or GitHub group settings. The public-source verifier checks documentation, assets,
 manifests, contrast, and protected-file preservation. See [VERIFY.md](../VERIFY.md).
+
+The runner-contract regressions require the existing PyYAML test dependency. They execute the
+workflow's actual shell qualification steps against synthetic current, legacy, foreign and
+deployment identities, plus platform and private-evidence denials. They do not dispatch a job or
+attest live runner assignment, group access, admission or deployment authority.
 
 ## Legacy ship helper
 
